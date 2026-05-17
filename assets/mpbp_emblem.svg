@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#d4af37"/><stop offset="55%" stop-color="#2cff87" stop-opacity=".35"/><stop offset="100%" stop-color="#05020a" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="1200" fill="#05020a"/>
+<circle cx="600" cy="600" r="520" fill="none" stroke="#d4af37" stroke-width="18" opacity=".9"/>
+<circle cx="600" cy="600" r="430" fill="none" stroke="#2cff87" stroke-width="6" opacity=".6"/>
+<path d="M600 105 L745 455 L1125 455 L820 675 L935 1045 L600 825 L265 1045 L380 675 L75 455 L455 455 Z" fill="url(#g)" stroke="#d4af37" stroke-width="10" opacity=".95"/>
+<text x="600" y="565" text-anchor="middle" font-family="Arial Black, Arial" font-size="108" fill="#d4af37" letter-spacing="10">M.P.B.P</text>
+<text x="600" y="670" text-anchor="middle" font-family="Arial Black, Arial" font-size="150" fill="#fff2b6" letter-spacing="14">440</text>
+<text x="600" y="755" text-anchor="middle" font-family="Arial" font-size="38" fill="#2cff87" letter-spacing="8">CORP.2026</text>
+</svg>
