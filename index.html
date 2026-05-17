@@ -1,1 +1,121 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sparetdee Simon – Site officiel</title><meta name="description" content="Site officiel de Sparetdee Simon – M.P.B.P 440 Corp.2026. Musique, clips, liens streaming, prochaines sorties."><meta property="og:title" content="Sparetdee Simon – M.P.B.P 440"><meta property="og:image" content="assets/artist/sparetdee-avatar.jpg"><link rel="icon" href="assets/logo/mpbp440-logo.jpg"><link rel="stylesheet" href="style-upgrade.css"></head><body><div class="noise"></div><button id="topBtn">↑</button><header class="hero"><div class="hero-bg"></div><nav class="nav"><a class="brand" href="#"><img src="assets/logo/mpbp440-logo.jpg"><span>M.P.B.P 440 Corp.2026</span></a><button class="menuBtn" id="menuBtn">☰</button><div class="navlinks" id="navlinks"><a href="#bio">Bio</a><a href="#featured">Sortie</a><a href="#upcoming">À venir</a><a href="#music">Morceaux</a><a href="#videos">Clips</a><a href="#links">Liens</a><a href="#contact">Contact</a></div></nav><section class="hero-content"><div><p class="eyebrow">974 • Côte d’Azur • Hip-hop old school futuriste</p><h1>Sparetdee<br>Simon</h1><p class="tagline">Rap conscient, groove solaire, plume de quartier et vision cosmique.</p><div class="cta"><a class="btn primary" href="#featured">Sortie officielle</a><a class="btn" href="#videos">Voir les clips</a><a class="btn ghost" href="https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu" target="_blank">Spotify</a></div></div><div class="profile-card"><img src="assets/artist/sparetdee-avatar.jpg"><div class="profile-logo"><img src="assets/logo/mpbp440-logo.jpg"></div></div></section></header><main><section id="bio" class="glass intro"><div class="bio-grid"><img src="assets/artist/sparetdee-photo-reelle.jpg"><div><p class="eyebrow">Identité artistique</p><h2>Bio officielle</h2><p><strong>Sparetdee Simon</strong>, artiste hip-hop indépendant lié à La Réunion et au sud de la France, développe un univers entre rap old school, poésie urbaine, groove solaire et esthétique sombre/or futuriste.</p><p>Son label visuel et musical, <strong>M.P.B.P 440 Corp.2026</strong>, porte une direction claire : racines 974, conscience, humour, métaphores, clips, pochettes et énergie de terrain.</p></div></div></section><section id="featured"><div class="section-title"><p>Focus</p><h2>Sortie officielle</h2></div><div id="featuredCard" class="featured-card glass"></div></section><section id="upcoming"><div class="section-title"><p>Planning</p><h2>Prochaines sorties</h2></div><div id="upcomingGrid" class="timeline"></div></section><section id="music"><div class="section-title"><p>Catalogue</p><h2>Morceaux & pochettes</h2></div><div id="tracks" class="cards"></div></section><section id="videos" class="glass media-center"><div class="media-copy"><p class="eyebrow">Clips intégrés</p><h2>Vidéos YouTube</h2><p>Trois clips sont disponibles directement sur le site. Tu peux ajouter d’autres vidéos plus tard dans <strong>data.json</strong>.</p><a class="btn primary" href="https://www.youtube.com/@sparetdee440" target="_blank">Voir la chaîne YouTube</a></div><div id="videoList" class="video-list"></div></section><section id="links"><div class="section-title"><p>Streaming & réseaux</p><h2>Liens officiels</h2></div><div id="officialLinks" class="link-grid"></div></section><section id="qr"><div class="section-title"><p>Scan direct</p><h2>QR codes</h2></div><div class="qr-grid"><article class="qr-card glass"><img src="assets/qr/qr-spotify.png"><h3>Spotify</h3></article><article class="qr-card glass"><img src="assets/qr/qr-youtube.png"><h3>YouTube</h3></article><article class="qr-card glass"><img src="assets/qr/qr-deezer.png"><h3>Deezer</h3></article><article class="qr-card glass"><img src="assets/qr/qr-apple-music.png"><h3>Apple Music</h3></article></div></section><section id="contact" class="contact"><div class="section-title"><p>Booking / Promo</p><h2>Contact</h2></div><div class="glass contact-box"><p>Collaboration, clip, remix, booking, presse ou projet M.P.B.P 440 :</p><a class="btn primary" href="mailto:mpbp97440@gmail.com">mpbp97440@gmail.com</a></div></section></main><footer><p>© <span id="year"></span> Sparetdee Simon — M.P.B.P 440 Corp.2026</p></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparetdee Simon – Site officiel</title>
+  <meta name="description" content="Site officiel de Sparetdee Simon – M.P.B.P 440 Corp.2026. Musique, clips, liens streaming, prochaines sorties et univers visuel." />
+  <meta property="og:title" content="Sparetdee Simon – M.P.B.P 440" />
+  <meta property="og:description" content="Rap conscient, old school futuriste, racines 974, clips et sorties officielles." />
+  <meta property="og:image" content="assets/artist/sparetdee-avatar.jpg" />
+  <meta name="theme-color" content="#d4af37" />
+  <link rel="icon" href="assets/logo/mpbp440-logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <button id="topBtn">↑</button>
+
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <nav class="nav">
+      <a class="brand" href="#home">
+        <img src="assets/logo/mpbp440-logo.jpg" alt="Logo M.P.B.P 440">
+        <span>M.P.B.P 440 Corp.2026</span>
+      </a>
+      <button class="menuBtn" id="menuBtn">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#bio">Bio</a>
+        <a href="#featured">Sortie</a>
+        <a href="#upcoming">À venir</a>
+        <a href="#music">Morceaux</a>
+        <a href="#videos">Clips</a>
+        <a href="#links">Liens</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div>
+        <p class="eyebrow">974 • Côte d’Azur • Hip-hop old school futuriste</p>
+        <h1>Sparetdee<br>Simon</h1>
+        <p class="tagline">Rap conscient, groove solaire, plume de quartier et vision cosmique.</p>
+        <div class="cta">
+          <a class="btn primary" href="#featured">Sortie officielle</a>
+          <a class="btn" href="#videos">Voir les clips</a>
+          <a class="btn ghost" href="https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu" target="_blank">Spotify</a>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="assets/artist/sparetdee-avatar.jpg" alt="Avatar officiel Sparetdee Simon">
+        <div class="profile-logo"><img src="assets/logo/mpbp440-logo.jpg" alt="Logo M.P.B.P 440"></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="bio" class="glass intro">
+      <div class="bio-grid">
+        <img src="assets/artist/sparetdee-photo-reelle.jpg" alt="Photo réelle Sparetdee Simon">
+        <div>
+          <p class="eyebrow">Identité artistique</p>
+          <h2>Bio officielle</h2>
+          <p><strong>Sparetdee Simon</strong>, artiste hip-hop indépendant lié à La Réunion et au sud de la France, développe un univers entre rap old school, poésie urbaine, groove solaire et esthétique sombre/or futuriste.</p>
+          <p>Son label visuel et musical, <strong>M.P.B.P 440 Corp.2026</strong>, porte une direction claire : racines 974, conscience, humour, métaphores, clips, pochettes et énergie de terrain.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured">
+      <div class="section-title"><p>Focus</p><h2>Sortie officielle</h2></div>
+      <div id="featuredCard" class="featured-card glass"></div>
+    </section>
+
+    <section id="upcoming">
+      <div class="section-title"><p>Planning</p><h2>Prochaines sorties</h2></div>
+      <div id="upcomingGrid" class="timeline"></div>
+    </section>
+
+    <section id="music">
+      <div class="section-title"><p>Catalogue</p><h2>Morceaux & pochettes</h2></div>
+      <div id="tracks" class="cards"></div>
+    </section>
+
+    <section id="videos" class="glass media-center">
+      <div class="media-copy">
+        <p class="eyebrow">Clips intégrés</p>
+        <h2>Vidéos YouTube</h2>
+        <p>Trois clips sont disponibles directement sur le site. Tu peux ajouter d’autres vidéos plus tard dans <strong>data.json</strong>.</p>
+        <a class="btn primary" href="https://www.youtube.com/@sparetdee440" target="_blank">Voir la chaîne YouTube</a>
+      </div>
+      <div id="videoList" class="video-list"></div>
+    </section>
+
+    <section id="links">
+      <div class="section-title"><p>Streaming & réseaux</p><h2>Liens officiels</h2></div>
+      <div id="officialLinks" class="link-grid"></div>
+    </section>
+
+    <section id="qr">
+      <div class="section-title"><p>Scan direct</p><h2>QR codes</h2></div>
+      <div class="qr-grid">
+        <article class="qr-card glass"><img src="assets/qr/qr-spotify.png"><h3>Spotify</h3></article>
+        <article class="qr-card glass"><img src="assets/qr/qr-youtube.png"><h3>YouTube</h3></article>
+        <article class="qr-card glass"><img src="assets/qr/qr-deezer.png"><h3>Deezer</h3></article>
+        <article class="qr-card glass"><img src="assets/qr/qr-apple-music.png"><h3>Apple Music</h3></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-title"><p>Booking / Promo</p><h2>Contact</h2></div>
+      <div class="glass contact-box">
+        <p>Collaboration, clip, remix, booking, presse ou projet M.P.B.P 440 :</p>
+        <a class="btn primary" href="mailto:mpbp97440@gmail.com">mpbp97440@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year"></span> Sparetdee Simon — M.P.B.P 440 Corp.2026</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

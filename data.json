@@ -13,9 +13,9 @@
   "featured": {
     "title": "Dernier Chapitre",
     "status": "Prochaine sortie officielle",
-    "date": "À confirmer",
-    "description": "Un titre conscient et solaire, pensé comme une passerelle entre le vécu, l’espoir et le mouvement.",
-    "cover": "assets/covers/dans-lombre-des-puissant.jpg",
+    "date": "À venir",
+    "description": "Chaque mot laisse une trace, chaque son écrit l’histoire. Une sortie officielle M.P.B.P 440 Corp.2026.",
+    "cover": "assets/covers/dernier-chapitre.jpg",
     "links": {
       "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
       "YouTube": "https://www.youtube.com/@sparetdee440",
@@ -26,18 +26,54 @@
     }
   },
   "upcoming": [
-  {
-    "title": "Dernier Chapitre",
-    "cover": "assets/covers/dernier-chapitre.jpg",
-    "description": "Chaque mot laisse une trace."
-  },
-  {
-    "title": "Monde Alternatif",
-    "cover": "assets/covers/monde-alternatif.jpg",
-    "description": "Une rencontre. Un amour. Deux mondes."
-  }
-],
+    {
+      "title": "Dernier Chapitre",
+      "date": "Prochaine sortie officielle",
+      "description": "Chaque mot laisse une trace.",
+      "cover": "assets/covers/dernier-chapitre.jpg"
+    },
+    {
+      "title": "Monde Alternatif",
+      "date": "Sortie suivante",
+      "description": "Une rencontre. Un amour. Deux mondes.",
+      "cover": "assets/covers/monde-alternatif.jpg"
+    },
+    {
+      "title": "Autres créations",
+      "date": "À venir",
+      "description": "Les prochaines sorties seront dévoilées progressivement.",
+      "cover": "assets/logo/mpbp440-logo.jpg"
+    }
+  ],
   "tracks": [
+    {
+      "title": "Dernier Chapitre",
+      "year": "À venir",
+      "description": "Chaque mot laisse une trace, chaque son écrit l’histoire.",
+      "cover": "assets/covers/dernier-chapitre.jpg",
+      "links": {
+        "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+        "YouTube": "https://www.youtube.com/@sparetdee440",
+        "TikTok": "https://www.tiktok.com/@simonsparet",
+        "Instagram": "https://www.instagram.com/sparetdee/",
+        "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+      }
+    },
+    {
+      "title": "Monde Alternatif",
+      "year": "À venir",
+      "description": "Une rencontre, un amour, deux mondes. Ambiance futuriste, intime et cinématique.",
+      "cover": "assets/covers/monde-alternatif.jpg",
+      "links": {
+        "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+        "YouTube": "https://www.youtube.com/@sparetdee440",
+        "TikTok": "https://www.tiktok.com/@simonsparet",
+        "Instagram": "https://www.instagram.com/sparetdee/",
+        "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+      }
+    },
     {
       "title": "Dans l'ombre des puissant",
       "year": "2026",
@@ -125,7 +161,7 @@
     {
       "title": "11 hivers et 11 étés",
       "year": "2026",
-      "description": "Une histoire de saisons et d’attachement.",
+      "description": "Une histoire de saisons, de durée et d’attachement.",
       "cover": "assets/covers/11-hivers-11-etes.jpg",
       "links": {
         "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
