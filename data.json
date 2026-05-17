@@ -1,0 +1,83 @@
+{
+  "artist": "Sparetdee Simon",
+  "label": "M.P.B.P 440 Corp.2026",
+  "email": "mpbp97440@gmail.com",
+  "youtubeEmbed": "https://www.youtube.com/embed?listType=search&list=Sparetdee%20Simon",
+  "featured": {
+    "title": "L'asticot Getga",
+    "year": "2026",
+    "description": "Banger joyeux et dansant, énergie solaire, hip-hop old school modernisé.",
+    "links": {
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "Deezer": "https://www.deezer.com/fr/artist/385051171",
+      "Spotify": "",
+      "YouTube": ""
+    }
+  },
+  "tracks": [
+    {
+      "title": "L'asticot Getga",
+      "year": "2026",
+      "description": "Banger joyeux, dansant, hip-hop avec énergie solaire.",
+      "links": {
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+        "Deezer": "https://www.deezer.com/fr/artist/385051171"
+      }
+    },
+    {
+      "title": "3 Minutes 35",
+      "year": "2026",
+      "description": "Morceau calibré, tension narrative et DA futuriste.",
+      "links": {
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+        "Deezer": "https://www.deezer.com/fr/artist/385051171"
+      }
+    },
+    {
+      "title": "Prince Des Étoiles",
+      "year": "2026",
+      "description": "Univers cosmique, steampunk futuriste, rap conscient.",
+      "links": {
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+        "Deezer": "https://www.deezer.com/fr/artist/385051171"
+      }
+    },
+    {
+      "title": "Dernier Chapitre",
+      "year": "2026",
+      "description": "Titre conscient, solaire et plus dansant.",
+      "links": {
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+        "Deezer": "https://www.deezer.com/fr/artist/385051171"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "title": "Clip officiel à venir",
+      "type": "Teaser",
+      "description": "Espace pour tes clips IA, Shorts, Reels et teasers TikTok.",
+      "url": ""
+    },
+    {
+      "title": "Making-of M.P.B.P 440",
+      "type": "Studio",
+      "description": "Zone prévue pour montrer Cubase, Suno, affiches et création visuelle.",
+      "url": ""
+    }
+  ],
+  "merch": [
+    {
+      "name": "T-shirt M.P.B.P 440",
+      "status": "Concept à venir"
+    },
+    {
+      "name": "Sticker Sparetdee Simon",
+      "status": "Concept à venir"
+    },
+    {
+      "name": "Pack cover / QR promo",
+      "status": "Disponible prochainement"
+    }
+  ]
+}

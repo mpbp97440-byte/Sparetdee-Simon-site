@@ -1,0 +1,9 @@
+{
+  "name": "Sparetdee Simon",
+  "short_name": "Sparetdee",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#06050a",
+  "theme_color": "#d4af37",
+  "icons": []
+}
