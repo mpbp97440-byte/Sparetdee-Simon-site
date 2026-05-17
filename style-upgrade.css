@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap');
+:root{
+--gold:#d4af37;
+--bg:#050505;
+--text:#f5f0df;
+}
+body{
+margin:0;
+background:#050505;
+color:var(--text);
+font-family:'Montserrat',sans-serif;
+background-image:
+radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 30%),
+radial-gradient(circle at bottom right, rgba(0,255,170,.08), transparent 25%);
+}
+.hero-title{
+font-family:'Bebas Neue',sans-serif;
+font-size:clamp(70px,12vw,170px);
+letter-spacing:4px;
+line-height:.9;
+background:linear-gradient(180deg,#fff4bf,#d4af37,#8f6711);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 40px rgba(212,175,55,.25);
+}
+.logo-text{
+font-family:'Orbitron',sans-serif;
+letter-spacing:3px;
+color:var(--gold);
+}

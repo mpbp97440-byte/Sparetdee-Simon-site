@@ -1,0 +1,38 @@
+
+MISE À JOUR ULTRA PRO — SPARETDEE SIMON
+
+1. Dézippe ce pack.
+2. Ouvre ton dépôt GitHub.
+3. Clique sur :
+Add file → Upload files
+4. Glisse :
+- style-upgrade.css
+- assets/covers/dernier-chapitre.jpg
+- assets/covers/monde-alternatif.jpg
+
+5. Dans index.html :
+remplace la classe du grand titre par :
+class="hero-title"
+
+6. Pour le logo texte :
+class="logo-text"
+
+7. Dans data.json ajoute :
+
+{
+"title":"Dernier Chapitre",
+"year":"2026",
+"description":"Nouvelle sortie officielle.",
+"cover":"assets/covers/dernier-chapitre.jpg"
+}
+
+et :
+
+{
+"title":"Monde Alternatif",
+"year":"2026",
+"description":"Univers sentimental futuriste.",
+"cover":"assets/covers/monde-alternatif.jpg"
+}
+
+8. Recharge le site avec CTRL + F5
