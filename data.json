@@ -11,11 +11,11 @@
     "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
   },
   "featured": {
-    "title": "Monde Alternatif",
-    "status": "Sortie officielle",
-    "date": "Disponible le 23/05/2026 sur toutes les plateformes",
-    "description": "Une rencontre. Un amour. Deux mondes. Nouveau morceau officiel de Sparetdee Simon, entre émotion, univers futuriste et signature M.P.B.P 440.",
-    "cover": "assets/covers/monde-alternatif.jpg",
+    "title": "Le Temps Où Cousin",
+    "status": "Prochaine sortie officielle",
+    "date": "Sortie officielle : 29/05/2026",
+    "description": "Nouveau single officiel signé Sparetdee Simon. Réel jusqu’au bout, lumière jusqu’au bout, disponible sur toutes les plateformes.",
+    "cover": "assets/covers/le-temps-ou-cousin.jpg",
     "links": {
       "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
       "YouTube": "https://www.youtube.com/@sparetdee440",
@@ -28,9 +28,15 @@
   "upcoming": [
     {
       "title": "Le Temps Où Cousin",
-      "date": "Disponible le 29/05/2026",
-      "description": "Réel jusqu’au bout, lumière jusqu’au bout. Prochaine sortie officielle M.P.B.P 440 Corp.2026.",
+      "date": "29/05/2026",
+      "description": "Prochaine sortie officielle sur toutes les plateformes.",
       "cover": "assets/covers/le-temps-ou-cousin.jpg"
+    },
+    {
+      "title": "La Mista Gringa",
+      "date": "30/05/2026",
+      "description": "Prochaine sortie numéro 2, disponible sur toutes les plateformes.",
+      "cover": "assets/covers/la-mista-gringa.jpg"
     },
     {
       "title": "Autres créations",
@@ -41,10 +47,24 @@
   ],
   "tracks": [
     {
-      "title": "Monde Alternatif",
-      "year": "23/05/2026",
-      "description": "Sortie officielle disponible sur toutes les plateformes. Une rencontre, un amour, deux mondes.",
-      "cover": "assets/covers/monde-alternatif.jpg",
+      "title": "Le Temps Où Cousin",
+      "year": "29/05/2026",
+      "description": "Réel jusqu’au bout, lumière jusqu’au bout. Nouveau single officiel.",
+      "cover": "assets/covers/le-temps-ou-cousin.jpg",
+      "links": {
+        "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+        "YouTube": "https://www.youtube.com/@sparetdee440",
+        "TikTok": "https://www.tiktok.com/@simonsparet",
+        "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+        "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+        "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+      }
+    },
+    {
+      "title": "La Mista Gringa",
+      "year": "30/05/2026",
+      "description": "Même le ciel noir s’incline sous un halo combat. Nouveau single officiel.",
+      "cover": "assets/covers/la-mista-gringa.jpg",
       "links": {
         "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
         "YouTube": "https://www.youtube.com/@sparetdee440",
@@ -57,7 +77,7 @@
     {
       "title": "Dernier Chapitre",
       "year": "21/05/2026",
-      "description": "Une page se tourne, une autre commence. Le morceau le plus personnel.",
+      "description": "Chaque mot laisse une trace, chaque son écrit l’histoire.",
       "cover": "assets/covers/dernier-chapitre.jpg",
       "links": {
         "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
@@ -69,10 +89,10 @@
       }
     },
     {
-      "title": "Le Temps Où Cousin",
-      "year": "29/05/2026",
-      "description": "Prochaine sortie officielle. Réel jusqu’au bout, lumière jusqu’au bout.",
-      "cover": "assets/covers/le-temps-ou-cousin.jpg",
+      "title": "Monde Alternatif",
+      "year": "À venir",
+      "description": "Une rencontre, un amour, deux mondes. Ambiance futuriste, intime et cinématique.",
+      "cover": "assets/covers/monde-alternatif.jpg",
       "links": {
         "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
         "YouTube": "https://www.youtube.com/@sparetdee440",
