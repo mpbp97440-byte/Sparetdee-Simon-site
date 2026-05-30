@@ -568,3 +568,42 @@ footer{
     grid-template-columns:1fr;
   }
 }
+
+
+/* SECTION ÉVÈNEMENTS */
+.events-section{
+  padding:58px 0;
+}
+
+.event-card{
+  display:grid;
+  grid-template-columns:minmax(280px,430px) 1fr;
+  gap:28px;
+  align-items:center;
+}
+
+.event-card img{
+  width:100%;
+  border-radius:22px;
+  border:1px solid var(--border);
+  box-shadow:0 0 35px rgba(0,0,0,.45);
+}
+
+.event-body h3{
+  font-family:'Bebas Neue',Impact,sans-serif;
+  letter-spacing:2px;
+  font-size:clamp(42px,6vw,76px);
+  margin:8px 0;
+  color:#fff3c0;
+}
+
+.event-body p{
+  line-height:1.7;
+  color:#e7dec6;
+}
+
+@media(max-width:860px){
+  .event-card{
+    grid-template-columns:1fr;
+  }
+}
