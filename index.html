@@ -29,7 +29,7 @@
     <a href="#upcoming">À venir</a>
     <a href="#events">Évènements</a>
     <a href="#music">Morceaux</a>
-    <a href="#mpbp-tv">MPBP TV</a>
+    <a href="#mpbp-tv">MPBP TV</a><a href="#radio">Radio</a>
     <a href="#videos">Clips</a>
     <a href="#gallery">Galerie</a>
     <a href="#links">Liens</a>
@@ -508,10 +508,86 @@
   <a class="btn primary" href="mailto:mpbp97440@gmail.com">mpbp97440@gmail.com</a>
 </section>
 
+
+<section id="radio" class="section panel radio-mpbp">
+  <div class="section-head">
+    <p class="sup">Radio officielle</p>
+    <h2>RADIO MPBP440</h2>
+    <p>Playlist officielle Sparetdee Simon — écoute via YouTube Music.</p>
+  </div>
+
+  <div class="radio-player-box">
+    <div class="radio-now">
+      <span class="radio-badge">ON AIR</span>
+      <h3 id="radioNowTitle">Sélectionne un titre</h3>
+      <p id="radioNowArtist">MPBP440 Music</p>
+      <div class="radio-actions">
+        <a id="radioOpenBtn" class="btn primary" href="https://music.youtube.com/" target="_blank" rel="noopener">Ouvrir le titre</a>
+        <button class="btn ghost" type="button" onclick="radioPrevious()">Précédent</button>
+        <button class="btn ghost" type="button" onclick="radioNext()">Suivant</button>
+      </div>
+      <p class="radio-note">YouTube Music ne fournit pas de flux MP3 direct intégrable. Le bouton ouvre donc le titre officiel dans YouTube Music.</p>
+    </div>
+
+    <div class="radio-list" id="radioPlaylist">
+      <p>Chargement de la playlist...</p>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer><p>© 2026 MPBP 440 Corp.2026 — Sparetdee Simon / Juste Une Plume</p></footer>
 
 <script src="script.js?v=3.2.8-mpbp-tv"></script>
+
+<script>
+const RADIO_MPBPRADIO_VERSION = "3.2.10";
+let mpbpRadioTracks = [];
+let mpbpRadioIndex = 0;
+
+function renderRadioTrack(index){
+  if(!mpbpRadioTracks.length) return;
+  mpbpRadioIndex = (index + mpbpRadioTracks.length) % mpbpRadioTracks.length;
+  const track = mpbpRadioTracks[mpbpRadioIndex];
+  const title = document.getElementById("radioNowTitle");
+  const artist = document.getElementById("radioNowArtist");
+  const btn = document.getElementById("radioOpenBtn");
+  if(title) title.textContent = track.title || "Titre MPBP440";
+  if(artist) artist.textContent = track.artist || "MPBP440";
+  if(btn) btn.href = track.url || "#";
+
+  document.querySelectorAll(".radio-track").forEach((el, i) => {
+    el.classList.toggle("active", i === mpbpRadioIndex);
+  });
+}
+
+function radioNext(){ renderRadioTrack(mpbpRadioIndex + 1); }
+function radioPrevious(){ renderRadioTrack(mpbpRadioIndex - 1); }
+
+async function loadMPBPRadio(){
+  const list = document.getElementById("radioPlaylist");
+  if(!list) return;
+  try{
+    const r = await fetch("radio_playlist.json?v=" + Date.now(), {cache:"no-store"});
+    mpbpRadioTracks = await r.json();
+    list.innerHTML = mpbpRadioTracks.map((track, i) => `
+      <button type="button" class="radio-track" onclick="renderRadioTrack(${i})">
+        <span class="radio-track-number">${String(i+1).padStart(2,"0")}</span>
+        <span>
+          <strong>${track.title}</strong>
+          <small>${track.artist || "MPBP440"}</small>
+        </span>
+      </button>
+    `).join("");
+    renderRadioTrack(0);
+  }catch(e){
+    list.innerHTML = "<p>Playlist radio indisponible.</p>";
+    console.warn("Erreur playlist radio", e);
+  }
+}
+document.addEventListener("DOMContentLoaded", loadMPBPRadio);
+</script>
+
 </body>
 </html>
