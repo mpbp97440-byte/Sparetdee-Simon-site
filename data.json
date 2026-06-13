@@ -469,7 +469,7 @@
     }
   ],
   "site": {
-    "version": "3.2.7 Event Fit + Official Covers",
+    "version": "3.2.8 MPBP440 TV",
     "artist": "Sparetdee Simon",
     "label": "M.P.B.P 440 Corp.2026",
     "claim": "Music • Passion • But • Progress",
@@ -555,5 +555,23 @@
       "label": "Prochaine sortie Sparetdee Simon",
       "cover": "assets/covers/reves-et-cauchemards.jpg"
     }
-  ]
+  ],
+  "mpbp_tv": {
+    "title": "MPBP440 TV",
+    "status": "Portail vidéo officiel",
+    "live": {
+      "title": "Live TikTok — Fête de la musique",
+      "date": "21/06/2026",
+      "time": "21h00",
+      "url": "https://www.tiktok.com/@simonsparet",
+      "cover": "assets/events/live-tiktok-fete-musique-21062026-full.jpg",
+      "description": "Quand le live TikTok est actif, rejoins directement le direct officiel depuis ce bouton. TikTok ne permet pas toujours l’intégration directe du live comme YouTube, donc cette zone sert de portail officiel MPBP440 TV."
+    },
+    "featured_videos": [
+      "0YEqshdl7jI",
+      "zHx-OHSAKcs",
+      "HKzweo2V-iw",
+      "EzsriXQY-04"
+    ]
+  }
 }
