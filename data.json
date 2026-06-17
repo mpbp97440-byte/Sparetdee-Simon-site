@@ -15,20 +15,12 @@
     "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
   },
   "featured": {
-    "title": "Le Système",
-    "status": "Prochaine sortie officielle",
-    "date": "27/06/2026",
-    "description": "Pré-sortie officielle — disponible le 27/06/2026 sur toutes les plateformes.",
-    "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png",
-    "links": {
-      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
-      "YouTube": "https://www.youtube.com/@sparetdee440",
-      "TikTok": "https://www.tiktok.com/@simonsparet",
-      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
-      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
-      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
-    },
-    "artist": "Sparetdee Simon"
+    "title": "Double sortie",
+    "artist": "Sparetdee Simon",
+    "date": "20/06/2026",
+    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
+    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
+    "status": "Sortie du moment"
   },
   "upcoming": [
     {
@@ -548,9 +540,11 @@
   ],
   "countdowns": [
     {
-      "title": "Le Système — Sparetdee Simon",
+      "title": "Le Système",
+      "artist": "Sparetdee Simon",
       "date": "2026-06-27T00:00:00+02:00",
-      "label": "Compte à rebours officiel",
+      "label": "Prochaine sortie Sparetdee Simon",
+      "description": "Sortie officielle le 27/06/2026 sur toutes les plateformes.",
       "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png"
     },
     {
@@ -595,5 +589,37 @@
       "status": "Base radio prête — ajoute les fichiers audio MP3 pour lecture directe.",
       "note": "Les visiteurs peuvent déjà accéder aux titres via les plateformes. Le vrai lecteur audio sera activé quand les fichiers audio autorisés seront fournis."
     }
+  },
+  "focus": {
+    "title": "Double sortie",
+    "artist": "Sparetdee Simon",
+    "date": "20/06/2026",
+    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
+    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
+    "status": "Sortie du moment"
+  },
+  "officialFocus": {
+    "title": "Double sortie",
+    "artist": "Sparetdee Simon",
+    "date": "20/06/2026",
+    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
+    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
+    "status": "Sortie du moment"
+  },
+  "highlight": {
+    "title": "Double sortie",
+    "artist": "Sparetdee Simon",
+    "date": "20/06/2026",
+    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
+    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
+    "status": "Sortie du moment"
+  },
+  "moment": {
+    "title": "Double sortie",
+    "artist": "Sparetdee Simon",
+    "date": "20/06/2026",
+    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
+    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
+    "status": "Sortie du moment"
   }
 }

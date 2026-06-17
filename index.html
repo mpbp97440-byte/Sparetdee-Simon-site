@@ -556,20 +556,47 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+
+
 <script>
+/* V3.2.16 force correct countdown + focus */
 document.addEventListener("DOMContentLoaded", function(){
-  const focusCandidates = Array.from(document.querySelectorAll("section, article, .panel, .card"));
-  const focus = focusCandidates.find(el => /focus officiel/i.test(el.textContent || ""));
-  if(focus){
-    focus.querySelectorAll("h2,h3").forEach(h => {
-      if(/france|soulève|souleve/i.test(h.textContent || "")) h.textContent = "Le Système";
+  setTimeout(function(){
+    const countdownSections = Array.from(document.querySelectorAll("section, .section, .panel")).filter(el => /comptes? à rebours|prochaines sorties/i.test(el.textContent || ""));
+    countdownSections.forEach(sec => {
+      const cards = Array.from(sec.querySelectorAll("article, .card, .countdown-card, .release-card, .panel")).filter(c => c !== sec);
+      const just = cards.find(c => /juste une plume|je sais/i.test(c.textContent || ""));
+      if(just){
+        const img = just.querySelector("img");
+        if(img){ img.src = "assets/covers/le-systeme-pre-sortie-27-06-2026.png"; img.alt = "Le Système — Sparetdee Simon"; }
+        just.innerHTML = `
+          <img src="assets/covers/le-systeme-pre-sortie-27-06-2026.png" alt="Le Système — Sparetdee Simon">
+          <div>
+            <p class="sup">PROCHAINE SORTIE SPARETDEE SIMON</p>
+            <h3>LE SYSTÈME</h3>
+            <p>Sortie officielle le <strong>27/06/2026</strong> sur toutes les plateformes.</p>
+            <div class="countdown" data-date="2026-06-27T00:00:00+02:00">
+              <div><strong>00</strong><span>jours</span></div>
+              <div><strong>00</strong><span>heures</span></div>
+              <div><strong>00</strong><span>minutes</span></div>
+              <div><strong>00</strong><span>secondes</span></div>
+            </div>
+          </div>`;
+      }
     });
-    const img = focus.querySelector("img");
-    if(img){
-      img.src = "assets/covers/le-systeme-pre-sortie-27-06-2026.png";
-      img.alt = "Le Système — Sparetdee Simon";
+
+    const focus = Array.from(document.querySelectorAll("section, .section")).find(el => /focus officiel|sortie du moment/i.test(el.textContent || ""));
+    if(focus){
+      const img = focus.querySelector("img");
+      if(img){ img.src = "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg"; img.alt = "Double sortie — L’Argent + Je Vous Pousse Tous"; }
+      focus.querySelectorAll("h2,h3").forEach(h => {
+        if(/le système|la france|soulève|souleve/i.test(h.textContent || "")) h.textContent = "Double sortie";
+      });
+      const p = focus.querySelector("p:not(.sup)");
+      if(p) p.innerHTML = "L’Argent + Je Vous Pousse Tous — sortie officielle le <strong>20/06/2026</strong> sur toutes les plateformes.";
     }
-  }
+  }, 500);
 });
 </script>
 
