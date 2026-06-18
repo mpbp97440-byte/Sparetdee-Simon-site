@@ -5,4 +5,3 @@ Ajouts :
 - Section Actualités MPBP440
 - Structure JSON autonome dans /data
 - Fichiers : artists.json, news.json, featured.json, radio.json, live_status.json, events.json, countdowns.json
-- Préparation pour pilotage futur par Brenda
