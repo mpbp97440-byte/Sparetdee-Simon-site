@@ -1,2 +1,2 @@
-site_mpbp440_VERSION_3_4_1_ADMIN_MANUEL
-Mode manuel renforcé : guide GitHub, aperçu, copier JSON, téléchargement JSON.
+site_mpbp440_VERSION_3_4_2_ADMIN_MEDIAS
+Ajout gestion images, galerie, vidéos, chemins automatiques et exports JSON.

@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MPBP440 Admin Manuel</title>
-<link rel="stylesheet" href="admin.css?v=3.4.1">
+<link rel="stylesheet" href="admin.css?v=3.4.2">
 </head>
 <body>
 <header class="topbar">
   <div>
     <p class="sup">Administration interne</p>
     <h1>MPBP440 Admin</h1>
-    <p class="subtitle">Mode manuel compatible GitHub Pages — aucune dépendance externe.</p>
+    <p class="subtitle">Mode manuel compatible GitHub Pages — gestion contenus, images et liens.</p>
   </div>
   <div class="top-actions">
     <a class="btn ghost" href="index.html">Voir le site</a>
@@ -21,16 +21,16 @@
 
 <main class="admin-wrap">
   <section class="panel guide">
-    <h2>Mode manuel : comment publier une modification</h2>
+    <h2>Mode manuel : images et JSON</h2>
     <ol>
-      <li>Prépare les contenus dans cette page.</li>
-      <li>Télécharge le ou les fichiers JSON générés.</li>
-      <li>Va sur GitHub dans le dossier <strong>data</strong>.</li>
-      <li>Remplace le fichier correspondant : <code>news.json</code>, <code>featured.json</code> ou <code>live_status.json</code>.</li>
-      <li>Valide avec <strong>Commit changes</strong>.</li>
-      <li>Attends 1 à 2 minutes puis fais <strong>CTRL + F5</strong> sur le site.</li>
+      <li>Choisis ton image dans l’admin.</li>
+      <li>L’admin crée un nom propre et un chemin du type <code>assets/covers/mon-titre.png</code>.</li>
+      <li>Télécharge l’image renommée avec le bouton prévu.</li>
+      <li>Sur GitHub, upload l’image renommée dans le bon dossier : <code>assets/covers</code>, <code>assets/gallery</code> ou <code>assets/events</code>.</li>
+      <li>Télécharge ou copie le JSON généré.</li>
+      <li>Remplace le fichier JSON correspondant dans le dossier <code>data</code>.</li>
     </ol>
-    <p class="notice">Adresse actuelle du site : <strong>https://mpbp97440-byte.github.io/Sparetdee-Simon-site/</strong></p>
+    <p class="notice">Le site actuel reste hébergé sur GitHub Pages : <strong>https://mpbp97440-byte.github.io/Sparetdee-Simon-site/</strong></p>
   </section>
 
   <section class="grid cards">
@@ -38,6 +38,35 @@
     <article class="card"><h2 id="eventsCount">--</h2><p>Événements</p></article>
     <article class="card"><h2 id="artistsCount">--</h2><p>Artistes</p></article>
     <article class="card"><h2 id="liveStatus">--</h2><p>Statut Live</p></article>
+  </section>
+
+  <section class="panel">
+    <h2>Gestion des images</h2>
+    <p class="muted">Prépare une pochette, un flyer d’événement ou une image de galerie avec le bon nom de fichier.</p>
+    <div class="form-grid">
+      <label>Type d’image
+        <select id="mediaFolder">
+          <option value="assets/covers">Pochette / sortie</option>
+          <option value="assets/events">Événement / live</option>
+          <option value="assets/gallery">Galerie photo</option>
+        </select>
+      </label>
+      <label>Nom public / titre
+        <input id="mediaTitle" placeholder="Le Système">
+      </label>
+      <label class="wide">Choisir l’image
+        <input id="mediaFile" type="file" accept="image/*">
+      </label>
+    </div>
+    <div class="media-preview">
+      <img id="mediaPreview" alt="">
+      <div>
+        <p class="path">Chemin généré : <code id="mediaPath">---</code></p>
+        <button class="btn" onclick="prepareMedia()">Préparer l’image</button>
+        <button class="btn ghost" onclick="downloadRenamedMedia()">Télécharger l’image renommée</button>
+        <button class="btn ghost" onclick="copyMediaPath()">Copier le chemin</button>
+      </div>
+    </div>
   </section>
 
   <section class="panel">
@@ -66,9 +95,41 @@
       <label class="wide">Description <textarea id="featuredDescription" placeholder="Description publique"></textarea></label>
     </div>
     <button class="btn" onclick="saveFeaturedDraft()">Préparer le focus</button>
+    <button class="btn ghost" onclick="useMediaForFeatured()">Utiliser l’image préparée</button>
     <button class="btn ghost" onclick="copyJson('featured')">Copier featured.json</button>
     <button class="btn ghost" onclick="downloadFeatured()">Télécharger featured.json</button>
     <p class="path">Fichier GitHub à remplacer : <code>data/featured.json</code></p>
+  </section>
+
+  <section class="panel">
+    <h2>Ajouter une image à la galerie</h2>
+    <p class="muted">Crée une entrée galerie avec le chemin de l’image préparée.</p>
+    <div class="form-grid">
+      <label>Titre <input id="galleryTitle" placeholder="Photo officielle"></label>
+      <label>Catégorie <input id="galleryCategory" placeholder="Studio / Live / Promo"></label>
+      <label class="wide">Chemin image <input id="galleryImage" placeholder="assets/gallery/photo.png"></label>
+      <label class="wide">Description <textarea id="galleryDescription" placeholder="Description publique"></textarea></label>
+    </div>
+    <button class="btn" onclick="addGallery()">Ajouter à gallery.json</button>
+    <button class="btn ghost" onclick="useMediaForGallery()">Utiliser l’image préparée</button>
+    <button class="btn ghost" onclick="copyJson('gallery')">Copier gallery.json</button>
+    <button class="btn ghost" onclick="downloadGallery()">Télécharger gallery.json</button>
+    <p class="path">Fichier GitHub à remplacer : <code>data/gallery.json</code></p>
+  </section>
+
+  <section class="panel">
+    <h2>Ajouter un clip / une vidéo</h2>
+    <p class="muted">Ajoute un lien YouTube ou YouTube Shorts dans la base vidéo du site.</p>
+    <div class="form-grid">
+      <label>Titre <input id="videoTitle" placeholder="Nouveau clip officiel"></label>
+      <label>Artiste <input id="videoArtist" placeholder="Sparetdee Simon"></label>
+      <label class="wide">Lien YouTube <input id="videoUrl" placeholder="https://www.youtube.com/watch?v=..."></label>
+      <label class="wide">Description <textarea id="videoDescription" placeholder="Description publique"></textarea></label>
+    </div>
+    <button class="btn" onclick="addVideo()">Ajouter à videos.json</button>
+    <button class="btn ghost" onclick="copyJson('videos')">Copier videos.json</button>
+    <button class="btn ghost" onclick="downloadVideos()">Télécharger videos.json</button>
+    <p class="path">Fichier GitHub à remplacer : <code>data/videos.json</code></p>
   </section>
 
   <section class="panel">
@@ -98,21 +159,10 @@
   <section class="panel preview-panel">
     <h2>Aperçu avant publication</h2>
     <div class="preview-grid">
-      <article>
-        <p class="sup">Focus</p>
-        <h3 id="previewFeaturedTitle">--</h3>
-        <p id="previewFeaturedText">--</p>
-      </article>
-      <article>
-        <p class="sup">Live</p>
-        <h3 id="previewLiveTitle">--</h3>
-        <p id="previewLiveText">--</p>
-      </article>
-      <article>
-        <p class="sup">Dernière actu</p>
-        <h3 id="previewNewsTitle">--</h3>
-        <p id="previewNewsText">--</p>
-      </article>
+      <article><p class="sup">Focus</p><h3 id="previewFeaturedTitle">--</h3><p id="previewFeaturedText">--</p></article>
+      <article><p class="sup">Live</p><h3 id="previewLiveTitle">--</h3><p id="previewLiveText">--</p></article>
+      <article><p class="sup">Dernière actu</p><h3 id="previewNewsTitle">--</h3><p id="previewNewsText">--</p></article>
+      <article><p class="sup">Image préparée</p><h3 id="previewMediaTitle">--</h3><p id="previewMediaText">--</p></article>
     </div>
   </section>
 
@@ -122,6 +172,6 @@
   </section>
 </main>
 
-<script src="admin.js?v=3.4.1"></script>
+<script src="admin.js?v=3.4.2"></script>
 </body>
 </html>
