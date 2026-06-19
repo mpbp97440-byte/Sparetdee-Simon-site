@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MPBP440 Admin Manuel</title>
-<link rel="stylesheet" href="admin.css?v=3.6.0">
+<link rel="stylesheet" href="admin.css?v=3.6.1">
 </head>
 <body>
 <header class="topbar">
@@ -42,6 +42,43 @@
 
 
 
+
+  <section class="panel studio-plus">
+    <h2>Studio Pro+</h2>
+    <p class="muted">Outils avancés pour contrôler les médias, vidéos, sorties et sauvegardes avant publication.</p>
+
+    <div class="grid cards">
+      <article class="card"><h2 id="nextReleaseCard">--</h2><p>Prochaine sortie</p></article>
+      <article class="card"><h2 id="lastNewsCard">--</h2><p>Dernière actualité</p></article>
+      <article class="card"><h2 id="platformCountCard">--</h2><p>Liens plateformes</p></article>
+      <article class="card"><h2 id="mediaCountCard">--</h2><p>Médias préparés</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Gestionnaire médias visuel</h2>
+    <p class="muted">Miniatures, chemins GitHub et actions rapides sur les médias préparés.</p>
+    <div id="visualMediaManager" class="visual-media-grid"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Gestionnaire vidéos avancé</h2>
+    <p class="muted">Miniatures YouTube, artistes, descriptions et liens prêts à copier.</p>
+    <div id="advancedVideoManager" class="visual-media-grid"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Statistiques globales — préparation</h2>
+    <p class="muted">Ces cartes sont prêtes pour un futur compteur global. Le site reste compatible GitHub Pages.</p>
+    <div class="global-stats-grid">
+      <article><strong>--</strong><span>Visites aujourd’hui</span></article>
+      <article><strong>--</strong><span>Visites totales</span></article>
+      <article><strong>--</strong><span>Pays</span></article>
+      <article><strong>--</strong><span>Pages consultées</span></article>
+    </div>
+  </section>
+
+
   <section class="panel studio-pro">
     <h2>Studio de publication MPBP440</h2>
     <p class="muted">Centre de préparation avant mise en ligne : sauvegardes, contrôle final et export des brouillons.</p>
@@ -50,6 +87,8 @@
       <button class="btn" onclick="makeStudioBackup()">Créer une sauvegarde des brouillons</button>
       <button class="btn ghost" onclick="downloadStudioBackup()">Télécharger la sauvegarde</button>
       <button class="btn ghost" onclick="document.getElementById('restoreBackupFile').click()">Restaurer une sauvegarde</button>
+      <button class="btn ghost" onclick="createRestorePoint()">Créer point restauration</button>
+      <button class="btn ghost" onclick="restoreLastPoint()">Restaurer dernier point</button>
       <input id="restoreBackupFile" type="file" accept="application/json" style="display:none" onchange="restoreStudioBackup(event)">
     </div>
 
@@ -271,6 +310,6 @@
   </section>
 </main>
 
-<script src="admin.js?v=3.6.0"></script>
+<script src="admin.js?v=3.6.1"></script>
 </body>
 </html>

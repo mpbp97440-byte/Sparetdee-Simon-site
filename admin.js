@@ -476,3 +476,109 @@ render = function(){
   oldRenderStudioBase();
   renderStudio();
 };
+
+
+/* V3.6.1 — Studio Pro+ */
+function getAllPreparedMedia(){
+  const media = [];
+  (drafts.gallery || []).forEach((g, i) => media.push({type:"Galerie", title:g.title, path:g.image, index:i, source:"gallery"}));
+  (drafts.releases || []).forEach((r, i) => media.push({type:"Pochette", title:r.title, path:r.cover, index:i, source:"releases"}));
+  if(preparedMedia && preparedMedia.path) media.unshift({type:"Image préparée", title:preparedMedia.filename, path:preparedMedia.path, preview:preparedMedia.url, source:"prepared"});
+  return media.filter(m => m.path || m.title);
+}
+
+function removeDraftItem(source, index){
+  if(!confirm("Supprimer cet élément du brouillon ?")) return;
+  if(source === "gallery") drafts.gallery.splice(index, 1);
+  if(source === "releases") drafts.releases.splice(index, 1);
+  persist();
+}
+
+function renderVisualMediaManager(){
+  const box = document.getElementById("visualMediaManager");
+  if(!box) return;
+  const items = getAllPreparedMedia();
+  box.innerHTML = items.length ? items.map(m => {
+    const isImg = /\.(png|jpg|jpeg|webp|gif)$/i.test(m.path || "");
+    const preview = m.preview || (isImg ? m.path : "");
+    return `
+      <article class="visual-media-card">
+        ${preview ? `<img src="${preview}" alt="">` : `<div class="media-placeholder">🖼️</div>`}
+        <p class="sup">${m.type}</p>
+        <h3>${m.title || "Sans titre"}</h3>
+        <code>${m.path || ""}</code>
+        <div>
+          <button class="btn ghost" onclick="navigator.clipboard.writeText('${String(m.path || "").replace(/'/g,"\\'")}')">Copier chemin</button>
+          ${m.source !== "prepared" ? `<button class="btn ghost" onclick="removeDraftItem('${m.source}', ${m.index})">Supprimer</button>` : ""}
+        </div>
+      </article>`;
+  }).join("") : '<p class="muted">Aucun média préparé.</p>';
+}
+
+function renderAdvancedVideoManager(){
+  const box = document.getElementById("advancedVideoManager");
+  if(!box) return;
+  const vids = drafts.videos || [];
+  box.innerHTML = vids.length ? vids.map((v, i) => {
+    const thumb = v.youtubeId ? `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg` : "";
+    return `
+      <article class="visual-media-card">
+        ${thumb ? `<img src="${thumb}" alt="">` : `<div class="media-placeholder">🎬</div>`}
+        <p class="sup">${v.artist || "Vidéo"}</p>
+        <h3>${v.title || "Sans titre"}</h3>
+        <p>${v.description || ""}</p>
+        <code>${v.url || ""}</code>
+        <div>
+          <button class="btn ghost" onclick="navigator.clipboard.writeText('${String(v.url || "").replace(/'/g,"\\'")}')">Copier lien</button>
+          <button class="btn ghost" onclick="drafts.videos.splice(${i},1); persist();">Supprimer</button>
+        </div>
+      </article>`;
+  }).join("") : '<p class="muted">Aucune vidéo préparée.</p>';
+}
+
+function renderStudioPlusCards(){
+  const nextEl = document.getElementById("nextReleaseCard");
+  const newsEl = document.getElementById("lastNewsCard");
+  const platformEl = document.getElementById("platformCountCard");
+  const mediaEl = document.getElementById("mediaCountCard");
+
+  const releases = drafts.releases || [];
+  const sorted = [...releases].sort((a,b) => (a.isoDate || a.date || "").localeCompare(b.isoDate || b.date || ""));
+  if(nextEl) nextEl.textContent = sorted[0]?.title || "--";
+  if(newsEl) newsEl.textContent = (drafts.news || [])[0]?.title || "--";
+
+  let platformCount = 0;
+  releases.forEach(r => {
+    if(r.links) platformCount += Object.values(r.links).filter(Boolean).length;
+  });
+  if(platformEl) platformEl.textContent = platformCount;
+
+  if(mediaEl) mediaEl.textContent = getAllPreparedMedia().length;
+}
+
+function createRestorePoint(){
+  const point = {
+    created_at: new Date().toISOString(),
+    drafts: JSON.parse(JSON.stringify(drafts))
+  };
+  localStorage.setItem("mpbp_restore_point", JSON.stringify(point));
+  alert("Point de restauration créé.");
+}
+
+function restoreLastPoint(){
+  const saved = localStorage.getItem("mpbp_restore_point");
+  if(!saved){ alert("Aucun point de restauration trouvé."); return; }
+  if(!confirm("Restaurer le dernier point ?")) return;
+  const point = JSON.parse(saved);
+  drafts = point.drafts;
+  persist();
+  alert("Point de restauration restauré.");
+}
+
+const oldRenderV361 = render;
+render = function(){
+  oldRenderV361();
+  renderVisualMediaManager();
+  renderAdvancedVideoManager();
+  renderStudioPlusCards();
+};
