@@ -1,0 +1,38 @@
+[
+  {
+    "id": "le-systeme",
+    "title": "Le Système",
+    "artist": "Sparetdee Simon",
+    "date": "27/06/2026",
+    "status": "À venir",
+    "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png",
+    "type": "Single",
+    "lyrics": "lyrics/le-systeme.html",
+    "links": {
+      "spotify": "",
+      "apple": "",
+      "deezer": "",
+      "youtube": "",
+      "amazon": ""
+    },
+    "description": "Nouvelle sortie officielle de Sparetdee Simon."
+  },
+  {
+    "id": "je-sais-que-tu-sais",
+    "title": "Je sais que tu sais",
+    "artist": "Juste Une Plume",
+    "date": "16/06/2026",
+    "status": "Disponible",
+    "cover": "assets/covers/je-sais-juste-une-plume.jpg",
+    "type": "Single",
+    "lyrics": "lyrics/je-sais-que-tu-sais.html",
+    "links": {
+      "spotify": "https://open.spotify.com/artist/4LAJA1pkE8Z3OyAGFSWdT3?si=fypn9MRDSMO0dN3mAoSv4A",
+      "apple": "https://music.apple.com/fr/artist/juste-une-plume/6776260357",
+      "deezer": "https://link.deezer.com/s/33Abgbsu5jmfSOCNVpsFb",
+      "youtube": "https://youtu.be/jkKGmZDQMtE?si=wWLZSqLFOA5320VT",
+      "amazon": "https://amazon.fr/music/player/albums/B0H3W4P77J?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR"
+    },
+    "description": "Premier titre officiel de Juste Une Plume."
+  }
+]

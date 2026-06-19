@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MPBP440 Music Hub</title>
+<link rel="stylesheet" href="music.css?v=5.0">
+</head>
+<body>
+<main class="music-page">
+  <header class="top">
+    <a class="logo" href="../index.html">M.P.B.P 440</a>
+    <a class="btn ghost" href="../index.html">Retour au site</a>
+  </header>
+
+  <section class="hero">
+    <p class="sup">Music Hub officiel</p>
+    <h1>MPBP440 MUSIC HUB</h1>
+    <p>Écoutez, explorez, ajoutez vos titres favoris et retrouvez les sorties officielles du label.</p>
+    <div class="hero-actions">
+      <button class="btn" onclick="shuffleMusic()">Lecture aléatoire</button>
+      <button class="btn ghost" onclick="renderFavorites()">Mes favoris</button>
+    </div>
+  </section>
+
+  <section class="filters">
+    <input id="musicSearch" type="search" placeholder="Rechercher un titre ou un artiste...">
+    <select id="artistFilter">
+      <option value="Tous">Tous les artistes</option>
+      <option value="Sparetdee Simon">Sparetdee Simon</option>
+      <option value="Juste Une Plume">Juste Une Plume</option>
+    </select>
+  </section>
+
+  <section id="nowPlaying" class="now-playing">
+    <p class="sup">Sélection</p>
+    <h2>Aucun titre sélectionné</h2>
+    <p>Choisis un morceau dans la liste.</p>
+  </section>
+
+  <section id="musicGrid" class="music-grid"></section>
+
+  <section class="section">
+    <p class="sup">Bibliothèque personnelle</p>
+    <h2>Mes favoris</h2>
+    <div id="favoritesList" class="favorites-list"></div>
+  </section>
+</main>
+<script src="music.js?v=5.0"></script>
+</body>
+</html>
