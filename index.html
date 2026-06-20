@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="style.css?v=4.0-portail-interactif">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#f4d35e">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MPBP440">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/assets/icons/mpbp440-icon.svg">
+<link rel="stylesheet" href="/pwa/pwa.css?v=5.2-full">
 </head>
 
 <body>
@@ -656,6 +663,20 @@
   <div id="favoritesList" class="favorites-list"></div>
 </section>
 
+
+<section id="app-shortcuts" class="section panel app-shortcuts">
+  <div class="section-head">
+    <p class="sup">Application MPBP440</p>
+    <h2>ACCÈS RAPIDE</h2>
+    <p>Retrouvez les espaces principaux du portail officiel MPBP440.</p>
+  </div>
+  <div class="media-pro-grid">
+    <article><span>🎵</span><h3>Music Hub</h3><p>Sorties, favoris et paroles officielles.</p><a class="btn ghost" href="/music/index.html">Ouvrir</a></article>
+    <article><span>🔴</span><h3>Live Center</h3><p>Lives, événements et notifications locales.</p><a class="btn ghost" href="/live/index.html">Ouvrir</a></article>
+    <article><span>🖼️</span><h3>Galerie</h3><p>Photos, pochettes, flyers et visuels officiels.</p><a class="btn ghost" href="/galerie/index.html">Ouvrir</a></article>
+  </div>
+</section>
+
 </main>
 
 <footer><p>© 2026 MPBP 440 Corp.2026 — Sparetdee Simon / Juste Une Plume</p></footer>
@@ -922,5 +943,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+<script src="/pwa/pwa.js?v=5.2-full"></script>
 </body>
 </html>

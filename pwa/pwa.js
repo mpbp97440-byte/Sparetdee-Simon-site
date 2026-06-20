@@ -1,4 +1,4 @@
-/* MPBP440 PWA Loader — V5.2 */
+/* MPBP440 PWA Loader — V5.2 FULL */
 let deferredPrompt = null;
 
 function mpbpCreateInstallButton(){
@@ -9,7 +9,6 @@ function mpbpCreateInstallButton(){
   btn.textContent = "Installer l’app MPBP440";
   btn.hidden = true;
   document.body.appendChild(btn);
-
   btn.addEventListener("click", async () => {
     if(!deferredPrompt) return;
     deferredPrompt.prompt();
@@ -23,7 +22,8 @@ window.addEventListener("beforeinstallprompt", event => {
   event.preventDefault();
   deferredPrompt = event;
   mpbpCreateInstallButton();
-  document.getElementById("mpbpInstallAppBtn").hidden = false;
+  const btn = document.getElementById("mpbpInstallAppBtn");
+  if(btn) btn.hidden = false;
 });
 
 window.addEventListener("appinstalled", () => {
@@ -33,12 +33,10 @@ window.addEventListener("appinstalled", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   mpbpCreateInstallButton();
-
   if("serviceWorker" in navigator){
     navigator.serviceWorker.register("/sw.js")
       .then(() => console.log("MPBP440 PWA active"))
       .catch(err => console.warn("MPBP440 PWA erreur:", err));
   }
-
   document.documentElement.classList.add("mpbp-pwa-ready");
 });
