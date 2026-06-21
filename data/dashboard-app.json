@@ -1,0 +1,92 @@
+{
+  "version": "6.1",
+  "hero": {
+    "kicker": "Application MPBP440",
+    "title": "Bienvenue sur MPBP440",
+    "subtitle": "Le portail musical officiel du label : artistes, sorties, clips, radio, lives et actualités."
+  },
+  "featured_release": {
+    "title": "Le Système",
+    "artist": "Sparetdee Simon",
+    "date": "27/06/2026",
+    "cover": "assets/covers/le-systeme.png",
+    "url": "/music/index.html"
+  },
+  "quick_actions": [
+    {
+      "icon": "🎵",
+      "title": "Music Hub",
+      "text": "Écouter et retrouver les morceaux.",
+      "url": "/music/index.html"
+    },
+    {
+      "icon": "📻",
+      "title": "Radio",
+      "text": "Lancer l’espace radio MPBP440.",
+      "url": "/#radio"
+    },
+    {
+      "icon": "🔴",
+      "title": "Live Center",
+      "text": "Lives et événements officiels.",
+      "url": "/live/index.html"
+    },
+    {
+      "icon": "👤",
+      "title": "Mon Espace",
+      "text": "Profil, favoris et historique.",
+      "url": "/mon-espace/index.html"
+    },
+    {
+      "icon": "📲",
+      "title": "Application",
+      "text": "Installer MPBP440 sur votre appareil.",
+      "url": "/application/index.html"
+    },
+    {
+      "icon": "📊",
+      "title": "Stats",
+      "text": "Voir les statistiques publiques.",
+      "url": "/analytics/index.html"
+    }
+  ],
+  "internal_notifications": [
+    {
+      "type": "sortie",
+      "title": "Nouvelle sortie officielle",
+      "text": "Suivez les prochaines sorties MPBP440 depuis l’application."
+    },
+    {
+      "type": "app",
+      "title": "Application mise à jour",
+      "text": "Version 6.1 : dashboard application et widgets rapides."
+    },
+    {
+      "type": "live",
+      "title": "Live Center actif",
+      "text": "Les prochains lives seront annoncés dans l’espace dédié."
+    }
+  ],
+  "widgets": [
+    {
+      "label": "Dernière sortie",
+      "value": "Le Système",
+      "url": "/music/index.html"
+    },
+    {
+      "label": "Radio",
+      "value": "MPBP440 Radio",
+      "url": "/#radio"
+    },
+    {
+      "label": "Artistes",
+      "value": "Sparetdee Simon • Juste Une Plume",
+      "url": "/#artistes"
+    },
+    {
+      "label": "Application",
+      "value": "PWA installable",
+      "url": "/application/index.html"
+    }
+  ]
+}

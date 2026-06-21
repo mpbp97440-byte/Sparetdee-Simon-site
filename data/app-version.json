@@ -1,35 +1,24 @@
 {
-  "version": "6.0",
-  "app_version": "2.0",
-  "name": "MPBP440 App Quasi Native",
+  "version": "6.1",
+  "app_version": "2.1",
+  "name": "MPBP440 Dashboard Application Native",
   "features": [
-    "Navigation mobile fixe",
-    "Mini lecteur global",
-    "Cache hors connexion renforcé",
-    "Détection mise à jour",
-    "Raccourcis PWA",
-    "Préparation Microsoft Store / Google Play TWA"
+    "Dashboard application",
+    "Widgets rapides",
+    "Notifications internes",
+    "Préchargement hors ligne",
+    "Accueil app enrichi"
   ],
-  "store_preparation": {
-    "microsoft_store": "Ready for PWA packaging",
-    "google_play": "Ready for TWA preparation",
-    "app_store": "Requires native wrapper"
-  },
   "changelog": [
+    {
+      "version": "2.1 / V6.1",
+      "date": "2026",
+      "text": "Ajout du dashboard application : widgets, raccourcis, notifications internes et préchargement hors ligne."
+    },
     {
       "version": "2.0 / V6.0",
       "date": "2026",
-      "text": "Interface quasi native : navigation fixe, mini-player global, cache renforcé et préparation store."
-    },
-    {
-      "version": "1.1 / V5.6",
-      "date": "2026",
-      "text": "Splash screen, téléchargements, cache avancé et notifications locales."
-    },
-    {
-      "version": "1.0 / V5.2",
-      "date": "2026",
-      "text": "Première version PWA installable."
+      "text": "Interface quasi native et PWA avancée."
     }
   ]
 }

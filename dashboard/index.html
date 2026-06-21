@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard MPBP440 — Application</title>
+<meta name="description" content="Dashboard application MPBP440 : sorties, radio, clips, live center, notifications et raccourcis rapides.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/pwa/pwa.css?v=6.1">
+<link rel="stylesheet" href="/pwa/pwa-advanced.css?v=6.1">
+<link rel="stylesheet" href="dashboard.css?v=6.1">
+</head>
+<body>
+<main class="dash-page">
+  <header class="top">
+    <a class="logo" href="/">M.P.B.P 440</a>
+    <a class="btn ghost" href="/">Retour au site</a>
+  </header>
+
+  <section class="hero">
+    <p class="sup" id="heroKicker">Application MPBP440</p>
+    <h1 id="heroTitle">Bienvenue sur MPBP440</h1>
+    <p id="heroSubtitle">Chargement du dashboard...</p>
+    <div class="hero-actions">
+      <a class="btn" href="/music/index.html">🎵 Écouter maintenant</a>
+      <a class="btn ghost" href="/application/index.html">📲 Installer l’app</a>
+    </div>
+  </section>
+
+  <section class="section featured">
+    <p class="sup">Focus officiel</p>
+    <h2>Dernière sortie mise en avant</h2>
+    <div id="featuredRelease" class="featured-card"></div>
+  </section>
+
+  <section class="section">
+    <p class="sup">Widgets</p>
+    <h2>Tableau de bord rapide</h2>
+    <div id="widgets" class="widgets-grid"></div>
+  </section>
+
+  <section class="section">
+    <p class="sup">Accès rapide</p>
+    <h2>Navigation application</h2>
+    <div id="quickActions" class="actions-grid"></div>
+  </section>
+
+  <section class="section">
+    <p class="sup">Notifications internes</p>
+    <h2>Actualités MPBP440</h2>
+    <div id="notifications" class="notice-list"></div>
+  </section>
+
+  <section class="section">
+    <p class="sup">Mode application</p>
+    <h2>État de l’appareil</h2>
+    <div class="device-card">
+      <p id="appMode">Détection en cours...</p>
+      <button class="btn" onclick="cacheEssentials()">Précharger les pages essentielles</button>
+      <p id="cacheStatus"></p>
+    </div>
+  </section>
+</main>
+<script src="/pwa/pwa.js?v=6.1"></script>
+<script src="/pwa/pwa-advanced.js?v=6.1"></script>
+<script src="/app/offline-manager.js?v=6.1"></script>
+<script src="dashboard.js?v=6.1"></script>
+</body>
+</html>
