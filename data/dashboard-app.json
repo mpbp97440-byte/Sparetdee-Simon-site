@@ -1,92 +1,87 @@
 {
-  "version": "6.2",
+  "version": "6.3",
   "hero": {
-    "kicker": "Application sociale MPBP440",
-    "title": "Dashboard MPBP440",
-    "subtitle": "Votre portail musical interactif : compte membre, favoris, notifications, actualités, radio et sorties."
+    "kicker": "Refonte MPBP440",
+    "title": "Portail officiel du label",
+    "subtitle": "Logo officiel, artistes, sorties et accès direct à l’univers MPBP440."
   },
   "featured_release": {
-    "title": "Le Système",
+    "title": "Rêves et Cauchemards",
     "artist": "Sparetdee Simon",
-    "date": "27/06/2026",
-    "cover": "assets/covers/le-systeme.png",
+    "date": "24/06/2026",
+    "cover": "assets/covers/reves-et-cauchemards.webp",
     "url": "/music/index.html"
   },
   "quick_actions": [
     {
+      "icon": "🎵",
+      "title": "Music Hub",
+      "text": "Morceaux disponibles et prochaines sorties.",
+      "url": "/music/index.html"
+    },
+    {
+      "icon": "📺",
+      "title": "MPBP TV",
+      "text": "Clips officiels et futures exclusivités du site.",
+      "url": "/mpbp-tv/index.html"
+    },
+    {
       "icon": "👤",
-      "title": "Compte membre",
-      "text": "Profil local, favoris et historique.",
-      "url": "/members/index.html"
+      "title": "Sparetdee Simon",
+      "text": "Artiste, auteur, compositeur, interprète.",
+      "url": "/artistes/sparetdee-simon.html"
+    },
+    {
+      "icon": "🪶",
+      "title": "Juste Une Plume",
+      "text": "Artiste MPBP440, univers plume et écriture.",
+      "url": "/artistes/juste-une-plume.html"
     },
     {
       "icon": "🔔",
       "title": "Notifications",
-      "text": "Sorties, lives, clips et mises à jour.",
+      "text": "Actualités, lives et annonces du label.",
       "url": "/notifications/index.html"
-    },
-    {
-      "icon": "🎵",
-      "title": "Music Hub",
-      "text": "Morceaux, paroles et plateformes.",
-      "url": "/music/index.html"
-    },
-    {
-      "icon": "🔴",
-      "title": "Live Center",
-      "text": "Lives et événements officiels.",
-      "url": "/live/index.html"
-    },
-    {
-      "icon": "🖼️",
-      "title": "Galerie",
-      "text": "Visuels officiels du label.",
-      "url": "/galerie/index.html"
     },
     {
       "icon": "🌐",
       "title": "Site classique",
-      "text": "Retour au portail web.",
+      "text": "Retour au portail web complet.",
       "url": "/"
     }
   ],
   "internal_notifications": [
     {
-      "type": "membre",
-      "title": "Comptes membres locaux",
-      "text": "Créez votre profil MPBP440 sans inscription serveur."
+      "type": "sortie",
+      "title": "Rêves et Cauchemards",
+      "text": "Sortie prévue le 24/06/2026."
     },
     {
-      "type": "notifications",
-      "title": "Centre de notifications",
-      "text": "Les annonces du label sont maintenant centralisées."
-    },
-    {
-      "type": "push",
-      "title": "Push préparé",
-      "text": "Architecture prête pour notifications avancées sur Windows/Android."
+      "type": "mise à jour",
+      "title": "Refonte ergonomique V6.3",
+      "text": "Accueil réorganisé, visuel amélioré et MPBP TV préparé."
     }
   ],
   "widgets": [
     {
-      "label": "Compte",
-      "value": "Profil local",
-      "url": "/members/index.html"
+      "label": "Prochaine sortie",
+      "value": "Rêves et Cauchemards",
+      "url": "/music/index.html"
     },
     {
-      "label": "Favoris",
-      "value": "Bibliothèque",
-      "url": "/members/index.html"
+      "label": "Sortie suivante",
+      "value": "Le Système",
+      "url": "/music/index.html"
     },
     {
-      "label": "Notifications",
-      "value": "Centre actif",
-      "url": "/notifications/index.html"
+      "label": "Nouveaux titres",
+      "value": "Je Vous Pousse Tous • L’Argent",
+      "url": "/music/index.html"
     },
     {
-      "label": "Actualités",
-      "value": "Fil MPBP440",
-      "url": "/notifications/index.html"
+      "label": "MPBP TV",
+      "value": "Exclusivités bientôt",
+      "url": "/mpbp-tv/index.html"
     }
   ]
 }

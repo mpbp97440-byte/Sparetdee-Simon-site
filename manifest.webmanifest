@@ -1,7 +1,7 @@
 {
   "name": "MPBP440 — Portail Musical Officiel",
   "short_name": "MPBP440",
-  "description": "Application musicale interactive MPBP440 : membres, favoris, notifications, Music Hub, lives et galerie.",
+  "description": "Application musicale interactive MPBP440 : dashboard, artistes, sorties, clips, lives, galerie et espace personnel.",
   "start_url": "/dashboard/?source=pwa",
   "scope": "/",
   "display": "standalone",
@@ -11,16 +11,16 @@
   "lang": "fr-FR",
   "icons": [
     {
+      "src": "/assets/icons/mpbp440-app-icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/assets/icons/mpbp440-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
-    },
-    {
-      "src": "/assets/icons/mpbp440-maskable.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
     }
   ],
   "shortcuts": [
@@ -30,9 +30,14 @@
       "url": "/dashboard/"
     },
     {
-      "name": "Compte membre",
-      "short_name": "Compte",
-      "url": "/members/index.html"
+      "name": "Music Hub",
+      "short_name": "Music",
+      "url": "/music/index.html"
+    },
+    {
+      "name": "MPBP TV",
+      "short_name": "TV",
+      "url": "/mpbp-tv/index.html"
     },
     {
       "name": "Notifications",
@@ -40,14 +45,9 @@
       "url": "/notifications/index.html"
     },
     {
-      "name": "Music Hub",
-      "short_name": "Music",
-      "url": "/music/index.html"
-    },
-    {
-      "name": "Live Center",
-      "short_name": "Live",
-      "url": "/live/index.html"
+      "name": "Compte membre",
+      "short_name": "Compte",
+      "url": "/members/index.html"
     }
   ]
 }

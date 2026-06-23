@@ -1,0 +1,23 @@
+/* MPBP440 V6.3 — Refonte ergonomique */
+:root{--mpbp-bg:#050505;--mpbp-panel:rgba(255,255,255,.055);--mpbp-gold:#f4d35e;--mpbp-soft:#fff1bd;--mpbp-green:#00ff87;--mpbp-border:rgba(244,211,94,.30)}
+body{background:radial-gradient(circle at 18% 0%,rgba(244,211,94,.18),transparent 32%),radial-gradient(circle at 80% 18%,rgba(0,255,135,.06),transparent 26%),linear-gradient(180deg,#050505,#120d05 50%,#050505)!important}
+.mpbp-v63-hero{max-width:1180px;margin:24px auto;padding:24px;border:1px solid var(--mpbp-border);border-radius:34px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(0,0,0,.32));box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.mpbp-v63-top{display:grid;grid-template-columns:minmax(180px,320px) 1fr;gap:24px;align-items:center}
+.mpbp-v63-logo-card{border:1px solid rgba(244,211,94,.35);border-radius:28px;background:rgba(0,0,0,.28);padding:14px}
+.mpbp-v63-logo-card img{width:100%;display:block;border-radius:22px}
+.mpbp-v63-title p,.mpbp-v63-section>p{color:var(--mpbp-green);text-transform:uppercase;letter-spacing:.18em;font-weight:900}
+.mpbp-v63-title h1{color:var(--mpbp-soft);font-size:clamp(3.5rem,9vw,7.4rem);line-height:.86;margin:10px 0 16px;text-transform:uppercase}
+.mpbp-v63-title strong{color:white;font-size:1.1rem}
+.mpbp-v63-artists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.mpbp-v63-artist-card{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;padding:14px;border:1px solid rgba(244,211,94,.24);border-radius:24px;background:rgba(0,0,0,.32);color:white;text-decoration:none}
+.mpbp-v63-artist-card img{width:96px;height:96px;object-fit:cover;border-radius:18px;border:1px solid rgba(244,211,94,.25)}
+.mpbp-v63-artist-card h3{margin:0 0 6px;color:var(--mpbp-soft)}.mpbp-v63-artist-card p{margin:0;color:rgba(255,255,255,.72)}
+.mpbp-v63-section{max-width:1180px;margin:22px auto;padding:24px;border:1px solid var(--mpbp-border);border-radius:30px;background:var(--mpbp-panel)}
+.mpbp-v63-section h2{margin:0 0 18px;color:var(--mpbp-soft);font-size:clamp(2rem,5vw,4rem);text-transform:uppercase}
+.mpbp-v63-release-grid,.mpbp-v63-music-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.mpbp-v63-release,.mpbp-v63-track,.mpbp-v63-tv-card{border:1px solid rgba(244,211,94,.24);border-radius:24px;overflow:hidden;background:rgba(0,0,0,.28)}
+.mpbp-v63-release img,.mpbp-v63-track img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}.mpbp-v63-content{padding:16px}
+.mpbp-v63-content h3,.mpbp-v63-tv-card h3{margin:0 0 8px;color:var(--mpbp-soft);font-size:1.5rem}.mpbp-v63-content p,.mpbp-v63-tv-card p{color:rgba(255,255,255,.74)}
+.mpbp-v63-btn{display:inline-flex;border-radius:999px;padding:11px 15px;background:var(--mpbp-gold);color:#111;font-weight:900;text-decoration:none}.mpbp-v63-btn.ghost{background:rgba(255,255,255,.06);color:white;border:1px solid rgba(244,211,94,.35)}
+.mpbp-v63-tv-card{padding:18px}
+@media(max-width:760px){.mpbp-v63-hero,.mpbp-v63-section{margin:14px;padding:18px;border-radius:24px}.mpbp-v63-top{grid-template-columns:1fr}.mpbp-v63-logo-card{max-width:280px;margin:auto}.mpbp-v63-artists{grid-template-columns:1fr}.mpbp-v63-artist-card{grid-template-columns:76px 1fr}.mpbp-v63-artist-card img{width:76px;height:76px}}

@@ -1,24 +1,20 @@
 {
-  "version": "6.2",
-  "app_version": "2.2",
-  "name": "MPBP440 App Sociale",
+  "version": "6.3",
+  "app_version": "2.3",
+  "name": "MPBP440 Refonte Ergonomique",
   "features": [
-    "Comptes membres locaux",
-    "Favoris améliorés",
-    "Centre de notifications",
-    "Fil d’actualité",
-    "Préparation notifications push"
+    "Accueil réorganisé",
+    "Logo officiel mis en avant",
+    "Fiches artistes visibles en haut",
+    "Sorties mises à jour",
+    "Music Hub enrichi",
+    "MPBP TV préparé"
   ],
   "changelog": [
     {
-      "version": "2.2 / V6.2",
+      "version": "2.3 / V6.3",
       "date": "2026",
-      "text": "Ajout des comptes membres locaux, notifications, actualités et favoris améliorés."
-    },
-    {
-      "version": "2.1.1 / V6.1.1",
-      "date": "2026",
-      "text": "Dashboard comme accueil de l’application."
+      "text": "Refonte ergonomique, nouveau visuel d’accueil, logo/app icon et mise à jour des sorties."
     }
   ]
 }
