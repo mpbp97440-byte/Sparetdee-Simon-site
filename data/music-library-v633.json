@@ -1,0 +1,30 @@
+[
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Je Vous Pousse Tous",
+    "status": "Disponible",
+    "cover": "assets/covers/je-vous-pousse-tous.webp",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "L’Argent",
+    "status": "Disponible",
+    "cover": "assets/covers/l-argent.webp",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Rêves et Cauchemards",
+    "status": "À venir",
+    "releaseDate": "24/06/2026",
+    "cover": "assets/covers/reves-et-cauchemards.webp",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+    }
+  }
+]

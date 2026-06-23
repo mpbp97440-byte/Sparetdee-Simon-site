@@ -1,23 +1,178 @@
-/* MPBP440 V6.3 — Refonte ergonomique */
-:root{--mpbp-bg:#050505;--mpbp-panel:rgba(255,255,255,.055);--mpbp-gold:#f4d35e;--mpbp-soft:#fff1bd;--mpbp-green:#00ff87;--mpbp-border:rgba(244,211,94,.30)}
-body{background:radial-gradient(circle at 18% 0%,rgba(244,211,94,.18),transparent 32%),radial-gradient(circle at 80% 18%,rgba(0,255,135,.06),transparent 26%),linear-gradient(180deg,#050505,#120d05 50%,#050505)!important}
-.mpbp-v63-hero{max-width:1180px;margin:24px auto;padding:24px;border:1px solid var(--mpbp-border);border-radius:34px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(0,0,0,.32));box-shadow:0 30px 90px rgba(0,0,0,.35)}
-.mpbp-v63-top{display:grid;grid-template-columns:minmax(180px,320px) 1fr;gap:24px;align-items:center}
-.mpbp-v63-logo-card{border:1px solid rgba(244,211,94,.35);border-radius:28px;background:rgba(0,0,0,.28);padding:14px}
-.mpbp-v63-logo-card img{width:100%;display:block;border-radius:22px}
-.mpbp-v63-title p,.mpbp-v63-section>p{color:var(--mpbp-green);text-transform:uppercase;letter-spacing:.18em;font-weight:900}
-.mpbp-v63-title h1{color:var(--mpbp-soft);font-size:clamp(3.5rem,9vw,7.4rem);line-height:.86;margin:10px 0 16px;text-transform:uppercase}
-.mpbp-v63-title strong{color:white;font-size:1.1rem}
-.mpbp-v63-artists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
-.mpbp-v63-artist-card{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;padding:14px;border:1px solid rgba(244,211,94,.24);border-radius:24px;background:rgba(0,0,0,.32);color:white;text-decoration:none}
-.mpbp-v63-artist-card img{width:96px;height:96px;object-fit:cover;border-radius:18px;border:1px solid rgba(244,211,94,.25)}
-.mpbp-v63-artist-card h3{margin:0 0 6px;color:var(--mpbp-soft)}.mpbp-v63-artist-card p{margin:0;color:rgba(255,255,255,.72)}
-.mpbp-v63-section{max-width:1180px;margin:22px auto;padding:24px;border:1px solid var(--mpbp-border);border-radius:30px;background:var(--mpbp-panel)}
-.mpbp-v63-section h2{margin:0 0 18px;color:var(--mpbp-soft);font-size:clamp(2rem,5vw,4rem);text-transform:uppercase}
-.mpbp-v63-release-grid,.mpbp-v63-music-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.mpbp-v63-release,.mpbp-v63-track,.mpbp-v63-tv-card{border:1px solid rgba(244,211,94,.24);border-radius:24px;overflow:hidden;background:rgba(0,0,0,.28)}
-.mpbp-v63-release img,.mpbp-v63-track img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}.mpbp-v63-content{padding:16px}
-.mpbp-v63-content h3,.mpbp-v63-tv-card h3{margin:0 0 8px;color:var(--mpbp-soft);font-size:1.5rem}.mpbp-v63-content p,.mpbp-v63-tv-card p{color:rgba(255,255,255,.74)}
-.mpbp-v63-btn{display:inline-flex;border-radius:999px;padding:11px 15px;background:var(--mpbp-gold);color:#111;font-weight:900;text-decoration:none}.mpbp-v63-btn.ghost{background:rgba(255,255,255,.06);color:white;border:1px solid rgba(244,211,94,.35)}
-.mpbp-v63-tv-card{padding:18px}
-@media(max-width:760px){.mpbp-v63-hero,.mpbp-v63-section{margin:14px;padding:18px;border-radius:24px}.mpbp-v63-top{grid-template-columns:1fr}.mpbp-v63-logo-card{max-width:280px;margin:auto}.mpbp-v63-artists{grid-template-columns:1fr}.mpbp-v63-artist-card{grid-template-columns:76px 1fr}.mpbp-v63-artist-card img{width:76px;height:76px}}
+/* MPBP440 V6.3.3 — Clean Refonte Fix */
+:root{
+  --mpbp-gold:#f4d35e;
+  --mpbp-soft:#fff1bd;
+  --mpbp-green:#00ff87;
+  --mpbp-border:rgba(244,211,94,.30);
+  --mpbp-card:rgba(255,255,255,.055);
+}
+body{
+  background:
+    radial-gradient(circle at 18% 0%,rgba(244,211,94,.14),transparent 30%),
+    linear-gradient(180deg,#050505,#100b04 48%,#050505) !important;
+}
+
+/* Kill old broken injected blocks */
+.mpbp-v63-hero,
+.mpbp-v63-section,
+.mpbp-v631-root,
+.mpbp-v631-hero,
+.mpbp-v631-section,
+.mpbp-v633-hide{
+  display:none!important;
+  visibility:hidden!important;
+  height:0!important;
+  min-height:0!important;
+  max-height:0!important;
+  overflow:hidden!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+}
+
+/* New clean top module */
+.mpbp-v633-home{
+  width:min(1180px, calc(100% - 28px));
+  margin:16px auto 22px;
+  display:grid;
+  gap:18px;
+}
+.mpbp-v633-hero{
+  border:1px solid var(--mpbp-border);
+  border-radius:26px;
+  background:linear-gradient(135deg,rgba(255,255,255,.075),rgba(0,0,0,.38));
+  padding:18px;
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:18px;
+  align-items:center;
+  box-shadow:0 22px 70px rgba(0,0,0,.30);
+}
+.mpbp-v633-logo{
+  width:150px!important;
+  height:150px!important;
+  max-width:150px!important;
+  max-height:150px!important;
+  object-fit:cover;
+  border-radius:22px;
+  border:1px solid rgba(244,211,94,.32);
+  background:#050505;
+}
+.mpbp-v633-title p,
+.mpbp-v633-section>p{
+  color:var(--mpbp-green);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+  margin:0 0 8px;
+}
+.mpbp-v633-title h1{
+  color:var(--mpbp-soft);
+  font-size:clamp(2.5rem,6vw,5.2rem);
+  line-height:.9;
+  margin:0 0 10px;
+  text-transform:uppercase;
+}
+.mpbp-v633-title strong{
+  color:#fff;
+}
+.mpbp-v633-artists{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:14px;
+}
+.mpbp-v633-artist{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(0,0,0,.30);
+  border:1px solid rgba(244,211,94,.22);
+  border-radius:18px;
+  padding:10px;
+}
+.mpbp-v633-artist img{
+  width:70px!important;
+  height:70px!important;
+  max-width:70px!important;
+  max-height:70px!important;
+  object-fit:cover;
+  border-radius:50%;
+  border:1px solid rgba(244,211,94,.35);
+}
+.mpbp-v633-artist h3{
+  margin:0 0 4px;
+  color:var(--mpbp-soft);
+  font-size:1.05rem;
+}
+.mpbp-v633-artist p{
+  margin:0;
+  color:rgba(255,255,255,.70);
+  font-size:.92rem;
+}
+
+.mpbp-v633-section{
+  border:1px solid var(--mpbp-border);
+  border-radius:24px;
+  background:var(--mpbp-card);
+  padding:18px;
+}
+.mpbp-v633-section h2{
+  color:var(--mpbp-soft);
+  text-transform:uppercase;
+  font-size:clamp(1.8rem,4vw,3.2rem);
+  margin:0 0 14px;
+}
+.mpbp-v633-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:14px;
+}
+.mpbp-v633-card{
+  background:rgba(0,0,0,.30);
+  border:1px solid rgba(244,211,94,.22);
+  border-radius:20px;
+  overflow:hidden;
+}
+.mpbp-v633-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+}
+.mpbp-v633-content{
+  padding:14px;
+}
+.mpbp-v633-content h3{
+  color:var(--mpbp-soft);
+  margin:0 0 8px;
+  font-size:1.35rem;
+}
+.mpbp-v633-content p{
+  color:rgba(255,255,255,.74);
+}
+.mpbp-v633-btn{
+  display:inline-flex;
+  border-radius:999px;
+  padding:10px 14px;
+  background:var(--mpbp-gold);
+  color:#111;
+  font-weight:900;
+  text-decoration:none;
+}
+.mpbp-v633-btn.ghost{
+  color:#fff;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(244,211,94,.35);
+}
+@media(max-width:720px){
+  .mpbp-v633-home{width:calc(100% - 20px);margin-top:10px}
+  .mpbp-v633-hero{grid-template-columns:1fr;text-align:left;padding:14px;border-radius:22px}
+  .mpbp-v633-logo{width:110px!important;height:110px!important;max-width:110px!important;max-height:110px!important}
+  .mpbp-v633-artists{grid-template-columns:1fr}
+  .mpbp-v633-artist{grid-template-columns:58px 1fr}
+  .mpbp-v633-artist img{width:58px!important;height:58px!important;max-width:58px!important;max-height:58px!important}
+}
