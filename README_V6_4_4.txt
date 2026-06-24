@@ -1,0 +1,1 @@
+PATCH V6.4.4 — Stable clean site. Remplace les pages publiques principales par une version stable : accueil, Music Hub, MPBP TV, actualités, événements, sorties.

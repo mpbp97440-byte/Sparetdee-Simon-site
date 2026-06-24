@@ -1,47 +1,17 @@
 {
   "name": "MPBP440 — Portail Musical Officiel",
   "short_name": "MPBP440",
-  "description": "Application musicale MPBP440 : Music Hub Pro, MPBP TV, artistes, sorties, membres et notifications.",
-  "start_url": "/dashboard/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
   "background_color": "#050505",
   "theme_color": "#f4d35e",
   "icons": [
     {
-      "src": "/assets/icons/mpbp440-app-icon.webp",
+      "src": "/assets/brand/mpbp440-official-logo.jpg",
       "sizes": "512x512",
-      "type": "image/webp",
+      "type": "image/jpeg",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/icons/mpbp440-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Music Hub Pro",
-      "short_name": "Music",
-      "url": "/music/index.html"
-    },
-    {
-      "name": "MPBP TV",
-      "short_name": "TV",
-      "url": "/mpbp-tv/index.html"
-    },
-    {
-      "name": "Dashboard",
-      "short_name": "Dashboard",
-      "url": "/dashboard/"
-    },
-    {
-      "name": "Notifications",
-      "short_name": "Notifs",
-      "url": "/notifications/index.html"
     }
   ]
 }

@@ -1,69 +1,12 @@
 {
-  "version": "6.4.1",
-  "artists": [
-    {
-      "name": "Sparetdee Simon",
-      "slug": "sparetdee-simon",
-      "page": "/artistes/sparetdee-simon.html",
-      "profile": "/assets/artists/sparetdee-simon-profile.jpg",
-      "catalog": [
-        {
-          "title": "Je Vous Pousse Tous",
-          "artist": "Sparetdee Simon",
-          "status": "Disponible",
-          "releaseDate": "",
-          "cover": "/assets/covers/je-vous-pousse-tous.jpg",
-          "links": {
-            "artist": "/artistes/sparetdee-simon.html"
-          }
-        },
-        {
-          "title": "L’Argent",
-          "artist": "Sparetdee Simon",
-          "status": "Disponible",
-          "releaseDate": "",
-          "cover": "/assets/covers/l-argent.jpg",
-          "links": {
-            "artist": "/artistes/sparetdee-simon.html"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Juste Une Plume",
-      "slug": "juste-une-plume",
-      "page": "/artistes/juste-une-plume.html",
-      "profile": "/assets/artists/juste-une-plume-profile.jpg",
-      "catalog": [
-        {
-          "title": "Je Sais Que Tu Sais",
-          "artist": "Juste Une Plume",
-          "status": "Disponible",
-          "releaseDate": "",
-          "cover": "/assets/artists/juste-une-plume-profile.jpg",
-          "links": {
-            "artist": "/artistes/juste-une-plume.html"
-          }
-        }
-      ]
-    }
+  "version": "6.4.4",
+  "tracks": [
+    "Je Vous Pousse Tous",
+    "L’Argent",
+    "Je Sais Que Tu Sais"
   ],
   "upcoming": [
-    {
-      "title": "Rêves et Cauchemards",
-      "artist": "Sparetdee Simon",
-      "date": "24/06/2026",
-      "isoDate": "2026-06-24",
-      "cover": "/assets/covers/reves-et-cauchemards.jpg",
-      "page": "/music/index.html"
-    },
-    {
-      "title": "Le Système",
-      "artist": "Sparetdee Simon",
-      "date": "27/06/2026",
-      "isoDate": "2026-06-27",
-      "cover": "/assets/brand/mpbp440-official-logo.jpg",
-      "page": "/music/index.html"
-    }
+    "Rêves et Cauchemards",
+    "Le Système"
   ]
 }
