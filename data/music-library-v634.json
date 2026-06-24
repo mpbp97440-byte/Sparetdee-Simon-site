@@ -3,31 +3,178 @@
     "artist": "Sparetdee Simon",
     "title": "Je Vous Pousse Tous",
     "status": "Disponible",
-    "cover": "assets/covers/je-vous-pousse-tous.webp",
-    "coverFallback": "assets/covers/je-vous-pousse-tous.jpg",
+    "cover": "/assets/covers/je-vous-pousse-tous.webp",
+    "coverFallback": "/assets/covers/je-vous-pousse-tous.jpg",
     "links": {
-      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
     }
   },
   {
     "artist": "Sparetdee Simon",
     "title": "L’Argent",
     "status": "Disponible",
-    "cover": "assets/covers/l-argent.webp",
-    "coverFallback": "assets/covers/l-argent.jpg",
+    "cover": "/assets/covers/l-argent.webp",
+    "coverFallback": "/assets/covers/l-argent.jpg",
     "links": {
-      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
     }
   },
   {
     "artist": "Sparetdee Simon",
-    "title": "Rêves et Cauchemards",
-    "status": "À venir",
-    "releaseDate": "24/06/2026",
-    "cover": "assets/covers/reves-et-cauchemards.webp",
-    "coverFallback": "assets/covers/reves-et-cauchemards.jpg",
+    "title": "Le Bizz c’est Bon",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
     "links": {
-      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Les Rues s’embrasent",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Réseaux Fantômes",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "La France se soulève",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Dans l’ombre des puissants",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Mains Tendues",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Soleil Dans L’Ombre",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Dernier Chapitre",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Prince Des étoiles",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Monde Alternatif",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Pou 2 lard 440",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Sparetdee Simon",
+    "title": "Bouffe Ma Vie",
+    "status": "Disponible",
+    "cover": "/assets/brand/mpbp440-official-logo.webp",
+    "coverFallback": "/assets/brand/mpbp440-official-logo.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html",
+      "apple": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126",
+      "deezer": "https://www.deezer.com/fr/artist/385051171"
+    }
+  },
+  {
+    "artist": "Juste Une Plume",
+    "title": "Je Sais Que Tu Sais",
+    "status": "Disponible",
+    "cover": "/assets/covers/je-sais-que-tu-sais.webp",
+    "coverFallback": "/assets/covers/je-sais-que-tu-sais.jpg",
+    "links": {
+      "artist": "https://www.mpbp440.com/artistes/juste-une-plume.html"
     }
   }
 ]

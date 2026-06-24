@@ -18,7 +18,8 @@
     "type": "Single",
     "date": "27/06/2026",
     "isoDate": "2026-06-27",
-    "cover": "assets/covers/le-systeme.png",
+    "cover": "assets/covers/le-systeme.webp",
+    "coverFallback": "assets/covers/le-systeme.jpg",
     "status": "À venir",
     "links": {
       "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
