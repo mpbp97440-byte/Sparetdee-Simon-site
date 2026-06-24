@@ -5,9 +5,8 @@
     "type": "Single",
     "date": "24/06/2026",
     "isoDate": "2026-06-24",
-    "cover": "assets/covers/reves-et-cauchemards.webp",
-    "coverFallback": "assets/covers/reves-et-cauchemards.jpg",
-    "status": "À venir",
+    "cover": "assets/covers/reves-et-cauchemards.jpg",
+    "status": "Disponible",
     "links": {
       "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"
     }
@@ -18,8 +17,7 @@
     "type": "Single",
     "date": "27/06/2026",
     "isoDate": "2026-06-27",
-    "cover": "assets/covers/le-systeme.webp",
-    "coverFallback": "assets/covers/le-systeme.jpg",
+    "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png",
     "status": "À venir",
     "links": {
       "artist": "https://www.mpbp440.com/artistes/sparetdee-simon.html"

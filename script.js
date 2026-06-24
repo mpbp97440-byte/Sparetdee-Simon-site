@@ -188,3 +188,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   loadLiveStatus();
   setInterval(loadLiveStatus, 30000);
 });
+
+// V6.4.6 public cleanup
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll('a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="admin-440-mpbp-corp"]').forEach(el=>el.remove());
+});

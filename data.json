@@ -15,77 +15,44 @@
     "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
   },
   "featured": {
-    "title": "Double sortie",
+    "title": "Rêves et Cauchemards",
     "artist": "Sparetdee Simon",
-    "date": "20/06/2026",
-    "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
-    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
-    "status": "Sortie du moment"
+    "date": "24/06/2026",
+    "description": "Nouvelle sortie officielle de Sparetdee Simon. Disponible sur toutes les plateformes.",
+    "cover": "assets/covers/reves-et-cauchemards.jpg",
+    "status": "Sortie officielle",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    }
   },
   "upcoming": [
     {
       "title": "Le Système",
       "artist": "Sparetdee Simon",
       "date": "27/06/2026",
-      "description": "Pré-sortie officielle du nouveau titre de Sparetdee Simon. Disponible le 27/06/2026 sur toutes les plateformes.",
+      "description": "Prochaine sortie officielle de Sparetdee Simon. Disponible le 27/06/2026 sur toutes les plateformes.",
       "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png",
       "status": "À venir"
-    },
-    {
-      "title": "Aujourd’hui",
-      "artist": "Sparetdee Simon",
-      "date": "23/06/2026",
-      "description": "Nouvelle sortie officielle disponible sur toutes les plateformes.",
-      "cover": "assets/covers/aujourdhui.jpg",
-      "status": "Sortie officielle"
     },
     {
       "title": "Rêves et Cauchemards",
       "artist": "Sparetdee Simon",
       "date": "24/06/2026",
-      "description": "Nouvelle sortie officielle disponible sur toutes les plateformes.",
+      "description": "Nouvelle sortie officielle de Sparetdee Simon. Disponible sur toutes les plateformes.",
       "cover": "assets/covers/reves-et-cauchemards.jpg",
       "status": "Sortie officielle"
-    },
-    {
-      "title": "Double sortie : L’Argent / Je Vous Pousse Tous",
-      "artist": "Sparetdee Simon",
-      "date": "20/06/2026",
-      "description": "Pré-sortie officielle des deux nouveaux titres de Sparetdee Simon, disponibles simultanément sur toutes les plateformes.",
-      "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
-      "status": "Double sortie officielle"
-    },
-    {
-      "title": "Je sais que tu sais",
-      "artist": "Juste Une Plume",
-      "date": "16/06/2026",
-      "description": "Premier titre officiel de Juste Une Plume — sortie sur toutes les plateformes.",
-      "cover": "assets/covers/je-sais-juste-une-plume.jpg"
-    },
-    {
-      "title": "La France Se Soulève",
-      "date": "02/06/2026",
-      "description": "Sortie officielle sur toutes les plateformes.",
-      "cover": "assets/covers/la-france-se-souleve.jpg"
-    },
-    {
-      "title": "Bizouzouzou Ours",
-      "date": "03/06/2026",
-      "description": "Sortie officielle sur toutes les plateformes. Good vibes only.",
-      "cover": "assets/covers/bizouzouzou-ours.jpg"
-    },
-    {
-      "title": "Autres créations",
-      "date": "À venir",
-      "description": "Les prochaines sorties seront dévoilées progressivement.",
-      "cover": "assets/logo/mpbp440-logo.jpg"
     }
   ],
   "tracks": [
     {
       "title": "L’Argent",
       "artist": "Sparetdee Simon",
-      "year": "À venir • 20/06/2026",
+      "year": "Disponible",
       "description": "Nouveau titre officiel de Sparetdee Simon inclus dans la double sortie du 20/06/2026.",
       "cover": "assets/covers/largent-officiel.jpg",
       "links": {
@@ -100,7 +67,7 @@
     {
       "title": "Je Vous Pousse Tous",
       "artist": "Sparetdee Simon",
-      "year": "À venir • 20/06/2026",
+      "year": "Disponible",
       "description": "Nouveau titre officiel de Sparetdee Simon inclus dans la double sortie du 20/06/2026.",
       "cover": "assets/covers/je-vous-pousse-tous-officiel.jpg",
       "links": {
@@ -116,14 +83,14 @@
       "title": "Je sais que tu sais",
       "artist": "Juste Une Plume",
       "year": "À venir • 16/06/2026",
-      "description": "Premier single officiel de Juste Une Plume, entre sensibilité, espoir et regard humain.",
+      "description": "Premier titre officiel de Juste Une Plume.",
       "cover": "assets/covers/je-sais-juste-une-plume.jpg",
       "links": {
         "spotify": "https://open.spotify.com/artist/4LAJA1pkE8Z3OyAGFSWdT3?si=fypn9MRDSMO0dN3mAoSv4A",
-        "deezer": "https://link.deezer.com/s/33Abgbsu5jmfSOCNVpsFb",
-        "amazon": "https://amazon.fr/music/player/albums/B0H3W4P77J?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR&ref=dm_sh_tEGDVOPWSlUxHIFULYR8IF7xT",
         "apple": "https://music.apple.com/fr/artist/juste-une-plume/6776260357",
-        "youtube": "https://youtu.be/jkKGmZDQMtE?si=wWLZSqLFOA5320VT"
+        "deezer": "https://link.deezer.com/s/33Abgbsu5jmfSOCNVpsFb",
+        "youtube": "https://youtu.be/jkKGmZDQMtE?si=wWLZSqLFOA5320VT",
+        "amazon": "https://amazon.fr/music/player/albums/B0H3W4P77J?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR"
       },
       "status": "Disponible"
     },

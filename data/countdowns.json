@@ -8,21 +8,11 @@
     "cover": "assets/covers/le-systeme-pre-sortie-27-06-2026.png"
   },
   {
-    "title": "Double sortie — L’Argent / Je Vous Pousse Tous",
-    "date": "2026-06-20T00:00:00+02:00",
-    "label": "Prochaine sortie Sparetdee Simon",
-    "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg"
-  },
-  {
-    "title": "Aujourd’hui — Sparetdee Simon",
-    "date": "2026-06-23T00:00:00+02:00",
-    "label": "Prochaine sortie Sparetdee Simon",
-    "cover": "assets/covers/aujourdhui.jpg"
-  },
-  {
     "title": "Rêves et Cauchemards — Sparetdee Simon",
+    "artist": "Sparetdee Simon",
     "date": "2026-06-24T00:00:00+02:00",
-    "label": "Prochaine sortie Sparetdee Simon",
+    "label": "Sortie officielle Sparetdee Simon",
+    "description": "Disponible sur toutes les plateformes.",
     "cover": "assets/covers/reves-et-cauchemards.jpg"
   }
 ]

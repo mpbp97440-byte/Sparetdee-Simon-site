@@ -1,8 +1,16 @@
 {
-  "title": "Double sortie",
+  "title": "Rêves et Cauchemards",
   "artist": "Sparetdee Simon",
-  "date": "20/06/2026",
-  "description": "L’Argent + Je Vous Pousse Tous — sortie officielle le 20/06/2026 sur toutes les plateformes.",
-  "cover": "assets/covers/double-sortie-largent-je-vous-pousse-tous.jpg",
-  "status": "Sortie du moment"
+  "date": "24/06/2026",
+  "description": "Nouvelle sortie officielle de Sparetdee Simon. Disponible sur toutes les plateformes.",
+  "cover": "assets/covers/reves-et-cauchemards.jpg",
+  "status": "Sortie officielle",
+  "links": {
+    "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+    "YouTube": "https://www.youtube.com/@sparetdee440",
+    "TikTok": "https://www.tiktok.com/@simonsparet",
+    "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+    "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+    "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+  }
 }

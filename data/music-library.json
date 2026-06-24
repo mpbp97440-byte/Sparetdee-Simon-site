@@ -18,14 +18,49 @@
     "description": "Nouvelle sortie officielle de Sparetdee Simon."
   },
   {
+    "id": "largent",
+    "title": "L’Argent",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/largent-officiel.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Nouveau titre officiel de Sparetdee Simon inclus dans la double sortie du 20/06/2026."
+  },
+  {
+    "id": "je-vous-pousse-tous",
+    "title": "Je Vous Pousse Tous",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/je-vous-pousse-tous-officiel.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Nouveau titre officiel de Sparetdee Simon inclus dans la double sortie du 20/06/2026."
+  },
+  {
     "id": "je-sais-que-tu-sais",
     "title": "Je sais que tu sais",
     "artist": "Juste Une Plume",
-    "date": "16/06/2026",
+    "date": "À venir • 16/06/2026",
     "status": "Disponible",
     "cover": "assets/covers/je-sais-juste-une-plume.jpg",
     "type": "Single",
-    "lyrics": "lyrics/je-sais-que-tu-sais.html",
     "links": {
       "spotify": "https://open.spotify.com/artist/4LAJA1pkE8Z3OyAGFSWdT3?si=fypn9MRDSMO0dN3mAoSv4A",
       "apple": "https://music.apple.com/fr/artist/juste-une-plume/6776260357",
@@ -34,5 +69,383 @@
       "amazon": "https://amazon.fr/music/player/albums/B0H3W4P77J?marketplaceId=A13V1IB3VIYZZH&musicTerritory=FR"
     },
     "description": "Premier titre officiel de Juste Une Plume."
+  },
+  {
+    "id": "l-asticot-getga",
+    "title": "L'Asticot Getga",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/lasticot-getga.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Nouveau morceau disponible sur toutes les plateformes."
+  },
+  {
+    "id": "la-france-se-soul-ve",
+    "title": "La France Se Soulève",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/la-france-se-souleve.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Sortie officielle le 02/06/2026 sur toutes les plateformes."
+  },
+  {
+    "id": "bizouzouzou-ours",
+    "title": "Bizouzouzou Ours",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/bizouzouzou-ours.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Sortie officielle le 03/06/2026 sur toutes les plateformes."
+  },
+  {
+    "id": "rien-de-plus-rien-de-moins",
+    "title": "Rien De Plus, Rien De Moins",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/rien-de-plus-rien-de-moins.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Un titre direct, solaire et énergique, dans l’univers M.P.B.P 440 Production 2026."
+  },
+  {
+    "id": "brainrot-society",
+    "title": "BrainRot Society",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/brainrot-society.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Un délire visuel et musical explosif, entre satire moderne, énergie digitale et rap coloré."
+  },
+  {
+    "id": "la-route-dor-e-remix",
+    "title": "La Route Dorée Remix",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/la-route-doree-remix.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Une route symbolique entre choix, humain et espérance."
+  },
+  {
+    "id": "de-saint-beno-t-saint-andr-remix",
+    "title": "De Saint-Benoît à Saint-André Remix",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/de-saint-benoit-a-saint-andre-remix.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "97470 vers 97440, une histoire vraie entre racines, mémoire et trajectoire."
+  },
+  {
+    "id": "l-galise-la-kalit",
+    "title": "Légalise La Kalité",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/legalise-la-kalite.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Un morceau engagé, entre feu social et souffle vert."
+  },
+  {
+    "id": "savoir-la-savour",
+    "title": "Savoir La Savouré",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/savoir-la-savoure.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Une vibe solaire, posée et positive, portée par l’esprit réunionnais."
+  },
+  {
+    "id": "comme-un-pansement",
+    "title": "Comme Un Pansement",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/comme-un-pansement.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Un titre sur la réparation, la trace et la lumière après la blessure."
+  },
+  {
+    "id": "fiainana-tsotra",
+    "title": "Fiainana Tsotra",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/fiainana-tsotra.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Une passerelle entre île, ville, mémoire et vérité simple."
+  },
+  {
+    "id": "le-temps-o-cousin",
+    "title": "Le Temps Où Cousin",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/le-temps-ou-cousin.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Réel jusqu’au bout, lumière jusqu’au bout."
+  },
+  {
+    "id": "la-mista-gringa",
+    "title": "La Mista Gringa",
+    "artist": "Sparetdee Simon",
+    "date": "Disponible",
+    "status": "Disponible",
+    "cover": "assets/covers/la-mista-gringa.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Même le ciel noir s’incline sous un halo combat."
+  },
+  {
+    "id": "dernier-chapitre",
+    "title": "Dernier Chapitre",
+    "artist": "Sparetdee Simon",
+    "date": "",
+    "status": "Disponible",
+    "cover": "assets/covers/dernier-chapitre.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Chaque mot laisse une trace, chaque son écrit l’histoire."
+  },
+  {
+    "id": "monde-alternatif",
+    "title": "Monde Alternatif",
+    "artist": "Sparetdee Simon",
+    "date": "",
+    "status": "Disponible",
+    "cover": "assets/covers/monde-alternatif.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Une rencontre, un amour, deux mondes. Ambiance futuriste, intime et cinématique."
+  },
+  {
+    "id": "dans-l-ombre-des-puissant",
+    "title": "Dans l'ombre des puissant",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/dans-lombre-des-puissant.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Rap conscient, sombre et cinématique."
+  },
+  {
+    "id": "3-minutes-35",
+    "title": "3 Minutes 35",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/3-minutes-35.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Tension narrative, horloge fissurée et DA noire/or."
+  },
+  {
+    "id": "prince-des-toiles",
+    "title": "Prince Des Étoiles",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/prince-des-etoiles.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Univers cosmique, steampunk futuriste et signature Sparetdee Simon."
+  },
+  {
+    "id": "loin-de-mon-le",
+    "title": "Loin de mon île",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/loin-de-mon-ile.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Réunion, exil, ville et nostalgie solaire."
+  },
+  {
+    "id": "11-hivers-et-11-t-s",
+    "title": "11 hivers et 11 étés",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/11-hivers-11-etes.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Une histoire de saisons, de durée et d’attachement."
+  },
+  {
+    "id": "bouffe-ma-vie",
+    "title": "Bouffe Ma Vie",
+    "artist": "Sparetdee Simon",
+    "date": "2026",
+    "status": "Disponible",
+    "cover": "assets/covers/bouffe-ma-vie.jpg",
+    "type": "Single",
+    "links": {
+      "Spotify": "https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu",
+      "YouTube": "https://www.youtube.com/@sparetdee440",
+      "TikTok": "https://www.tiktok.com/@simonsparet",
+      "Facebook": "https://www.facebook.com/Sparetdee.simon/",
+      "Deezer": "https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2",
+      "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
+    },
+    "description": "Vision sociale dure et humaine, entre survie et dignité."
   }
 ]
