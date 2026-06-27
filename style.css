@@ -860,3 +860,34 @@ a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="
     grid-template-columns:1fr!important;
   }
 }
+
+/* V6.4.10 - pochettes et flyers sans deformation */
+.featuredCard img,
+.time-card img,
+.event-card img,
+.card img,
+.galleryCard img{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  display:block!important;
+  background:#050505!important;
+}
+
+.featuredCard img,
+#upcomingGrid .time-card img{
+  max-height:460px!important;
+}
+
+@media(max-width:900px){
+  .featuredCard img,
+  .time-card img,
+  .event-card img,
+  .card img,
+  .galleryCard img{
+    aspect-ratio:1/1!important;
+    max-height:none!important;
+  }
+}
