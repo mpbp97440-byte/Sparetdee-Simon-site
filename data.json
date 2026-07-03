@@ -578,7 +578,7 @@
       "time": "21h00",
       "url": "https://www.tiktok.com/@simonsparet",
       "cover": "assets/events/live-tiktok-fete-musique-21062026-full.jpg",
-      "description": "Quand le live TikTok est actif, rejoins directement le direct officiel depuis ce bouton. TikTok ne permet pas toujours l’intégration directe du live comme YouTube, donc cette zone sert de portail officiel MPBP440 TV."
+      "description": "Retrouve les directs, clips et rendez-vous officiels MPBP440 depuis cet espace vidéo."
     },
     "featured_videos": [
       "0YEqshdl7jI",
@@ -589,8 +589,8 @@
     ],
     "radio": {
       "title": "Radio MPBP440",
-      "status": "Base radio prête — ajoute les fichiers audio MP3 pour lecture directe.",
-      "note": "Les visiteurs peuvent déjà accéder aux titres via les plateformes. Le vrai lecteur audio sera activé quand les fichiers audio autorisés seront fournis."
+      "status": "Sélection officielle MPBP440",
+      "note": "Écoute la sélection du label et retrouve les titres sur les plateformes officielles."
     }
   },
   "focus": {

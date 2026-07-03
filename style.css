@@ -980,3 +980,33 @@ a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="
     grid-template-columns:repeat(2,1fr)!important;
   }
 }
+
+/* V6.4.12 - etats publics pour sections sans contenu */
+.emptyState{
+  grid-column:1/-1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  gap:14px!important;
+  min-width:0!important;
+}
+
+.emptyState p{
+  margin:0!important;
+  color:var(--muted)!important;
+}
+
+.emptyState .btn{
+  margin-top:2px!important;
+}
+
+@media(max-width:900px){
+  .emptyState{
+    align-items:stretch!important;
+  }
+
+  .emptyState .btn{
+    width:100%!important;
+    justify-content:center!important;
+  }
+}

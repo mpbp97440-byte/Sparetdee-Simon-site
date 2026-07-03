@@ -65,6 +65,43 @@ function itemLinks(item={}, data={}){
   return mergeLinks(canUseGlobalLinks ? data.socials : {}, item.links || {});
 }
 
+function valueForSearch(value){
+  if(Array.isArray(value)) return value.map(valueForSearch).join(" ");
+  if(value && typeof value === "object") return Object.keys(value).concat(Object.values(value).map(valueForSearch)).join(" ");
+  return safeText(value);
+}
+
+function trackSearchText(track={}){
+  return cleanKey([
+    track.title,
+    track.artist,
+    track.description,
+    track.year,
+    track.status,
+    track.type,
+    track.genre,
+    track.mood,
+    track.keywords,
+    track.tags,
+    track.links,
+    track.displayLinks
+  ].map(valueForSearch).join(" "));
+}
+
+function matchesTrackSearch(track={}, query=""){
+  const tokens = cleanKey(query).split(/\s+/).filter(Boolean);
+  if(!tokens.length) return true;
+  const haystack = trackSearchText(track);
+  return tokens.every(token => haystack.includes(token));
+}
+
+function emptyStateHtml(message, href="#home", label="Retour a l'accueil"){
+  return `<div class="panel emptyState">
+    <p>${message}</p>
+    <a class="btn" href="${href}">${label}</a>
+  </div>`;
+}
+
 function parseReleaseDate(value){
   if(!value) return null;
   if(String(value).includes("T")){
@@ -153,7 +190,7 @@ function renderNextRelease(data={}){
 
 async function loadData(){
   try{
-    const data = await fetch("data.json?v=3.2.17-verif-complete", {cache:"no-store"}).then(r=>r.json());
+    const data = await fetch("/data.json?v=20260703-quality", {cache:"no-store"}).then(r=>r.json());
 
     const f = data.featured;
     const featuredCard = document.getElementById("featuredCard");
@@ -173,7 +210,8 @@ async function loadData(){
 
     const upcomingGrid = document.getElementById("upcomingGrid");
     if(upcomingGrid){
-      upcomingGrid.innerHTML = (data.upcoming || []).map((x,i)=>`
+      const upcoming = data.upcoming || [];
+      upcomingGrid.innerHTML = upcoming.length ? upcoming.map((x,i)=>`
         <article class="time-card">
           <img src="${x.cover}" alt="${x.title}">
           <div class="time-body">
@@ -182,12 +220,13 @@ async function loadData(){
             <p><strong>${x.date || ""}</strong></p>
             <p>${x.description || ""}</p>
           </div>
-        </article>`).join("");
+        </article>`).join("") : emptyStateHtml("Contenu bientot disponible : les prochaines sorties seront annoncees ici.", "#morceaux", "Voir les morceaux");
     }
 
     const eventsGrid = document.getElementById("eventsGrid");
     if(eventsGrid){
-      eventsGrid.innerHTML = (data.events || []).map(e=>`
+      const events = data.events || [];
+      eventsGrid.innerHTML = events.length ? events.map(e=>`
         <article class="event-card panel">
           <img src="${e.cover}" alt="${e.title}">
           <div>
@@ -197,7 +236,7 @@ async function loadData(){
             <p>${e.description || ""}</p>
             <a class="btn primary" href="${e.url || "#"}">${e.buttonText || "Voir l’évènement"}</a>
           </div>
-        </article>`).join("");
+        </article>`).join("") : emptyStateHtml("Contenu bientot disponible : les prochains evenements MPBP440 seront annonces ici.", "/mpbp-tv/index.html", "Ouvrir MPBP TV");
     }
 
     allTracks = (data.tracks || []).map(t => ({...t, displayLinks: itemLinks(t, data)}));
@@ -205,38 +244,36 @@ async function loadData(){
 
     const videoList = document.getElementById("videoList");
     if(videoList){
-      videoList.innerHTML = (data.videos || []).map(v=>`
+      const videos = data.videos || [];
+      videoList.innerHTML = videos.length ? videos.map(v=>`
         <div>
           <div class="video-frame">
             <iframe src="https://www.youtube.com/embed/${v.youtubeId}" title="${v.title}" allowfullscreen></iframe>
           </div>
           <div class="platforms"><a href="${v.url}" target="_blank" rel="noopener">${v.title}</a></div>
-        </div>`).join("");
+        </div>`).join("") : emptyStateHtml("Contenu bientot disponible : les prochains clips seront publies ici.", "/mpbp-tv/index.html", "Ouvrir MPBP TV");
     }
 
     const galleryGrid = document.getElementById("galleryGrid");
-    if(galleryGrid && data.gallery){
-      galleryGrid.innerHTML = data.gallery.map(item => `
+    if(galleryGrid){
+      const gallery = data.gallery || [];
+      galleryGrid.innerHTML = gallery.length ? gallery.map(item => `
         <article class="galleryCard">
           <img src="${item.image}" alt="${item.title}">
           <div class="galleryInfo"><h3>${item.title}</h3><p>${item.description || ""}</p></div>
-        </article>`).join("");
+        </article>`).join("") : emptyStateHtml("Contenu bientot disponible : les prochains visuels seront ajoutes ici.", "#liens", "Voir les liens officiels");
     }
 
     const officialLinks = document.getElementById("officialLinks");
     if(officialLinks){
-      officialLinks.innerHTML = Object.entries(data.socials || {}).map(([n,u])=>`<a class="link-card" href="${u}" target="_blank" rel="noopener">${n}</a>`).join("");
+      const socials = Object.entries(data.socials || {});
+      officialLinks.innerHTML = socials.length ? socials.map(([n,u])=>`<a class="link-card" href="${u}" target="_blank" rel="noopener">${n}</a>`).join("") : emptyStateHtml("Contenu bientot disponible : les liens officiels seront ajoutes ici.", "#home", "Retour a l'accueil");
     }
 
     const searchInput = document.getElementById("searchInput");
     if(searchInput){
       searchInput.addEventListener("input", e => {
-        const q = e.target.value.toLowerCase().trim();
-        const filtered = allTracks.filter(t =>
-          safeText(t.title).toLowerCase().includes(q) ||
-          safeText(t.artist).toLowerCase().includes(q) ||
-          safeText(t.description).toLowerCase().includes(q)
-        );
+        const filtered = allTracks.filter(t => matchesTrackSearch(t, e.target.value));
         renderTracks(filtered);
       });
     }
@@ -248,6 +285,19 @@ async function loadData(){
 function renderTracks(tracks){
   const tracksEl = document.getElementById("tracks");
   if(!tracksEl) return;
+  if(!tracks.length){
+    tracksEl.innerHTML = emptyStateHtml("Aucun morceau ne correspond a cette recherche.", "#morceaux", "Voir tout le catalogue");
+    const resetLink = tracksEl.querySelector(".emptyState a");
+    if(resetLink){
+      resetLink.addEventListener("click", event => {
+        event.preventDefault();
+        const searchInput = document.getElementById("searchInput");
+        if(searchInput) searchInput.value = "";
+        renderTracks(allTracks);
+      });
+    }
+    return;
+  }
   tracksEl.innerHTML = tracks.map(t=>`
     <article class="card">
       <img src="${t.cover}" alt="${t.title}">
@@ -425,7 +475,8 @@ document.addEventListener("DOMContentLoaded", async ()=>{
       const spotify = radioData.spotify || radioData.spotify_playlist;
       if(oldBox){
         const frame = oldBox.querySelector("iframe");
-        if(embed && frame){
+        const validEmbed = /^https:\/\/open\.spotify\.com\/embed\//.test(safeText(embed));
+        if(validEmbed && frame){
           frame.src = embed;
         }else{
           oldBox.innerHTML = `<div class="spotifyRadioFallback">
