@@ -1301,3 +1301,50 @@ body{background:radial-gradient(circle at 10% 0%,rgba(39,255,137,.10),transparen
 
 /* V8.5 footer mobile containment */
 .v85-footer nav{position:static!important;left:auto!important;right:auto!important;top:auto!important;display:flex!important;max-width:100%!important;min-width:0!important}
+
+/* V9.1 - Intro MPBP440 et micro-animations premium */
+.intro-active{overflow:hidden}
+.mpbpIntro{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;overflow:hidden;background:#010101;color:var(--text);isolation:isolate;animation:introFadeOut .58s ease 3.78s forwards}
+.mpbpIntro.is-done{animation:introManualOut .48s ease forwards}
+.mpbpIntro:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 45%,rgba(255,224,138,.20),transparent 18%),radial-gradient(circle at 42% 55%,rgba(212,175,55,.18),transparent 26%),linear-gradient(120deg,transparent 38%,rgba(255,241,168,.22) 48%,transparent 58%);opacity:0;transform:translateX(-18%) rotate(-8deg);animation:introLight 3.4s ease .42s forwards}
+.mpbpIntroSmoke{position:absolute;inset:-15%;background:radial-gradient(ellipse at 24% 70%,rgba(255,255,255,.08),transparent 32%),radial-gradient(ellipse at 78% 28%,rgba(255,255,255,.07),transparent 30%),radial-gradient(ellipse at 48% 52%,rgba(212,175,55,.08),transparent 38%);filter:blur(22px);opacity:0;animation:introSmoke 3.7s ease forwards}
+.mpbpIntroParticles,.mpbpIntroParticles:before,.mpbpIntroParticles:after{position:absolute;inset:0;content:"";background-image:radial-gradient(circle,rgba(255,241,168,.96) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(212,175,55,.8) 0 1px,transparent 2px);background-size:86px 86px,132px 132px;background-position:10px 18px,44px 62px;opacity:0;animation:introParticles 3.6s ease .12s forwards}
+.mpbpIntroParticles:before{transform:scale(1.25) rotate(9deg);filter:blur(.4px)}
+.mpbpIntroParticles:after{transform:scale(.82) rotate(-11deg);opacity:.35}
+.mpbpIntroSkip{position:absolute;top:18px;right:18px;z-index:2;border:1px solid rgba(212,175,55,.52);border-radius:999px;background:rgba(0,0,0,.42);color:#fff1bd;padding:10px 14px;font-weight:900;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 0 24px rgba(212,175,55,.12)}
+.mpbpIntroStage{position:relative;z-index:1;width:min(620px,calc(100% - 34px));display:grid;place-items:center;text-align:center;gap:14px;transform:translateY(16px);opacity:0;animation:introStage 3.45s cubic-bezier(.2,.8,.2,1) .22s forwards}
+.mpbpIntroLogo{display:grid;place-items:center;gap:12px;animation:introLogoShrink 3.7s cubic-bezier(.2,.8,.2,1) forwards}
+.mpbpIntroLogo img{width:clamp(92px,25vw,154px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,241,168,.55);box-shadow:0 0 40px rgba(212,175,55,.42),inset 0 0 18px rgba(255,241,168,.25)}
+.mpbpIntroLogo span{font-family:Orbitron,sans-serif;font-size:clamp(28px,8vw,58px);font-weight:900;letter-spacing:clamp(2px,.8vw,9px);line-height:1;background:linear-gradient(100deg,#7d5107,#fff7bf 28%,#d4af37 52%,#fff1a8 72%,#76500a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 26px rgba(212,175,55,.24)}
+.mpbpIntroSymbols{display:flex;align-items:center;justify-content:center;gap:34px;min-height:58px;opacity:0;animation:introSymbols .9s ease 1.35s forwards}
+.mpbpIntroSymbol{position:relative;display:block;width:54px;height:54px}
+.mpbpIntroCrutches i{position:absolute;top:5px;width:7px;height:48px;border-radius:999px;background:linear-gradient(#fff5bd,#d4af37 50%,#76500a);box-shadow:0 0 18px rgba(212,175,55,.25)}
+.mpbpIntroCrutches i:first-child{left:14px;transform:rotate(14deg)}
+.mpbpIntroCrutches i:last-child{right:14px;transform:rotate(-14deg)}
+.mpbpIntroCrutches i:before{content:"";position:absolute;top:0;left:-8px;width:23px;height:6px;border-radius:999px;background:#fff1a8}
+.mpbpIntroCrutches i:after{content:"";position:absolute;bottom:0;left:-4px;width:15px;height:5px;border-radius:999px;background:#76500a}
+.mpbpIntroFeather:before{content:"";position:absolute;left:15px;top:5px;width:24px;height:42px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#fff7c7,#d4af37 52%,#7b5109);transform:rotate(28deg);box-shadow:0 0 18px rgba(212,175,55,.25)}
+.mpbpIntroFeather:after{content:"";position:absolute;left:28px;top:8px;width:2px;height:48px;background:#fff7c7;transform:rotate(28deg);transform-origin:top}
+.mpbpIntroArtists{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;color:#fff4c6;font-weight:900;opacity:0;animation:introTextIn .8s ease 1.75s forwards}
+.mpbpIntroArtists span{border:1px solid rgba(212,175,55,.34);border-radius:999px;background:rgba(255,255,255,.06);padding:8px 12px}
+.mpbpIntroStage strong{font-family:Bebas Neue,Impact,sans-serif;font-size:clamp(38px,9vw,84px);line-height:.9;letter-spacing:2px;color:#fff1bd;opacity:0;animation:introTextIn .78s ease 2.18s forwards}
+.mpbpIntroStage p{margin:0;color:#dcc99c;font-weight:800;opacity:0;animation:introTextIn .78s ease 2.52s forwards}
+.brand img{animation:logoBreath 4.8s ease-in-out infinite}
+.btn,.platforms a,.link-card,.galleryFilters button{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease}
+.btn:hover,.platforms a:hover,.link-card:hover,.galleryFilters button:hover{box-shadow:0 0 26px rgba(212,175,55,.28),0 0 1px rgba(255,241,168,.8);border-color:rgba(255,241,168,.62)}
+.card,.time-card,.galleryCard,.artistCard,.v8FocusCard,.v85-video-card,.homeExclusiveClip,.featuredCard{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.card:hover,.v85-track-card:hover,.time-card:hover,.galleryCard:hover,.artistCard:hover,.v8FocusCard:hover,.v85-video-card:hover,.homeExclusiveClip:hover{transform:translateY(-4px) scale(1.012);box-shadow:0 20px 46px rgba(0,0,0,.32),0 0 28px rgba(212,175,55,.14);border-color:rgba(255,241,168,.52)}
+.premium-motion-ready .reveal-on-scroll{opacity:0;transform:translateY(18px);transition:opacity .64s ease,transform .64s ease}
+.premium-motion-ready .reveal-on-scroll.is-visible{opacity:1;transform:none}
+@keyframes introParticles{0%{opacity:0;transform:translateY(16px) scale(.98)}22%{opacity:.95}100%{opacity:.2;transform:translateY(-22px) scale(1.04)}}
+@keyframes introSmoke{0%{opacity:0;transform:translate3d(0,22px,0) scale(.96)}35%{opacity:.75}100%{opacity:.16;transform:translate3d(0,-18px,0) scale(1.04)}}
+@keyframes introLight{0%{opacity:0;transform:translateX(-35%) rotate(-10deg)}38%{opacity:1}100%{opacity:.22;transform:translateX(28%) rotate(-10deg)}}
+@keyframes introStage{0%{opacity:0;transform:translateY(18px) scale(.96)}18%,86%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-18px) scale(.86)}}
+@keyframes introLogoShrink{0%,70%{transform:scale(1)}100%{transform:scale(.72)}}
+@keyframes introSymbols{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes introTextIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes introFadeOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+@keyframes introManualOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+@keyframes logoBreath{0%,100%{box-shadow:0 0 18px rgba(212,175,55,.26)}50%{box-shadow:0 0 32px rgba(255,241,168,.42)}}
+@media(max-width:520px){.mpbpIntroSkip{top:12px;right:12px;padding:9px 12px}.mpbpIntroStage{gap:11px}.mpbpIntroArtists{gap:9px}.mpbpIntroArtists span{font-size:12px;padding:8px 10px}.mpbpIntroStage strong{font-size:clamp(38px,13vw,58px)}.mpbpIntroLogo span{letter-spacing:2px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.mpbpIntro{display:none!important}.brand img{animation:none!important}.premium-motion-ready .reveal-on-scroll{opacity:1!important;transform:none!important}}

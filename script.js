@@ -1,4 +1,5 @@
 let allTracks = [];
+const MPBP_PUBLIC_VERSION = "9.1-intro";
 
 function safeText(value){
   return String(value || "");
@@ -217,7 +218,7 @@ function renderNextRelease(data={}){
 
 async function loadData(){
   try{
-    const data = await fetch("/data.json?v=9-performance", {cache:"no-store"}).then(r=>r.json());
+    const data = await fetch(`/data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"}).then(r=>r.json());
 
     const f = data.featured;
     const featuredCard = document.getElementById("featuredCard");
@@ -366,6 +367,71 @@ document.addEventListener("DOMContentLoaded", () => {
   loadData();
 });
 
+function initMPBPIntro(){
+  const intro = document.getElementById("mpbpIntro");
+  if(!intro) return;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const storage = {
+    get(){
+      try{return window.sessionStorage.getItem("mpbpIntroPlayed") === "1";}catch(e){return false;}
+    },
+    set(){
+      try{window.sessionStorage.setItem("mpbpIntroPlayed", "1");}catch(e){}
+    }
+  };
+  const hasPlayed = storage.get();
+  const finish = () => {
+    intro.classList.add("is-done");
+    storage.set();
+    setTimeout(() => intro.remove(), 520);
+  };
+  if(reduceMotion || hasPlayed){
+    intro.remove();
+    return;
+  }
+  document.body.classList.add("intro-active");
+  const skip = document.getElementById("mpbpIntroSkip");
+  const close = () => {
+    document.body.classList.remove("intro-active");
+    finish();
+  };
+  skip?.addEventListener("click", close, {once:true});
+  setTimeout(close, 3900);
+}
+
+function initPremiumMotion(){
+  document.documentElement.classList.add("premium-motion-ready");
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const targets = document.querySelectorAll(".section,.hero,.v8FocusCard,.featuredCard,.homeExclusiveClip,.artistCard,.galleryCard");
+  if(!("IntersectionObserver" in window)){
+    targets.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+  targets.forEach(el => {
+    el.classList.add("reveal-on-scroll");
+    observer.observe(el);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initMPBPIntro();
+  initPremiumMotion();
+});
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  });
+}
+
 
 // V3.2.9 — MPBP440 Media Center controls
 function initMPBPTVControls(){
@@ -480,13 +546,13 @@ document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('a[h
 // V6.4.9 — correctif radio Spotify + liens plateformes complets
 document.addEventListener("DOMContentLoaded", async ()=>{
   try{
-    const res = await fetch("/data.json?v=9-performance", {cache:"no-store"});
+    const res = await fetch(`/data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
     const siteData = await res.json();
     async function getRadioData(){
       const mainRadio = siteData.radio || {};
       if(mainRadio.embed) return mainRadio;
       try{
-        const radioRes = await fetch("/data/radio.json?v=9-performance", {cache:"no-store"});
+        const radioRes = await fetch(`/data/radio.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
         if(radioRes.ok){
           const radioData = await radioRes.json();
           return Object.assign({}, mainRadio, radioData);
