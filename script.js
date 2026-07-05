@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "9.5.1-mobile-menu-fix";
+const MPBP_PUBLIC_VERSION = "9.7-audio-experience";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -502,11 +502,22 @@ function initMPBPIntro(){
   const stopParticles = startMPBPCinematicParticles();
   document.body.classList.add("intro-active");
   const skip = document.getElementById("mpbpIntroSkip");
+  const soundOn = document.getElementById("mpbpIntroSoundOn");
+  const soundOff = document.getElementById("mpbpIntroSoundOff");
   const close = () => {
     stopParticles();
     document.body.classList.remove("intro-active");
     finish();
   };
+  soundOn?.addEventListener("click", () => {
+    window.MPBPAudio?.startIntroJingle?.();
+    close();
+  }, {once:true});
+  soundOff?.addEventListener("click", () => {
+    try{localStorage.setItem("mpbpAmbianceEnabled", "0");}catch(e){}
+    window.MPBPAudio?.stopIntroJingle?.();
+    close();
+  }, {once:true});
   skip?.addEventListener("click", close, {once:true});
   setTimeout(close, 7000);
   setTimeout(close, 7600);
@@ -612,6 +623,7 @@ function initPremiumMotion(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initMPBPAmbianceAudio();
   initMPBPIntro();
   initPremiumMotion();
 });
@@ -624,106 +636,224 @@ if("serviceWorker" in navigator){
 
 function initMPBPAmbianceAudio(){
   if(document.getElementById("mpbpAudioControl")) return;
-  const audioPath = "/assets/audio/mpbp-ambiance.mp3";
+  const ambiancePath = "/assets/audio/mpbp-ambiance.mp3";
+  const jinglePath = "/assets/audio/mpbp-intro-jingle.mp3";
   const isSubPage = location.pathname.includes("/artistes/");
   const radioHref = isSubPage ? "../index.html#radio" : "/#radio";
   const control = document.createElement("div");
   control.id = "mpbpAudioControl";
   control.className = "mpbpAudioControl";
   control.innerHTML = `<button type="button" class="mpbpAudioButton">Activer l'ambiance MPBP440</button>
+    <span class="mpbpAudioStatus" aria-live="polite">Ambiance OFF</span>
     <label class="mpbpAudioVolume" aria-label="Volume ambiance"><span>Volume</span><input type="range" min="0" max="1" step="0.01"></label>`;
   document.body.appendChild(control);
 
   const button = control.querySelector(".mpbpAudioButton");
+  const status = control.querySelector(".mpbpAudioStatus");
   const volumeInput = control.querySelector("input");
   const storedVolume = Number(localStorage.getItem("mpbpAmbianceVolume"));
   let baseVolume = Number.isFinite(storedVolume) && storedVolume >= 0 ? Math.min(storedVolume, 1) : 0.22;
-  let available = false;
-  let playing = false;
-  let fadeTimer = null;
-  const audio = new Audio(audioPath);
-  audio.loop = true;
-  audio.preload = "none";
-  audio.volume = baseVolume;
+  let ambianceAvailable = true;
+  let jingleAvailable = true;
+  let ambiancePlaying = false;
+  let jinglePlaying = false;
+  let ducked = false;
+  let audioBlocked = false;
+  let ambianceFadeTimer = null;
+  let jingleFadeTimer = null;
+  const ambiance = new Audio(ambiancePath);
+  const jingle = new Audio(jinglePath);
+  ambiance.dataset.mpbpAudio = "ambiance";
+  jingle.dataset.mpbpAudio = "intro-jingle";
+  ambiance.loop = true;
+  ambiance.preload = "none";
+  ambiance.volume = baseVolume;
+  jingle.loop = false;
+  jingle.preload = "none";
+  jingle.volume = Math.min(Math.max(baseVolume, 0.18), 0.32);
   volumeInput.value = String(baseVolume);
 
   function setUnavailable(){
     control.classList.add("is-fallback");
     control.innerHTML = `<a class="mpbpAudioButton" href="${radioHref}">Ouvrir Radio MPBP440</a>`;
   }
-  function setButton(){
-    button.textContent = playing ? "Mettre l'ambiance en pause" : (localStorage.getItem("mpbpAmbianceEnabled") === "1" ? "Reprendre l'ambiance MPBP440" : "Activer l'ambiance MPBP440");
+  function setState(text){
+    if(status) status.textContent = text;
   }
-  function fadeTo(target, done){
-    clearInterval(fadeTimer);
+  function setButton(){
+    if(!button) return;
+    if(jinglePlaying) button.textContent = "Passer a l'ambiance";
+    else button.textContent = ambiancePlaying ? "Pause ambiance" : (localStorage.getItem("mpbpAmbianceEnabled") === "1" ? "Reprendre ambiance" : "Activer l'ambiance MPBP440");
+    setState(audioBlocked ? "Son a relancer" : (jinglePlaying ? "Jingle" : (ducked ? "Muet pendant lecture" : (ambiancePlaying ? "Ambiance ON" : "Ambiance OFF"))));
+    control.classList.toggle("is-playing", ambiancePlaying || jinglePlaying);
+    control.classList.toggle("is-ducked", ducked);
+  }
+  function fadeAudio(audio, target, done, kind){
+    const timerName = kind === "jingle" ? "jingle" : "ambiance";
+    if(timerName === "jingle") clearInterval(jingleFadeTimer);
+    else clearInterval(ambianceFadeTimer);
     const start = audio.volume;
     const steps = 18;
     let i = 0;
-    fadeTimer = setInterval(() => {
+    const timer = setInterval(() => {
       i += 1;
       audio.volume = start + (target - start) * (i / steps);
       if(i >= steps){
-        clearInterval(fadeTimer);
+        clearInterval(timer);
         audio.volume = target;
         if(done) done();
       }
     }, 32);
+    if(timerName === "jingle") jingleFadeTimer = timer;
+    else ambianceFadeTimer = timer;
   }
   function restoreAmbiance(){
-    if(!available || !playing || audio.paused) return;
-    fadeTo(baseVolume);
-  }
-  function duckAmbiance(){
-    if(!available || !playing || audio.paused) return;
-    fadeTo(0.04);
-  }
-  function bindVideos(){
-    document.querySelectorAll("video").forEach(video => {
-      if(video.dataset.mpbpAudioBound) return;
-      video.dataset.mpbpAudioBound = "1";
-      video.addEventListener("play", duckAmbiance);
-      video.addEventListener("pause", restoreAmbiance);
-      video.addEventListener("ended", restoreAmbiance);
-    });
-  }
-
-  fetch(audioPath, {method:"HEAD", cache:"no-store"}).then(res => {
-    if(!res.ok){ setUnavailable(); return; }
-    available = true;
-    control.classList.add("is-ready");
-    setButton();
-    bindVideos();
-  }).catch(setUnavailable);
-
-  button.addEventListener("click", async () => {
-    if(!available) return;
-    if(playing){
-      fadeTo(0, () => audio.pause());
-      playing = false;
-      localStorage.setItem("mpbpAmbianceEnabled", "0");
+    ducked = false;
+    if(!ambianceAvailable || !ambiancePlaying || ambiance.paused){
       setButton();
       return;
     }
-    try{
-      audio.volume = 0;
-      await audio.play();
-      playing = true;
-      localStorage.setItem("mpbpAmbianceEnabled", "1");
-      fadeTo(baseVolume);
+    fadeAudio(ambiance, baseVolume, setButton, "ambiance");
+    setButton();
+  }
+  function duckAmbiance(){
+    ducked = true;
+    if(!ambianceAvailable || !ambiancePlaying || ambiance.paused){
       setButton();
-      bindVideos();
-    }catch(e){
-      playing = false;
-      setButton();
+      return;
     }
+    fadeAudio(ambiance, 0.04, setButton, "ambiance");
+    setButton();
+  }
+  async function startAmbiance(){
+    if(!ambianceAvailable) return false;
+    try{
+      jingle.pause();
+      jingle.currentTime = 0;
+      jinglePlaying = false;
+      ambiance.volume = 0;
+      await ambiance.play();
+      audioBlocked = false;
+      ambiancePlaying = true;
+      localStorage.setItem("mpbpAmbianceEnabled", "1");
+      fadeAudio(ambiance, ducked ? 0.04 : baseVolume, setButton, "ambiance");
+      setButton();
+      bindInternalMedia();
+      return true;
+    }catch(e){
+      ambiancePlaying = false;
+      audioBlocked = true;
+      setButton();
+      return false;
+    }
+  }
+  function pauseAmbiance(){
+    if(!ambiancePlaying) return;
+    fadeAudio(ambiance, 0, () => {
+      ambiance.pause();
+      ambiancePlaying = false;
+      setButton();
+    }, "ambiance");
+    localStorage.setItem("mpbpAmbianceEnabled", "0");
+    setButton();
+  }
+  async function startIntroJingle(){
+    localStorage.setItem("mpbpAmbianceEnabled", "1");
+    if(!jingleAvailable){
+      return startAmbiance();
+    }
+    try{
+      if(ambiancePlaying) pauseAmbiance();
+      jingle.volume = Math.min(Math.max(baseVolume, 0.18), 0.32);
+      jingle.currentTime = 0;
+      await jingle.play();
+      audioBlocked = false;
+      jinglePlaying = true;
+      setButton();
+      return true;
+    }catch(e){
+      jinglePlaying = false;
+      audioBlocked = true;
+      setButton();
+      return startAmbiance();
+    }
+  }
+  function stopIntroJingle(){
+    if(!jinglePlaying) return;
+    fadeAudio(jingle, 0, () => {
+      jingle.pause();
+      jingle.currentTime = 0;
+      jinglePlaying = false;
+      setButton();
+    }, "jingle");
+  }
+  function bindInternalMedia(){
+    document.querySelectorAll("video,audio").forEach(media => {
+      if(media.dataset.mpbpAudio || media.dataset.mpbpAudioBound) return;
+      media.dataset.mpbpAudioBound = "1";
+      media.addEventListener("play", duckAmbiance);
+      media.addEventListener("pause", restoreAmbiance);
+      media.addEventListener("ended", restoreAmbiance);
+    });
+  }
+
+  Promise.allSettled([
+    fetch(ambiancePath, {method:"HEAD", cache:"no-store"}),
+    fetch(jinglePath, {method:"HEAD", cache:"no-store"})
+  ]).then(results => {
+    ambianceAvailable = results[0].status === "fulfilled" && results[0].value.ok;
+    jingleAvailable = results[1].status === "fulfilled" && results[1].value.ok;
+    if(!ambianceAvailable && !jingleAvailable){ setUnavailable(); return; }
+    control.classList.add("is-ready");
+    setButton();
+    bindInternalMedia();
+  }).catch(setUnavailable);
+
+  button.addEventListener("click", async () => {
+    if(jinglePlaying || !ambiancePlaying) await startAmbiance();
+    else pauseAmbiance();
   });
   volumeInput.addEventListener("input", event => {
     baseVolume = Math.min(Number(event.target.value) || 0, 1);
     localStorage.setItem("mpbpAmbianceVolume", String(baseVolume));
-    if(playing && !audio.paused) audio.volume = baseVolume;
+    if(ambiancePlaying && !ambiance.paused) ambiance.volume = ducked ? 0.04 : baseVolume;
+    if(jinglePlaying && !jingle.paused) jingle.volume = Math.min(Math.max(baseVolume, 0.18), 0.32);
+    setButton();
   });
+  jingle.addEventListener("ended", () => {
+    jinglePlaying = false;
+    setButton();
+    startAmbiance();
+  });
+  ambiance.addEventListener("pause", () => {
+    if(!jinglePlaying){
+      ambiancePlaying = false;
+      setButton();
+    }
+  });
+  window.MPBPAudio = {
+    startIntroJingle,
+    stopIntroJingle,
+    startAmbiance,
+    pauseAmbiance,
+    duckAmbiance,
+    restoreAmbiance,
+    getState(){
+      return {ambianceAvailable,jingleAvailable,ambiancePlaying,jinglePlaying,ducked,audioBlocked,baseVolume};
+    }
+  };
+  if(localStorage.getItem("mpbpAmbianceEnabled") === "1"){
+    const resumeAfterGesture = event => {
+      if(event.target && event.target.closest && event.target.closest("#mpbpAudioControl")) return;
+      startAmbiance();
+      document.removeEventListener("pointerdown", resumeAfterGesture);
+      document.removeEventListener("keydown", resumeAfterGesture);
+    };
+    document.addEventListener("pointerdown", resumeAfterGesture, {passive:true});
+    document.addEventListener("keydown", resumeAfterGesture);
+  }
   setButton();
-  setTimeout(bindVideos, 1000);
+  setTimeout(bindInternalMedia, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", initMPBPAmbianceAudio);
