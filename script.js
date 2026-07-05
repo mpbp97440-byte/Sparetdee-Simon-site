@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "9.5-pro-layout";
+const MPBP_PUBLIC_VERSION = "9.5.1-mobile-menu-fix";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -955,16 +955,27 @@ function setupV94MobileMenu(){
   const nav = document.getElementById("mainNav") || document.querySelector(".topbar nav");
   if(!btn || !nav || btn.dataset.v94Menu) return;
   btn.dataset.v94Menu = "1";
+  btn.setAttribute("type", "button");
+  btn.setAttribute("aria-controls", nav.id || "mainNav");
+  btn.setAttribute("aria-label", "Ouvrir le menu");
   const sync = () => {
     const open = nav.classList.contains("open");
     document.body.classList.toggle("menu-open", open);
     btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+  };
+  const closeMenu = () => {
+    nav.classList.remove("open");
+    sync();
   };
   btn.addEventListener("click", () => setTimeout(sync, 0));
   nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    sync();
+    closeMenu();
   }));
+  window.addEventListener("resize", () => {
+    if(window.innerWidth > 980) closeMenu();
+  });
+  window.addEventListener("pageshow", sync);
   sync();
 }
 
