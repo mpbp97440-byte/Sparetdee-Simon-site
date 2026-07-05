@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "9.7.1-audio-off-fix";
+const MPBP_PUBLIC_VERSION = "9.8-share-clips";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -916,6 +916,56 @@ document.addEventListener("DOMContentLoaded", initMPBPAmbianceAudio);
 
 
 // V3.2.9 — MPBP440 Media Center controls
+function initMPBPShareButtons(){
+  document.querySelectorAll("[data-share-url]").forEach(button => {
+    if(button.dataset.shareReady) return;
+    button.dataset.shareReady = "1";
+    const feedback = button.closest(".v98-exclusive-clip, .exclusiveVideo, section")?.querySelector(".v98-share-feedback");
+    const writeFeedback = message => {
+      if(!feedback) return;
+      feedback.textContent = message;
+      clearTimeout(feedback._mpbpShareTimer);
+      feedback._mpbpShareTimer = setTimeout(() => { feedback.textContent = ""; }, 3200);
+    };
+    button.addEventListener("click", async () => {
+      const shareData = {
+        title: button.dataset.shareTitle || document.title,
+        text: button.dataset.shareText || "",
+        url: button.dataset.shareUrl
+      };
+      try{
+        if(navigator.share){
+          await navigator.share(shareData);
+          writeFeedback("Partage prêt");
+          return;
+        }
+      }catch(e){
+        if(e && e.name === "AbortError") return;
+      }
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          await navigator.clipboard.writeText(shareData.url);
+        }else{
+          const input = document.createElement("input");
+          input.value = shareData.url;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+          writeFeedback("Lien du clip copié");
+      }catch(e){
+        writeFeedback("Lien prêt : " + shareData.url);
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initMPBPShareButtons);
+
 function initMPBPTVControls(){
   const player = document.getElementById("mpbpTvPlayer");
   document.querySelectorAll("#mpbpTvList button[data-yt]").forEach(btn=>{

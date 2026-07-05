@@ -2032,3 +2032,62 @@ body{
 @media(prefers-reduced-motion:reduce){
   .mpbpIntroAudioChoice{display:none!important}
 }
+
+/* V9.8 - MPBP TV share clips and UX polish */
+.v98-exclusive-clip{
+  position:relative;
+  scroll-margin-top:calc(112px + env(safe-area-inset-top));
+  border-color:rgba(255,220,125,.40)!important;
+  background:
+    radial-gradient(circle at 18% 10%,rgba(216,184,79,.16),transparent 34%),
+    linear-gradient(145deg,rgba(216,184,79,.10),rgba(255,255,255,.028))!important;
+}
+.v98-exclusive-clip:before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(255,220,125,.10);
+  border-radius:inherit;
+  pointer-events:none;
+}
+.v98-clip-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:18px;
+}
+.v98-share-btn{
+  background:rgba(0,0,0,.30)!important;
+  color:#fff1bd!important;
+}
+.v98-share-feedback{
+  min-height:22px;
+  margin:10px 0 0;
+  color:#fff1bd;
+  font-weight:900;
+  letter-spacing:.2px;
+}
+.v98-next-clips{
+  border-color:rgba(255,220,125,.24)!important;
+}
+.v95-tv-body .siteVideo{
+  outline:1px solid rgba(255,220,125,.14);
+}
+.mpbpAudioControl{
+  box-shadow:0 14px 34px rgba(0,0,0,.32),0 0 18px rgba(212,175,55,.08)!important;
+}
+.mpbpAudioOffButton{
+  box-shadow:none;
+}
+@media(max-width:720px){
+  .v98-clip-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .v98-clip-actions .btn,
+  .v98-share-btn{
+    width:100%;
+    justify-content:center;
+  }
+}
