@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "9.4.1-music-nav-fix";
+const MPBP_PUBLIC_VERSION = "9.5-pro-layout";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -367,16 +367,17 @@ function setupV94MusicHub(tracks=[]){
   const artists = Array.from(new Set(tracks.map(t => safeText(t.artist || "MPBP440")).filter(Boolean))).sort((a,b)=>a.localeCompare(b, "fr"));
   const controls = document.createElement("div");
   controls.className = "v94-music-tools";
+  const isMusicPage = location.pathname.includes("/music/");
   controls.innerHTML = `
     <div class="v94-listen-now">
       <div>
         <p class="sup">Écouter maintenant</p>
-        <h3>Catalogue officiel</h3>
-        <p>35 titres Sparetdee Simon synchronisés avec pochettes, liens plateformes et recherche accentuée.</p>
+        <h3>${isMusicPage ? "Catalogue officiel" : "Aperçu Music Hub"}</h3>
+        <p>${isMusicPage ? "35 titres Sparetdee Simon et Je sais que tu sais, avec pochettes, liens plateformes et recherche accentuée." : "Une sélection du catalogue officiel. La page Music Hub contient les 36 cartes et tous les filtres."}</p>
       </div>
       <div class="v94-listen-actions">
-        <a class="btn primary" href="/mpbp-tv/index.html">Voir le clip L'Argent</a>
-        <a class="btn" href="/#radio">Ouvrir la radio</a>
+        <a class="btn primary" href="/music/index.html#morceaux">Ouvrir Music Hub</a>
+        <a class="btn" href="/mpbp-tv/index.html">Voir le clip L'Argent</a>
       </div>
     </div>
     <div class="v94-filter-row" aria-label="Filtres du catalogue">
@@ -422,7 +423,9 @@ function applyV94MusicFilters(){
   if(musicHubState.sort === "artist") indexed.sort((a,b)=>safeText(a.track.artist).localeCompare(safeText(b.track.artist), "fr"));
   if(musicHubState.sort === "recent") indexed.sort((a,b)=>trackDateSortValue(b.track) - trackDateSortValue(a.track));
   if(musicHubState.sort === "source") indexed.sort((a,b)=>a.index - b.index);
-  renderTracks(indexed.map(item => item.track));
+  const isMusicPage = location.pathname.includes("/music/");
+  const preview = !isMusicPage && !musicHubState.query ? indexed.slice(0, 6) : indexed;
+  renderTracks(preview.map(item => item.track));
 }
 
 function redirectLegacyMusicHash(){

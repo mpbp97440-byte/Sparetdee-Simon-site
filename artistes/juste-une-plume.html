@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Juste Une Plume — MPBP440</title>
-<link rel="stylesheet" href="artist.css?v=9.4.1-music-nav-fix">
+<link rel="stylesheet" href="artist.css?v=9.5-pro-layout">
 </head>
-<body data-artist="Juste Une Plume">
+<body class="v95-artist-body" data-artist="Juste Une Plume">
 <main class="artist-page">
   <header class="top">
     <a class="logo" href="../index.html">M.P.B.P 440</a>
@@ -29,6 +29,20 @@
     <p class="sup">Discographie</p>
     <h2>Sorties officielles</h2>
     <div id="discographyFilters" class="discography-filters"></div>
+    <article class="release-card-artist v95-static-release">
+      <img src="../assets/covers/je-sais-juste-une-plume.webp" alt="Je sais que tu sais">
+      <div>
+        <p class="sup">Single • Disponible</p>
+        <h3>Je sais que tu sais</h3>
+        <p>Titre officiel de Juste Une Plume, disponible sur les plateformes.</p>
+        <div class="release-links">
+          <a class="btn ghost small" href="https://open.spotify.com/artist/4LAJA1pkE8Z3OyAGFSWdT3?si=fypn9MRDSMO0dN3mAoSv4A" target="_blank" rel="noopener">Spotify</a>
+          <a class="btn ghost small" href="https://music.apple.com/fr/artist/juste-une-plume/6776260357" target="_blank" rel="noopener">Apple Music</a>
+          <a class="btn ghost small" href="https://link.deezer.com/s/33Abgbsu5jmfSOCNVpsFb" target="_blank" rel="noopener">Deezer</a>
+          <a class="btn ghost small" href="https://youtu.be/jkKGmZDQMtE?si=wWLZSqLFOA5320VT" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </article>
     <div id="artistDiscography"></div>
   </section>
 
@@ -43,7 +57,13 @@
   </section>
 <section class="section artistOfficialLinks"><p class="sup">Liens officiels</p><h2>Accès rapide</h2><div class="grid"><a class="card" href="../music/index.html#morceaux"><h3>Music Hub</h3><p>Retrouver les titres liés dans le catalogue officiel.</p></a><a class="card" href="../mpbp-tv/index.html"><h3>MPBP TV</h3><p>Voir les clips et contenus vidéo disponibles.</p></a><a class="card" href="../index.html#liens"><h3>Plateformes</h3><p>Ouvrir les liens officiels du label.</p></a></div></section>
 </main>
-<script src="artist.js?v=9.4.1-music-nav-fix"></script>
-<script src="../script.js?v=9.4.1-music-nav-fix"></script>
+<script src="artist.js?v=9.5-pro-layout"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>setTimeout(()=>{
+  const box=document.getElementById("artistDiscography");
+  if(document.querySelector(".v95-static-release") && box && /Aucune sortie/.test(box.textContent||"")) box.innerHTML="";
+},900));
+</script>
+<script src="../script.js?v=9.5-pro-layout"></script>
 </body>
 </html>
