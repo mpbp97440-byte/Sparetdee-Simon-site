@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "9.4-media-radio";
+const MPBP_PUBLIC_VERSION = "9.4.1-music-nav-fix";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -425,6 +425,13 @@ function applyV94MusicFilters(){
   renderTracks(indexed.map(item => item.track));
 }
 
+function redirectLegacyMusicHash(){
+  const path = location.pathname.replace(/\/index\.html$/,"/");
+  if((path === "/" || path === "") && cleanKey(location.hash) === "#morceaux"){
+    location.replace("/music/index.html#morceaux");
+  }
+}
+
 function setupAllMiniCountdowns(){
   document.querySelectorAll(".miniCountdown[data-date], .countdown[data-date]").forEach(box => {
     const target = new Date(box.dataset.date).getTime();
@@ -455,9 +462,11 @@ window.addEventListener("scroll",()=>{const b=document.getElementById("topBtn");
 document.getElementById("topBtn")?.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
 
 document.addEventListener("DOMContentLoaded", () => {
+  redirectLegacyMusicHash();
   setupAllMiniCountdowns();
   loadData();
 });
+window.addEventListener("hashchange", redirectLegacyMusicHash);
 
 function initMPBPIntro(){
   const intro = document.getElementById("mpbpIntro");
@@ -788,12 +797,12 @@ document.addEventListener("DOMContentLoaded",()=>{
       {keys:["sortie"],url:"/#sortie"},
       {keys:["a venir","à venir"],url:"/#avenir"},
       {keys:["evenements","événements","evenement","évènement"],url:"/#events"},
-      {keys:["morceaux","music hub"],url:"/#morceaux"},
+      {keys:["morceaux","music hub"],url:"/music/index.html#morceaux"},
       {keys:["mpbp tv"],url:"/mpbp-tv/index.html"},
       {keys:["radio"],url:"/#radio"},
       {keys:["actus","actualites","actualités"],url:"/#actus"},
       {keys:["artistes"],url:"/#artistes"},
-      {keys:["recherche"],url:"/#morceaux"},
+      {keys:["recherche"],url:"/music/index.html#morceaux"},
       {keys:["clips"],url:"/#clips"},
       {keys:["galerie"],url:"/#galerie"},
       {keys:["liens"],url:"/#liens"},
@@ -823,7 +832,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 })();
 
 // V6.4.8 — sorties/radio/nav public fixes
-document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="admin-440-mpbp-corp"]').forEach(el=>el.remove());const navMap=[["morceaux","#morceaux"],["mpbp tv","/mpbp-tv/index.html"],["actus","#actus"],["actualites","#actus"],["actualités","#actus"],["a venir","#avenir"],["à venir","#avenir"],["evenements","#events"],["événements","#events"]];document.querySelectorAll(".topbar nav a,#mainNav a").forEach(a=>{const t=(a.textContent||"").trim().toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");navMap.forEach(([k,u])=>{if(t===k.normalize("NFD").replace(/[\\u0300-\\u036f]/g,""))a.href=u;});});const radio=document.querySelector("#radio");if(radio&&!radio.querySelector("iframe")){radio.insertAdjacentHTML("beforeend",`<div class="spotifyRadioBox panel"><h3>Playlist MPBP440 sur Spotify</h3><p>Écoute la sélection officielle directement depuis le site.</p><iframe style="border-radius:18px" src="https://open.spotify.com/embed/artist/1893053126?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>`);}});
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="admin-440-mpbp-corp"]').forEach(el=>el.remove());const navMap=[["morceaux","/music/index.html#morceaux"],["recherche","/music/index.html#morceaux"],["mpbp tv","/mpbp-tv/index.html"],["actus","#actus"],["actualites","#actus"],["actualités","#actus"],["a venir","#avenir"],["à venir","#avenir"],["evenements","#events"],["événements","#events"]];document.querySelectorAll(".topbar nav a,#mainNav a").forEach(a=>{const t=(a.textContent||"").trim().toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");navMap.forEach(([k,u])=>{if(t===k.normalize("NFD").replace(/[\\u0300-\\u036f]/g,""))a.href=u;});});const radio=document.querySelector("#radio");if(radio&&!radio.querySelector("iframe")){radio.insertAdjacentHTML("beforeend",`<div class="spotifyRadioBox panel"><h3>Playlist MPBP440 sur Spotify</h3><p>Écoute la sélection officielle directement depuis le site.</p><iframe style="border-radius:18px" src="https://open.spotify.com/embed/artist/1893053126?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>`);}});
 
 
 
