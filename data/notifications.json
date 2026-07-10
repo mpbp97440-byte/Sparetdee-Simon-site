@@ -1,5 +1,15 @@
 [
   {
+    "id": "clip-je-sais-que-tu-sais-mpbp-tv",
+    "date": "2026-07-10",
+    "type": "clip",
+    "title": "Clip exclusif : Je sais que tu sais",
+    "message": "Le clip exclusif Je sais que tu sais de Juste Une Plume est disponible sur MPBP TV avec un lien de repartage officiel.",
+    "url": "/mpbp-tv/index.html#clip-je-sais-que-tu-sais",
+    "image": "assets/covers/je-sais-juste-une-plume.webp",
+    "priority": "high"
+  },
+  {
     "id": "live-tiktok-makeda-2026-07-11",
     "date": "2026-07-11",
     "type": "event",

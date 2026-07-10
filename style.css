@@ -1495,6 +1495,7 @@ body.intro-active{overflow:hidden}
 
 /* V9.5 - Pro layout public MPBP440 */
 :root{
+  --anchor-offset:112px;
   --v95-bg:#030302;
   --v95-panel:rgba(255,255,255,.055);
   --v95-panel-strong:rgba(255,255,255,.082);
@@ -1503,6 +1504,10 @@ body.intro-active{overflow:hidden}
   --v95-line:rgba(216,184,79,.24);
   --v95-muted:rgba(245,236,211,.76);
 }
+html{scroll-padding-top:var(--anchor-offset)}
+section[id],main[id],.v98-exclusive-clip{scroll-margin-top:var(--anchor-offset)}
+@media(max-width:720px){:root{--anchor-offset:96px}}
+
 body{
   background:
     radial-gradient(circle at 8% 4%,rgba(216,184,79,.18),transparent 26%),
@@ -1923,6 +1928,15 @@ body{
   transform:translateY(-1px);
   box-shadow:0 0 28px rgba(212,175,55,.22);
 }
+.mpbpIntroAudioChoice.is-locked{
+  opacity:0;
+  transform:translateY(8px) scale(.98);
+  pointer-events:none;
+  transition:opacity .32s ease,transform .32s ease;
+}
+.mpbpIntroAudioChoice button:disabled{
+  cursor:default;
+}
 .mpbpAudioControl{
   min-height:44px;
   max-width:min(520px,calc(100vw - 24px))!important;
@@ -2089,6 +2103,19 @@ body{
 }
 .v95-tv-body .siteVideo{
   outline:1px solid rgba(255,220,125,.14);
+}
+.siteVideoPortrait{
+  max-height:min(76vh,760px);
+  aspect-ratio:480/854;
+  object-fit:contain;
+  justify-self:center;
+}
+.v10-jup-exclusive{
+  border-color:rgba(255,220,125,.46)!important;
+}
+.jupExclusiveClip .release-card-artist img{
+  object-fit:contain;
+  background:#050505;
 }
 .mpbpAudioControl{
   box-shadow:0 14px 34px rgba(0,0,0,.32),0 0 18px rgba(212,175,55,.08)!important;

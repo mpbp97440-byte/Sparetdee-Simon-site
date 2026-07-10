@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Juste Une Plume — Artiste officielle | MPBP440">
 <meta name="twitter:description" content="Découvre Juste Une Plume, artiste du label MPBP440, ses sorties, son univers et ses liens officiels.">
 <meta name="twitter:image" content="https://www.mpbp440.com/assets/artists/juste-une-plume-profile.webp">
-<link rel="stylesheet" href="artist.css?v=events-cleanup-202607">
+<link rel="stylesheet" href="artist.css?v=jup-clip-intro-fix-202607">
 </head>
 <body class="v95-artist-body" data-artist="Juste Une Plume">
 <main class="artist-page">
@@ -38,6 +38,20 @@
       <div class="tags"><span>Autrice</span><span>Compositrice</span><span>Interprète</span><span>Sensibilité</span><span>Humanité</span></div>
       <button class="btn" onclick="addArtistFavorite('Juste Une Plume', 'Artiste MPBP440')">Ajouter aux favoris</button>
     </div>
+  </section>
+
+  <section class="section jupExclusiveClip">
+    <p class="sup">Nouveau clip exclusif</p>
+    <h2>Je sais que tu sais</h2>
+    <article class="release-card-artist">
+      <img src="../assets/covers/je-sais-juste-une-plume.webp" alt="Je sais que tu sais - clip exclusif">
+      <div>
+        <p class="sup">Clip exclusif MPBP TV</p>
+        <h3>Je sais que tu sais</h3>
+        <p>Une pièce visuelle sensible et directe, à découvrir dans la sélection clips exclusifs du label.</p>
+        <a class="btn" href="../mpbp-tv/index.html#clip-je-sais-que-tu-sais">Voir le clip sur MPBP TV</a>
+      </div>
+    </article>
   </section>
 
   <section class="section">
@@ -72,13 +86,13 @@
   </section>
 <section class="section artistOfficialLinks"><p class="sup">Liens officiels</p><h2>Accès rapide</h2><div class="grid"><a class="card" href="../music/index.html#morceaux"><h3>Music Hub</h3><p>Retrouver les titres liés dans le catalogue officiel.</p></a><a class="card" href="../mpbp-tv/index.html"><h3>MPBP TV</h3><p>Voir les clips et contenus vidéo disponibles.</p></a><a class="card" href="../index.html#liens"><h3>Plateformes</h3><p>Ouvrir les liens officiels du label.</p></a></div></section>
 </main>
-<script src="artist.js?v=events-cleanup-202607"></script>
+<script src="artist.js?v=jup-clip-intro-fix-202607"></script>
 <script>
 document.addEventListener("DOMContentLoaded",()=>setTimeout(()=>{
   const box=document.getElementById("artistDiscography");
   if(document.querySelector(".v95-static-release") && box && /Aucune sortie/.test(box.textContent||"")) box.innerHTML="";
 },900));
 </script>
-<script src="../script.js?v=events-cleanup-202607"></script>
+<script src="../script.js?v=jup-clip-intro-fix-202607"></script>
 </body>
 </html>

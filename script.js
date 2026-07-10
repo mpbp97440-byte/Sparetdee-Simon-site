@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "events-cleanup-202607";
+const MPBP_PUBLIC_VERSION = "jup-clip-intro-fix-202607";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -88,6 +88,47 @@ function itemLinks(item={}, data={}){
   const mainArtist = cleanKey(data.artist);
   const canUseGlobalLinks = !item.artist || itemArtist === mainArtist;
   return mergeLinks(canUseGlobalLinks ? data.socials : {}, item.links || {});
+}
+
+function getAnchorOffset(){
+  const topbar = document.querySelector(".topbar");
+  const topbarHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+  const safeGap = window.innerWidth <= 720 ? 18 : 24;
+  return Math.ceil(topbarHeight + safeGap);
+}
+
+function scrollToAnchorTarget(target, updateHash=true){
+  if(!target) return false;
+  const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getAnchorOffset());
+  document.body.classList.remove("menu-open");
+  document.getElementById("mainNav")?.classList.remove("open");
+  window.scrollTo({top, behavior:"smooth"});
+  if(updateHash && target.id){
+    history.pushState(null, "", `#${target.id}`);
+  }
+  return true;
+}
+
+function initAnchorScrollFix(){
+  document.addEventListener("click", event => {
+    const link = event.target.closest?.("a[href]");
+    if(!link) return;
+    const rawHref = link.getAttribute("href") || "";
+    if(!rawHref.includes("#")) return;
+    let url;
+    try{ url = new URL(rawHref, window.location.href); }catch(e){ return; }
+    if(url.origin !== window.location.origin || url.pathname !== window.location.pathname) return;
+    const id = decodeURIComponent(url.hash.slice(1));
+    if(!id) return;
+    const target = document.getElementById(id);
+    if(!target) return;
+    event.preventDefault();
+    scrollToAnchorTarget(target);
+  });
+  if(window.location.hash){
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    setTimeout(() => scrollToAnchorTarget(document.getElementById(id), false), 450);
+  }
 }
 
 function valueForSearch(value){
@@ -483,6 +524,7 @@ document.getElementById("topBtn")?.addEventListener("click",()=>scrollTo({top:0,
 
 document.addEventListener("DOMContentLoaded", () => {
   redirectLegacyMusicHash();
+  initAnchorScrollFix();
   setupAllMiniCountdowns();
   loadData();
 });
@@ -521,22 +563,31 @@ function initMPBPIntro(){
   const skip = document.getElementById("mpbpIntroSkip");
   const soundOn = document.getElementById("mpbpIntroSoundOn");
   const soundOff = document.getElementById("mpbpIntroSoundOff");
+  const audioChoice = document.querySelector(".mpbpIntroAudioChoice");
   const close = () => {
     stopParticles();
     document.body.classList.remove("intro-active");
     finish();
   };
-  soundOn?.addEventListener("click", () => {
+  const lockAudioChoice = () => {
+    audioChoice?.classList.add("is-locked");
+    [soundOn, soundOff].forEach(button => {
+      if(button) button.disabled = true;
+    });
+  };
+  soundOn?.addEventListener("click", event => {
+    event.preventDefault();
+    lockAudioChoice();
     window.MPBPAudio?.startIntroJingle?.();
-    close();
   }, {once:true});
-  soundOff?.addEventListener("click", () => {
+  soundOff?.addEventListener("click", event => {
+    event.preventDefault();
+    lockAudioChoice();
     try{
       localStorage.setItem("mpbpAmbianceEnabled", "0");
       localStorage.setItem("mpbpAmbianceMode", "off");
     }catch(e){}
     window.MPBPAudio?.stopAllAudio?.();
-    close();
   }, {once:true});
   skip?.addEventListener("click", close, {once:true});
   setTimeout(close, 7000);
