@@ -1,5 +1,5 @@
-/* MPBP440 Service Worker - JUP clip intro fix */
-const MPBP_CACHE="mpbp440-v10-jup-clip-intro-fix-202607";
+/* MPBP440 Service Worker - BrainRot release and Makeda double pre-release */
+const MPBP_CACHE="mpbp440-v10-brainrot-release-makeda-double-202607";
 const PRECACHE=["/","/index.html","/style.css","/script.js","/manifest.webmanifest","/data.json","/data/notifications.json","/data/countdowns.json","/data/events.json","/data/releases.json","/music/index.html","/mpbp-tv/index.html","/artistes/makeda-muse.html","/members/index.html","/telechargements/index.html"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(MPBP_CACHE).then(c=>c.addAll(PRECACHE)).catch(()=>{}))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==MPBP_CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});

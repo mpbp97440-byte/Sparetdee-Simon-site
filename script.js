@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "jup-clip-intro-fix-202607";
+const MPBP_PUBLIC_VERSION = "brainrot-release-makeda-double-202607";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -230,7 +230,7 @@ function renderNextRelease(data={}){
   const candidates = releases
     .filter(item => item.targetDate.getTime() >= Date.now())
     .sort((a,b)=>a.targetDate - b.targetDate);
-  const release = releases.find(item => cleanKey(item.title).includes("brainrot society 2.0")) || candidates[0];
+  const release = candidates[0];
 
   if(!release){
     box.innerHTML = `<div class="nextReleaseBody"><span class="status-pill">Disponible maintenant</span><h3>Disponible maintenant</h3></div>`;
@@ -247,7 +247,7 @@ function renderNextRelease(data={}){
       <span class="status-pill">${release.label || "Prochaine sortie"}</span>
       <h3>${release.title}</h3>
       <p class="sup">${release.artist || "MPBP440"} • ${formatReleaseDate(release.date, release.targetDate)}</p>
-      <p>${release.description || "Pré-sortie officielle sur toutes les plateformes le 11/07/2026"}</p>
+      <p>${release.description || "Prochaine sortie officielle sur toutes les plateformes."}</p>
       <div class="countdown nextReleaseTimer" data-date="${release.targetDate.toISOString()}">
         <div><strong>00</strong><span>Jours</span></div>
         <div><strong>00</strong><span>Heures</span></div>

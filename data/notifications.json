@@ -1,5 +1,15 @@
 [
   {
+    "id": "makeda-double-pre-release-2026-07-25",
+    "date": "2026-07-11",
+    "type": "sortie",
+    "title": "Je laisse la porte ouverte / J'existe arrive le 25 juillet",
+    "message": "Makeda Muse prépare une double pré-sortie officielle le 25 juillet 2026 : Je laisse la porte ouverte et J'existe.",
+    "url": "/#avenir",
+    "image": "assets/releases/makeda-muse/double-pre-sortie-makeda-muse-2026-07-25.png",
+    "priority": "high"
+  },
+  {
     "id": "clip-je-sais-que-tu-sais-mpbp-tv",
     "date": "2026-07-10",
     "type": "clip",

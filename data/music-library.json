@@ -3,12 +3,29 @@
     "id": "brainrot-society-2-0",
     "title": "BrainRot Society 2.0",
     "artist": "Sparetdee Simon",
-    "date": "11/07/2026",
-    "status": "À venir",
-    "cover": "assets/covers/brainrot-society-2-0-pre-sortie.webp",
+    "date": "2026-07-11",
+    "status": "Disponible",
+    "cover": "assets/releases/sparetdee-simon/brainrot-society-2-0-cover.png",
     "type": "Single",
-    "links": {},
-    "description": "Pré-sortie officielle prévue le 11/07/2026."
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/1zZE6vLQL9l6WvJs9BuQWs?si=cV6LysYkTLqWw4O2gvOQhA",
+      "deezer": "https://link.deezer.com/s/33NPOv6Ur6tfFVXhiyoty",
+      "apple": "https://music.apple.com/fr/album/brainrot-society-2-0/6786613684?i=6786613688",
+      "youtube": "https://youtu.be/Vrf9SCzQjGA?si=cxHmHoCD-gdnxT_r"
+    },
+    "description": "BrainRot Society 2.0 - titre officiel de Sparetdee Simon, disponible maintenant sur les plateformes.",
+    "keywords": [
+      "sparetdee simon",
+      "brainrot society 2.0",
+      "brainrot",
+      "mpbp440",
+      "single",
+      "disponible",
+      "spotify",
+      "deezer",
+      "apple music",
+      "youtube music"
+    ]
   },
   {
     "id": "le-systeme",

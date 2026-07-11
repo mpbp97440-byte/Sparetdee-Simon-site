@@ -1,13 +1,5 @@
 [
   {
-    "title": "BrainRot Society 2.0",
-    "artist": "Sparetdee Simon",
-    "date": "2026-07-11T00:00:00+02:00",
-    "label": "Pré-sortie officielle",
-    "description": "Pré-sortie officielle prévue le 11/07/2026 sur toutes les plateformes.",
-    "cover": "assets/covers/brainrot-society-2-0-pre-sortie.webp"
-  },
-  {
     "id": "makeda-jour-de-pluie",
     "title": "Jour de pluie",
     "artist": "Makeda Muse",
@@ -44,6 +36,29 @@
       "mpbp440",
       "pre-sortie",
       "cle de sol"
+    ]
+  },
+  {
+    "id": "makeda-double-pre-sortie-2026-07-25",
+    "title": "Je laisse la porte ouverte / J'existe",
+    "artist": "Makeda Muse",
+    "date": "2026-07-25T00:00:00+02:00",
+    "label": "Double pré-sortie officielle",
+    "status": "Pré-sortie / Bientôt disponible",
+    "type": "Double pré-sortie",
+    "description": "Double pré-sortie officielle de Makeda Muse : Je laisse la porte ouverte et J'existe, disponible le 25 juillet 2026 sur toutes les plateformes.",
+    "cover": "assets/releases/makeda-muse/double-pre-sortie-makeda-muse-2026-07-25.png",
+    "links": {},
+    "keywords": [
+      "makeda muse",
+      "je laisse la porte ouverte",
+      "j'existe",
+      "j existe",
+      "double pre-sortie",
+      "pré-sortie",
+      "mpbp440",
+      "25 juillet 2026",
+      "clé de sol"
     ]
   }
 ]
