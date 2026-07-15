@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "homepage-restructure-v11-202607";
+const MPBP_PUBLIC_VERSION = "mobile-hotfix-v11-202607";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){

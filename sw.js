@@ -1,5 +1,5 @@
-/* MPBP440 Service Worker - homepage restructure V11 */
-const MPBP_CACHE="mpbp440-v11-homepage-restructure-202607";
+/* MPBP440 Service Worker - mobile hotfix V11.1 */
+const MPBP_CACHE="mpbp440-v11-mobile-hotfix-202607";
 const PRECACHE=["/","/index.html","/style.css","/script.js","/manifest.webmanifest","/data.json","/data/news.json","/data/notifications.json","/data/countdowns.json","/data/events.json","/data/releases.json","/music/index.html","/mpbp-tv/index.html","/artistes/makeda-muse.html","/members/index.html","/telechargements/index.html"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(MPBP_CACHE).then(c=>c.addAll(PRECACHE)).catch(()=>{}))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==MPBP_CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});

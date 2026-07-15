@@ -2584,3 +2584,217 @@ body{
   }
 }
 
+/* V11.1 - mobile/iPhone homepage hotfix */
+@media(max-width:768px){
+  html,
+  body{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    height:auto!important;
+    min-height:100%!important;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  body{
+    padding-bottom:calc(98px + env(safe-area-inset-bottom))!important;
+  }
+
+  .noise,
+  .hero::before,
+  .hero::after,
+  .heroDim{
+    pointer-events:none!important;
+  }
+
+  .topbar{
+    position:fixed!important;
+    top:calc(8px + env(safe-area-inset-top))!important;
+    left:calc(8px + env(safe-area-inset-left))!important;
+    right:calc(8px + env(safe-area-inset-right))!important;
+    width:auto!important;
+    max-width:calc(100vw - 16px)!important;
+    min-height:58px!important;
+    z-index:4200!important;
+    pointer-events:auto!important;
+  }
+
+  .menuBtn,
+  .mpbpHeaderActions,
+  .mpbpNotificationsButton{
+    position:relative!important;
+    z-index:4300!important;
+    pointer-events:auto!important;
+  }
+
+  .hero{
+    display:block!important;
+    min-height:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:calc(104px + env(safe-area-inset-top)) 14px 34px!important;
+    overflow:visible!important;
+    align-items:initial!important;
+    isolation:isolate;
+  }
+
+  .heroGrid{
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+    align-items:start!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+
+  .heroGrid > div:first-child{
+    min-width:0!important;
+    position:relative!important;
+    z-index:3!important;
+  }
+
+  .hero .sup{
+    font-size:11px!important;
+    letter-spacing:2px!important;
+  }
+
+  .hero h1{
+    font-size:clamp(54px,19vw,82px)!important;
+    line-height:.86!important;
+    letter-spacing:1px!important;
+    margin:12px 0 14px!important;
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+  }
+
+  .tagline{
+    max-width:100%!important;
+    margin:0!important;
+    font-size:clamp(18px,6vw,24px)!important;
+    line-height:1.28!important;
+  }
+
+  .heroButtons{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    width:100%!important;
+    margin-top:18px!important;
+    position:relative!important;
+    z-index:4!important;
+  }
+
+  .heroButtons .btn{
+    width:100%!important;
+    min-height:46px!important;
+    pointer-events:auto!important;
+  }
+
+  .statsStrip{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin-top:18px!important;
+  }
+
+  .premiumCard{
+    width:min(240px,72vw)!important;
+    margin:8px auto 0!important;
+    justify-self:center!important;
+    pointer-events:none!important;
+  }
+
+  .premiumBadge{
+    display:none!important;
+  }
+
+  .v11-home{
+    position:relative!important;
+    z-index:1!important;
+    margin-top:0!important;
+    padding-top:0!important;
+  }
+
+  .v11-quick-access{
+    position:relative!important;
+    z-index:2!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+    margin-top:0!important;
+    pointer-events:auto!important;
+  }
+
+  .v11-quick-access span{
+    grid-column:1/-1!important;
+  }
+
+  .v11-quick-access a{
+    min-height:46px!important;
+    pointer-events:auto!important;
+  }
+
+  .section,
+  .panel,
+  .v11ReleaseCard,
+  .homeExclusiveClip,
+  .artistCard,
+  .mpbpNewsCard{
+    position:relative!important;
+  }
+
+  a,
+  button,
+  .btn,
+  input,
+  select,
+  textarea,
+  video,
+  audio{
+    pointer-events:auto!important;
+  }
+
+  .mpbpAudioControl{
+    left:10px!important;
+    right:10px!important;
+    bottom:calc(10px + env(safe-area-inset-bottom))!important;
+    width:auto!important;
+    max-width:none!important;
+    z-index:1500!important;
+    pointer-events:none!important;
+  }
+
+  .mpbpAudioControl button,
+  .mpbpAudioControl a,
+  .mpbpAudioControl input,
+  .mpbpAudioControl label,
+  .mpbpAudioControl .mpbpAudioButton,
+  .mpbpAudioControl .mpbpAudioOffButton{
+    pointer-events:auto!important;
+  }
+}
+
+@media(min-width:769px) and (max-width:900px){
+  .hero{
+    min-height:auto!important;
+    height:auto!important;
+    overflow:visible!important;
+    padding-top:120px!important;
+    padding-bottom:44px!important;
+  }
+
+  .heroGrid{
+    grid-template-columns:1fr!important;
+    align-items:start!important;
+  }
+
+  .v11-quick-access{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+
+  .v11-quick-access span{
+    grid-column:1/-1!important;
+  }
+}
+
