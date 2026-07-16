@@ -5,13 +5,19 @@
   "scope": "/",
   "display": "standalone",
   "background_color": "#050505",
-  "theme_color": "#f4d35e",
+  "theme_color": "#050505",
   "icons": [
     {
-      "src": "/assets/brand/mpbp440-official-logo.jpg",
+      "src": "/assets/icons/mpbp440-icon.svg",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/mpbp440-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
