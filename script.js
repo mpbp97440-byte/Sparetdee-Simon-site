@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "dois-je-me-taire-v11-202607";
+const MPBP_PUBLIC_VERSION = "countdown-notifications-hotfix-v11-202607";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -197,10 +197,61 @@ function countdownParts(target){
   return [days, hours, minutes, seconds];
 }
 
+function countdownState(target, now = Date.now()){
+  const timestamp = target instanceof Date ? target.getTime() : new Date(target).getTime();
+  if(!timestamp || isNaN(timestamp)) return null;
+  const remaining = timestamp - now;
+  if(remaining <= 0) return {available:true, parts:[0,0,0,0], remaining:0};
+  let diff = remaining;
+  const days = Math.floor(diff / 86400000); diff %= 86400000;
+  const hours = Math.floor(diff / 3600000); diff %= 3600000;
+  const minutes = Math.floor(diff / 60000); diff %= 60000;
+  const seconds = Math.floor(diff / 1000);
+  return {available:false, parts:[days, hours, minutes, seconds], remaining};
+}
+
 function formatReleaseDate(value, targetDate){
-  if(value && !String(value).includes("T")) return value;
-  if(!targetDate) return value || "";
-  return targetDate.toLocaleDateString("fr-FR", {day:"2-digit", month:"2-digit", year:"numeric"});
+  const date = targetDate || parseReleaseDate(value);
+  if(!date) return value || "";
+  return date.toLocaleDateString("fr-FR", {day:"numeric", month:"long", year:"numeric"});
+}
+
+function updateCountdownElement(box, target, now = Date.now()){
+  const state = countdownState(target, now);
+  if(!state) return true;
+  const values = box.querySelectorAll("strong");
+  state.parts.forEach((value,index)=>{
+    if(values[index]) values[index].textContent = String(value).padStart(2,"0");
+  });
+  const status = box.closest(".nextReleaseBody, .time-body, .release-card-artist, section, article")?.querySelector(".nextReleaseStatus,.countdownStatus");
+  if(status) status.textContent = state.available ? "Disponible maintenant" : "";
+  box.classList.toggle("is-available", state.available);
+  return state.available;
+}
+
+function initCountdownElement(box){
+  const dateValue = box.dataset.date || box.dataset.countdown;
+  const target = parseReleaseDate(dateValue);
+  if(!target) return;
+  if(box._mpbpCountdownInterval){
+    clearInterval(box._mpbpCountdownInterval);
+    box._mpbpCountdownInterval = null;
+  }
+  const tick = () => {
+    const available = updateCountdownElement(box, target);
+    if(available && box._mpbpCountdownInterval){
+      clearInterval(box._mpbpCountdownInterval);
+      box._mpbpCountdownInterval = null;
+    }
+  };
+  tick();
+  if(target.getTime() > Date.now()){
+    box._mpbpCountdownInterval = setInterval(tick, 1000);
+  }
+}
+
+function initAllCountdowns(root=document){
+  root.querySelectorAll(".miniCountdown[data-date], .countdown[data-date], [data-countdown]").forEach(initCountdownElement);
 }
 
 function parseEventDate(item={}){
@@ -258,22 +309,7 @@ function renderNextRelease(data={}){
       <p class="nextReleaseStatus" aria-live="polite"></p>
     </div>`;
 
-  const timer = box.querySelector(".nextReleaseTimer");
-  const values = timer.querySelectorAll("strong");
-  const status = box.querySelector(".nextReleaseStatus");
-  function tick(){
-    if(release.targetDate.getTime() <= Date.now()){
-      status.textContent = "Disponible maintenant";
-      values.forEach(value => value.textContent = "00");
-      return;
-    }
-    countdownParts(release.targetDate).forEach((value,index)=>{
-      if(values[index]) values[index].textContent = String(value).padStart(2,"0");
-    });
-    status.textContent = "";
-  }
-  tick();
-  setInterval(tick, 1000);
+  initAllCountdowns(box);
 }
 
 async function loadData(){
@@ -333,12 +369,14 @@ async function loadData(){
           <div class="time-body">
             <p class="sup">${x.artist || "MPBP 440"} &bull; Etape ${i+1}</p>
             <h3>${x.title}</h3>
-            <p><strong>${x.date || ""}</strong></p>
+            <p><strong>${formatReleaseDate(x.date, target)}</strong></p>
             <p>${x.description || ""}</p>
             ${timer}
+            ${target ? `<p class="countdownStatus" aria-live="polite"></p>` : ""}
           </div>
         </article>`;
       }).join("") : emptyStateHtml("Contenu bientot disponible : les prochaines sorties seront annoncees ici.", "#morceaux", "Voir les morceaux");
+      initAllCountdowns(upcomingGrid);
     }
 
     const eventsGrid = document.getElementById("eventsGrid");
@@ -524,24 +562,6 @@ function redirectLegacyMusicHash(){
   }
 }
 
-function setupAllMiniCountdowns(){
-  document.querySelectorAll(".miniCountdown[data-date], .countdown[data-date]").forEach(box => {
-    const target = new Date(box.dataset.date).getTime();
-    const values = box.querySelectorAll("strong");
-    function tick(){
-      if(!target || isNaN(target)) return;
-      let diff = Math.max(0, target - Date.now());
-      const d = Math.floor(diff / 86400000); diff %= 86400000;
-      const h = Math.floor(diff / 3600000); diff %= 3600000;
-      const m = Math.floor(diff / 60000); diff %= 60000;
-      const s = Math.floor(diff / 1000);
-      [d,h,m,s].forEach((v,i)=>{ if(values[i]) values[i].textContent = String(v).padStart(2,"0"); });
-    }
-    tick();
-    setInterval(tick, 1000);
-  });
-}
-
 const primaryMenuBtn = document.getElementById("menuBtn");
 if(primaryMenuBtn && !primaryMenuBtn.dataset.v647){
   primaryMenuBtn.dataset.v647 = "1";
@@ -556,7 +576,7 @@ document.getElementById("topBtn")?.addEventListener("click",()=>scrollTo({top:0,
 document.addEventListener("DOMContentLoaded", () => {
   redirectLegacyMusicHash();
   initAnchorScrollFix();
-  setupAllMiniCountdowns();
+  initAllCountdowns();
   loadData();
 });
 window.addEventListener("hashchange", redirectLegacyMusicHash);
@@ -1028,6 +1048,8 @@ async function initMPBPNotifications(){
   const storageKey = "mpbpNotificationsRead";
   const openedKey = "mpbpNotificationsOpened";
   const nativeShownKey = "mpbpNotificationsNativeShown";
+  const consentKey = "mpbpNotificationsConsent";
+  const originalTitle = document.title;
   const notificationUrl = `/data/notifications.json?v=${MPBP_PUBLIC_VERSION}`;
   let notifications = [];
 
@@ -1055,6 +1077,14 @@ async function initMPBPNotifications(){
 
   function saveNativeShown(ids){
     localStorage.setItem(nativeShownKey, JSON.stringify(Array.from(new Set(ids))));
+  }
+
+  function notificationConsent(){
+    return localStorage.getItem(consentKey) || "unknown";
+  }
+
+  function saveNotificationConsent(value){
+    localStorage.setItem(consentKey, value);
   }
 
   function labelForType(type){
@@ -1089,8 +1119,9 @@ async function initMPBPNotifications(){
     </div>
     <div class="mpbpNotificationsTools">
       <button type="button" class="mpbpNotificationsReadAll">Tout marquer comme lu</button>
-      <button type="button" class="mpbpNotificationsPermission" hidden>Autoriser les notifications locales</button>
+      <button type="button" class="mpbpNotificationsPermission" hidden>Activer les notifications MPBP440</button>
     </div>
+    <p class="mpbpNotificationsConsentText" hidden>Recevez les nouvelles sorties, clips exclusifs et actualites importantes de MPBP440. Vous pourrez desactiver cette option depuis les reglages de votre appareil.</p>
     <div class="mpbpNotificationsList" aria-live="polite"><p class="mpbpNotificationsEmpty">Chargement des nouveautés...</p></div>
   </div>`;
   document.body.appendChild(panel);
@@ -1101,10 +1132,9 @@ async function initMPBPNotifications(){
   const closeButton = panel.querySelector(".mpbpNotificationsClose");
   const readAllButton = panel.querySelector(".mpbpNotificationsReadAll");
   const permissionButton = panel.querySelector(".mpbpNotificationsPermission");
+  const consentText = panel.querySelector(".mpbpNotificationsConsentText");
 
-  if("Notification" in window && Notification.permission === "default"){
-    permissionButton.hidden = false;
-  }
+  updatePermissionUi();
 
   function unreadItems(){
     const read = new Set(readIds());
@@ -1117,6 +1147,40 @@ async function initMPBPNotifications(){
     badge.hidden = count === 0;
     button.classList.toggle("has-unread", count > 0);
     button.setAttribute("aria-label", count ? `Ouvrir les notifications, ${count} non lue${count > 1 ? "s" : ""}` : "Ouvrir les notifications");
+    updateAppBadge(count);
+  }
+
+  async function updateAppBadge(count){
+    document.title = count > 0 ? `(${count}) ${originalTitle}` : originalTitle;
+    try{
+      if(count > 0 && "setAppBadge" in navigator){
+        await navigator.setAppBadge(count);
+      }else if(count === 0 && "clearAppBadge" in navigator){
+        await navigator.clearAppBadge();
+      }
+    }catch(e){}
+  }
+
+  function updatePermissionUi(){
+    if(!("Notification" in window)){
+      permissionButton.hidden = true;
+      return;
+    }
+    const consent = notificationConsent();
+    if(Notification.permission === "granted" && consent === "granted"){
+      permissionButton.hidden = true;
+      return;
+    }
+    permissionButton.hidden = false;
+    if(Notification.permission === "denied" || consent === "denied"){
+      permissionButton.textContent = "Notifications bloquees";
+      permissionButton.disabled = true;
+      permissionButton.title = "Reactivez les notifications depuis les reglages du navigateur ou de l'appareil.";
+      return;
+    }
+    permissionButton.disabled = false;
+    permissionButton.textContent = "Activer les notifications MPBP440";
+    permissionButton.title = "";
   }
 
   function renderList(){
@@ -1148,6 +1212,7 @@ async function initMPBPNotifications(){
     panel.setAttribute("aria-hidden", "false");
     button.setAttribute("aria-expanded", "true");
     localStorage.setItem(openedKey, new Date().toISOString());
+    updatePermissionUi();
   }
 
   function closePanel(){
@@ -1183,18 +1248,33 @@ async function initMPBPNotifications(){
   }
 
   async function maybeShowLocalNotification(){
-    if(!("Notification" in window) || Notification.permission !== "granted") return;
+    if(!("Notification" in window) || Notification.permission !== "granted" || notificationConsent() !== "granted") return;
     const unread = unreadItems().filter(item => cleanKey(item.priority) === "high");
     if(!unread.length) return;
     const shown = new Set(seenNativeIds());
     const next = unread.find(item => !shown.has(item.id));
     if(!next) return;
     try{
-      new Notification(next.title || "MPBP440", {
+      const options = {
         body: next.message || "Nouvelle notification MPBP440",
         icon: "/assets/brand/mpbp440-official-logo.jpg",
-        tag: next.id
-      });
+        badge: "/assets/icons/mpbp440-icon.svg",
+        tag: next.id,
+        data: {url: next.url || "/"},
+        renotify: false
+      };
+      if(navigator.serviceWorker?.ready){
+        const registration = await navigator.serviceWorker.ready;
+        if(registration.showNotification){
+          await registration.showNotification(next.title || "MPBP440", options);
+        }else{
+          const notification = new Notification(next.title || "MPBP440", options);
+          notification.onclick = () => window.open(options.data.url, "_blank", "noopener");
+        }
+      }else{
+        const notification = new Notification(next.title || "MPBP440", options);
+        notification.onclick = () => window.open(options.data.url, "_blank", "noopener");
+      }
       shown.add(next.id);
       saveNativeShown(Array.from(shown));
     }catch(e){}
@@ -1213,8 +1293,16 @@ async function initMPBPNotifications(){
   readAllButton.addEventListener("click", markAllRead);
   permissionButton.addEventListener("click", async () => {
     if(!("Notification" in window)) return;
+    if(consentText) consentText.hidden = false;
+    if(Notification.permission === "denied"){
+      saveNotificationConsent("denied");
+      updatePermissionUi();
+      return;
+    }
     const result = await Notification.requestPermission();
+    saveNotificationConsent(result === "granted" ? "granted" : "denied");
     permissionButton.hidden = result !== "default";
+    updatePermissionUi();
     if(result === "granted") maybeShowLocalNotification();
   });
   document.addEventListener("keydown", event => {
@@ -1235,6 +1323,22 @@ async function initMPBPNotifications(){
 }
 
 document.addEventListener("DOMContentLoaded", initMPBPNotifications);
+
+function initPwaInstallHint(){
+  const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+  const isStandalone = window.matchMedia?.("(display-mode: standalone)")?.matches || navigator.standalone;
+  if(!isAppleMobile || isStandalone || localStorage.getItem("mpbpPwaHintDismissed") === "1") return;
+  const hint = document.createElement("div");
+  hint.className = "mpbpPwaHint";
+  hint.innerHTML = `<p>Sur iPhone, ajoutez MPBP440 à l'écran d'accueil pour profiter pleinement de l'application et de ses notifications.</p><button type="button" aria-label="Fermer l'aide PWA">OK</button>`;
+  hint.querySelector("button").addEventListener("click", () => {
+    localStorage.setItem("mpbpPwaHintDismissed", "1");
+    hint.remove();
+  });
+  document.body.appendChild(hint);
+}
+
+document.addEventListener("DOMContentLoaded", initPwaInstallHint);
 
 function labelForNewsType(type){
   const labels = {clip:"Clip", sortie:"Sortie", event:"Événement", evenement:"Événement", artiste:"Artiste", annonce:"Annonce"};
