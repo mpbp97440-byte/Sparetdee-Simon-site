@@ -28,8 +28,15 @@
 {"@context":"https://schema.org","@type":"WebSite","name":"MPBP440","url":"https://www.mpbp440.com/","inLanguage":"fr-FR"}
 </script>
 <link rel="stylesheet" href="/style.css?v=countdown-notifications-hotfix-v11-202607">
+<link rel="stylesheet" href="/assets/css/v12-tokens.css?v=12-lot1">
+<link rel="stylesheet" href="/assets/css/v12-base.css?v=12-lot1">
+<link rel="stylesheet" href="/assets/css/v12-components.css?v=12-lot1">
+<link rel="stylesheet" href="/assets/css/v12-layout.css?v=12-lot1">
+<link rel="stylesheet" href="/assets/css/v12-responsive.css?v=12-lot1">
+<script src="/assets/js/v12-navigation.js?v=12-lot1" defer></script>
 </head>
-<body class="v95-public-home">
+<body class="v95-public-home v12-shell">
+<a class="v12-skip-link" href="#contenu-principal">Aller au contenu principal</a>
 <div class="mpbpIntro mpbpIntroV92" id="mpbpIntro" aria-label="Animation de lancement MPBP440">
   <img class="mpbpIntroUniverse" src="/assets/intro/mpbp-universe.webp" alt="" aria-hidden="true">
   <canvas class="mpbpIntroCanvas" id="mpbpIntroCanvas" aria-hidden="true"></canvas>
@@ -70,29 +77,56 @@
 </div>
 <div class="noise"></div>
 <button id="topBtn">↑</button>
-<header class="topbar">
-  <a class="brand" href="#home"><img src="assets/brand/mpbp440-official-logo.jpg" alt="MPBP 440"><span>M.P.B.P 440</span></a>
-  <button class="menuBtn" id="menuBtn">☰</button>
-  <nav id="mainNav">
-    <a href="#home">Accueil</a>
-    <a href="#label">Label</a>
-    <a href="#sortie">Sortie</a>
-    <a href="#avenir">À venir</a>
-    <a href="#events">Événements</a>
-    <a href="/music/index.html#morceaux">Morceaux</a>
+<header class="topbar v12-site-header" data-v12-header>
+  <a class="brand v12-brand" href="/#home"><img src="/assets/brand/mpbp440-official-logo.jpg" alt=""><span>M.P.B.P 440</span></a>
+  <div class="v12-primary-nav" role="navigation" aria-label="Navigation principale" data-v12-navigation>
+    <a href="/#home">Accueil</a>
+    <a href="/#sortie">Sorties</a>
+    <a href="/#avenir">À venir</a>
     <a href="/mpbp-tv/index.html">MPBP TV</a>
-    <a href="#radio">Radio</a>
-    <a href="#actus">Actus</a>
-    <a href="#artistes">Artistes</a>
-    <a href="/music/index.html#morceaux">Recherche</a>
-    <a href="#clips">Clips</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#liens">Liens</a>
-    <a href="#application">Application</a>
-    <a href="/members/index.html">Mon espace</a>
-    <a href="/telechargements/index.html">Téléchargements</a>
-  </nav>
+    <a href="/#artistes">Artistes</a>
+    <a href="/#actus">Actus</a>
+    <a href="/#events">Événements</a>
+    <a href="/#galerie">Galerie</a>
+    <a href="/#radio">Radio</a>
+  </div>
+  <div class="v12-more">
+    <button class="v12-button v12-button--ghost v12-button--small v12-more__button" type="button" aria-expanded="false" aria-controls="v12MoreMenu" data-v12-more-toggle>Plus</button>
+    <div class="v12-more__menu" id="v12MoreMenu" role="menu" data-v12-more-menu data-v12-navigation hidden>
+      <a role="menuitem" href="/#label">Label</a>
+      <a role="menuitem" href="/music/index.html#morceaux">Morceaux</a>
+      <a role="menuitem" href="/music/index.html#morceaux">Recherche</a>
+      <a role="menuitem" href="/#clips">Clips</a>
+      <a role="menuitem" href="/#liens">Liens</a>
+      <a role="menuitem" href="/#application">Application</a>
+      <a role="menuitem" href="/members/index.html">Mon espace</a>
+      <a role="menuitem" href="/telechargements/index.html">Téléchargements</a>
+    </div>
+  </div>
+  <button class="menuBtn v12-menu-button" id="menuBtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="v12MobileMenu" data-v647="1" data-v94-menu="1" data-v12-menu-toggle><span class="v12-menu-button__icon" aria-hidden="true"></span></button>
 </header>
+<div class="v12-mobile-menu" id="v12MobileMenu" data-v12-mobile-menu aria-hidden="true" hidden>
+  <div class="v12-mobile-menu__surface" role="dialog" aria-modal="true" aria-labelledby="v12MobileMenuTitle">
+    <div class="v12-mobile-menu__head">
+      <h2 id="v12MobileMenuTitle">Navigation MPBP440</h2>
+      <button class="v12-button v12-button--ghost v12-button--icon" type="button" aria-label="Fermer le menu" data-v12-menu-close>×</button>
+    </div>
+    <div class="v12-mobile-menu__scroll" data-v12-navigation>
+      <div class="v12-mobile-menu__group">
+        <p class="v12-mobile-menu__label">Principal</p>
+        <nav class="v12-mobile-menu__nav" aria-label="Navigation mobile principale">
+          <a href="/#home">Accueil</a><a href="/#sortie">Sorties</a><a href="/#avenir">À venir</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/#artistes">Artistes</a><a href="/#actus">Actus</a><a href="/#events">Événements</a><a href="/#galerie">Galerie</a><a href="/#radio">Radio</a>
+        </nav>
+      </div>
+      <div class="v12-mobile-menu__group">
+        <p class="v12-mobile-menu__label">Label et autres accès</p>
+        <nav class="v12-mobile-menu__nav" aria-label="Navigation mobile secondaire">
+          <a href="/#label">Label</a><a href="/music/index.html#morceaux">Morceaux</a><a href="/music/index.html#morceaux">Recherche</a><a href="/#clips">Clips</a><a href="/#liens">Liens</a><a href="/#application">Application</a><a href="/members/index.html">Mon espace</a><a href="/telechargements/index.html">Téléchargements</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="hero" id="home" style="--hero:url('assets/covers/reves-et-cauchemards.webp')">
   <div class="heroDim"></div>
@@ -119,7 +153,7 @@
   </div>
 </section>
 
-<main class="v85-main v11-home">
+<main class="v85-main v11-home" id="contenu-principal">
   <nav class="section panel mpbpQuickAccess v11-quick-access" aria-label="Accès direct MPBP440">
     <span>Accès direct</span>
     <a href="#sortie">Sorties</a>
@@ -143,7 +177,7 @@
         <h2>Écouter maintenant</h2>
         <p class="sectionIntro">Les morceaux déjà sortis, avec les liens officiels vers les plateformes.</p>
       </div>
-      <a class="btn" href="/music/index.html#morceaux">Music Hub complet</a>
+      <a class="btn" id="recherche" href="/music/index.html#morceaux">Music Hub complet</a>
     </div>
     <div id="availableReleasesGrid" class="v11ReleaseGrid"></div>
   </section>
@@ -253,7 +287,30 @@
   </section>
 </main>
 
-<footer class="footer v85-footer v11-footer"><div><strong>MPBP440 Corp. 2026</strong><span>Music • Power • Believe • Purpose</span></div><nav aria-label="Footer public"><a href="/#sortie">Sorties</a><a href="/#artistes">Artistes</a><a href="/music/index.html#morceaux">Music Hub</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/#actus">Actualités</a><a href="mailto:mpbp97440@gmail.com">Contact</a></nav></footer>
+<footer class="footer v12-footer" data-v12-footer data-v12-navigation>
+  <div class="v12-container v12-container--immersive">
+    <div class="v12-footer__grid">
+      <div class="v12-footer__brand">
+        <img class="v12-footer__logo" src="/assets/brand/mpbp440-official-logo.jpg" alt="Logo MPBP440">
+        <strong>MPBP440 Corp. 2026</strong>
+        <p>Music • Passion • But • Progress</p>
+      </div>
+      <nav class="v12-footer__nav" aria-label="Navigation du pied de page">
+        <h2>Explorer</h2><a href="/#home">Accueil</a><a href="/#sortie">Sorties</a><a href="/#avenir">À venir</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/#actus">Actualités</a>
+      </nav>
+      <nav class="v12-footer__nav" aria-label="Artistes MPBP440">
+        <h2>Artistes</h2><a href="/artistes/sparetdee-simon.html">Sparetdee Simon</a><a href="/artistes/juste-une-plume.html">Juste Une Plume</a><a href="/artistes/makeda-muse.html">Makéda Muse</a>
+      </nav>
+      <nav class="v12-footer__nav" aria-label="Plateformes officielles">
+        <h2>Plateformes</h2><a href="https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/@sparetdee440" target="_blank" rel="noopener">YouTube</a><a href="https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2" target="_blank" rel="noopener">Deezer</a><a href="https://music.apple.com/fr/artist/sparetdee-simon/1893053126" target="_blank" rel="noopener">Apple Music</a>
+      </nav>
+      <nav class="v12-footer__nav" aria-label="Informations et contact">
+        <h2>Informations</h2><a href="mailto:mpbp97440@gmail.com">Contact</a><span class="v12-footer__pending">Liens légaux en attente de validation éditoriale.</span>
+      </nav>
+    </div>
+    <div class="v12-footer__bottom"><span>© 2026 M.P.B.P 440 Corp.</span><span>Site officiel MPBP440</span></div>
+  </div>
+</footer>
 <script src="/script.js?v=countdown-notifications-hotfix-v11-202607"></script>
 </body>
 </html>

@@ -110,6 +110,7 @@ function scrollToAnchorTarget(target, updateHash=true){
 }
 
 function initAnchorScrollFix(){
+  if(document.body.classList.contains("v12-shell")) return;
   document.addEventListener("click", event => {
     const link = event.target.closest?.("a[href]");
     if(!link) return;

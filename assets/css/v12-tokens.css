@@ -1,0 +1,113 @@
+/* MPBP440 V12 — tokens de fondation. Les breakpoints sont documentaires :
+   les custom properties ne sont pas utilisables dans les conditions @media. */
+:root {
+  color-scheme: dark;
+
+  --mpbp-black: #050505;
+  --mpbp-black-deep: #090806;
+  --mpbp-surface: #0d0b08;
+  --mpbp-surface-raised: #15120d;
+  --mpbp-gold: #d4af37;
+  --mpbp-gold-light: #f6d46b;
+  --mpbp-gold-dark: #9b741c;
+  --mpbp-gold-glow: #ffe49a;
+  --mpbp-text: #f8eed0;
+  --mpbp-text-secondary: #cbbf9f;
+  --mpbp-text-muted: #8e846c;
+  --mpbp-success: #36f58a;
+  --mpbp-info: #4cb8ff;
+  --mpbp-warning: #ff9f43;
+  --mpbp-error: #ff5a5f;
+
+  --mpbp-font-body: Montserrat, Arial, sans-serif;
+  --mpbp-font-display: "Bebas Neue", Impact, sans-serif;
+  --mpbp-font-brand: Orbitron, Montserrat, sans-serif;
+  --mpbp-text-display-xl: clamp(3rem, 6vw, 4.5rem);
+  --mpbp-text-display-l: clamp(2.5rem, 5vw, 3.75rem);
+  --mpbp-text-h1: clamp(2rem, 4vw, 3rem);
+  --mpbp-text-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --mpbp-text-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --mpbp-text-body-l: clamp(1.0625rem, 1.4vw, 1.125rem);
+  --mpbp-text-body-m: 1rem;
+  --mpbp-text-body-s: 0.875rem;
+  --mpbp-text-caption: 0.75rem;
+  --mpbp-text-badge: 0.6875rem;
+  --mpbp-text-button: 0.875rem;
+  --mpbp-leading-tight: 1.08;
+  --mpbp-leading-heading: 1.2;
+  --mpbp-leading-body: 1.65;
+  --mpbp-weight-regular: 400;
+  --mpbp-weight-semibold: 600;
+  --mpbp-weight-bold: 700;
+  --mpbp-weight-extrabold: 800;
+
+  --mpbp-space-1: 4px;
+  --mpbp-space-2: 8px;
+  --mpbp-space-3: 12px;
+  --mpbp-space-4: 16px;
+  --mpbp-space-6: 24px;
+  --mpbp-space-8: 32px;
+  --mpbp-space-12: 48px;
+  --mpbp-space-16: 64px;
+  --mpbp-space-24: 96px;
+  --mpbp-space-32: 128px;
+
+  --mpbp-radius-sm: 8px;
+  --mpbp-radius-md: 12px;
+  --mpbp-radius-lg: 16px;
+  --mpbp-radius-xl: 20px;
+  --mpbp-radius-2xl: 24px;
+  --mpbp-radius-pill: 999px;
+
+  --mpbp-border-subtle: 1px solid rgb(212 175 55 / 18%);
+  --mpbp-border-default: 1px solid rgb(212 175 55 / 34%);
+  --mpbp-border-strong: 1px solid rgb(246 212 107 / 58%);
+  --mpbp-shadow-sm: 0 8px 24px rgb(0 0 0 / 28%);
+  --mpbp-shadow-md: 0 18px 48px rgb(0 0 0 / 38%);
+  --mpbp-shadow-lg: 0 32px 96px rgb(0 0 0 / 52%);
+  --mpbp-shadow-gold: 0 0 28px rgb(212 175 55 / 22%);
+  --mpbp-halo-gold: 0 0 0 1px rgb(255 228 154 / 24%), 0 0 32px rgb(212 175 55 / 18%);
+
+  --mpbp-gradient-gold: linear-gradient(135deg, var(--mpbp-gold-glow), var(--mpbp-gold) 52%, var(--mpbp-gold-dark));
+  --mpbp-gradient-surface: linear-gradient(145deg, rgb(21 18 13 / 96%), rgb(9 8 6 / 96%));
+  --mpbp-gradient-vignette: radial-gradient(circle at 50% 15%, transparent 0 28%, rgb(0 0 0 / 72%) 100%);
+  --mpbp-overlay-soft: rgb(5 5 5 / 72%);
+  --mpbp-overlay-strong: rgb(5 5 5 / 92%);
+  --mpbp-opacity-disabled: 0.46;
+  --mpbp-opacity-muted: 0.72;
+  --mpbp-opacity-decorative: 0.18;
+
+  --mpbp-duration-fast: 140ms;
+  --mpbp-duration-standard: 220ms;
+  --mpbp-duration-slow: 360ms;
+  --mpbp-ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --mpbp-transition-fast: var(--mpbp-duration-fast) var(--mpbp-ease-standard);
+  --mpbp-transition-standard: var(--mpbp-duration-standard) var(--mpbp-ease-standard);
+
+  --mpbp-z-base: 0;
+  --mpbp-z-raised: 10;
+  --mpbp-z-dropdown: 4300;
+  --mpbp-z-header: 4200;
+  --mpbp-z-mobile-menu: 4100;
+  --mpbp-z-overlay: 5000;
+  --mpbp-z-toast: 6000;
+
+  --mpbp-touch-min: 44px;
+  --mpbp-control-md: 48px;
+  --mpbp-control-lg: 56px;
+  --mpbp-header-height: 72px;
+  --mpbp-header-height-compact: 58px;
+  --mpbp-anchor-offset: 108px;
+  --mpbp-content-compact: 760px;
+  --mpbp-content-standard: 1180px;
+  --mpbp-content-immersive: 1280px;
+  --mpbp-page-gutter: clamp(20px, 4vw, 48px);
+
+  --mpbp-breakpoint-wide: 1440px;
+  --mpbp-breakpoint-desktop: 1200px;
+  --mpbp-breakpoint-tablet: 1024px;
+  --mpbp-breakpoint-mobile-nav: 980px;
+  --mpbp-breakpoint-mobile: 768px;
+  --mpbp-breakpoint-phone: 430px;
+  --mpbp-breakpoint-phone-sm: 375px;
+}
