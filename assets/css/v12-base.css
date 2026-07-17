@@ -1,0 +1,120 @@
+/* MPBP440 V12 — base isolée aux pages qui portent .v12-shell. */
+.v12-shell,
+.v12-shell button,
+.v12-shell input,
+.v12-shell select,
+.v12-shell textarea {
+  font-family: var(--mpbp-font-body);
+}
+
+.v12-shell *,
+.v12-shell *::before,
+.v12-shell *::after {
+  box-sizing: border-box;
+}
+
+.v12-shell {
+  min-width: 0;
+  color: var(--mpbp-text);
+  overflow-wrap: break-word;
+}
+
+.v12-shell img,
+.v12-shell video,
+.v12-shell iframe,
+.v12-shell svg {
+  max-width: 100%;
+}
+
+.v12-shell img,
+.v12-shell video {
+  height: auto;
+}
+
+.v12-shell button,
+.v12-shell a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.v12-shell button,
+.v12-shell [role="button"] {
+  min-width: var(--mpbp-touch-min);
+  min-height: var(--mpbp-touch-min);
+}
+
+.v12-shell :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--mpbp-gold-glow);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgb(212 175 55 / 20%);
+}
+
+.v12-shell [id] {
+  scroll-margin-top: var(--mpbp-anchor-offset);
+}
+
+.v12-shell ::selection {
+  background: var(--mpbp-gold-light);
+  color: var(--mpbp-black);
+}
+
+.v12-shell [hidden] {
+  display: none;
+}
+
+.v12-shell .v12-skip-link {
+  position: fixed;
+  top: var(--mpbp-space-3);
+  left: var(--mpbp-space-3);
+  z-index: var(--mpbp-z-toast);
+  translate: 0 -180%;
+  min-height: var(--mpbp-touch-min);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--mpbp-space-2) var(--mpbp-space-4);
+  border-radius: var(--mpbp-radius-md);
+  background: var(--mpbp-gold-glow);
+  color: var(--mpbp-black);
+  font-weight: var(--mpbp-weight-bold);
+  text-decoration: none;
+  transition: translate var(--mpbp-transition-fast);
+}
+
+.v12-shell .v12-skip-link:focus {
+  translate: 0;
+}
+
+.v12-shell.v12-menu-open {
+  overflow: hidden;
+}
+
+.v12-shell .v12-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v12-shell,
+  .v12-shell *,
+  .v12-shell *::before,
+  .v12-shell *::after {
+    scroll-behavior: auto;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    transition-duration: 1ms;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .v12-shell :where(a, button, input, select, textarea):focus-visible {
+    outline-width: 3px;
+    outline-color: #fff;
+    box-shadow: 0 0 0 6px #000;
+  }
+}

@@ -110,6 +110,7 @@ function scrollToAnchorTarget(target, updateHash=true){
 }
 
 function initAnchorScrollFix(){
+  if(document.body.classList.contains("v12-shell")) return;
   document.addEventListener("click", event => {
     const link = event.target.closest?.("a[href]");
     if(!link) return;
@@ -1713,3 +1714,13 @@ function setupV94MobileMenu(){
 }
 
 document.addEventListener("DOMContentLoaded", setupV94MobileMenu);
+
+// V12 final — source Spotify officielle unique et lecteur playlist valide.
+document.addEventListener("DOMContentLoaded", () => {
+  const radio = document.querySelector("#radio");
+  if (!radio) return;
+  const playlistUrl = "https://open.spotify.com/playlist/5e9OUZTwsGnWjBREAAVKUv";
+  const embedUrl = "https://open.spotify.com/embed/playlist/5e9OUZTwsGnWjBREAAVKUv?utm_source=generator";
+  radio.querySelectorAll(".spotifyRadioBox").forEach(box => box.remove());
+  radio.insertAdjacentHTML("beforeend", `<section class="spotifyRadioBox panel" aria-label="Playlist Spotify MPBP440"><h3>Playlist MPBP440 sur Spotify</h3><p>Écoutez la sélection officielle du label directement depuis Spotify.</p><iframe title="Playlist Spotify officielle MPBP440" src="${embedUrl}" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><p class="spotifyRadioBox__actions"><a href="${playlistUrl}" target="_blank" rel="noopener noreferrer">Ouvrir la playlist Spotify</a></p></section>`);
+});

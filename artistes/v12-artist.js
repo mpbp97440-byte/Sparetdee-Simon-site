@@ -1,0 +1,29 @@
+(() => {
+  const config = {
+    sparetdee:{clip:'../mpbp-tv/index.html#clip-dois-je-me-taire',clipTitle:'Dois-je me taire ?',poster:'../assets/clips/sparetdee-simon/dois-je-me-taire-cover.png',gallery:['../assets/artists/sparetdee-simon.webp','../assets/covers/le-systeme-pre-sortie-27-06-2026.webp']},
+    jup:{clip:'../mpbp-tv/index.html#clip-je-sais-que-tu-sais',clipTitle:'Je sais que tu sais',poster:'../assets/covers/je-sais-juste-une-plume.webp',gallery:['../assets/artists/juste-une-plume.webp','../assets/events/je-sais-sortie-officielle.webp']},
+    makeda:{clip:'../mpbp-tv/index.html#clip-j-existe',clipTitle:'J’existe',poster:'../assets/clips/makeda-muse/j-existe-cover.png',gallery:['../assets/makeda-muse/makeda-muse-profile.png','../assets/makeda-muse/jour-de-pluie-pre-sortie.png']}
+  };
+  const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const labels = {spotify:'Spotify',deezer:'Deezer',apple:'Apple Music',youtube:'YouTube',tiktok:'TikTok',facebook:'Facebook'};
+  document.addEventListener('DOMContentLoaded', async () => {
+    const key = document.body.dataset.artistKey, artist = document.body.dataset.artist, details = config[key];
+    if (!details) return;
+    const main = document.querySelector('.artist-page');
+    try {
+      const releases = await fetch('../data/releases.json', {cache:'no-store'}).then(response => response.json());
+      const artistReleases = releases.filter(item => item.artist === artist);
+      const newest = artistReleases[artistReleases.length - 1] || artistReleases[0];
+      if (newest && !main.querySelector('.v12-latest-artist-release')) {
+        const section = document.createElement('section'); section.className = 'section v12-latest-artist-release';
+        section.innerHTML = `<p class="sup">Dernière sortie</p><h2>${escape(newest.title)}</h2><article class="release-card-artist"><img src="../${escape(newest.cover)}" alt="Pochette ${escape(newest.title)}" loading="lazy"><div><p>${escape(newest.status || 'Sortie officielle')}</p><p>${escape(newest.description || '')}</p><div class="release-links">${Object.entries(newest.links || {}).filter(([,url]) => url).map(([name,url]) => `<a class="btn ghost small" target="_blank" rel="noopener" href="${escape(url)}">${labels[name] || escape(name)}</a>`).join('')}</div></div></article>`;
+        main.querySelector('.hero')?.insertAdjacentElement('afterend', section);
+      }
+    } catch (error) { console.warn('Dernière sortie artiste indisponible.', error); }
+    const media = document.createElement('section'); media.className = 'section v12-artist-gallery';
+    media.innerHTML = `<p class="sup">Clips et galerie</p><h2>L’univers visuel</h2><div class="v12-artist-media"><a href="${details.clip}"><img src="${details.poster}" alt="Poster ${details.clipTitle}" loading="lazy"><span>Voir le clip · ${details.clipTitle}</span></a>${details.gallery.map((src,index) => `<a href="../galerie/index.html"><img src="${src}" alt="Visuel officiel ${escape(artist)}" loading="lazy"><span>${index ? 'Explorer la galerie' : 'Profil officiel'}</span></a>`).join('')}</div></section>`;
+    const platforms = document.createElement('section'); platforms.className = 'section';
+    platforms.innerHTML = `<p class="sup">Liens officiels</p><h2>Écouter et suivre</h2><div class="v12-artist-platforms"><a href="../music/index.html#morceaux">Music Hub MPBP440</a><a href="${details.clip}">MPBP TV</a></div>`;
+    main.append(media, platforms);
+  }, {once:true});
+})();

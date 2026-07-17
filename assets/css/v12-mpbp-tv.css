@@ -1,0 +1,16 @@
+.v12-tv { width:min(1280px,calc(100% - 40px)); margin:0 auto; padding:7rem 0 5rem; }
+.v12-tv .section { margin:0 0 clamp(2rem,5vw,4rem); border-color:rgba(220,180,84,.22); background:linear-gradient(145deg,rgba(25,21,13,.94),rgba(8,8,7,.95)); box-shadow:0 1.5rem 5rem rgba(0,0,0,.28); }
+.v12-tv-hero { position:relative; isolation:isolate; min-height:22rem; display:flex; align-items:end; padding:clamp(2rem,6vw,5rem); overflow:hidden; background:linear-gradient(115deg,#080806,rgba(25,18,8,.76)),url('/assets/covers/largent-officiel.webp') center/cover!important; }
+.v12-tv-hero:before { content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(circle at 80% 20%,rgba(217,177,79,.28),transparent 30%); }
+.v12-tv-hero h1 { font-size:clamp(2.8rem,6vw,5.3rem); margin:.35rem 0; color:#fff; }.v12-tv-hero p { max-width:45rem; font-size:1.1rem; color:#e4ded1; }.v12-tv-hero .sup { display:none; }
+.v12-tv-playlist { display:flex; flex-wrap:wrap; gap:.65rem; margin:-2.6rem 1.3rem 3rem; position:relative; z-index:2; }
+.v12-tv-playlist a,.v12-tv-suggestion-grid a { display:inline-flex; align-items:center; min-height:44px; padding:.55rem 1rem; border:1px solid rgba(224,185,89,.38); border-radius:999px; color:#f8eac4; text-decoration:none; background:rgba(10,9,7,.88); }
+.v12-tv-playlist a:hover,.v12-tv-suggestion-grid a:hover { background:#d6ad55; color:#161108; }
+.v12-tv .exclusiveVideo { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(1rem,3vw,3rem); align-items:center; padding:clamp(1rem,3vw,2.5rem); scroll-margin-top:6rem; }
+.v12-tv .exclusiveVideo:nth-of-type(odd) { grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); }.v12-tv .exclusiveVideo:nth-of-type(odd) .exclusiveVideoText { order:2; }
+.v12-tv .exclusiveVideoText h2 { font-size:clamp(2rem,4.5vw,3.7rem); margin:.4rem 0; }.v12-tv .siteVideo { display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#000; border-radius:18px; border:1px solid rgba(224,185,89,.3); }.v12-tv .siteVideoPortrait { aspect-ratio:9/16; max-height:42rem; margin-inline:auto; }
+.v12-tv .videoUtilityActions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.6rem; }.v12-tv .v98-share-feedback { min-height:1.4em; color:#f2d281; }
+.v12-tv-suggestions h2 { font-size:clamp(1.8rem,3vw,2.7rem); }.v12-tv-suggestion-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }.v12-tv-suggestion-grid a { border-radius:12px; min-height:5.5rem; }
+.v12-tv .tvSplit { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:clamp(1.5rem,4vw,3rem); }.v12-tv .tvSoon { padding:1.5rem; border:1px solid rgba(224,185,89,.22); border-radius:18px; background:#0b0a08; }
+@media(max-width:800px){.v12-tv{width:min(100% - 24px,1280px);padding-top:5.3rem}.v12-tv .exclusiveVideo,.v12-tv .exclusiveVideo:nth-of-type(odd),.v12-tv .tvSplit{grid-template-columns:1fr}.v12-tv .exclusiveVideo:nth-of-type(odd) .exclusiveVideoText{order:0}.v12-tv-suggestion-grid{grid-template-columns:1fr 1fr}.v12-tv-hero{min-height:19rem}.v12-tv-playlist{margin:-2rem .6rem 2rem}}
+@media(max-width:430px){.v12-tv-suggestion-grid{grid-template-columns:1fr}.v12-tv .siteVideoPortrait{max-height:none}.v12-tv .exclusiveVideo{padding:1rem}.v12-tv .btn{min-height:44px}}
