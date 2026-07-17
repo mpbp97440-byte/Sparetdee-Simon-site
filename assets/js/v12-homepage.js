@@ -1,7 +1,11 @@
 (() => {
   const $ = (selector, root = document) => root.querySelector(selector);
   const esc = value => String(value || "").replace(/[&<>\"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
-  const media = path => path ? (path.startsWith("/") ? path : `/${path.replace(/^\.\//, "")}`) : "/assets/brand/mpbp440-official-logo.jpg";
+  const media = path => path ? new URL(path.replace(/^\.\//, ""), document.baseURI).href : "";
+  const releaseArtwork = (path, alt) => {
+    const source = media(path);
+    return source ? `<img src="${source}" alt="${esc(alt)}" width="1254" height="1254" loading="lazy" decoding="async">` : '<p class="v12-upcoming-card__missing-artwork" role="status">Visuel officiel indisponible.</p>';
+  };
   const date = value => new Date(value);
   const validDate = value => !Number.isNaN(date(value).getTime());
   const displayDate = value => validDate(value) ? date(value).toLocaleDateString("fr-FR", {day:"numeric",month:"long",year:"numeric"}) : "";
@@ -18,14 +22,14 @@
   };
   const render = async () => {
     try {
-      const [data, news, events, gallery] = await Promise.all([fetch("/data.json", {cache:"no-store"}).then(r => r.json()), fetch("/data/news.json", {cache:"no-store"}).then(r => r.json()), fetch("/data/events.json", {cache:"no-store"}).then(r => r.json()), fetch("/data/gallery.json", {cache:"no-store"}).then(r => r.json())]);
+      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
       const latest = (data.tracks || []).find(item => item.id === "brainrot-society-2-0");
       const latestRoot = $("#v12LatestRelease");
       if (latest && latestRoot) latestRoot.innerHTML = `<img src="${media(latest.cover)}" alt="Pochette ${esc(latest.title)}" width="1200" height="1200"><div class="v12-latest-release__body"><span class="v12-badge">Disponible maintenant</span><h3>${esc(latest.title)}</h3><p class="v12-feature__artist">${esc(latest.artist)}</p><p>${esc(latest.description)}</p><div class="v12-platform-links">${links(latest)}</div></div>`;
       const titles = ["Jour de pluie", "Sixieme Sens", "Je laisse la porte ouverte / J'existe", "Dois-je me taire ?"];
       const upcoming = (data.upcoming || []).filter(item => titles.includes(item.title));
       const upcomingRoot = $("#v12UpcomingGrid");
-      if (upcomingRoot) { upcomingRoot.innerHTML = upcoming.map(item => `<article class="v12-upcoming-card"><img src="${media(item.cover)}" alt="Pochette ${esc(item.title)}" width="1200" height="1200" loading="lazy"><div class="v12-upcoming-card__body"><span class="v12-badge">${date(item.date).getTime() <= Date.now() ? "Disponible maintenant" : "À venir"}</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)} · ${displayDate(item.date)}</p><div class="v12-countdown" data-date="${esc(item.date)}"></div></div></article>`).join(""); upcomingRoot.querySelectorAll("[data-date]").forEach(node => countdown(node.dataset.date, node)); }
+      if (upcomingRoot) { upcomingRoot.innerHTML = upcoming.map(item => `<article class="v12-upcoming-card">${releaseArtwork(item.cover, `Pochette ${item.title}`)}<div class="v12-upcoming-card__body"><span class="v12-badge">${date(item.date).getTime() <= Date.now() ? "Disponible maintenant" : "À venir"}</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)} · ${displayDate(item.date)}</p><div class="v12-countdown" data-date="${esc(item.date)}"></div></div></article>`).join(""); upcomingRoot.querySelectorAll("[data-date]").forEach(node => countdown(node.dataset.date, node)); }
       const newsRoot = $("#v12NewsGrid");
       if (newsRoot) newsRoot.innerHTML = news.filter(item => !item.hidden && !/Live TikTok/.test(item.title)).slice(0,4).map((item, index) => `<article class="v12-news-card ${index === 0 ? "v12-news-card--lead" : ""}"><span class="v12-eyebrow">${esc(item.type || "actualité")}</span><time datetime="${esc(item.date)}">${displayDate(item.date)}</time><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p><a href="${esc(item.url || "/#actus")}">${esc(item.buttonText || "Lire l’actualité")}</a></article>`).join("");
       const futureEvents = events.filter(item => validDate(item.datetime || item.date) && date(item.datetime || item.date).getTime() >= Date.now());
