@@ -10,7 +10,7 @@
     splash.className = "mpbp-splash";
     splash.innerHTML = `
       <div>
-        <img src="/assets/icons/mpbp440-icon.svg" alt="MPBP440">
+        <img src="/assets/brand/mpbp440-corp-official.png" alt="MPBP440">
         <h1>M.P.B.P 440</h1>
         <p>PORTAIL MUSICAL OFFICIEL</p>
       </div>`;

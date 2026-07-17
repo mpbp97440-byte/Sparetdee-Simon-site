@@ -1434,7 +1434,7 @@ body{background:radial-gradient(circle at 10% 0%,rgba(39,255,137,.10),transparen
 .mpbpIntroV92 .mpbpIntroStage{grid-template-columns:minmax(170px,.78fr) minmax(230px,.72fr) minmax(170px,.78fr)!important}
 .mpbpIntroCrest{width:min(24vw,292px)!important;min-width:216px!important}
 .mpbpIntroV92 .mpbpIntroLogo{z-index:5!important}
-.mpbpIntroV92 .mpbpIntroLogo img{width:min(20vw,236px)!important;min-width:168px!important}
+.mpbpIntroV92 .mpbpIntroLogo img{width:min(20vw,236px)!important;min-width:168px!important;aspect-ratio:1;object-fit:contain}
 .mpbpIntroSymbolAsset{z-index:4!important;max-width:min(24vw,300px)!important;opacity:0;object-fit:contain!important;mix-blend-mode:normal!important;pointer-events:none}
 .mpbpIntroCanesAsset{left:-78%!important;top:14%!important;transform-origin:center!important}
 .mpbpIntroFeatherAsset{right:-78%!important;top:14%!important;transform-origin:center!important}

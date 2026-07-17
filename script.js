@@ -10,7 +10,7 @@ function cleanKey(value){
   return safeText(value).trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 }
 
-const fallbackLogo = "/assets/brand/mpbp440-official-logo.jpg";
+const fallbackLogo = "/assets/brand/mpbp440-corp-official.png";
 
 function mediaSrc(value){
   const src = safeText(value).trim();
@@ -1258,8 +1258,8 @@ async function initMPBPNotifications(){
     try{
       const options = {
         body: next.message || "Nouvelle notification MPBP440",
-        icon: "/assets/brand/mpbp440-official-logo.jpg",
-        badge: "/assets/icons/mpbp440-icon.svg",
+        icon: "/assets/brand/mpbp440-corp-official.png",
+        badge: "/assets/brand/mpbp440-corp-official.png",
         tag: next.id,
         data: {url: next.url || "/"},
         renotify: false
@@ -1563,7 +1563,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
   }
   function removeAdmin(){document.querySelectorAll('a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="admin-440-mpbp-corp"]').forEach(el=>el.remove());}
-  function fixBrokenImages(){document.querySelectorAll("img").forEach(img=>{if(!img.dataset.v647){img.dataset.v647="1";img.addEventListener("error",function(){this.src="/assets/brand/mpbp440-official-logo.jpg";});}});}
+  function fixBrokenImages(){document.querySelectorAll("img").forEach(img=>{if(!img.dataset.v647){img.dataset.v647="1";img.addEventListener("error",function(){this.src="/assets/brand/mpbp440-corp-official.png";});}});}
   function apply(){fixMenu();normalizeLinks();cleanPublicText();removeAdmin();fixBrokenImages();}
   document.addEventListener("DOMContentLoaded",()=>{apply();setTimeout(apply,500);setTimeout(apply,1500);});
 })();
