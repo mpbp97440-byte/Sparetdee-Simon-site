@@ -1,0 +1,18 @@
+/* V12.0.5 — keep the official seal clear of the Hero artwork. */
+@media (min-width:701px){
+  .v12-home-hero__inner{position:relative;grid-template-columns:minmax(0,1fr)}
+  .v12-home-hero__logo{position:absolute;inset-block-start:clamp(1rem,3.5vw,2.75rem);inset-inline-start:clamp(40rem,53vw,64rem);width:clamp(5.4rem,7vw,7.5rem);height:auto;max-width:none;margin:0;object-fit:contain}
+}
+@media (max-width:700px){
+  .v12-home-hero__inner{display:flex;flex-direction:column;gap:1rem}
+  .v12-home-hero__logo{display:block;order:-1;width:min(26vw,7rem);max-width:26%;height:auto;margin:0 auto;object-fit:contain}
+}
+
+/* The Artists filter is a consistent three-card gallery, not a masonry mix. */
+.v12-gallery-cards.v12-gallery-cards--artists{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.v12-gallery-cards--artists .v12-gallery-card{display:grid;grid-template-rows:auto auto;height:100%;margin:0}
+.v12-gallery-card--artist img{width:100%;height:auto;aspect-ratio:1/1.07}
+.v12-gallery-card__artist-link{display:flex;align-items:center;justify-content:center;min-height:44px;margin:.8rem;border:1px solid rgba(220,180,84,.45);border-radius:99px;color:#f8eed0;font-weight:800;text-decoration:none}
+.v12-gallery-card__artist-link:hover{background:rgba(213,174,85,.14)}
+@media (max-width:800px){.v12-gallery-cards.v12-gallery-cards--artists{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.v12-gallery-cards.v12-gallery-cards--artists{grid-template-columns:1fr}}
