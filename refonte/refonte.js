@@ -4,7 +4,7 @@
   const catalogUrl="/data/music-catalog-v645.json?v=6.4.5";
 
   function cleanText(s){return (s||"").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
-  function img(src,alt,cls=""){return `<img class="${cls}" src="${src}?v=6.4.5" alt="${alt}" onerror="this.src='/assets/brand/mpbp440-official-logo.jpg'">`}
+  function img(src,alt,cls=""){return `<img class="${cls}" src="${src}?v=6.4.5" alt="${alt}" onerror="this.src='/assets/brand/mpbp440-corp-official.png'">`}
 
   function hideAdmin(){
     document.querySelectorAll('a[href*="admin-pro"],a[href*="admin-440-mpbp-corp"],[href*="admin-pro"],[href*="admin-440-mpbp-corp"]').forEach(e=>e.remove());
@@ -42,7 +42,7 @@
   }
 
   function card(track, links, upcoming=false){
-    const cover=track.cover||"/assets/brand/mpbp440-official-logo.jpg";
+    const cover=track.cover||"/assets/brand/mpbp440-corp-official.png";
     const status=upcoming?"À venir":"Disponible";
     const subtitle=upcoming?`${track.artist} — sortie officielle le ${track.date}.`:track.artist;
     const btns=upcoming
@@ -64,7 +64,7 @@
     root.id=V; root.className="mpbp-v645";
     root.innerHTML=`
       <section class="mpbp-v645-hero">
-        ${img("/assets/brand/mpbp440-official-logo.jpg","Logo MPBP440","mpbp-v645-logo")}
+        ${img("/assets/brand/mpbp440-corp-official.png","Logo MPBP440","mpbp-v645-logo")}
         <div>
           <p class="sup">Portail musical officiel</p>
           <h1>MPBP 440 Corp.</h1>

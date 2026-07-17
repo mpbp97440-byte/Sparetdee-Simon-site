@@ -1,0 +1,12 @@
+/* V12.0.3 — identity replacement and homepage composition polish. */
+.v12-home-hero{min-height:clamp(39rem,52vw,48rem);display:grid;align-items:center;padding-block:clamp(6.5rem,9vw,9rem) clamp(4.5rem,7vw,7rem)}
+.v12-home-hero__inner{grid-template-columns:minmax(0,1.08fr) minmax(20rem,.72fr);align-items:center;gap:clamp(2rem,7vw,8rem)}
+.v12-home-hero__content{display:grid;align-content:center;justify-items:start;max-width:43rem;padding-block:1rem}
+.v12-home-hero__content .v12-eyebrow{margin-bottom:1rem;color:#a9df7e}
+.v12-home-hero h1{font-size:clamp(4.5rem,9.2vw,9rem);line-height:.84;letter-spacing:-.065em;text-wrap:balance}
+.v12-home-hero__claim{margin:1.3rem 0 0;max-width:38rem}
+.v12-home-actions{margin-top:2rem}
+.v12-home-hero__logo{justify-self:center;width:min(100%,31rem);max-height:none;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 1.8rem 2.8rem rgba(0,0,0,.62))}
+.v12-site-header .v12-brand img,.v12-footer img.v12-footer__logo{object-fit:contain}
+@media (max-width:1024px){.v12-home-hero{min-height:0}.v12-home-hero__inner{gap:clamp(2rem,5vw,4rem)}.v12-home-hero__logo{width:min(100%,23rem)}}
+@media (max-width:700px){.v12-home-hero{padding:calc(6rem + env(safe-area-inset-top)) 0 4rem}.v12-home-hero__inner{grid-template-columns:1fr;gap:2.2rem;text-align:center}.v12-home-hero__content{justify-items:center;margin-inline:auto;padding:0}.v12-home-hero__content .v12-eyebrow{margin-bottom:.85rem}.v12-home-hero h1{font-size:clamp(4rem,17vw,6.2rem)}.v12-home-hero__claim{margin-top:1rem}.v12-home-actions{width:100%;margin-top:1.6rem}.v12-home-hero__logo{display:block;width:min(74vw,18rem);margin-inline:auto}}

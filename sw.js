@@ -1,5 +1,5 @@
-const MPBP_CACHE = "mpbp440-v12-0-2-production-202607";
-const PRECACHE = ["/","/index.html","/offline.html","/style.css","/script.js","/manifest.webmanifest","/data.json","/data/news.json","/data/gallery.json","/assets/icons/mpbp440-icon.svg"];
+const MPBP_CACHE = "mpbp440-v12-0-3-production-202607";
+const PRECACHE = ["/","/index.html","/offline.html","/style.css","/script.js","/manifest.webmanifest","/data.json","/data/news.json","/data/gallery.json","/assets/brand/mpbp440-corp-official.png"];
 self.addEventListener("install", event => { self.skipWaiting(); event.waitUntil(caches.open(MPBP_CACHE).then(cache => cache.addAll(PRECACHE))); });
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith("mpbp440-") && key !== MPBP_CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", event => { if(event.request.method !== "GET") return; const url = new URL(event.request.url); if(url.origin !== self.location.origin || url.pathname.endsWith(".mp4") || url.pathname.startsWith("/assets/")) return; event.respondWith(fetch(event.request).then(response => { if(response.ok && !url.search) caches.open(MPBP_CACHE).then(cache => cache.put(event.request,response.clone())); return response; }).catch(() => caches.match(event.request).then(hit => hit || caches.match("/offline.html")))); });
