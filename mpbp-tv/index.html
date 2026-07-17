@@ -31,17 +31,17 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoObject","name":"Dois-je me taire ?","description":"Clip exclusif Dois-je me taire ? de Sparetdee Simon sur MPBP TV.","thumbnailUrl":"https://www.mpbp440.com/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png","contentUrl":"https://www.mpbp440.com/assets/clips/sparetdee-simon/dois-je-me-taire-clip-exclusif.mp4","url":"https://www.mpbp440.com/mpbp-tv/#clip-dois-je-me-taire"}
 </script>
-<link rel="stylesheet" href="/style.css?v=countdown-notifications-hotfix-v11-202607">
+<link rel="stylesheet" href="/style.css?v=v12-0-1-desktop-mpbptv-202607">
 <link rel="stylesheet" href="/assets/css/v12-tokens.css?v=12-lot1">
 <link rel="stylesheet" href="/assets/css/v12-base.css?v=12-lot1">
 <link rel="stylesheet" href="/assets/css/v12-components.css?v=12-lot1">
 <link rel="stylesheet" href="/assets/css/v12-layout.css?v=12-lot1">
 <link rel="stylesheet" href="/assets/css/v12-responsive.css?v=12-lot1">
-<link rel="stylesheet" href="/assets/css/v12-mpbp-tv.css?v=12-lot3-mobile-final-202607">
+<link rel="stylesheet" href="/assets/css/v12-mpbp-tv.css?v=v12-0-1-mpbptv-202607">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/assets/icons/mpbp440-icon.svg" type="image/svg+xml">
 <script src="/assets/js/v12-navigation.js?v=12-lot1" defer></script>
-<script src="/assets/js/v12-mpbp-tv.js?v=12-lot3" defer></script>
+<script src="/assets/js/v12-mpbp-tv.js?v=v12-0-1-mpbptv-202607" defer></script>
 </head>
 <body class="v95-tv-body v12-shell">
 <a class="v12-skip-link" href="#contenu-principal">Aller au contenu principal</a>
@@ -60,9 +60,14 @@
       <p>Clips exclusifs et univers visuels du label MPBP440.</p>
     </div>
     <div class="v85-tv-badges"><span>Exclusif</span><span>Clip officiel</span><span>Bientôt</span></div>
-  </section><nav class="v12-tv-playlist" aria-label="Playlist MPBP TV"><a href="#l-argent">L’Argent</a><a href="#clip-je-sais-que-tu-sais">Je sais que tu sais</a><a href="#clip-j-existe">J’existe</a><a href="#clip-dois-je-me-taire">Dois-je me taire ?</a></nav>
+  </section>
+  <section class="section panel v12-tv-player" id="mpbp-tv-player" aria-labelledby="mpbpTvPlayerTitle">
+    <div class="v12-tv-player__media"><video id="v12TvPlayer" class="siteVideo" controls preload="none" playsinline poster="/assets/covers/largent-officiel.webp" aria-describedby="v12TvPlayerDescription"></video></div>
+    <div class="v12-tv-player__content"><p class="sup">Clips exclusifs</p><h2 id="mpbpTvPlayerTitle">L’Argent</h2><p id="v12TvPlayerArtist" class="sup">Sparetdee Simon — M.P.B.P 440 Corp. 2026</p><p id="v12TvPlayerDescription">Clip exclusif disponible uniquement sur le site officiel et l’application MPBP440.</p><div class="v12-tv-player__actions"><button class="btn primary" type="button" data-v12-player-toggle>Lecture</button><button class="btn v98-share-btn" type="button" data-v12-player-share>Partager le clip</button><a class="btn ghost" id="v12TvPlayerArtistLink" href="/artistes/sparetdee-simon.html">Voir la page artiste</a></div><p class="v98-share-feedback" data-v12-player-feedback aria-live="polite"></p></div>
+    <nav class="v12-tv-playlist" aria-label="Playlist MPBP TV"><button type="button" data-v12-clip="l-argent" aria-pressed="true">L’Argent</button><button type="button" data-v12-clip="clip-je-sais-que-tu-sais" aria-pressed="false">Je sais que tu sais</button><button type="button" data-v12-clip="clip-j-existe" aria-pressed="false">J’existe</button><button type="button" data-v12-clip="clip-dois-je-me-taire" aria-pressed="false">Dois-je me taire ?</button></nav>
+  </section>
 
-  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip" id="l-argent">
+  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v12-tv-legacy" id="l-argent">
     <div class="exclusiveVideoText">
       <p class="sup">Exclusivité MPBP TV — Clip officiel</p>
       <h2>L’Argent</h2>
@@ -85,7 +90,7 @@
     </video>
   </section>
 
-  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v10-jup-exclusive" id="clip-je-sais-que-tu-sais">
+  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v10-jup-exclusive v12-tv-legacy" id="clip-je-sais-que-tu-sais">
     <div class="exclusiveVideoText">
       <p class="sup">Exclusivité MPBP TV — Clip officiel</p>
       <h2>Je sais que tu sais</h2>
@@ -109,7 +114,7 @@
     </video>
   </section>
 
-  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v10-makeda-exclusive" id="clip-j-existe">
+  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v10-makeda-exclusive v12-tv-legacy" id="clip-j-existe">
     <div class="exclusiveVideoText">
       <p class="sup">Exclusivité MPBP TV — Clip officiel</p>
       <h2>J’existe</h2>
@@ -139,7 +144,7 @@
     </div>
   </section>
 
-  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v11-sparetdee-exclusive" id="clip-dois-je-me-taire">
+  <section class="section panel exclusiveVideo tvFeatured v85-featured-video v98-exclusive-clip v11-sparetdee-exclusive v12-tv-legacy" id="clip-dois-je-me-taire">
     <div class="exclusiveVideoText">
       <p class="sup">Exclusivité MPBP TV — Clip officiel</p>
       <h2>Dois-je me taire ?</h2>
@@ -169,10 +174,8 @@
     </div>
   </section>
 
-  <section class="section tvBlock v85-video-shelf v12-tv-suggestions">
-    <p class="sup">Clips officiels</p>
-    <h2>Vidéos du label</h2>
-    <div class="v12-tv-suggestion-grid"><a href="#l-argent">Sparetdee Simon · L’Argent</a><a href="#clip-je-sais-que-tu-sais">Juste Une Plume · Je sais que tu sais</a><a href="#clip-j-existe">Makéda Muse · J’existe</a><a href="#clip-dois-je-me-taire">Sparetdee Simon · Dois-je me taire ?</a></div>
+  <section class="section tvBlock v85-video-shelf v12-tv-youtube" aria-labelledby="v12YoutubeTitle">
+    <p class="sup">Archives officielles</p><h2 id="v12YoutubeTitle">Sélection YouTube MPBP440</h2><p>Clips historiques officiels restaurés depuis les données versionnées du label.</p><div id="v12YoutubeGrid" class="v12-tv-youtube__grid"></div>
   </section>
 
   <section class="section panel tvSplit v85-tv-split">
