@@ -32,7 +32,7 @@
       artist.textContent = `${clip.artist} — M.P.B.P 440 Corp. 2026`;
       description.textContent = clip.description;
       artistLink.href = clip.artistUrl;
-      buttons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.v12Clip === selected)));
+      buttons.forEach(button => { const isSelected = button.dataset.v12Clip === selected; button.setAttribute("aria-pressed", String(isSelected)); if (isSelected) button.setAttribute("aria-current", "true"); else button.removeAttribute("aria-current"); });
       if (scroll) panel.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
       if (autoplay) player.play().catch(() => {});
     };
