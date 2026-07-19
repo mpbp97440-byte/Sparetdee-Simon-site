@@ -1,0 +1,47 @@
+name: Validate and migrate Supabase
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - v12.0.8-supabase-backend-phase1
+    paths:
+      - 'supabase/**'
+      - '.github/workflows/supabase-migrations.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate versioned migrations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+      - name: Start isolated local Supabase stack
+        run: supabase start
+      - name: Lint database schema
+        run: supabase db lint --level warning
+      - name: Stop local Supabase stack
+        if: always()
+        run: supabase stop --no-backup
+
+  migrate:
+    name: Apply linked-project migrations
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+      - name: Link and push versioned migrations
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
+          supabase link --project-ref "$SUPABASE_PROJECT_REF"
+          supabase db push --linked --password "$SUPABASE_DB_PASSWORD"
