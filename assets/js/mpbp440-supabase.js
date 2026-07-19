@@ -48,7 +48,11 @@
     } finally { clearTimeout(timer); if (writes) pending.delete(token); }
   };
   const write = (name, args) => request(name, { p_session: sessionId(), p_visitor: visitorId(), ...args }, true).catch(() => null);
-  const format = (count, label) => `${new Intl.NumberFormat('fr-FR').format(Number(count) || 0)} ${label}${Number(count) === 1 ? '' : 's'}`;
+  const format = (count, label) => {
+    const number = Number(count) || 0;
+    const unit = label === 'J’aime' ? label : `${label}${number === 1 ? '' : 's'}`;
+    return `${new Intl.NumberFormat('fr-FR').format(number)} ${unit}`;
+  };
   const notifyUnavailable = (element) => { if (element) element.textContent = 'Statistiques temporairement indisponibles'; };
 
   const analytics = Object.freeze({
