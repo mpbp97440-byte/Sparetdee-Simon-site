@@ -2,6 +2,12 @@ name: Validate and migrate Supabase
 
 on:
   workflow_dispatch:
+    inputs:
+      apply_production_migration:
+        description: 'Apply linked production migrations (manual, reviewed run only)'
+        required: true
+        type: boolean
+        default: false
   push:
     branches:
       - main
@@ -33,7 +39,12 @@ jobs:
   migrate:
     name: Apply linked-project migrations
     needs: validate
-    if: github.repository == 'mpbp97440-byte/Sparetdee-Simon-site' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == 'mpbp97440-byte/Sparetdee-Simon-site' &&
+      (github.ref == 'refs/heads/main' ||
+      (github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/v12.1-admin-analytics-comments' &&
+      inputs.apply_production_migration == true))
     runs-on: ubuntu-latest
     environment: production
     steps:
