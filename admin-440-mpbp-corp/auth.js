@@ -1,101 +1,90 @@
-const ADMIN_USER = "sparet";
-const ADMIN_PASS = "docslam@mpbp83340";
+/* Back-office access is verified by Supabase Auth and public.admin_users.
+ * The publishable key is intentionally public; passwords are never stored here. */
+(() => {
+  'use strict';
 
-const SESSION_KEY = "mpbp440_admin_session_v8";
-const LOCK_KEY = "mpbp440_admin_lock_v8";
-const FAIL_KEY = "mpbp440_admin_fail_v8";
-const LOG_KEY = "mpbp440_admin_login_log_v8";
-const MAX_FAILS = 5;
-const LOCK_MINUTES = 15;
+  const config = Object.freeze({
+    url: 'https://eneuejomsrpdwvvpgvgl.supabase.co',
+    publishableKey: 'sb_publishable_ysbrjS9YnmymD_6YIU2gbg_Gb2RfyiD'
+  });
+  const sessionKey = 'mpbp440.admin.supabase.session.v1';
+  const timeoutMs = 6500;
+  let activeSession = null;
 
-function now(){ return Date.now(); }
-function getFail(){ return parseInt(localStorage.getItem(FAIL_KEY) || "0", 10); }
-function lockUntil(){ return parseInt(localStorage.getItem(LOCK_KEY) || "0", 10); }
-function isLocked(){ const t = lockUntil(); return t && now() < t; }
-function formatRemain(ms){ return Math.ceil(ms / 60000) + " minute(s)"; }
-function setMsg(txt){ const el = document.getElementById("loginMsg"); if(el) el.textContent = txt; }
-function setAttempts(){
-  const el = document.getElementById("attemptsMsg");
-  if(!el) return;
-  el.textContent = "Tentatives restantes : " + Math.max(0, MAX_FAILS - getFail()) + "/" + MAX_FAILS;
-}
-function addLog(type){
-  let logs = [];
-  try{ logs = JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); }catch(e){}
-  logs.unshift({type, date:new Date().toISOString(), userAgent:navigator.userAgent, page:location.href});
-  localStorage.setItem(LOG_KEY, JSON.stringify(logs.slice(0,30)));
-}
-function getSession(){
-  try{ return JSON.parse(localStorage.getItem(SESSION_KEY) || "null"); }
-  catch(e){ return null; }
-}
-function togglePassword(){
-  const pass = document.getElementById("adminPass");
-  if(pass) pass.type = pass.type === "password" ? "text" : "password";
-}
-function showHelp(){
-  alert("Accès réservé MPBP440. La connexion est locale au navigateur et ne contacte aucun serveur.");
-}
-function clearLockLocal(){
-  if(!confirm("Réinitialiser uniquement le verrou local de ce navigateur ?")) return;
-  localStorage.removeItem(LOCK_KEY);
-  localStorage.removeItem(FAIL_KEY);
-  setMsg("Verrou local réinitialisé.");
-  setAttempts();
-}
-function activateAdmin(){
-  const login = document.getElementById("loginBox");
-  const admin = document.getElementById("adminBox");
-  if(login) login.style.display = "none";
-  if(admin) admin.style.display = "block";
-  const session = getSession();
-  const info = document.getElementById("sessionInfo");
-  if(info && session) info.textContent = "Session active jusqu'à " + new Date(session.expire).toLocaleString();
-  document.dispatchEvent(new CustomEvent("mpbp-admin-ready"));
-}
-function checkSession(){
-  const session = getSession();
-  if(session && session.expire > now()){
-    activateAdmin();
-    return;
-  }
-  localStorage.removeItem(SESSION_KEY);
-  setAttempts();
-  const locked = lockUntil();
-  if(locked && now() < locked) setMsg("Accès verrouillé encore " + formatRemain(locked - now()) + ".");
-}
-function loginAdmin(){
-  if(isLocked()){
-    setMsg("Accès temporairement verrouillé encore " + formatRemain(lockUntil() - now()) + ".");
-    setAttempts();
-    return;
-  }
-  const user = document.getElementById("adminUser").value.trim();
-  const pass = document.getElementById("adminPass").value;
-  if(user === ADMIN_USER && pass === ADMIN_PASS){
-    const remember = document.getElementById("rememberAdmin").checked;
-    const expire = now() + (remember ? 24*60*60*1000 : 60*60*1000);
-    localStorage.setItem(SESSION_KEY, JSON.stringify({expire, user}));
-    localStorage.removeItem(FAIL_KEY);
-    localStorage.removeItem(LOCK_KEY);
-    addLog("success");
-    activateAdmin();
-    return;
-  }
-  const fail = getFail() + 1;
-  localStorage.setItem(FAIL_KEY, String(fail));
-  addLog("failed");
-  if(fail >= MAX_FAILS){
-    localStorage.setItem(LOCK_KEY, String(now() + LOCK_MINUTES*60*1000));
-    setMsg("Trop de tentatives. Verrouillage " + LOCK_MINUTES + " minutes.");
-  }else{
-    setMsg("Identifiant ou mot de passe incorrect.");
-  }
-  setAttempts();
-}
-function logoutAdmin(){
-  localStorage.removeItem(SESSION_KEY);
-  addLog("logout");
-  location.reload();
-}
-document.addEventListener("DOMContentLoaded", checkSession);
+  const byId = (id) => document.getElementById(id);
+  const setMessage = (message, isError = true) => {
+    const target = byId('loginMsg');
+    if (!target) return;
+    target.textContent = message;
+    target.classList.toggle('success', !isError);
+  };
+  const safeSession = () => {
+    try { return JSON.parse(sessionStorage.getItem(sessionKey) || 'null'); } catch (_) { return null; }
+  };
+  const saveSession = (session) => { activeSession = session; sessionStorage.setItem(sessionKey, JSON.stringify(session)); };
+  const clearSession = () => { activeSession = null; sessionStorage.removeItem(sessionKey); };
+  const request = async (path, options = {}) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(`${config.url}${path}`, { ...options, signal: controller.signal, headers: { apikey: config.publishableKey, 'Content-Type': 'application/json', ...(options.headers || {}) } });
+      const body = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(body?.msg || body?.message || `Connexion refusée (${response.status}).`);
+      return body;
+    } finally { clearTimeout(timer); }
+  };
+  const token = () => activeSession?.access_token || '';
+  const rpc = (name, args = {}) => request(`/rest/v1/rpc/${name}`, { method: 'POST', headers: { Authorization: `Bearer ${token()}` }, body: JSON.stringify(args) });
+  const user = () => request('/auth/v1/user', { headers: { Authorization: `Bearer ${token()}` } });
+  const isExpired = (session) => !session?.access_token || (session.expires_at && session.expires_at * 1000 <= Date.now() + 10000);
+  const activate = (profile) => {
+    byId('loginBox').hidden = true;
+    byId('adminBox').hidden = false;
+    const info = byId('sessionInfo');
+    if (info) info.textContent = `Session administrateur active : ${profile.email || 'compte vérifié'}`;
+    document.dispatchEvent(new CustomEvent('mpbp-admin-ready'));
+  };
+  const verifyAdmin = async () => {
+    const profile = await user();
+    await rpc('get_admin_dashboard_summary');
+    return profile;
+  };
+
+  window.MPBP440Admin = Object.freeze({ rpc, signOut: () => clearSession() });
+  window.togglePassword = () => {
+    const field = byId('adminPass');
+    if (field) field.type = field.type === 'password' ? 'text' : 'password';
+  };
+  window.loginAdmin = async () => {
+    const email = byId('adminEmail')?.value.trim();
+    const password = byId('adminPass')?.value || '';
+    const submit = byId('loginSubmit');
+    if (!email || !password) { setMessage('Saisissez votre adresse e-mail et votre mot de passe.'); return; }
+    if (submit) submit.disabled = true;
+    setMessage('Vérification de la session…', false);
+    try {
+      const session = await request('/auth/v1/token?grant_type=password', { method: 'POST', body: JSON.stringify({ email, password }) });
+      saveSession(session);
+      const profile = await verifyAdmin();
+      byId('adminPass').value = '';
+      setMessage('');
+      activate(profile);
+    } catch (error) {
+      clearSession();
+      setMessage(error?.message === 'administrator access required' ? 'Ce compte ne possède pas le rôle administrateur actif.' : 'Connexion impossible. Vérifiez vos accès Supabase Auth.');
+    } finally { if (submit) submit.disabled = false; }
+  };
+  window.logoutAdmin = async () => {
+    try { if (token()) await request('/auth/v1/logout', { method: 'POST', headers: { Authorization: `Bearer ${token()}` } }); } catch (_) {}
+    clearSession();
+    location.reload();
+  };
+  document.addEventListener('DOMContentLoaded', async () => {
+    const session = safeSession();
+    if (isExpired(session)) { clearSession(); return; }
+    saveSession(session);
+    setMessage('Restauration de la session…', false);
+    try { activate(await verifyAdmin()); setMessage(''); }
+    catch (_) { clearSession(); setMessage('Votre session a expiré. Connectez-vous à nouveau.'); }
+  }, { once: true });
+})();

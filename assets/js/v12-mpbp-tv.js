@@ -25,9 +25,32 @@
     const buttons = [...document.querySelectorAll('[data-v12-clip]')];
     const panel = document.getElementById('mpbp-tv-player');
     const analytics = window.MPBP440Analytics;
+    const commentsList = document.querySelector('[data-v12-comments-list]');
+    const commentsStatus = document.querySelector('[data-v12-comments-status]');
+    const commentsForm = document.querySelector('[data-v12-comments-form]');
+    const commentCount = document.querySelector('[data-v12-comment-count]');
+    const commentsRetry = document.querySelector('[data-v12-comments-retry]');
     if (!player || !panel) return;
 
     let selected = 'l-argent'; let watched = 0; let lastPosition = null; let viewSent = false;
+    const commentDate = (value) => new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(value));
+    const setCommentsStatus = (message) => { if (commentsStatus) commentsStatus.textContent = message; };
+    const setCommentFormAvailable = (available) => { const submit = commentsForm?.querySelector('button[type="submit"]'); if (submit) submit.disabled = !available; };
+    const loadComments = async () => {
+      if (!commentsList || !analytics) { setCommentsStatus('Les commentaires sont momentanément indisponibles.'); setCommentFormAvailable(false); if (commentsRetry) commentsRetry.hidden = false; return; }
+      setCommentsStatus('Chargement des commentaires…'); commentsList.replaceChildren(); if (commentsRetry) commentsRetry.hidden = true;
+      try {
+        const comments = await analytics.commentsForClip(selected);
+        if (!comments?.length) { setCommentsStatus('Aucun commentaire approuvé pour ce clip.'); setCommentFormAvailable(true); return; }
+        comments.forEach((comment) => {
+          const article = document.createElement('article'); article.className = 'v12-tv-comment';
+          const meta = document.createElement('p'); meta.className = 'v12-tv-comment__meta'; meta.textContent = `${comment.display_name} · ${commentDate(comment.created_at)}`;
+          const message = document.createElement('p'); message.textContent = comment.message;
+          article.append(meta, message); commentsList.append(article);
+        });
+        setCommentsStatus(`${comments.length} commentaire(s) approuvé(s).`); setCommentFormAvailable(true);
+      } catch (_) { setCommentsStatus('Les commentaires sont momentanément indisponibles.'); setCommentFormAvailable(false); if (commentsRetry) commentsRetry.hidden = false; }
+    };
     const setStats = (stats) => {
       if (!stats) { if (viewCount) viewCount.textContent = 'Statistiques temporairement indisponibles'; if (like) { like.disabled = true; like.setAttribute('aria-label', 'J’aime indisponible : statistiques temporairement indisponibles'); } return; }
       if (viewCount) viewCount.textContent = analytics.format(stats.views, 'vue');
@@ -56,6 +79,7 @@
       player.poster = clip.poster; title.textContent = clip.title; artist.textContent = `${clip.artist} — M.P.B.P 440 Corp. 2026`; description.textContent = clip.description; artistLink.href = clip.artistUrl;
       buttons.forEach((button) => { const active = button.dataset.v12Clip === selected; button.setAttribute('aria-pressed', String(active)); if (active) button.setAttribute('aria-current', 'true'); else button.removeAttribute('aria-current'); });
       refreshStats();
+      loadComments();
       if (scroll) panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       if (autoplay) player.play().catch(() => {});
     };
@@ -76,6 +100,18 @@
       if (liked === null && !analytics.isPreview) { setStats(null); return; }
       await refreshStats();
     });
+    commentsForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = new FormData(commentsForm); const name = String(data.get('displayName') || '').trim(); const message = String(data.get('message') || '').trim();
+      const submit = commentsForm.querySelector('button[type="submit"]');
+      if (data.get('website') || !name || !message || !analytics) { setCommentsStatus('Vérifiez les informations saisies.'); return; }
+      if (submit) submit.disabled = true; setCommentsStatus('Envoi pour modération…');
+      try { const result = await analytics.submitComment(selected, name, message); if (result === null && analytics.isPreview) { setCommentsStatus('L’envoi est désactivé sur la prévisualisation.'); return; } commentsForm.reset(); if (commentCount) commentCount.textContent = '0 / 1000'; setCommentsStatus('Merci. Votre commentaire sera publié après validation.'); }
+      catch (_) { setCommentsStatus('Envoi impossible pour le moment. Réessayez plus tard.'); }
+      finally { if (submit) submit.disabled = false; }
+    });
+    commentsForm?.elements.message?.addEventListener('input', (event) => { if (commentCount) commentCount.textContent = `${event.target.value.length} / 1000`; });
+    commentsRetry?.addEventListener('click', loadComments);
     share?.addEventListener('click', async () => { const clip = clips[selected]; const data = { title: `${clip.title} — ${clip.artist} | MPBP TV`, text: clip.description, url: canonical(selected) }; try { if (navigator.share) await navigator.share(data); else if (navigator.clipboard) { await navigator.clipboard.writeText(data.url); if (feedback) feedback.textContent = 'Lien du clip copié.'; } } catch (_) {} });
     const fromHash = () => { const key = location.hash.slice(1); if (clips[key]) select(key, { scroll: true }); };
     window.addEventListener('hashchange', fromHash); if (clips[location.hash.slice(1)]) fromHash(); else select(selected); refreshCardStats();

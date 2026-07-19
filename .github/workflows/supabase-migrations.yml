@@ -7,6 +7,7 @@ on:
       - main
       - v12.0.8-supabase-backend-phase1
       - v12.0.9-supabase-live-counters
+      - v12.1-admin-analytics-comments
     paths:
       - 'supabase/**'
       - '.github/workflows/supabase-migrations.yml'
