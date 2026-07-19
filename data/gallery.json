@@ -7,18 +7,18 @@
     "description": "Visuel officiel de Sparetdee Simon pour le portail MPBP440."
   },
   {
-    "artist": "Juste Une Plume",
-    "title": "Profil officiel Juste Une Plume",
-    "type": "Profil artiste",
-    "image": "assets/artists/juste-une-plume.webp",
-    "description": "Visuel officiel de Juste Une Plume pour le portail MPBP440."
-  },
-  {
     "artist": "Makéda Muse",
     "title": "Profil officiel Makéda Muse",
     "type": "Profil artiste",
     "image": "assets/makeda-muse/makeda-muse-profile.png",
     "description": "Visuel officiel de Makéda Muse pour le portail MPBP440."
+  },
+  {
+    "artist": "Juste Une Plume",
+    "title": "Profil officiel Juste Une Plume",
+    "type": "Profil artiste",
+    "image": "assets/artists/juste-une-plume.webp",
+    "description": "Visuel officiel de Juste Une Plume pour le portail MPBP440."
   },
   {
     "artist": "Sparetdee Simon",
