@@ -31,7 +31,7 @@ jobs:
   migrate:
     name: Apply linked-project migrations
     needs: validate
-    if: github.ref == 'refs/heads/main'
+    if: github.repository == 'mpbp97440-byte/Sparetdee-Simon-site' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
     steps:
