@@ -19,6 +19,10 @@ Créer ou fournir un projet Supabase avec une URL publique, une clé anon et une
 
 ## Vérifications
 
+- Publication V12.0.6 limitée aux corrections visuelles et structurelles.
+- Vues et likes explicitement reportés à V12.0.7 : aucun compteur, bouton, chiffre ou total local n'est publié.
+- Routes vérifiées : homepage, galerie et les trois pages artistes ; les quatre ancres MPBP TV restent inchangées.
+- Responsive vérifié de 1920 à 375 px, dont 430, 414, 402, 393, 390 et 375 px sans overflow horizontal.
 - URLs et ancres publiques inchangées.
 - MPBP TV et ses vidéos inchangés : aucun code d'analytics non fonctionnel n'est ajouté.
 - Les fichiers protégés locaux sont conservés.
