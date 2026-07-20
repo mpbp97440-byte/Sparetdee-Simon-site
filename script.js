@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "12-1-1-jour-de-pluie-fix-20260721";
+const MPBP_PUBLIC_VERSION = "12-1-1-preview-data-fix-20260721";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){
@@ -320,7 +320,7 @@ function renderNextRelease(data={}){
 
 async function loadData(){
   try{
-    const data = await fetch(`/data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"}).then(r=>r.json());
+    const data = await fetch(`${publicRoot()}data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"}).then(r=>r.json());
 
     const availableReleasesGrid = document.getElementById("availableReleasesGrid");
     if(availableReleasesGrid){
@@ -1374,7 +1374,7 @@ async function initMPBPNewsSection(){
   const list = document.getElementById("mpbpNewsList");
   if(!list) return;
   try{
-    const response = await fetch(`/data/news.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
+    const response = await fetch(`${publicRoot()}data/news.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
     const news = response.ok ? await response.json() : [];
     if(!Array.isArray(news) || !news.length){
       list.innerHTML = emptyStateHtml("Aucune actualité disponible pour le moment.", "/music/index.html#morceaux", "Voir les morceaux");
@@ -1481,7 +1481,7 @@ function initMPBPTVControls(){
 
 async function loadLiveStatus(){
   try{
-    const res = await fetch("/live_status.json?v=" + Date.now(), {cache:"no-store"});
+    const res = await fetch(publicRoot() + "live_status.json?v=" + Date.now(), {cache:"no-store"});
     if(!res.ok) return;
     const live = await res.json();
     const card = document.getElementById("livePortalCard");
@@ -1581,13 +1581,13 @@ document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll('a[h
 // V6.4.9 — correctif radio Spotify + liens plateformes complets
 document.addEventListener("DOMContentLoaded", async ()=>{
   try{
-    const res = await fetch(`/data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
+    const res = await fetch(`${publicRoot()}data.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
     const siteData = await res.json();
     async function getRadioData(){
       const mainRadio = siteData.radio || {};
       if(mainRadio.embed) return mainRadio;
       try{
-        const radioRes = await fetch(`/data/radio.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
+        const radioRes = await fetch(`${publicRoot()}data/radio.json?v=${MPBP_PUBLIC_VERSION}`, {cache:"no-store"});
         if(radioRes.ok){
           const radioData = await radioRes.json();
           return Object.assign({}, mainRadio, radioData);
