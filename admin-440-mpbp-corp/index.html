@@ -5,222 +5,40 @@
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Back Office MPBP440</title>
-<link rel="stylesheet" href="admin.css?v=8.0-backoffice">
+<link rel="stylesheet" href="admin.css?v=12-1-admin-analytics">
 </head>
 <body>
 <section id="loginBox" class="login-wrap">
   <div class="login-card">
-    <p class="sup">Accès réservé</p>
-    <h1>Back Office MPBP440</h1>
-    <p class="muted">Connexion locale, aucune donnée envoyée à un serveur.</p>
-    <label>Identifiant <input id="adminUser" autocomplete="username" placeholder="Identifiant"></label>
-    <label>Mot de passe
-      <div class="password-row">
-        <input id="adminPass" type="password" autocomplete="current-password" placeholder="Mot de passe">
-        <button type="button" onclick="togglePassword()">Voir</button>
-      </div>
-    </label>
-    <label class="remember"><input id="rememberAdmin" type="checkbox" checked><span>Rester connecté 24 h</span></label>
-    <button class="btn" onclick="loginAdmin()">Accéder au back office</button>
-    <p id="loginMsg" class="msg"></p>
-    <p id="attemptsMsg" class="muted small"></p>
-    <div class="login-footer">
-      <button class="btn ghost" onclick="showHelp()">Aide</button>
-      <button class="btn ghost" onclick="clearLockLocal()">Réinitialiser verrou local</button>
-    </div>
+    <p class="sup">Accès réservé</p><h1>Back Office MPBP440</h1>
+    <p class="muted">Authentification Supabase sécurisée. L’accès nécessite un compte Auth et un rôle administrateur actif.</p>
+    <form id="adminLoginForm" novalidate>
+      <label>Adresse e-mail <input id="adminEmail" type="email" autocomplete="username" inputmode="email" required></label>
+      <label>Mot de passe <div class="password-row"><input id="adminPass" type="password" autocomplete="current-password" required><button type="button" class="btn ghost" onclick="togglePassword()">Voir</button></div></label>
+      <button class="btn" id="loginSubmit" type="submit">Accéder au back office</button>
+      <p id="loginMsg" class="msg" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
-<section id="adminBox" style="display:none">
-  <div class="admin-secure-bar">
-    <strong>Back Office MPBP440</strong>
-    <span id="sessionInfo">Session active</span>
-    <button onclick="logoutAdmin()">Se déconnecter</button>
-  </div>
-
+<section id="adminBox" hidden>
+  <div class="admin-secure-bar"><strong>Back Office MPBP440</strong><span id="sessionInfo">Session active</span><button class="btn ghost" type="button" onclick="logoutAdmin()">Se déconnecter</button></div>
   <main class="admin-page">
-    <header class="admin-hero">
-      <div>
-        <p class="sup">V8 Essential</p>
-        <h1>Gestion du site</h1>
-        <p>Charge les JSON existants, prépare les médias et exporte uniquement les fichiers modifiés.</p>
-      </div>
-      <div class="hero-actions">
-        <button class="btn" id="reloadDataBtn">Recharger les JSON</button>
-        <button class="btn primary" id="quickExportBtn">Exporter la mise à jour</button>
-      </div>
-    </header>
-
+    <header class="admin-hero"><div><p class="sup">V12.1 sécurisé</p><h1>Gestion du site</h1><p>Gestion locale des contenus et statistiques Supabase réservées aux administrateurs.</p></div><div class="hero-actions"><button class="btn" id="reloadDataBtn">Recharger les JSON</button><button class="btn primary" id="quickExportBtn">Exporter la mise à jour</button></div></header>
     <nav class="tabs" aria-label="Modules back office">
-      <button class="tab active" data-tab="dashboard">Dashboard</button>
-      <button class="tab" data-tab="tracks">Morceaux</button>
-      <button class="tab" data-tab="tv">MPBP TV</button>
-      <button class="tab" data-tab="gallery">Galerie</button>
-      <button class="tab" data-tab="events">Événements</button>
-      <button class="tab" data-tab="news">Actualités</button>
-      <button class="tab" data-tab="upcoming">Sorties</button>
-      <button class="tab" data-tab="export">Export</button>
+      <button class="tab active" data-tab="dashboard">Dashboard</button><button class="tab" data-tab="analytics">Analytics</button><button class="tab" data-tab="comments">Commentaires</button><button class="tab" data-tab="tracks">Morceaux</button><button class="tab" data-tab="tv">MPBP TV</button><button class="tab" data-tab="gallery">Galerie</button><button class="tab" data-tab="events">Événements</button><button class="tab" data-tab="news">Actualités</button><button class="tab" data-tab="upcoming">Sorties</button><button class="tab" data-tab="export">Export</button>
     </nav>
-
-    <section class="tabPanel active" id="tab-dashboard">
-      <div class="grid dashboard-grid" id="dashboardCards"></div>
-      <article class="panel">
-        <h2>Aperçu avant export</h2>
-        <div id="previewCards" class="preview-grid"></div>
-      </article>
-    </section>
-
-    <section class="tabPanel" id="tab-tracks">
-      <article class="panel">
-        <h2>Morceaux</h2>
-        <div class="form-grid">
-          <input type="hidden" id="trackIndex">
-          <label>Titre <input id="trackTitle"></label>
-          <label>Artiste <input id="trackArtist"></label>
-          <label>Statut <input id="trackStatus" placeholder="Disponible"></label>
-          <label>Date <input id="trackDate" placeholder="Disponible / 11/07/2026"></label>
-          <label class="wide">Description <textarea id="trackDescription"></textarea></label>
-          <label>Pochette <input id="trackCover" placeholder="assets/covers/titre.jpg"></label>
-          <label>Importer pochette <input id="trackMedia" type="file" accept="image/*"></label>
-          <label>Spotify <input id="trackSpotify"></label>
-          <label>Apple Music <input id="trackApple"></label>
-          <label>Deezer <input id="trackDeezer"></label>
-          <label>YouTube <input id="trackYoutube"></label>
-          <label>Amazon <input id="trackAmazon"></label>
-          <label>TikTok <input id="trackTiktok"></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-track">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-track">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Artiste</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="tracksTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-tv">
-      <article class="panel">
-        <h2>MPBP TV</h2>
-        <div class="form-grid">
-          <input type="hidden" id="videoIndex">
-          <label>Titre <input id="videoTitle"></label>
-          <label>Artiste <input id="videoArtist"></label>
-          <label>Catégorie <select id="videoCategory"><option>clip officiel</option><option>exclusivité</option><option>live</option><option>archive</option></select></label>
-          <label>Lien YouTube <input id="videoYoutube"></label>
-          <label>Fichier MP4 <input id="videoFile" type="file" accept="video/mp4,video/*"></label>
-          <label>Chemin vidéo <input id="videoSrc" placeholder="assets/videos/clip.mp4"></label>
-          <label>Poster <input id="videoPoster" placeholder="assets/covers/poster.jpg"></label>
-          <label>Importer poster <input id="videoPosterFile" type="file" accept="image/*"></label>
-          <label class="wide">Description <textarea id="videoDescription"></textarea></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-video">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-video">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Catégorie</th><th>Source</th><th>Actions</th></tr></thead><tbody id="videosTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-gallery">
-      <article class="panel">
-        <h2>Galerie</h2>
-        <div class="form-grid">
-          <input type="hidden" id="galleryIndex">
-          <label>Titre <input id="galleryTitle"></label>
-          <label>Catégorie <input id="galleryCategory" placeholder="photo / flyer / scène"></label>
-          <label>Artiste lié <input id="galleryArtist"></label>
-          <label>Image <input id="galleryImage" placeholder="assets/gallery/image.jpg"></label>
-          <label>Importer image <input id="galleryFile" type="file" accept="image/*"></label>
-          <label class="wide">Description <textarea id="galleryDescription"></textarea></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-gallery">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-gallery">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Catégorie</th><th>Artiste</th><th>Actions</th></tr></thead><tbody id="galleryTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-events">
-      <article class="panel">
-        <h2>Événements / Lives</h2>
-        <div class="form-grid">
-          <input type="hidden" id="eventIndex">
-          <label>Titre <input id="eventTitle"></label>
-          <label>Date <input id="eventDate" placeholder="21/06/2026"></label>
-          <label>Heure <input id="eventTime"></label>
-          <label>Lieu ou lien <input id="eventPlace"></label>
-          <label>Statut <input id="eventStatus" placeholder="À venir"></label>
-          <label>Image <input id="eventCover" placeholder="assets/events/event.jpg"></label>
-          <label>Importer image <input id="eventFile" type="file" accept="image/*"></label>
-          <label class="wide">Description <textarea id="eventDescription"></textarea></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-event">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-event">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="eventsTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-news">
-      <article class="panel">
-        <h2>Actualités</h2>
-        <div class="form-grid">
-          <input type="hidden" id="newsIndex">
-          <label>Titre <input id="newsTitle"></label>
-          <label>Date <input id="newsDate" placeholder="04/07/2026"></label>
-          <label>Lien optionnel <input id="newsUrl"></label>
-          <label>Image <input id="newsImage" placeholder="assets/gallery/news.jpg"></label>
-          <label>Importer image <input id="newsFile" type="file" accept="image/*"></label>
-          <label class="wide">Texte <textarea id="newsText"></textarea></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-news">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-news">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Date</th><th>Lien</th><th>Actions</th></tr></thead><tbody id="newsTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-upcoming">
-      <article class="panel">
-        <h2>Sorties à venir</h2>
-        <div class="form-grid">
-          <input type="hidden" id="upcomingIndex">
-          <label>Titre <input id="upcomingTitle"></label>
-          <label>Artiste <input id="upcomingArtist"></label>
-          <label>Date <input id="upcomingDate" placeholder="11/07/2026"></label>
-          <label>Flyer <input id="upcomingCover" placeholder="assets/covers/flyer.jpg"></label>
-          <label>Importer flyer <input id="upcomingFile" type="file" accept="image/*"></label>
-          <label class="wide">Description <textarea id="upcomingDescription"></textarea></label>
-        </div>
-        <div class="actions">
-          <button class="btn primary" data-action="save-upcoming">Ajouter / Modifier</button>
-          <button class="btn ghost" data-action="clear-upcoming">Nouveau</button>
-        </div>
-      </article>
-      <div class="table-wrap"><table><thead><tr><th>Titre</th><th>Artiste</th><th>Date</th><th>Actions</th></tr></thead><tbody id="upcomingTable"></tbody></table></div>
-    </section>
-
-    <section class="tabPanel" id="tab-export">
-      <article class="panel">
-        <h2>Exporter la mise à jour</h2>
-        <p>Le ZIP contient uniquement les JSON modifiés et les nouveaux médias préparés dans cette session.</p>
-        <div id="changeList" class="change-list"></div>
-        <div class="actions">
-          <button class="btn primary" data-action="export-zip">Exporter la mise à jour</button>
-          <button class="btn ghost" data-action="reset-work">Réinitialiser les modifications locales</button>
-        </div>
-      </article>
-      <article class="panel">
-        <h2>README_UPLOAD.txt</h2>
-        <pre id="readmePreview"></pre>
-      </article>
-    </section>
+    <section class="tabPanel active" id="tab-dashboard"><div class="grid dashboard-grid" id="dashboardCards"></div><article class="panel"><h2>Aperçu avant export</h2><div id="previewCards" class="preview-grid"></div></article></section>
+    <section class="tabPanel" id="tab-analytics"><article class="panel"><div class="panel-head"><div><h2>Analytics privées</h2><p class="muted">Visites, pages, artistes, clips et activité récente. Aucune donnée visiteur n’est affichée.</p></div><button class="btn ghost" type="button" data-admin-reload="analytics">Actualiser</button></div><p id="analyticsStatus" class="msg" role="status" aria-live="polite"></p><div id="adminAnalyticsCards" class="grid dashboard-grid"></div></article><article class="panel"><h2>Clips</h2><div class="table-wrap"><table><thead><tr><th>Clip</th><th>Vues</th><th>Rang vues</th><th>J’aime</th><th>Rang J’aime</th></tr></thead><tbody id="adminClipStats"></tbody></table></div></article><article class="panel"><h2>Artistes</h2><div class="table-wrap"><table><thead><tr><th>Artiste</th><th>Visites</th></tr></thead><tbody id="adminArtistStats"></tbody></table></div></article><article class="panel"><h2>Pages les plus vues</h2><div class="table-wrap"><table><thead><tr><th>Page</th><th>Visites</th></tr></thead><tbody id="adminPageStats"></tbody></table></div></article><article class="panel"><h2>Activité récente</h2><ul id="adminRecentActivity" class="activity-list"></ul></article></section>
+    <section class="tabPanel" id="tab-comments"><article class="panel"><div class="panel-head"><div><h2>Modération des commentaires</h2><p class="muted">Les nouveaux commentaires restent invisibles jusqu’à approbation.</p></div><button class="btn ghost" type="button" data-admin-reload="comments">Actualiser</button></div><label class="filter-label">Statut <select id="adminCommentFilter"><option value="pending">En attente</option><option value="approved">Approuvés</option><option value="rejected">Refusés</option><option value="hidden">Masqués</option><option value="deleted">Supprimés</option><option value="all">Tous</option></select></label><p id="commentsStatus" class="msg" role="status" aria-live="polite"></p><div id="adminCommentsList" class="comment-admin-list"></div></article></section>
+    <section class="tabPanel" id="tab-tracks"><article class="panel"><h2>Morceaux</h2><div class="form-grid"><input type="hidden" id="trackIndex"><label>Titre <input id="trackTitle"></label><label>Artiste <input id="trackArtist"></label><label>Statut <input id="trackStatus" placeholder="Disponible"></label><label>Date <input id="trackDate" placeholder="Disponible / 11/07/2026"></label><label class="wide">Description <textarea id="trackDescription"></textarea></label><label>Pochette <input id="trackCover" placeholder="assets/covers/titre.jpg"></label><label>Importer pochette <input id="trackMedia" type="file" accept="image/*"></label><label>Spotify <input id="trackSpotify"></label><label>Apple Music <input id="trackApple"></label><label>Deezer <input id="trackDeezer"></label><label>YouTube <input id="trackYoutube"></label><label>Amazon <input id="trackAmazon"></label><label>TikTok <input id="trackTiktok"></label></div><div class="actions"><button class="btn primary" data-action="save-track">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-track">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Artiste</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="tracksTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-tv"><article class="panel"><h2>MPBP TV</h2><div class="form-grid"><input type="hidden" id="videoIndex"><label>Titre <input id="videoTitle"></label><label>Artiste <input id="videoArtist"></label><label>Catégorie <select id="videoCategory"><option>clip officiel</option><option>exclusivité</option><option>live</option><option>archive</option></select></label><label>Lien YouTube <input id="videoYoutube"></label><label>Fichier MP4 <input id="videoFile" type="file" accept="video/mp4,video/*"></label><label>Chemin vidéo <input id="videoSrc" placeholder="assets/videos/clip.mp4"></label><label>Poster <input id="videoPoster" placeholder="assets/covers/poster.jpg"></label><label>Importer poster <input id="videoPosterFile" type="file" accept="image/*"></label><label class="wide">Description <textarea id="videoDescription"></textarea></label></div><div class="actions"><button class="btn primary" data-action="save-video">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-video">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Catégorie</th><th>Source</th><th>Actions</th></tr></thead><tbody id="videosTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-gallery"><article class="panel"><h2>Galerie</h2><div class="form-grid"><input type="hidden" id="galleryIndex"><label>Titre <input id="galleryTitle"></label><label>Catégorie <input id="galleryCategory" placeholder="photo / flyer / scène"></label><label>Artiste lié <input id="galleryArtist"></label><label>Image <input id="galleryImage" placeholder="assets/gallery/image.jpg"></label><label>Importer image <input id="galleryFile" type="file" accept="image/*"></label><label class="wide">Description <textarea id="galleryDescription"></textarea></label></div><div class="actions"><button class="btn primary" data-action="save-gallery">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-gallery">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Catégorie</th><th>Artiste</th><th>Actions</th></tr></thead><tbody id="galleryTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-events"><article class="panel"><h2>Événements / Lives</h2><div class="form-grid"><input type="hidden" id="eventIndex"><label>Titre <input id="eventTitle"></label><label>Date <input id="eventDate" placeholder="21/06/2026"></label><label>Heure <input id="eventTime"></label><label>Lieu ou lien <input id="eventPlace"></label><label>Statut <input id="eventStatus" placeholder="À venir"></label><label>Image <input id="eventCover" placeholder="assets/events/event.jpg"></label><label>Importer image <input id="eventFile" type="file" accept="image/*"></label><label class="wide">Description <textarea id="eventDescription"></textarea></label></div><div class="actions"><button class="btn primary" data-action="save-event">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-event">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="eventsTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-news"><article class="panel"><h2>Actualités</h2><div class="form-grid"><input type="hidden" id="newsIndex"><label>Titre <input id="newsTitle"></label><label>Date <input id="newsDate" placeholder="04/07/2026"></label><label>Lien optionnel <input id="newsUrl"></label><label>Image <input id="newsImage" placeholder="assets/gallery/news.jpg"></label><label>Importer image <input id="newsFile" type="file" accept="image/*"></label><label class="wide">Texte <textarea id="newsText"></textarea></label></div><div class="actions"><button class="btn primary" data-action="save-news">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-news">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Date</th><th>Lien</th><th>Actions</th></tr></thead><tbody id="newsTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-upcoming"><article class="panel"><h2>Sorties à venir</h2><div class="form-grid"><input type="hidden" id="upcomingIndex"><label>Titre <input id="upcomingTitle"></label><label>Artiste <input id="upcomingArtist"></label><label>Date <input id="upcomingDate" placeholder="11/07/2026"></label><label>Flyer <input id="upcomingCover" placeholder="assets/covers/flyer.jpg"></label><label>Importer flyer <input id="upcomingFile" type="file" accept="image/*"></label><label class="wide">Description <textarea id="upcomingDescription"></textarea></label></div><div class="actions"><button class="btn primary" data-action="save-upcoming">Ajouter / Modifier</button><button class="btn ghost" data-action="clear-upcoming">Nouveau</button></div></article><div class="table-wrap"><table><thead><tr><th>Titre</th><th>Artiste</th><th>Date</th><th>Actions</th></tr></thead><tbody id="upcomingTable"></tbody></table></div></section>
+    <section class="tabPanel" id="tab-export"><article class="panel"><h2>Exporter la mise à jour</h2><p>Le ZIP contient uniquement les JSON modifiés et les nouveaux médias préparés dans cette session.</p><div id="changeList" class="change-list"></div><div class="actions"><button class="btn primary" data-action="export-zip">Exporter la mise à jour</button><button class="btn ghost" data-action="reset-work">Réinitialiser les modifications locales</button></div></article><article class="panel"><h2>README_UPLOAD.txt</h2><pre id="readmePreview"></pre></article></section>
   </main>
 </section>
-
-<script src="auth.js?v=8.0-backoffice"></script>
-<script src="backoffice.js?v=8.0-backoffice"></script>
-</body>
-</html>
+<script src="auth.js?v=12-1-auth-fix-20260720"></script><script src="backoffice.js?v=12-1-admin-analytics"></script><script src="admin-supabase.js?v=12-1-admin-analytics"></script>
+</body></html>

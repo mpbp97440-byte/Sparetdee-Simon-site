@@ -66,6 +66,8 @@
       const result = await request('get_video_engagement', { p_video_id: key, p_visitor: visitorId() });
       return Array.isArray(result) ? result[0] : result;
     },
+    commentsForClip: async (key) => request('get_approved_comments', { p_content_type: 'clip', p_content_id: key }),
+    submitComment: (key, displayName, message) => request('submit_comment', { p_content_type: 'clip', p_content_id: key, p_display_name: displayName, p_message: message, p_visitor: visitorId() }, true),
     format,
     visitorId,
     sessionId
