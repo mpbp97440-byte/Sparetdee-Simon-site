@@ -10,13 +10,18 @@ function cleanKey(value){
   return safeText(value).trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 }
 
-const fallbackLogo = "/assets/brand/mpbp440-corp-official.png";
+function publicRoot(){
+  const path = location.pathname;
+  const section = path.match(/^(.*)\/(?:music|artistes|mpbp-tv|galerie|evenements|actualites|notifications|live|members|application|telechargements|admin-440-mpbp-corp)\//);
+  return section ? `${section[1]}/` : path.replace(/[^/]*$/, '');
+}
+const fallbackLogo = `${publicRoot()}assets/brand/mpbp440-corp-official.png`;
 
 function mediaSrc(value){
   const src = safeText(value).trim();
   if(!src) return fallbackLogo;
   if(/^(https?:|data:|blob:)/i.test(src) || src.startsWith("/")) return src;
-  return "/" + src.replace(/^\.?\//,"");
+  return publicRoot() + src.replace(/^\.?\//,"");
 }
 
 function fallbackImage(event){
