@@ -1,5 +1,5 @@
 let allTracks = [];
-const MPBP_PUBLIC_VERSION = "countdown-notifications-hotfix-v11-202607";
+const MPBP_PUBLIC_VERSION = "12-1-1-jour-de-pluie-fix-20260721";
 const musicHubState = {query:"", artist:"all", status:"all", sort:"source"};
 
 function safeText(value){

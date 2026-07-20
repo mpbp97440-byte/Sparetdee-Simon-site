@@ -912,6 +912,7 @@
     "type": "Single",
     "description": "Sortie officielle de Makéda Muse, disponible maintenant sur les plateformes.",
     "cover": "assets/releases/makeda-muse/jour-de-pluie-pochette-officielle.png",
+    "promoCover": "assets/releases/makeda-muse/jour-de-pluie-disponible-maintenant.png",
     "links": {
       "spotify": "https://open.spotify.com/intl-fr/album/0AhJuwE14u2HxeKK7gLqay?si=oJ77v3q4R8e6OxmL5XMFdw",
       "deezer": "https://link.deezer.com/s/33SZ08NYKSL7CCqciuBrr",

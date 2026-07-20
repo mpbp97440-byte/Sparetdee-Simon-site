@@ -5,7 +5,7 @@
     makeda:{clip:'../mpbp-tv/index.html#clip-j-existe',clipTitle:'J’existe',poster:'../assets/clips/makeda-muse/j-existe-cover.png',gallery:['../assets/makeda-muse/makeda-muse-profile.png','../assets/releases/makeda-muse/jour-de-pluie-pochette-officielle.png']}
   };
   const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const labels = {spotify:'Spotify',deezer:'Deezer',apple:'Apple Music',youtube:'YouTube',tiktok:'TikTok',facebook:'Facebook'};
+  const labels = {spotify:'Spotify',deezer:'Deezer',apple:'Apple Music',youtube:'YouTube Music',tiktok:'TikTok',facebook:'Facebook'};
   document.addEventListener('DOMContentLoaded', async () => {
     const key = document.body.dataset.artistKey, artist = document.body.dataset.artist, details = config[key];
     if (!details) return;
@@ -13,10 +13,10 @@
     try {
       const releases = await fetch('../data/releases.json', {cache:'no-store'}).then(response => response.json());
       const artistReleases = releases.filter(item => item.artist === artist);
-      const newest = artistReleases[artistReleases.length - 1] || artistReleases[0];
+      const newest = artistReleases.filter(item => item.status === 'Disponible').sort((a,b) => String(b.date || '').localeCompare(String(a.date || '')))[0];
       if (newest && !main.querySelector('.v12-latest-artist-release')) {
         const section = document.createElement('section'); section.className = 'section v12-latest-artist-release';
-        section.innerHTML = `<p class="sup">Dernière sortie</p><h2>${escape(newest.title)}</h2><article class="release-card-artist"><img src="../${escape(newest.cover)}" alt="Pochette ${escape(newest.title)}" loading="lazy"><div><p>${escape(newest.status || 'Sortie officielle')}</p><p>${escape(newest.description || '')}</p><div class="release-links">${Object.entries(newest.links || {}).filter(([,url]) => url).map(([name,url]) => `<a class="btn ghost small" target="_blank" rel="noopener" href="${escape(url)}">${labels[name] || escape(name)}</a>`).join('')}</div></div></article>`;
+        section.innerHTML = `<p class="sup">Dernières sorties</p><h2>${escape(newest.title)}</h2><article class="release-card-artist"><img src="../${escape(newest.promoCover || newest.cover)}" alt="${escape(newest.title)} — disponible maintenant" loading="lazy"><div><p>${escape(newest.status || 'Sortie officielle')}</p><p>${escape(newest.description || '')}</p><div class="release-links">${Object.entries(newest.links || {}).filter(([,url]) => url).map(([name,url]) => `<a class="btn ghost small" target="_blank" rel="noopener" href="${escape(url)}">${labels[name] || escape(name)}</a>`).join('')}</div></div></article>`;
         main.querySelector('.hero')?.insertAdjacentElement('afterend', section);
       }
     } catch (error) { console.warn('Dernière sortie artiste indisponible.', error); }

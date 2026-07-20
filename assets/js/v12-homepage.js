@@ -22,7 +22,7 @@
   };
   const render = async () => {
     try {
-      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
+      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=12-1-1-jour-de-pluie-fix-20260721", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
       const latest = (data.tracks || []).find(item => item.id === "makeda-jour-de-pluie");
       const latestRoot = $("#v12LatestRelease");
       if (latest && latestRoot) latestRoot.innerHTML = `<img src="${media(latest.promoCover || latest.cover)}" alt="${esc(latest.title)} — disponible maintenant" width="1200" height="1200"><div class="v12-latest-release__body"><span class="v12-badge">Disponible maintenant</span><h3>${esc(latest.title)}</h3><p class="v12-feature__artist">${esc(latest.artist)}</p><p>${esc(latest.description)}</p><div class="v12-platform-links">${links(latest)}</div></div>`;
