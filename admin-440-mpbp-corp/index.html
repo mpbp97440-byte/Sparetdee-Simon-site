@@ -12,10 +12,12 @@
   <div class="login-card">
     <p class="sup">Accès réservé</p><h1>Back Office MPBP440</h1>
     <p class="muted">Authentification Supabase sécurisée. L’accès nécessite un compte Auth et un rôle administrateur actif.</p>
-    <label>Adresse e-mail <input id="adminEmail" type="email" autocomplete="username" inputmode="email" required></label>
-    <label>Mot de passe <div class="password-row"><input id="adminPass" type="password" autocomplete="current-password" required><button type="button" class="btn ghost" onclick="togglePassword()">Voir</button></div></label>
-    <button class="btn" id="loginSubmit" type="button" onclick="loginAdmin()">Accéder au back office</button>
-    <p id="loginMsg" class="msg" role="status" aria-live="polite"></p>
+    <form id="adminLoginForm" novalidate>
+      <label>Adresse e-mail <input id="adminEmail" type="email" autocomplete="username" inputmode="email" required></label>
+      <label>Mot de passe <div class="password-row"><input id="adminPass" type="password" autocomplete="current-password" required><button type="button" class="btn ghost" onclick="togglePassword()">Voir</button></div></label>
+      <button class="btn" id="loginSubmit" type="submit">Accéder au back office</button>
+      <p id="loginMsg" class="msg" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -38,5 +40,5 @@
     <section class="tabPanel" id="tab-export"><article class="panel"><h2>Exporter la mise à jour</h2><p>Le ZIP contient uniquement les JSON modifiés et les nouveaux médias préparés dans cette session.</p><div id="changeList" class="change-list"></div><div class="actions"><button class="btn primary" data-action="export-zip">Exporter la mise à jour</button><button class="btn ghost" data-action="reset-work">Réinitialiser les modifications locales</button></div></article><article class="panel"><h2>README_UPLOAD.txt</h2><pre id="readmePreview"></pre></article></section>
   </main>
 </section>
-<script src="auth.js?v=12-1-admin-analytics"></script><script src="backoffice.js?v=12-1-admin-analytics"></script><script src="admin-supabase.js?v=12-1-admin-analytics"></script>
+<script src="auth.js?v=12-1-auth-fix-20260720"></script><script src="backoffice.js?v=12-1-admin-analytics"></script><script src="admin-supabase.js?v=12-1-admin-analytics"></script>
 </body></html>
