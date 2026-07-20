@@ -1627,7 +1627,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
         const title = (t.title || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
         document.querySelectorAll(".card,.featuredCard,.time-card").forEach(card=>{
           const txt=(card.textContent||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-          if(txt.includes(title.split(" ")[0]) || (title.includes("systeme") && txt.includes("systeme")) || (title.includes("reves") && txt.includes("reves"))){
+          if(txt.includes(title) || (title.includes("systeme") && txt.includes("systeme")) || (title.includes("reves") && txt.includes("reves"))){
             let box = card.querySelector(".platforms");
             if(!box){
               box = document.createElement("div");

@@ -2,7 +2,7 @@
   const config = {
     sparetdee:{clip:'../mpbp-tv/index.html#clip-dois-je-me-taire',clipTitle:'Dois-je me taire ?',poster:'../assets/clips/sparetdee-simon/dois-je-me-taire-cover.png',gallery:['../assets/artists/sparetdee-simon.webp','../assets/covers/le-systeme-pre-sortie-27-06-2026.webp']},
     jup:{clip:'../mpbp-tv/index.html#clip-je-sais-que-tu-sais',clipTitle:'Je sais que tu sais',poster:'../assets/covers/je-sais-juste-une-plume.webp',gallery:['../assets/artists/juste-une-plume.webp','../assets/events/je-sais-sortie-officielle.webp']},
-    makeda:{clip:'../mpbp-tv/index.html#clip-j-existe',clipTitle:'J’existe',poster:'../assets/clips/makeda-muse/j-existe-cover.png',gallery:['../assets/makeda-muse/makeda-muse-profile.png','../assets/makeda-muse/jour-de-pluie-pre-sortie.png']}
+    makeda:{clip:'../mpbp-tv/index.html#clip-j-existe',clipTitle:'J’existe',poster:'../assets/clips/makeda-muse/j-existe-cover.png',gallery:['../assets/makeda-muse/makeda-muse-profile.png','../assets/releases/makeda-muse/jour-de-pluie-pochette-officielle.png']}
   };
   const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const labels = {spotify:'Spotify',deezer:'Deezer',apple:'Apple Music',youtube:'YouTube',tiktok:'TikTok',facebook:'Facebook'};

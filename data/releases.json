@@ -905,31 +905,37 @@
   {
     "id": "makeda-jour-de-pluie",
     "title": "Jour de pluie",
-    "artist": "Makeda Muse",
-    "date": "2026-07-21T00:00:00+02:00",
-    "label": "Pré-sortie officielle",
-    "status": "Pré-sortie / Bientôt disponible",
+    "artist": "Makéda Muse",
+    "date": "2026-07-21",
+    "label": "Sortie officielle",
+    "status": "Disponible",
     "type": "Single",
-    "description": "Pré-sortie officielle de Makeda Muse, disponible le 21 juillet 2026 sur toutes les plateformes.",
-    "cover": "assets/makeda-muse/jour-de-pluie-pre-sortie.png",
-    "links": {},
+    "description": "Sortie officielle de Makéda Muse, disponible maintenant sur les plateformes.",
+    "cover": "assets/releases/makeda-muse/jour-de-pluie-pochette-officielle.png",
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/0AhJuwE14u2HxeKK7gLqay?si=oJ77v3q4R8e6OxmL5XMFdw",
+      "deezer": "https://link.deezer.com/s/33SZ08NYKSL7CCqciuBrr",
+      "youtube": "https://music.youtube.com/watch?v=WbsU2lan3MU&si=z6FaVXU1g8V8ywC3",
+      "apple": "https://music.apple.com/fr/album/jour-de-pluie-single/6790335730",
+      "tiktok": "https://www.tiktok.com/@makeda_77?is_from_webapp=1&sender_device=pc"
+    },
     "keywords": [
-      "makeda muse",
+      "makéda muse",
       "jour de pluie",
       "mpbp440",
-      "pre-sortie",
-      "cle de sol"
+      "single",
+      "disponible"
     ]
   },
   {
     "id": "makeda-sixieme-sens",
     "title": "Sixieme Sens",
-    "artist": "Makeda Muse",
+    "artist": "Makéda Muse",
     "date": "2026-07-23T00:00:00+02:00",
     "label": "Pré-sortie officielle",
     "status": "Pré-sortie / Bientôt disponible",
     "type": "Single",
-    "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
+    "description": "Pré-sortie officielle de Makéda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
     "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
     "links": {},
     "keywords": [
@@ -944,12 +950,12 @@
   {
     "id": "makeda-double-pre-sortie-2026-07-25",
     "title": "Je laisse la porte ouverte / J'existe",
-    "artist": "Makeda Muse",
+    "artist": "Makéda Muse",
     "date": "2026-07-25T00:00:00+02:00",
     "label": "Double pré-sortie officielle",
     "status": "Pré-sortie / Bientôt disponible",
     "type": "Double pré-sortie",
-    "description": "Double pré-sortie officielle de Makeda Muse : Je laisse la porte ouverte et J'existe, disponible le 25 juillet 2026 sur toutes les plateformes.",
+    "description": "Double pré-sortie officielle de Makéda Muse : Je laisse la porte ouverte et J'existe, disponible le 25 juillet 2026 sur toutes les plateformes.",
     "cover": "assets/releases/makeda-muse/double-pre-sortie-makeda-muse-2026-07-25.png",
     "links": {},
     "keywords": [

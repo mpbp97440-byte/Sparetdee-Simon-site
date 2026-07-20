@@ -1,16 +1,15 @@
 {
-  "title": "Le Système",
-  "artist": "Sparetdee Simon",
+  "title": "Jour de pluie",
+  "artist": "Makéda Muse",
   "date": "Disponible maintenant",
-  "description": "Sortie officielle disponible sur toutes les plateformes.",
-  "cover": "assets/covers/le-systeme.webp",
+  "description": "Sortie officielle de Makéda Muse, disponible maintenant sur les plateformes.",
+  "cover": "assets/releases/makeda-muse/jour-de-pluie-disponible-maintenant.png",
   "status": "Disponible",
   "links": {
-    "spotify": "https://open.spotify.com/album/0zN3ZRFzJBRcT2KZ2XwETX?si=Ee6BWJQ8Q7CM8c3D2O-uag",
-    "deezer": "https://link.deezer.com/s/33Kdq8FWS8ad97Ehxav41",
-    "youtube": "https://www.youtube.com/@sparetdee440/releases",
-    "apple": "https://music.apple.com/fr/album/le-syst%C3%A8me-single/6781041946",
-    "tiktok": "https://www.tiktok.com/@simonsparet",
-    "facebook": "https://www.facebook.com/Sparetdee.simon"
+    "spotify": "https://open.spotify.com/intl-fr/album/0AhJuwE14u2HxeKK7gLqay?si=oJ77v3q4R8e6OxmL5XMFdw",
+    "deezer": "https://link.deezer.com/s/33SZ08NYKSL7CCqciuBrr",
+    "youtube": "https://music.youtube.com/watch?v=WbsU2lan3MU&si=z6FaVXU1g8V8ywC3",
+    "apple": "https://music.apple.com/fr/album/jour-de-pluie-single/6790335730",
+    "tiktok": "https://www.tiktok.com/@makeda_77?is_from_webapp=1&sender_device=pc"
   }
 }

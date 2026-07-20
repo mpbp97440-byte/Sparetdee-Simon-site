@@ -23,10 +23,10 @@
   const render = async () => {
     try {
       const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
-      const latest = (data.tracks || []).find(item => item.id === "brainrot-society-2-0");
+      const latest = (data.tracks || []).find(item => item.id === "makeda-jour-de-pluie");
       const latestRoot = $("#v12LatestRelease");
-      if (latest && latestRoot) latestRoot.innerHTML = `<img src="${media(latest.cover)}" alt="Pochette ${esc(latest.title)}" width="1200" height="1200"><div class="v12-latest-release__body"><span class="v12-badge">Disponible maintenant</span><h3>${esc(latest.title)}</h3><p class="v12-feature__artist">${esc(latest.artist)}</p><p>${esc(latest.description)}</p><div class="v12-platform-links">${links(latest)}</div></div>`;
-      const titles = ["Jour de pluie", "Sixieme Sens", "Je laisse la porte ouverte / J'existe", "Dois-je me taire ?"];
+      if (latest && latestRoot) latestRoot.innerHTML = `<img src="${media(latest.promoCover || latest.cover)}" alt="${esc(latest.title)} — disponible maintenant" width="1200" height="1200"><div class="v12-latest-release__body"><span class="v12-badge">Disponible maintenant</span><h3>${esc(latest.title)}</h3><p class="v12-feature__artist">${esc(latest.artist)}</p><p>${esc(latest.description)}</p><div class="v12-platform-links">${links(latest)}</div></div>`;
+      const titles = ["Sixieme Sens", "Je laisse la porte ouverte / J'existe", "Dois-je me taire ?"];
       const upcoming = (data.upcoming || []).filter(item => titles.includes(item.title));
       const upcomingRoot = $("#v12UpcomingGrid");
       if (upcomingRoot) { upcomingRoot.innerHTML = upcoming.map(item => `<article class="v12-upcoming-card">${releaseArtwork(item.cover, `Pochette ${item.title}`)}<div class="v12-upcoming-card__body"><span class="v12-badge">${date(item.date).getTime() <= Date.now() ? "Disponible maintenant" : "À venir"}</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)} · ${displayDate(item.date)}</p><div class="v12-countdown" data-date="${esc(item.date)}"></div></div></article>`).join(""); upcomingRoot.querySelectorAll("[data-date]").forEach(node => countdown(node.dataset.date, node)); }
