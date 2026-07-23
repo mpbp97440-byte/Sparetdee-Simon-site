@@ -930,22 +930,27 @@
   },
   {
     "id": "makeda-sixieme-sens",
-    "title": "Sixieme Sens",
+    "title": "Sixième Sens",
     "artist": "Makéda Muse",
-    "date": "2026-07-23T00:00:00+02:00",
-    "label": "Pré-sortie officielle",
-    "status": "Pré-sortie / Bientôt disponible",
+    "date": "2026-07-23",
+    "label": "Sortie officielle",
+    "status": "Disponible",
     "type": "Single",
-    "description": "Pré-sortie officielle de Makéda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-    "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-    "links": {},
+    "description": "Le nouveau titre de Makéda Muse est désormais disponible sur toutes les plateformes officielles.",
+    "cover": "assets/releases/makeda-muse/sixieme-sens-pochette-officielle.png",
+    "promoCover": "assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png",
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833",
+      "deezer": "https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J",
+      "apple": "https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284",
+      "tiktok": "https://www.tiktok.com/@makeda_77"
+    },
     "keywords": [
       "makeda muse",
-      "sixieme sens",
       "sixième sens",
       "mpbp440",
-      "pre-sortie",
-      "cle de sol"
+      "disponible"
     ]
   },
   {

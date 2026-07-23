@@ -1,14 +1,15 @@
 [
   {
-    "id": "live-tiktok-makeda-muse-2026-07-11",
-    "title": "Événement exclusif MPBP440 - Live TikTok",
-    "date": "11/07/2026",
-    "time": "21h00",
-    "datetime": "2026-07-11T21:00:00+02:00",
-    "place": "TikTok officiel de Sparetdee Simon",
-    "description": "Rendez-vous le samedi 11 juillet 2026 à partir de 21h00, heure de Paris, pour un live spécial : sortie officielle de BrainRot Society 2.0, pré-écoute exclusive de Makeda Muse avec Jour de pluie et Sixieme Sens, et diffusion exclusive du clip Je sais que tu sais de Juste Une Plume.",
-    "cover": "assets/makeda-muse/live-tiktok-2026-07-11.png",
-    "buttonText": "Rejoindre TikTok",
-    "url": "https://www.tiktok.com/@simonsparet"
+    "id": "roots-live-makeda-muse-2026-07-25",
+    "title": "Root's Live — Spéciale sortie des titres de Makéda Muse",
+    "date": "25/07/2026",
+    "time": "20h00",
+    "datetime": "2026-07-25T20:00:00+02:00",
+    "timezone": "Europe/Paris",
+    "place": "Profil officiel de Makéda Muse sur TikTok",
+    "description": "Live interactif spécial autour des sorties de Makéda Muse, avec présentation des nouveaux titres, exclusivités, échanges, participation, partage et surprises.",
+    "cover": "assets/events/roots-live-25-07-2026.png",
+    "buttonText": "Suivre Makéda Muse sur TikTok",
+    "url": "https://www.tiktok.com/@makeda_77"
   }
 ]
