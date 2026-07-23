@@ -1255,28 +1255,8 @@
       "role": "Artiste MPBP440",
       "bio": "Makeda Muse rejoint officiellement MPBP440 avec un univers inspiré, sensible et profond. Sa symbolique est la clé de sol : signe de musique, d'ouverture et d'inspiration.",
       "photo": "assets/makeda-muse/makeda-muse-profile.png",
-      "status": "Disponible : Jour de pluie / Pré-sorties : Sixieme Sens - 23/07/2026 / Je laisse la porte ouverte & J'existe - 25/07/2026",
+      "status": "Disponibles : Sixième Sens et Jour de pluie / Pré-sortie : Je laisse la porte ouverte & J'existe - 25/07/2026",
       "upcoming": [
-        {
-          "id": "makeda-sixieme-sens",
-          "title": "Sixieme Sens",
-          "artist": "Makéda Muse",
-          "date": "2026-07-23T00:00:00+02:00",
-          "label": "Pré-sortie officielle",
-          "status": "Pré-sortie / Bientôt disponible",
-          "type": "Single",
-          "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-          "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-          "links": {},
-          "keywords": [
-            "makeda muse",
-            "sixieme sens",
-            "sixième sens",
-            "mpbp440",
-            "pre-sortie",
-            "cle de sol"
-          ]
-        },
         {
           "id": "makeda-double-pre-sortie-2026-07-25",
           "title": "Je laisse la porte ouverte / J'existe",
@@ -1331,26 +1311,6 @@
       "cover": "assets/covers/reves-et-cauchemards.webp"
     },
     {
-      "id": "makeda-sixieme-sens",
-      "title": "Sixieme Sens",
-      "artist": "Makéda Muse",
-      "date": "2026-07-23T00:00:00+02:00",
-      "label": "Pré-sortie officielle",
-      "status": "Pré-sortie / Bientôt disponible",
-      "type": "Single",
-      "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-      "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-      "links": {},
-      "keywords": [
-        "makeda muse",
-        "sixieme sens",
-        "sixième sens",
-        "mpbp440",
-        "pre-sortie",
-        "cle de sol"
-      ]
-    },
-    {
       "id": "makeda-double-pre-sortie-2026-07-25",
       "title": "Je laisse la porte ouverte / J'existe",
       "artist": "Makéda Muse",
@@ -1400,13 +1360,13 @@
     "title": "MPBP440 Media Center",
     "status": "TV • Live TikTok • Radio Label",
     "live": {
-      "title": "Événement exclusif MPBP440 - Live TikTok",
-      "date": "11/07/2026",
-      "time": "21h00",
-      "datetime": "2026-07-11T21:00:00+02:00",
-      "url": "https://www.tiktok.com/@simonsparet",
-      "cover": "assets/makeda-muse/live-tiktok-2026-07-11.png",
-      "description": "Live spécial : BrainRot Society 2.0, pré-écoute exclusive de Makeda Muse, Jour de pluie, Sixieme Sens et diffusion du clip Je sais que tu sais."
+      "title": "Root's Live — Spéciale sortie des titres de Makéda Muse",
+      "date": "25/07/2026",
+      "time": "20h00",
+      "datetime": "2026-07-25T20:00:00+02:00",
+      "url": "https://www.tiktok.com/@makeda_77",
+      "cover": "assets/events/roots-live-25-07-2026.png",
+      "description": "Live interactif spécial autour des sorties de Makéda Muse, avec présentation des nouveaux titres, exclusivités, échanges, participation, partage et surprises."
     },
     "featured_videos": [
       "0YEqshdl7jI",
