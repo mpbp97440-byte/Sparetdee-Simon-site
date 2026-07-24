@@ -1,5 +1,25 @@
 [
   {
+    "id": "makeda-sixieme-sens-disponible-20260723",
+    "date": "2026-07-23",
+    "title": "Makéda Muse — Sixième Sens est disponible",
+    "text": "Le nouveau titre « Sixième Sens » de Makéda Muse est désormais disponible sur toutes les plateformes officielles. Retrouvez-le sur Apple Music, Spotify, Deezer, YouTube Music et TikTok.",
+    "type": "sortie",
+    "image": "assets/releases/makeda-muse/sixieme-sens-pochette-officielle.png",
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Écouter Sixième Sens"
+  },
+  {
+    "id": "roots-live-makeda-muse-20260725",
+    "date": "2026-07-23",
+    "title": "Root's Live le 25 juillet à 20h00",
+    "text": "Retrouvez Root's Live, une spéciale consacrée aux sorties de Makéda Muse, le 25 juillet 2026 à 20h00, heure de Paris : exclusivités, échanges, participation, partage et surprises.",
+    "type": "event",
+    "image": "assets/events/roots-live-25-07-2026.png",
+    "url": "/evenements/index.html#roots-live-25-07-2026",
+    "buttonText": "Voir l'événement"
+  },
+  {
     "id": "sparetdee-dois-je-me-taire-pre-sortie-20260730",
     "date": "2026-07-16",
     "title": "« Dois-je me taire ? » arrive le 30 juillet 2026",

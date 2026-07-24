@@ -15,41 +15,21 @@
     "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
   },
   "featured": {
-    "title": "Jour de pluie",
+    "title": "Sixième Sens",
     "artist": "Makéda Muse",
     "date": "Disponible maintenant",
-    "description": "Sortie officielle de Makéda Muse, disponible maintenant sur les plateformes.",
-    "cover": "assets/releases/makeda-muse/jour-de-pluie-disponible-maintenant.png",
+    "description": "Le nouveau titre de Makéda Muse est désormais disponible sur toutes les plateformes officielles.",
+    "cover": "assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png",
     "status": "Disponible",
     "links": {
-      "spotify": "https://open.spotify.com/intl-fr/album/0AhJuwE14u2HxeKK7gLqay?si=oJ77v3q4R8e6OxmL5XMFdw",
-      "deezer": "https://link.deezer.com/s/33SZ08NYKSL7CCqciuBrr",
-      "youtube": "https://music.youtube.com/watch?v=WbsU2lan3MU&si=z6FaVXU1g8V8ywC3",
-      "apple": "https://music.apple.com/fr/album/jour-de-pluie-single/6790335730",
-      "tiktok": "https://www.tiktok.com/@makeda_77?is_from_webapp=1&sender_device=pc"
+      "spotify": "https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833",
+      "deezer": "https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J",
+      "apple": "https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284",
+      "tiktok": "https://www.tiktok.com/@makeda_77"
     }
   },
   "upcoming": [
-    {
-      "id": "makeda-sixieme-sens",
-      "title": "Sixieme Sens",
-      "artist": "Makéda Muse",
-      "date": "2026-07-23T00:00:00+02:00",
-      "label": "Pré-sortie officielle",
-      "status": "Pré-sortie / Bientôt disponible",
-      "type": "Single",
-      "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-      "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-      "links": {},
-      "keywords": [
-        "makeda muse",
-        "sixieme sens",
-        "sixième sens",
-        "mpbp440",
-        "pre-sortie",
-        "cle de sol"
-      ]
-    },
     {
       "id": "makeda-double-pre-sortie-2026-07-25",
       "title": "Je laisse la porte ouverte / J'existe",
@@ -97,6 +77,26 @@
     }
   ],
   "tracks": [
+    {
+      "id": "makeda-sixieme-sens",
+      "title": "Sixième Sens",
+      "artist": "Makéda Muse",
+      "year": "2026",
+      "date": "2026-07-23",
+      "status": "Disponible",
+      "type": "Single",
+      "description": "Le nouveau titre de Makéda Muse est désormais disponible sur toutes les plateformes officielles.",
+      "cover": "assets/releases/makeda-muse/sixieme-sens-pochette-officielle.png",
+      "promoCover": "assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png",
+      "links": {
+        "spotify": "https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833",
+        "deezer": "https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m",
+        "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J",
+        "apple": "https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284",
+        "tiktok": "https://www.tiktok.com/@makeda_77"
+      },
+      "keywords": ["makéda muse", "sixième sens", "mpbp440", "single", "disponible"]
+    },
     {
       "id": "makeda-jour-de-pluie",
       "title": "Jour de pluie",
@@ -1162,16 +1162,17 @@
   ],
   "events": [
     {
-      "id": "live-tiktok-makeda-muse-2026-07-11",
-      "title": "Événement exclusif MPBP440 - Live TikTok",
-      "date": "11/07/2026",
-      "time": "21h00",
-      "datetime": "2026-07-11T21:00:00+02:00",
-      "place": "TikTok officiel de Sparetdee Simon",
-      "description": "Rendez-vous le samedi 11 juillet 2026 à partir de 21h00, heure de Paris, pour un live spécial : sortie officielle de BrainRot Society 2.0, pré-écoute exclusive de Makeda Muse avec Jour de pluie et Sixieme Sens, et diffusion exclusive du clip Je sais que tu sais de Juste Une Plume.",
-      "cover": "assets/makeda-muse/live-tiktok-2026-07-11.png",
-      "buttonText": "Rejoindre TikTok",
-      "url": "https://www.tiktok.com/@simonsparet"
+      "id": "roots-live-makeda-muse-2026-07-25",
+      "title": "Root's Live — Spéciale sortie des titres de Makéda Muse",
+      "date": "25/07/2026",
+      "time": "20h00",
+      "datetime": "2026-07-25T20:00:00+02:00",
+      "timezone": "Europe/Paris",
+      "place": "Profil officiel de Makéda Muse sur TikTok",
+      "description": "Live interactif spécial autour des sorties de Makéda Muse, avec présentation des nouveaux titres, exclusivités, échanges, participation, partage et surprises.",
+      "cover": "assets/events/roots-live-25-07-2026.png",
+      "buttonText": "Suivre Makéda Muse sur TikTok",
+      "url": "https://www.tiktok.com/@makeda_77"
     }
   ],
   "site": {
@@ -1254,28 +1255,8 @@
       "role": "Artiste MPBP440",
       "bio": "Makeda Muse rejoint officiellement MPBP440 avec un univers inspiré, sensible et profond. Sa symbolique est la clé de sol : signe de musique, d'ouverture et d'inspiration.",
       "photo": "assets/makeda-muse/makeda-muse-profile.png",
-      "status": "Disponible : Jour de pluie / Pré-sorties : Sixieme Sens - 23/07/2026 / Je laisse la porte ouverte & J'existe - 25/07/2026",
+      "status": "Disponibles : Sixième Sens et Jour de pluie / Pré-sortie : Je laisse la porte ouverte & J'existe - 25/07/2026",
       "upcoming": [
-        {
-          "id": "makeda-sixieme-sens",
-          "title": "Sixieme Sens",
-          "artist": "Makéda Muse",
-          "date": "2026-07-23T00:00:00+02:00",
-          "label": "Pré-sortie officielle",
-          "status": "Pré-sortie / Bientôt disponible",
-          "type": "Single",
-          "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-          "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-          "links": {},
-          "keywords": [
-            "makeda muse",
-            "sixieme sens",
-            "sixième sens",
-            "mpbp440",
-            "pre-sortie",
-            "cle de sol"
-          ]
-        },
         {
           "id": "makeda-double-pre-sortie-2026-07-25",
           "title": "Je laisse la porte ouverte / J'existe",
@@ -1330,26 +1311,6 @@
       "cover": "assets/covers/reves-et-cauchemards.webp"
     },
     {
-      "id": "makeda-sixieme-sens",
-      "title": "Sixieme Sens",
-      "artist": "Makéda Muse",
-      "date": "2026-07-23T00:00:00+02:00",
-      "label": "Pré-sortie officielle",
-      "status": "Pré-sortie / Bientôt disponible",
-      "type": "Single",
-      "description": "Pré-sortie officielle de Makeda Muse, disponible le 23 juillet 2026 sur toutes les plateformes.",
-      "cover": "assets/makeda-muse/sixieme-sens-pre-sortie.png",
-      "links": {},
-      "keywords": [
-        "makeda muse",
-        "sixieme sens",
-        "sixième sens",
-        "mpbp440",
-        "pre-sortie",
-        "cle de sol"
-      ]
-    },
-    {
       "id": "makeda-double-pre-sortie-2026-07-25",
       "title": "Je laisse la porte ouverte / J'existe",
       "artist": "Makéda Muse",
@@ -1399,13 +1360,13 @@
     "title": "MPBP440 Media Center",
     "status": "TV • Live TikTok • Radio Label",
     "live": {
-      "title": "Événement exclusif MPBP440 - Live TikTok",
-      "date": "11/07/2026",
-      "time": "21h00",
-      "datetime": "2026-07-11T21:00:00+02:00",
-      "url": "https://www.tiktok.com/@simonsparet",
-      "cover": "assets/makeda-muse/live-tiktok-2026-07-11.png",
-      "description": "Live spécial : BrainRot Society 2.0, pré-écoute exclusive de Makeda Muse, Jour de pluie, Sixieme Sens et diffusion du clip Je sais que tu sais."
+      "title": "Root's Live — Spéciale sortie des titres de Makéda Muse",
+      "date": "25/07/2026",
+      "time": "20h00",
+      "datetime": "2026-07-25T20:00:00+02:00",
+      "url": "https://www.tiktok.com/@makeda_77",
+      "cover": "assets/events/roots-live-25-07-2026.png",
+      "description": "Live interactif spécial autour des sorties de Makéda Muse, avec présentation des nouveaux titres, exclusivités, échanges, participation, partage et surprises."
     },
     "featured_videos": [
       "0YEqshdl7jI",

@@ -1,12 +1,13 @@
 (() => {
   const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const publicRoot = () => { const match = location.pathname.match(/^(.*)\/(?:actu|galerie)\//); return match ? `${match[1]}/` : '/'; };
   const date = value => new Date(value).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
   const category = item => { const type = String(item.type || '').toLowerCase(); if(type.includes('profil') || type.includes('artiste')) return 'artiste'; if(type.includes('pochette')) return 'pochette'; if(type.includes('event') || type.includes('flyer')) return 'event'; return type || 'archive'; };
   const share = async (title, url) => { try { if(navigator.share) await navigator.share({title,url}); else await navigator.clipboard?.writeText(location.origin + url); } catch (_) {} };
   const initFilters = (root, render) => root.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => { root.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed','false')); button.setAttribute('aria-pressed','true'); render(button.dataset.filter); }));
   const news = async () => {
     const root = document.querySelector('[data-v12-content="news"]'), cards = document.querySelector('#v12NewsCards'); if(!root || !cards) return;
-    const items = await fetch('/data/news.json',{cache:'no-store'}).then(response => response.json());
+    const items = await fetch(`${publicRoot()}data/news.json`,{cache:'no-store'}).then(response => response.json());
     const render = filter => { const list = items.filter(item => { if(filter === 'all') return true; if(filter === 'label') return !['sortie','clip','artiste','event'].includes(item.type); return item.type === filter; }).filter(item => !/Live TikTok/.test(item.title)); cards.innerHTML = list.length ? list.map((item,index) => `<article class="v12-news-card"><span class="v12-eyebrow">${escape(item.type || 'label')}${index < 2 ? ' · Nouveau' : ''}</span><time datetime="${escape(item.date)}">${date(item.date)}</time><h3>${escape(item.title)}</h3><p>${escape(item.text)}</p><div class="v12-news-actions"><a href="${escape(item.url || '/#actus')}">${escape(item.buttonText || 'Lire l’actualité')}</a><button type="button" data-share-url="${escape(item.url || '/actu/')}">Partager</button></div></article>`).join('') : '<p>Aucune actualité dans cette catégorie.</p>'; cards.querySelectorAll('[data-share-url]').forEach(button => button.addEventListener('click',() => share('MPBP440',button.dataset.shareUrl))); };
     render('all'); initFilters(root,render);
   };
