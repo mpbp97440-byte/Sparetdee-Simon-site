@@ -22,7 +22,19 @@
   };
   const render = async () => {
     try {
-      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=dois-je-me-taire-disponible-20260730", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json?v=dois-je-me-taire-disponible-20260730", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
+      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=featured-dynamic-20260813", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json?v=dois-je-me-taire-disponible-20260730", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
+      const featured = data.featured && typeof data.featured === "object" ? data.featured : null;
+      const featuredRoot = $("#v12Featured"), featuredHeading = $("#v12FeaturedHeading"), featuredSection = $("#alaune");
+      if (featuredRoot && featured?.title) {
+        const isAvailable = featured.status === "Disponible" || /disponible/i.test(featured.date || "");
+        const featuredLinks = links(featured);
+        const destination = Object.values(featured.links || {}).find(Boolean) || (isAvailable ? "/music/index.html#morceaux" : "#avenir");
+        const isExternal = /^https?:\/\//i.test(destination);
+        if (featuredHeading) featuredHeading.textContent = isAvailable ? "À découvrir maintenant" : "Le prochain chapitre";
+        featuredRoot.innerHTML = `<article class="v12-feature">${releaseArtwork(featured.cover, `Pochette ${featured.title}`)}<div><span class="v12-badge">${isAvailable ? "Disponible maintenant" : "À venir"}</span><h3>${esc(featured.title)}</h3><p class="v12-feature__artist">${esc(featured.artist)}${!isAvailable && displayDate(featured.date) ? ` · ${displayDate(featured.date)}` : ""}</p><p>${esc(featured.description)}</p><div class="v12-home-actions"><a class="v12-button v12-button--primary" href="${esc(destination)}"${isExternal ? " target=\"_blank\" rel=\"noopener\"" : ""}>${isAvailable ? "Écouter maintenant" : "Voir la prochaine sortie"}</a></div>${featuredLinks ? `<div class="v12-platform-links">${featuredLinks}</div>` : ""}</div></article>`;
+      } else if (featuredSection) {
+        featuredSection.hidden = true;
+      }
       const recentReleases = (data.tracks || []).filter(item => item.status === "Disponible" && validDate(item.date)).sort((a,b) => date(b.date).getTime() - date(a.date).getTime());
       const latest = recentReleases[0];
       const latestRoot = $("#v12LatestRelease");
