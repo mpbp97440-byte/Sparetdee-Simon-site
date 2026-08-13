@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Back Office MPBP440</title>
-<link rel="stylesheet" href="admin.css?v=12-1-admin-analytics">
+<link rel="stylesheet" href="admin.css?v=13-1-admin-cms-visual">
 </head>
 <body>
 <section id="loginBox" class="login-wrap">
@@ -24,7 +24,7 @@
 <section id="adminBox" hidden>
   <div class="admin-secure-bar"><strong>Back Office MPBP440</strong><span id="sessionInfo">Session active</span><button class="btn ghost" type="button" onclick="logoutAdmin()">Se déconnecter</button></div>
   <main class="admin-page">
-    <header class="admin-hero"><div><p class="sup">CMS V2 sécurisé</p><h1>Gestion du site</h1><p>Modifier, prévisualiser puis publier une mise à jour cohérente sans GitHub manuel.</p><p id="cmsChangeCount" class="cms-count" aria-live="polite">Aucune modification non publiée</p><p id="cmsStatus" class="msg" role="status" aria-live="polite"></p></div><div class="hero-actions"><button class="btn" id="reloadDataBtn">Recharger les données</button><button class="btn ghost" id="saveDraftBtn" type="button" disabled>Enregistrer le brouillon</button><button class="btn primary" id="publishSiteBtn" type="button" disabled>Publier sur le site</button></div></header>
+    <header class="admin-hero"><div><p class="sup">CMS V2.1 sécurisé</p><h1>Gestion visuelle du site</h1><p>Ajouter, vérifier et publier : le CMS synchronise automatiquement les contenus liés.</p><p id="cmsChangeCount" class="cms-count" aria-live="polite">Aucune modification non publiée</p><p id="cmsStatus" class="msg" role="status" aria-live="polite"></p></div><div class="hero-actions"><button class="btn" id="reloadDataBtn">Recharger les données</button><button class="btn ghost" id="previewChangesBtn" type="button">Aperçu</button><button class="btn ghost" id="saveDraftBtn" type="button" disabled>Enregistrer le brouillon</button><button class="btn primary" id="publishSiteBtn" type="button" disabled>Publier sur le site</button></div></header>
     <nav class="tabs" aria-label="Modules back office">
       <button class="tab active" data-tab="dashboard">Dashboard</button><button class="tab" data-tab="analytics">Analytics</button><button class="tab" data-tab="comments">Commentaires</button><button class="tab" data-tab="tracks">Morceaux</button><button class="tab" data-tab="tv">MPBP TV</button><button class="tab" data-tab="artists">Artistes</button><button class="tab" data-tab="gallery">Galerie</button><button class="tab" data-tab="events">Événements</button><button class="tab" data-tab="news">Actualités</button><button class="tab" data-tab="upcoming">Sorties</button><button class="tab" data-tab="featured">À la une</button><button class="tab" data-tab="export">Publication</button>
     </nav>
@@ -42,5 +42,5 @@
     <section class="tabPanel" id="tab-export"><article class="panel"><h2>Publication</h2><p>La publication CMS crée un seul commit atomique via une fonction Supabase sécurisée. L’export ZIP reste disponible uniquement comme solution de secours locale.</p><div id="changeList" class="change-list"></div><div class="actions"><button class="btn primary" type="button" id="publishSiteBtnSecondary">Publier sur le site</button><button class="btn ghost" data-action="export-zip">Exporter le brouillon ZIP</button><button class="btn ghost" data-action="reset-work">Annuler les modifications locales</button></div></article><article class="panel"><h2>README export de secours</h2><pre id="readmePreview"></pre></article></section>
   </main>
 </section>
-<script src="auth.js?v=13-admin-cms-20260811"></script><script src="backoffice.js?v=13-admin-cms-20260811"></script><script src="admin-supabase.js?v=13-admin-cms-20260811"></script>
+<script src="auth.js?v=13-admin-cms-20260811"></script><script src="backoffice.js?v=13-1-admin-cms-visual"></script><script src="admin-supabase.js?v=13-admin-cms-20260811"></script><script src="cms-visual.js?v=13-1-admin-cms-visual"></script>
 </body></html>

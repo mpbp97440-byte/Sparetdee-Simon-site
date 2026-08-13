@@ -15,7 +15,8 @@ const state = {
   original:{},
   data:{},
   media:new Map(),
-  ready:false
+  ready:false,
+  changes:[]
 };
 
 const $ = id => document.getElementById(id);
@@ -34,7 +35,7 @@ function localPath(folder, title, file){
 }
 function setValue(id, value){ const el = $(id); if(el) el.value = value || ""; }
 function getValue(id){ return text($(id)?.value); }
-function markChanged(){ renderAll(); renderCmsStatus(); }
+function markChanged(label="Modification enregistrée dans le brouillon"){ state.changes.unshift({label,at:new Date().toISOString()}); renderAll(); renderCmsStatus(); document.dispatchEvent(new CustomEvent("mpbp-cms-changed")); }
 function linksFrom(prefix){
   return {
     Spotify:getValue(prefix+"Spotify"),
@@ -42,7 +43,9 @@ function linksFrom(prefix){
     Deezer:getValue(prefix+"Deezer"),
     YouTube:getValue(prefix+"Youtube"),
     Amazon:getValue(prefix+"Amazon"),
-    TikTok:getValue(prefix+"Tiktok")
+    TikTok:getValue(prefix+"Tiktok"),
+    Facebook:getValue(prefix+"Facebook"),
+    Other:getValue(prefix+"Other")
   };
 }
 function cleanLinks(links){
@@ -82,6 +85,7 @@ async function loadAllData(){
     }
     state.original = clone(next);
     state.data = clone(next);
+    state.changes = [];
     state.ready = true;
     renderAll();
     renderCmsStatus();
@@ -103,6 +107,37 @@ function currentEvents(){ return state.data.site.events || []; }
 function currentNews(){ return normalizeList(state.data.news); }
 function currentUpcoming(){ return state.data.site.upcoming || []; }
 function currentArtists(){ return state.data.site.label_artists || []; }
+function currentReleases(){ return normalizeList(state.data.releases); }
+function currentLibrary(){ return normalizeList(state.data.music); }
+function sameContent(a,b){ return a && b && (text(a.id) && text(a.id)===text(b.id) || (slugify(a.title)===slugify(b.title) && slugify(a.artist)===slugify(b.artist))); }
+function normalizeArtistList(item){ return [...new Set([text(item.artist), ...(Array.isArray(item.artists)?item.artists:[]), ...(text(item.featuring).split(/,|feat\.?/i).map(text))].filter(Boolean))]; }
+function setMirroredList(key, list){ state.data[key]=Array.isArray(state.data[key])?list:{...(state.data[key]||{}),items:list}; }
+function copyRelease(item){ return clone({...item, id:item.id || slugify(`${item.artist}-${item.title}`), links:cleanLinks(item.links)}); }
+function removeByContent(list,item){ return (list||[]).filter(candidate=>!sameContent(candidate,item)); }
+function syncTrackRelations(item, previous){
+  const normalized=copyRelease(item);
+  normalized.artists=normalizeArtistList(normalized);
+  const available=normalized.status === "Disponible";
+  const upcoming=!available && /venir|bientot|bientôt/i.test(text(normalized.status));
+  let library=removeByContent(currentLibrary(),previous||normalized);
+  let releases=removeByContent(currentReleases(),previous||normalized);
+  library.unshift(normalized); releases.unshift(normalized);
+  setMirroredList("music",library); setMirroredList("releases",releases);
+  let future=removeByContent(currentUpcoming(),previous||normalized);
+  let countdowns=removeByContent(state.data.countdowns||[],previous||normalized);
+  state.data.site.countdowns=removeByContent(state.data.site.countdowns||[],previous||normalized);
+  if(upcoming){
+    const futureItem={...normalized,status:"À venir",label:"Prochaine sortie officielle"};
+    future.unshift(futureItem); countdowns.unshift(futureItem); state.data.site.countdowns.unshift(futureItem);
+  }
+  state.data.site.upcoming=future; state.data.countdowns=countdowns;
+  if(available){
+    const news=currentNews(); const existing=news.find(entry=>sameContent(entry,normalized));
+    const announcement={id:`${normalized.id}-available`,title:`${normalized.title} est disponible maintenant`,date:normalized.date || new Date().toISOString().slice(0,10),type:"sortie",text:`${normalized.title}, le nouveau titre de ${normalized.artist}, est disponible dès maintenant sur les plateformes officielles.`,image:normalized.cover,url:"/music/index.html#morceaux",buttonText:`Écouter ${normalized.title}`};
+    if(existing) Object.assign(existing,announcement); else news.unshift(announcement);
+    setNewsList(news);
+  }
+}
 function setNewsList(list){
   if(Array.isArray(state.data.news)){
     state.data.news = list;
@@ -254,27 +289,41 @@ function hideItem(type,index){
   const list = {track:currentTracks(), video:currentVideos(), gallery:currentGallery(), event:currentEvents(), news:currentNews(), upcoming:currentUpcoming(), artist:currentArtists()}[type];
   if(!list?.[index]) return;
   list[index].hidden = !list[index].hidden;
-  if(list[index].hidden && !list[index].status) list[index].status = "Masqué";
-  markChanged();
+  if(type === "track") syncTrackRelations({...list[index],status:list[index].hidden ? "Masqué" : list[index].status}, list[index]);
+  markChanged(`${list[index].title || "Contenu"} : ${list[index].hidden ? "masqué" : "affiché"}`);
 }
 function deleteItem(type,index){
-  if(!confirm("Supprimer cet élément du brouillon ?")) return;
   const list = {track:currentTracks(), video:currentVideos(), gallery:currentGallery(), event:currentEvents(), news:currentNews(), upcoming:currentUpcoming(), artist:currentArtists()}[type];
+  const item=list?.[index];
+  if(!item) return;
+  if(!confirm(`Supprimer « ${item.title || item.name || "ce contenu"} » du brouillon ? Les contenus liés seront retirés ensemble si nécessaire.`)) return;
   list?.splice(index,1);
-  markChanged();
+  if(type === "track"){
+    setMirroredList("music",removeByContent(currentLibrary(),item));
+    setMirroredList("releases",removeByContent(currentReleases(),item));
+    state.data.site.upcoming=removeByContent(currentUpcoming(),item);
+    state.data.countdowns=removeByContent(state.data.countdowns||[],item);
+    state.data.site.countdowns=removeByContent(state.data.site.countdowns||[],item);
+    if(sameContent(state.data.site.featured,item)) state.data.site.featured={};
+  }
+  markChanged(`${item.title || item.name || "Contenu"} : supprimé du brouillon`);
 }
 
 function fillTrack(item={}, index=""){
   setValue("trackIndex", index); setValue("trackTitle", item.title); setValue("trackArtist", item.artist); setValue("trackStatus", item.status || item.year); setValue("trackDate", item.date || item.year);
-  setValue("trackDescription", item.description); setValue("trackCover", item.cover);
-  const links = item.links || {}; setValue("trackSpotify", links.Spotify || links.spotify); setValue("trackApple", links["Apple Music"] || links.apple); setValue("trackDeezer", links.Deezer || links.deezer); setValue("trackYoutube", links.YouTube || links.youtube); setValue("trackAmazon", links.Amazon || links.amazon); setValue("trackTiktok", links.TikTok || links.tiktok);
+  setValue("trackDescription", item.description); setValue("trackCover", item.cover); setValue("trackFeaturing", item.featuring || (item.artists||[]).filter(name=>name!==item.artist).join(", "));
+  const links = item.links || {}; setValue("trackSpotify", links.Spotify || links.spotify); setValue("trackApple", links["Apple Music"] || links.apple); setValue("trackDeezer", links.Deezer || links.deezer); setValue("trackYoutube", links.YouTube || links.youtube); setValue("trackAmazon", links.Amazon || links.amazon); setValue("trackTiktok", links.TikTok || links.tiktok); setValue("trackFacebook", links.Facebook || links.facebook); setValue("trackOther", links.Other || links.other);
 }
 function clearTrack(){ fillTrack({}); }
 function saveTrack(){
-  const item = {title:getValue("trackTitle"), artist:getValue("trackArtist"), year:getValue("trackDate") || getValue("trackStatus"), status:getValue("trackStatus"), description:getValue("trackDescription"), cover:getValue("trackCover"), links:cleanLinks(linksFrom("track"))};
   const index = getValue("trackIndex");
+  const previous = index !== "" ? currentTracks()[Number(index)] : null;
+  const item = {id:previous?.id || slugify(`${getValue("trackArtist")}-${getValue("trackTitle")}`),title:getValue("trackTitle"), artist:getValue("trackArtist"), featuring:getValue("trackFeaturing"), year:getValue("trackDate") || getValue("trackStatus"), date:getValue("trackDate"), status:getValue("trackStatus") || "À venir", description:getValue("trackDescription"), cover:getValue("trackCover"), links:cleanLinks(linksFrom("track"))};
+  if(!item.title || !item.artist){ cmsMessage("Un titre et un artiste principal sont requis.",true); return; }
+  item.artists=normalizeArtistList(item);
   if(index !== "") currentTracks()[Number(index)] = item; else currentTracks().unshift(item);
-  clearTrack(); markChanged();
+  syncTrackRelations(item,previous);
+  clearTrack(); markChanged(`${item.title} : ${previous ? "mise à jour" : "ajouté"} et synchronisé`);
 }
 function fillVideo(item={}, index=""){
   setValue("videoIndex", index); setValue("videoTitle", item.title); setValue("videoArtist", item.artist); setValue("videoCategory", item.category || item.type || "clip officiel"); setValue("videoYoutube", item.url || item.youtube || ""); setValue("videoSrc", item.src); setValue("videoPoster", item.poster); setValue("videoDescription", item.description);
@@ -282,11 +331,15 @@ function fillVideo(item={}, index=""){
 function clearVideo(){ fillVideo({}); }
 function saveVideo(){
   const youtube = getValue("videoYoutube");
-  const item = {title:getValue("videoTitle"), artist:getValue("videoArtist"), category:getValue("videoCategory"), description:getValue("videoDescription"), url:youtube, youtubeId:ytId(youtube), src:getValue("videoSrc"), poster:getValue("videoPoster")};
   const index = getValue("videoIndex");
+  const youtubeId=ytId(youtube);
+  if(youtube && !youtubeId){ cmsMessage("Le lien YouTube est invalide.",true); return; }
+  if(youtubeId && currentVideos().some((entry,entryIndex)=>entryIndex!==Number(index) && entry.youtubeId===youtubeId)){ cmsMessage("Cette vidéo existe déjà dans MPBP TV.",true); return; }
+  const item = {id:index!=="" ? currentVideos()[Number(index)]?.id || slugify(getValue("videoTitle")) : slugify(getValue("videoTitle")),title:getValue("videoTitle"), artist:getValue("videoArtist"), category:getValue("videoCategory"), description:getValue("videoDescription"), url:youtube, youtubeId, src:getValue("videoSrc"), poster:getValue("videoPoster")};
+  if(!item.title || !item.artist || (!item.youtubeId && !item.src)){ cmsMessage("Titre, artiste et une source vidéo valide sont requis.",true); return; }
   if(index !== "") currentVideos()[Number(index)] = item; else currentVideos().unshift(item);
   state.data.videos = currentVideos();
-  clearVideo(); markChanged();
+  clearVideo(); markChanged(`${item.title} : clip ajouté ou mis à jour`);
 }
 function fillGallery(item={}, index=""){ setValue("galleryIndex", index); setValue("galleryTitle", item.title); setValue("galleryCategory", item.category || item.type); setValue("galleryArtist", item.artist); setValue("galleryImage", item.image); setValue("galleryDescription", item.description); }
 function clearGallery(){ fillGallery({}); }
@@ -313,9 +366,13 @@ function saveNews(){
 function fillUpcoming(item={}, index=""){ setValue("upcomingIndex", index); setValue("upcomingTitle", item.title); setValue("upcomingArtist", item.artist); setValue("upcomingDate", item.date); setValue("upcomingCover", item.cover); setValue("upcomingDescription", item.description); }
 function clearUpcoming(){ fillUpcoming({}); }
 function saveUpcoming(){
-  const item = {title:getValue("upcomingTitle"), artist:getValue("upcomingArtist"), date:getValue("upcomingDate"), cover:getValue("upcomingCover"), description:getValue("upcomingDescription"), status:"À venir"};
-  const index = getValue("upcomingIndex"); if(index !== "") currentUpcoming()[Number(index)] = item; else currentUpcoming().unshift(item);
-  syncCountdown(item); clearUpcoming(); markChanged();
+  const title=getValue("upcomingTitle"), artist=getValue("upcomingArtist"), index=getValue("upcomingIndex");
+  const matched=currentTracks().find(track=>slugify(track.title)===slugify(title) && slugify(track.artist)===slugify(artist));
+  const item={...(matched||{}),id:matched?.id || slugify(`${artist}-${title}`),title,artist,date:getValue("upcomingDate"),cover:getValue("upcomingCover"),description:getValue("upcomingDescription"),status:"À venir"};
+  if(!title || !artist || !item.date){ cmsMessage("Titre, artiste et date sont requis.",true); return; }
+  if(matched) Object.assign(matched,item); else currentTracks().unshift(item);
+  syncTrackRelations(item,matched);
+  clearUpcoming(); markChanged(`${item.title} : ajoutée aux prochaines sorties et au compte à rebours`);
 }
 function fillArtist(item={}, index=""){ setValue("artistIndex",index); setValue("artistName",item.name); setValue("artistRole",item.role); setValue("artistPhoto",item.photo); setValue("artistBio",item.bio); }
 function clearArtist(){ fillArtist({}); }
@@ -327,7 +384,14 @@ function saveArtist(){
 }
 function saveFeatured(){
   const item=featuredSource()[Number(getValue("featuredItem"))]; if(!item) return;
-  state.data.site.featured={...item, type:getValue("featuredType")}; markChanged();
+  state.data.site.featured={...item, type:getValue("featuredType")}; markChanged(`${item.title || "Contenu"} : mis à la une`);
+}
+function markTrackAvailable(index){
+  const item=currentTracks()[Number(index)]; if(!item) return;
+  if(!confirm(`${item.title} va devenir disponible. La sortie sera retirée de « À venir » et de son compte à rebours, puis synchronisée dans la bibliothèque et les actualités.`)) return;
+  const previous=clone(item); item.status="Disponible"; item.hidden=false;
+  syncTrackRelations(item,previous);
+  markChanged(`${item.title} : passée de À venir à Disponible, compte à rebours retiré`);
 }
 function syncCountdown(item){
   if(!Array.isArray(state.data.site.countdowns)) state.data.site.countdowns = [];
@@ -373,13 +437,15 @@ function readmeText(files){
 }
 function renderExport(){
   const files = [...changedJsonFiles(), ...[...state.media.keys()].map(path => [path,"media"])];
-  $("changeList").innerHTML = files.length ? files.map(([path]) => `<div class="change-item">${path}</div>`).join("") : `<div class="change-item">Aucune modification prête.</div>`;
+  const messages=state.changes.slice(0,12).map(change=>`<div class="change-item">${change.label}</div>`);
+  $("changeList").innerHTML = files.length ? `${messages.join("")}${files.map(([path]) => `<div class="change-item change-item--file">${path}</div>`).join("")}` : `<div class="change-item">Aucune modification prête.</div>`;
   $("readmePreview").textContent = readmeText(files);
 }
 function resetWork(){
   if(!confirm("Annuler toutes les modifications locales non exportées ?")) return;
   state.data = clone(state.original);
   state.media.clear();
+  state.changes=[];
   renderAll();
 }
 
@@ -463,6 +529,19 @@ function cmsMessage(message, error=false){
 function cmsDraftPayload(){
   return { version:2, files:Object.fromEntries(changedJsonFiles().map(([path,content])=>[path,JSON.parse(content)])) };
 }
+function validateCmsData(){
+  const problems=[];
+  const duplicate=(items,key,label)=>{ const seen=new Set(); items.forEach((item)=>{const value=text(item[key]); if(value && seen.has(value)) problems.push(`${label} dupliqué : ${value}`); if(value) seen.add(value);}); };
+  duplicate(currentTracks(),"id","ID de morceau"); duplicate(currentVideos(),"id","ID de clip"); duplicate(currentVideos(),"youtubeId","ID YouTube");
+  currentTracks().forEach(item=>{
+    if(!text(item.title)||!text(item.artist)) problems.push("Un morceau doit avoir un titre et un artiste.");
+    if(!text(item.cover)) problems.push(`${item.title || "Morceau"} : pochette manquante.`);
+    if(item.status==="Disponible" && currentUpcoming().some(entry=>sameContent(entry,item))) problems.push(`${item.title} est Disponible mais présent dans À venir.`);
+    Object.entries(item.links||{}).forEach(([name,url])=>{ if(text(url) && !/^https:\/\//i.test(text(url))) problems.push(`${item.title} : lien ${name} invalide.`); });
+  });
+  currentVideos().forEach(item=>{ if(!item.youtubeId && !text(item.src)) problems.push(`${item.title || "Clip"} : source vidéo manquante.`); });
+  return problems;
+}
 function renderCmsStatus(){
   const count=changedJsonFiles().length + state.media.size;
   const countNode=cmsNode('cmsChangeCount'); if(countNode) countNode.textContent=`${count} modification${count===1?'':'s'} non publiée${count===1?'':'s'}`;
@@ -500,6 +579,8 @@ async function uploadCmsMedia(){
 }
 async function publishCmsSite(){
   if(!Object.keys(cmsDraftPayload().files).length && !state.media.size) return;
+  const problems=validateCmsData();
+  if(problems.length){ cmsMessage(`Contrôle : ${problems.length} problème(s) à corriger — ${problems[0]}`,true); return; }
   if(!confirm('Publier ces modifications sur le site public ? Cette action crée un seul commit et déclenche GitHub Pages.')) return;
   const button=cmsNode('publishSiteBtn'); if(button) button.disabled=true;
   cmsMessage('Import des médias et validation des données…');
