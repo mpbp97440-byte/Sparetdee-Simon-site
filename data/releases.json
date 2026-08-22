@@ -1,5 +1,18 @@
 [
   {
+    "id": "juste-une-plume-petit-demon",
+    "title": "Petit Démon",
+    "artist": "Juste Une Plume",
+    "date": "29/08/2026",
+    "cover": "https://eneuejomsrpdwvvpgvgl.supabase.co/storage/v1/object/public/mpbp440-media/covers/0ede6bc5-5785-4f3b-9818-c602f1161007-1b1edb86-324f-4838-bfd9-0a397f85ad2ffile.png",
+    "description": "Petit Démon le nouveau single de l’artiste Juste Une Plume bientôt disponible restez à l’écoute",
+    "status": "À venir",
+    "links": {},
+    "artists": [
+      "Juste Une Plume"
+    ]
+  },
+  {
     "id": "makeda-karma",
     "title": "Karma",
     "artist": "Makéda Muse",
@@ -15,7 +28,13 @@
       "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_mNt-Mg0uyan1cvVRpnD357RVB1HaFKlKA&si=eunqH2F63a_-I70y",
       "apple": "https://music.apple.com/fr/album/karma/6798658028?i=6798658029"
     },
-    "keywords": ["makéda muse", "karma", "mpbp440", "single", "disponible"]
+    "keywords": [
+      "makéda muse",
+      "karma",
+      "mpbp440",
+      "single",
+      "disponible"
+    ]
   },
   {
     "id": "le-systeme",
@@ -1042,6 +1061,13 @@
       "tiktok": "https://www.tiktok.com/@simonsparet",
       "facebook": "https://www.facebook.com/Sparetdee.simon"
     },
-    "keywords": ["sparetdee simon", "que restera-t-il de moi", "mpbp440", "disponible", "spotify", "deezer"]
+    "keywords": [
+      "sparetdee simon",
+      "que restera-t-il de moi",
+      "mpbp440",
+      "disponible",
+      "spotify",
+      "deezer"
+    ]
   }
 ]

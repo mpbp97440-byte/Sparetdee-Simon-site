@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "juste-une-plume-petit-demon",
+    "title": "Petit Démon",
+    "artist": "Juste Une Plume",
+    "date": "29/08/2026",
+    "cover": "https://eneuejomsrpdwvvpgvgl.supabase.co/storage/v1/object/public/mpbp440-media/covers/0ede6bc5-5785-4f3b-9818-c602f1161007-1b1edb86-324f-4838-bfd9-0a397f85ad2ffile.png",
+    "description": "Petit Démon le nouveau single de l’artiste Juste Une Plume bientôt disponible restez à l’écoute",
+    "status": "À venir",
+    "links": {},
+    "artists": [
+      "Juste Une Plume"
+    ],
+    "label": "Prochaine sortie officielle"
+  }
+]
