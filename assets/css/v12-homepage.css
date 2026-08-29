@@ -6,3 +6,61 @@
 .v12-home-hero:before{opacity:.58;background-image:linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.7) 38%,rgba(5,5,5,.15) 72%,rgba(5,5,5,.4) 100%),url('../gallery/neuvieme-merveille.webp');background-repeat:no-repeat;background-position:center,right center;background-size:100% 100%,auto 100%}
 .v12-upcoming-card img,.v12-upcoming-card__missing-artwork{display:block;width:100%;aspect-ratio:1;object-fit:cover}.v12-upcoming-card__missing-artwork{margin:0;display:grid;place-items:center;padding:1rem;background:#16140f;color:#e7c878;text-align:center}
 @media (max-width:700px){.v12-home-hero:before{opacity:.5;background-image:linear-gradient(180deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.72) 58%,rgba(5,5,5,.32) 100%),url('../gallery/neuvieme-merveille.webp');background-position:center,center bottom;background-size:100% 100%,auto 66%}}
+
+/* Upcoming releases: roomy editorial cards that preserve every artwork format. */
+.v12-upcoming-grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,42rem),1fr));
+  gap:clamp(1rem,2vw,1.5rem);
+}
+.v12-upcoming-card{
+  display:grid;
+  grid-template-columns:minmax(17.5rem,.95fr) minmax(20rem,1.05fr);
+  align-items:stretch;
+  min-height:22rem;
+}
+.v12-upcoming-card img,
+.v12-upcoming-card__missing-artwork{
+  width:100%;
+  height:100%;
+  min-height:22rem;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  background:radial-gradient(circle at center,rgba(213,174,85,.12),transparent 65%),#0b0a08;
+}
+.v12-upcoming-card__body{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(1.4rem,3vw,2.4rem);
+}
+.v12-upcoming-card h3{
+  margin:.7rem 0 .45rem;
+  font-size:clamp(1.45rem,2.5vw,2rem);
+  line-height:1.12;
+}
+.v12-upcoming-card p{
+  margin:.25rem 0;
+  font-size:clamp(.95rem,1.4vw,1.05rem);
+  line-height:1.6;
+}
+.v12-countdown{
+  gap:.65rem;
+  margin-top:1.35rem;
+}
+.v12-countdown div{padding:.8rem .35rem}
+.v12-countdown strong{font-size:1.15rem}
+.v12-countdown span{font-size:.68rem}
+
+@media (max-width:900px){
+  .v12-upcoming-card{grid-template-columns:minmax(15rem,.9fr) minmax(0,1.1fr);min-height:20rem}
+  .v12-upcoming-card img,.v12-upcoming-card__missing-artwork{min-height:20rem}
+}
+@media (max-width:700px){
+  .v12-upcoming-card{grid-template-columns:1fr;min-height:0}
+  .v12-upcoming-card img,.v12-upcoming-card__missing-artwork{height:auto;min-height:0;aspect-ratio:3/2;object-fit:contain}
+  .v12-upcoming-card__body{padding:1.25rem}
+}
+@media (max-width:440px){
+  .v12-countdown{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+}
