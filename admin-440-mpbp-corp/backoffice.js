@@ -38,18 +38,60 @@ function getValue(id){ return text($(id)?.value); }
 function markChanged(label="Modification enregistrée dans le brouillon"){ state.changes.unshift({label,at:new Date().toISOString()}); renderAll(); renderCmsStatus(); document.dispatchEvent(new CustomEvent("mpbp-cms-changed")); }
 function linksFrom(prefix){
   return {
-    Spotify:getValue(prefix+"Spotify"),
-    "Apple Music":getValue(prefix+"Apple"),
-    Deezer:getValue(prefix+"Deezer"),
-    YouTube:getValue(prefix+"Youtube"),
-    Amazon:getValue(prefix+"Amazon"),
-    TikTok:getValue(prefix+"Tiktok"),
-    Facebook:getValue(prefix+"Facebook"),
-    Other:getValue(prefix+"Other")
+    spotify:getValue(prefix+"Spotify"),
+    apple:getValue(prefix+"Apple"),
+    deezer:getValue(prefix+"Deezer"),
+    youtube:getValue(prefix+"Youtube"),
+    amazon:getValue(prefix+"Amazon"),
+    tiktok:getValue(prefix+"Tiktok"),
+    facebook:getValue(prefix+"Facebook"),
+    other:getValue(prefix+"Other")
   };
 }
 function cleanLinks(links){
   return Object.fromEntries(Object.entries(links || {}).filter(([,url]) => text(url)));
+}
+function platformKey(name){
+  const key=slugify(name).replace(/-/g,"");
+  if(key.includes("spotify")) return "spotify";
+  if(key.includes("youtube")) return "youtube";
+  if(key.includes("deezer")) return "deezer";
+  if(key.includes("apple")) return "apple";
+  if(key.includes("amazon")) return "amazon";
+  if(key.includes("tiktok")) return "tiktok";
+  if(key.includes("facebook")) return "facebook";
+  if(key==="other" || key==="autre") return "other";
+  return "other";
+}
+function normalizePlatformLinks(links){
+  const normalized={};
+  Object.entries(links || {}).forEach(([name,url])=>{
+    const value=text(url); if(value) normalized[platformKey(name)]=value;
+  });
+  return normalized;
+}
+function parseCmsDate(value){
+  const raw=text(value);
+  let match=raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  let year,month,day;
+  if(match){ [,year,month,day]=match; }
+  else {
+    match=raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if(!match) return null;
+    [,day,month,year]=match;
+  }
+  const parsed=new Date(Number(year),Number(month)-1,Number(day));
+  if(parsed.getFullYear()!==Number(year) || parsed.getMonth()!==Number(month)-1 || parsed.getDate()!==Number(day)) return null;
+  return parsed;
+}
+function normalizeCmsDate(value){
+  const parsed=parseCmsDate(value);
+  if(!parsed) return text(value);
+  return `${parsed.getFullYear()}-${String(parsed.getMonth()+1).padStart(2,"0")}-${String(parsed.getDate()).padStart(2,"0")}`;
+}
+function hasOfficialStreamingLink(item){
+  const links=normalizePlatformLinks(item?.links);
+  return ["spotify","youtube","deezer","apple","amazon"].some(key=>/^https:\/\//i.test(text(links[key])));
 }
 function ytId(url){
   try{
@@ -112,7 +154,7 @@ function currentLibrary(){ return normalizeList(state.data.music); }
 function sameContent(a,b){ return a && b && (text(a.id) && text(a.id)===text(b.id) || (slugify(a.title)===slugify(b.title) && slugify(a.artist)===slugify(b.artist))); }
 function normalizeArtistList(item){ return [...new Set([text(item.artist), ...(Array.isArray(item.artists)?item.artists:[]), ...(text(item.featuring).split(/,|feat\.?/i).map(text))].filter(Boolean))]; }
 function setMirroredList(key, list){ state.data[key]=Array.isArray(state.data[key])?list:{...(state.data[key]||{}),items:list}; }
-function copyRelease(item){ return clone({...item, id:item.id || slugify(`${item.artist}-${item.title}`), links:cleanLinks(item.links)}); }
+function copyRelease(item){ return clone({...item, id:item.id || slugify(`${item.artist}-${item.title}`), date:normalizeCmsDate(item.date), links:cleanLinks(normalizePlatformLinks(item.links))}); }
 function removeByContent(list,item){ return (list||[]).filter(candidate=>!sameContent(candidate,item)); }
 function syncTrackRelations(item, previous){
   const normalized=copyRelease(item);
@@ -131,10 +173,16 @@ function syncTrackRelations(item, previous){
     future.unshift(futureItem); countdowns.unshift(futureItem); state.data.site.countdowns.unshift(futureItem);
   }
   state.data.site.upcoming=future; state.data.countdowns=countdowns;
+  if(sameContent(state.data.site.featured,previous||normalized)){
+    state.data.site.featured={...normalized,type:state.data.site.featured.type||"track"};
+  }
   if(available){
-    const news=currentNews(); const existing=news.find(entry=>sameContent(entry,normalized));
-    const announcement={id:`${normalized.id}-available`,title:`${normalized.title} est disponible maintenant`,date:normalized.date || new Date().toISOString().slice(0,10),type:"sortie",text:`${normalized.title}, le nouveau titre de ${normalized.artist}, est disponible dès maintenant sur les plateformes officielles.`,image:normalized.cover,url:"/music/index.html#morceaux",buttonText:`Écouter ${normalized.title}`};
-    if(existing) Object.assign(existing,announcement); else news.unshift(announcement);
+    let news=currentNews(); const announcementId=`${normalized.id}-available`;
+    const existingIndex=news.findIndex(entry=>text(entry.id)===announcementId || sameContent(entry,normalized));
+    const announcement={id:announcementId,title:`${normalized.title} est disponible maintenant`,artist:normalized.artist,date:normalized.date || new Date().toISOString().slice(0,10),type:"sortie",text:`${normalized.title}, le nouveau titre de ${normalized.artist}, est disponible dès maintenant sur les plateformes officielles.`,image:normalized.cover,url:"/music/index.html#morceaux",buttonText:`Écouter ${normalized.title}`};
+    if(existingIndex>=0) news[existingIndex]={...news[existingIndex],...announcement}; else news=[announcement,...news];
+    const keptIndex=existingIndex>=0?existingIndex:0;
+    news=news.filter((entry,index)=>text(entry.id)!==announcementId || index===keptIndex);
     setNewsList(news);
   }
 }
@@ -310,7 +358,7 @@ function deleteItem(type,index){
 }
 
 function fillTrack(item={}, index=""){
-  setValue("trackIndex", index); setValue("trackTitle", item.title); setValue("trackArtist", item.artist); setValue("trackStatus", item.status || item.year); setValue("trackDate", item.date || item.year);
+  setValue("trackIndex", index); setValue("trackTitle", item.title); setValue("trackArtist", item.artist); setValue("trackStatus", item.status || item.year); setValue("trackDate", normalizeCmsDate(item.date || item.year));
   setValue("trackDescription", item.description); setValue("trackCover", item.cover); setValue("trackFeaturing", item.featuring || (item.artists||[]).filter(name=>name!==item.artist).join(", "));
   const links = item.links || {}; setValue("trackSpotify", links.Spotify || links.spotify); setValue("trackApple", links["Apple Music"] || links.apple); setValue("trackDeezer", links.Deezer || links.deezer); setValue("trackYoutube", links.YouTube || links.youtube); setValue("trackAmazon", links.Amazon || links.amazon); setValue("trackTiktok", links.TikTok || links.tiktok); setValue("trackFacebook", links.Facebook || links.facebook); setValue("trackOther", links.Other || links.other);
 }
@@ -318,7 +366,8 @@ function clearTrack(){ fillTrack({}); }
 function saveTrack(){
   const index = getValue("trackIndex");
   const previous = index !== "" ? currentTracks()[Number(index)] : null;
-  const item = {id:previous?.id || slugify(`${getValue("trackArtist")}-${getValue("trackTitle")}`),title:getValue("trackTitle"), artist:getValue("trackArtist"), featuring:getValue("trackFeaturing"), year:getValue("trackDate") || getValue("trackStatus"), date:getValue("trackDate"), status:getValue("trackStatus") || "À venir", description:getValue("trackDescription"), cover:getValue("trackCover"), links:cleanLinks(linksFrom("track"))};
+  const releaseDate=normalizeCmsDate(getValue("trackDate"));
+  const item = {id:previous?.id || slugify(`${getValue("trackArtist")}-${getValue("trackTitle")}`),title:getValue("trackTitle"), artist:getValue("trackArtist"), featuring:getValue("trackFeaturing"), year:releaseDate || getValue("trackStatus"), date:releaseDate, status:getValue("trackStatus") || "À venir", description:getValue("trackDescription"), cover:getValue("trackCover"), links:cleanLinks(normalizePlatformLinks(linksFrom("track")))};
   if(!item.title || !item.artist){ cmsMessage("Un titre et un artiste principal sont requis.",true); return; }
   item.artists=normalizeArtistList(item);
   if(index !== "") currentTracks()[Number(index)] = item; else currentTracks().unshift(item);
@@ -363,12 +412,12 @@ function saveNews(){
   const list = currentNews(); const index = getValue("newsIndex"); if(index !== "") list[Number(index)] = item; else list.unshift(item);
   setNewsList(list); clearNews(); markChanged();
 }
-function fillUpcoming(item={}, index=""){ setValue("upcomingIndex", index); setValue("upcomingTitle", item.title); setValue("upcomingArtist", item.artist); setValue("upcomingDate", item.date); setValue("upcomingCover", item.cover); setValue("upcomingDescription", item.description); }
+function fillUpcoming(item={}, index=""){ setValue("upcomingIndex", index); setValue("upcomingTitle", item.title); setValue("upcomingArtist", item.artist); setValue("upcomingDate", normalizeCmsDate(item.date)); setValue("upcomingCover", item.cover); setValue("upcomingDescription", item.description); }
 function clearUpcoming(){ fillUpcoming({}); }
 function saveUpcoming(){
   const title=getValue("upcomingTitle"), artist=getValue("upcomingArtist"), index=getValue("upcomingIndex");
   const matched=currentTracks().find(track=>slugify(track.title)===slugify(title) && slugify(track.artist)===slugify(artist));
-  const item={...(matched||{}),id:matched?.id || slugify(`${artist}-${title}`),title,artist,date:getValue("upcomingDate"),cover:getValue("upcomingCover"),description:getValue("upcomingDescription"),status:"À venir"};
+  const item={...(matched||{}),id:matched?.id || slugify(`${artist}-${title}`),title,artist,date:normalizeCmsDate(getValue("upcomingDate")),cover:getValue("upcomingCover"),description:getValue("upcomingDescription"),status:"À venir"};
   if(!title || !artist || !item.date){ cmsMessage("Titre, artiste et date sont requis.",true); return; }
   if(matched) Object.assign(matched,item); else currentTracks().unshift(item);
   syncTrackRelations(item,matched);
@@ -384,12 +433,14 @@ function saveArtist(){
 }
 function saveFeatured(){
   const item=featuredSource()[Number(getValue("featuredItem"))]; if(!item) return;
-  state.data.site.featured={...item, type:getValue("featuredType")}; markChanged(`${item.title || "Contenu"} : mis à la une`);
+  const type=getValue("featuredType");
+  state.data.site.featured={...(type==="track"?copyRelease(item):item),type}; markChanged(`${item.title || "Contenu"} : mis à la une`);
 }
 function markTrackAvailable(index){
   const item=currentTracks()[Number(index)]; if(!item) return;
+  if(!hasOfficialStreamingLink(item)){ cmsMessage(`${item.title} doit avoir au moins un lien officiel de streaming HTTPS (Spotify, YouTube Music, Deezer, Apple Music ou Amazon Music).`,true); return; }
   if(!confirm(`${item.title} va devenir disponible. La sortie sera retirée de « À venir » et de son compte à rebours, puis synchronisée dans la bibliothèque et les actualités.`)) return;
-  const previous=clone(item); item.status="Disponible"; item.hidden=false;
+  const previous=clone(item); item.status="Disponible"; item.hidden=false; item.date=normalizeCmsDate(item.date); item.links=normalizePlatformLinks(item.links);
   syncTrackRelations(item,previous);
   markChanged(`${item.title} : passée de À venir à Disponible, compte à rebours retiré`);
 }
@@ -537,6 +588,7 @@ function validateCmsData(){
     if(!text(item.title)||!text(item.artist)) problems.push("Un morceau doit avoir un titre et un artiste.");
     if(!text(item.cover)) problems.push(`${item.title || "Morceau"} : pochette manquante.`);
     if(item.status==="Disponible" && currentUpcoming().some(entry=>sameContent(entry,item))) problems.push(`${item.title} est Disponible mais présent dans À venir.`);
+    if(item.status==="Disponible" && !hasOfficialStreamingLink(item)) problems.push(`${item.title} : au moins un lien officiel de streaming HTTPS est requis.`);
     Object.entries(item.links||{}).forEach(([name,url])=>{ if(text(url) && !/^https:\/\//i.test(text(url))) problems.push(`${item.title} : lien ${name} invalide.`); });
   });
   currentVideos().forEach(item=>{ if(!item.youtubeId && !text(item.src)) problems.push(`${item.title || "Clip"} : source vidéo manquante.`); });

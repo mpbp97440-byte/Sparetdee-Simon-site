@@ -2,6 +2,11 @@
 let galleryItems = [];
 let currentFilter = "Tous";
 
+function galleryMediaUrl(value){
+  const source=String(value||"").trim();
+  return /^(https?:|data:|blob:)/i.test(source) ? source : `../${source.replace(/^\.\.\//,"")}`;
+}
+
 async function loadGallery(){
   const grid = document.getElementById("galleryGrid");
   if(!grid) return;
@@ -25,7 +30,7 @@ function renderGallery(){
 
   grid.innerHTML = list.length ? list.map((item, i) => `
     <article class="gallery-card" onclick="openLightbox(${galleryItems.indexOf(item)})">
-      <img src="../${item.image}" alt="${item.title || ""}">
+      <img src="${galleryMediaUrl(item.image)}" alt="${item.title || ""}">
       <div>
         <p class="sup">${item.type || "Visuel"} • ${item.artist || "MPBP440"}</p>
         <h3>${item.title || ""}</h3>
@@ -38,7 +43,7 @@ function renderGallery(){
 function openLightbox(index){
   const item = galleryItems[index];
   if(!item) return;
-  document.getElementById("lightboxImg").src = "../" + item.image;
+  document.getElementById("lightboxImg").src = galleryMediaUrl(item.image);
   document.getElementById("lightboxTitle").textContent = item.title || "";
   document.getElementById("lightboxText").textContent = item.description || "";
   document.getElementById("lightbox").hidden = false;

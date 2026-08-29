@@ -479,13 +479,17 @@ function renderTracks(tracks){
 
 function trackBadgesHtml(track={}){
   const badges = [];
-  const status = cleanKey(track.status);
   const title = cleanKey(track.title);
-  if(status.includes("avenir") || status.includes("pre") || status.includes("soon")) badges.push("À venir");
+  if(isUpcomingTrack(track)) badges.push("À venir");
   else badges.push("Disponible");
   if(title.includes("argent")) badges.push("Clip");
   if(title.includes("remix")) badges.push("Remix");
   return `<div class="v94-track-badges">${badges.map(label=>`<span>${label}</span>`).join("")}</div>`;
+}
+
+function isUpcomingTrack(track={}){
+  const status = cleanKey(track.status).replace(/\s+/g,"");
+  return status.includes("avenir") || status.includes("pre") || status.includes("soon");
 }
 
 function trackDateSortValue(track={}){
@@ -546,8 +550,7 @@ function applyV94MusicFilters(){
   }
   if(musicHubState.status !== "all"){
     filtered = filtered.filter(track => {
-      const status = cleanKey(track.status);
-      const upcoming = status.includes("avenir") || status.includes("pre") || status.includes("soon");
+      const upcoming = isUpcomingTrack(track);
       return musicHubState.status === "upcoming" ? upcoming : !upcoming;
     });
   }

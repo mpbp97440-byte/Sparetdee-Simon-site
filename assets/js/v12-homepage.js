@@ -6,7 +6,19 @@
     const source = media(path);
     return source ? `<img src="${source}" alt="${esc(alt)}" width="1254" height="1254" loading="lazy" decoding="async">` : '<p class="v12-upcoming-card__missing-artwork" role="status">Visuel officiel indisponible.</p>';
   };
-  const date = value => new Date(value);
+  const date = value => {
+    const raw = String(value || "").trim();
+    let match = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    let year, month, day;
+    if (match) [, year, month, day] = match;
+    else {
+      match = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+      if (!match) return new Date(raw);
+      [, day, month, year] = match;
+    }
+    const parsed = new Date(Number(year), Number(month) - 1, Number(day));
+    return parsed.getFullYear() === Number(year) && parsed.getMonth() === Number(month) - 1 && parsed.getDate() === Number(day) ? parsed : new Date(NaN);
+  };
   const validDate = value => !Number.isNaN(date(value).getTime());
   const displayDate = value => validDate(value) ? date(value).toLocaleDateString("fr-FR", {day:"numeric",month:"long",year:"numeric"}) : "";
   const links = item => Object.entries(item.links || {}).filter(([, url]) => url).map(([name, url]) => `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(({spotify:"Spotify", deezer:"Deezer", apple:"Apple Music", youtube:"YouTube Music", tiktok:"TikTok", facebook:"Facebook"}[name] || name))}</a>`).join("");

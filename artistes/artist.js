@@ -28,10 +28,15 @@ function addReleaseFavorite(title, artist){
 function norm(s){
   return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
 }
+function artistMediaUrl(value){
+  const source=String(value||"").trim();
+  return /^(https?:|data:|blob:)/i.test(source) ? source : `../${source.replace(/^\.\.\//,"")}`;
+}
 function linkButtons(links){
   if(!links) return "";
   const labels = {spotify:"Spotify", apple:"Apple Music", deezer:"Deezer", youtube:"YouTube", amazon:"Amazon Music"};
-  return Object.keys(labels).map(k => (links[k] || links[labels[k]]) ? `<a class="btn ghost small" href="${links[k] || links[labels[k]]}" target="_blank" rel="noopener">${labels[k]}</a>` : "").join("");
+  const aliases={spotify:["spotify","Spotify"],apple:["apple","Apple Music"],deezer:["deezer","Deezer"],youtube:["youtube","YouTube","YouTube Music"],amazon:["amazon","Amazon","Amazon Music"]};
+  return Object.keys(labels).map(k => {const url=aliases[k].map(name=>links[name]).find(Boolean);return url ? `<a class="btn ghost small" href="${url}" target="_blank" rel="noopener">${labels[k]}</a>` : "";}).join("");
 }
 async function loadArtistReleases(){
   const box = document.getElementById("artistDiscography");
@@ -47,7 +52,7 @@ async function loadArtistReleases(){
       const list = current === "Tous" ? artistReleases : artistReleases.filter(x => norm(x.type) === norm(current));
       box.innerHTML = list.length ? list.map(item => `
         <article class="release-card-artist">
-          ${item.cover ? `<img src="../${item.cover}" alt="${item.title}">` : `<div class="release-placeholder">🎵</div>`}
+          ${item.cover ? `<img src="${artistMediaUrl(item.cover)}" alt="${item.title}">` : `<div class="release-placeholder">🎵</div>`}
           <div>
             <p class="sup">${item.type || "Sortie"} • ${item.status || ""}</p>
             <h3>${item.title || ""}</h3>
