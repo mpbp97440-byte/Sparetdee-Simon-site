@@ -1,5 +1,16 @@
 [
   {
+    "id": "juste-une-plume-petit-demon-available",
+    "date": "2026-08-29",
+    "title": "Petit Démon est disponible maintenant",
+    "artist": "Juste Une Plume",
+    "text": "Petit Démon, le nouveau single de Juste Une Plume, est disponible dès maintenant sur les plateformes officielles.",
+    "type": "sortie",
+    "image": "assets/releases/juste-une-plume/petit-demon-cover-officielle.jpeg",
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Écouter Petit Démon"
+  },
+  {
     "id": "makeda-muse-karma-clip-exclusif-web-20260729",
     "date": "2026-07-29",
     "title": "Le clip exclusif web de « Karma » est disponible",

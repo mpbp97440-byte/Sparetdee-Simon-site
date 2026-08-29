@@ -3,14 +3,36 @@
     "id": "juste-une-plume-petit-demon",
     "title": "Petit Démon",
     "artist": "Juste Une Plume",
-    "date": "29/08/2026",
-    "cover": "https://eneuejomsrpdwvvpgvgl.supabase.co/storage/v1/object/public/mpbp440-media/covers/0ede6bc5-5785-4f3b-9818-c602f1161007-1b1edb86-324f-4838-bfd9-0a397f85ad2ffile.png",
-    "description": "Petit Démon le nouveau single de l’artiste Juste Une Plume bientôt disponible restez à l’écoute",
-    "status": "À venir",
-    "links": {},
     "artists": [
       "Juste Une Plume"
-    ]
+    ],
+    "date": "2026-08-29",
+    "cover": "assets/releases/juste-une-plume/petit-demon-cover-officielle.jpeg",
+    "description": "Petit Démon, le nouveau single de Juste Une Plume, est disponible dès maintenant sur les plateformes officielles.",
+    "status": "Disponible",
+    "type": "Single",
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/track/1YIOeU2i9lvaUPQh56qA1q?si=7f6289acab7c4035",
+      "deezer": "https://link.deezer.com/s/34fz5ZbJHKmCiyeoqNDa9",
+      "apple": "https://music.apple.com/fr/album/petit-d%C3%A9mon/6805402159?i=6805402650",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_k7BBXMm3QYMqUldptDELFQcV3GR6lJ67I&si=EOonO68VJtzpYcfK"
+    }
+  },
+  {
+    "id": "le-tribunal-des-maux",
+    "title": "Le Tribunal des Maux",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "artists": [
+      "Sparetdee Simon",
+      "Makéda Muse"
+    ],
+    "featuring": "Makéda Muse",
+    "date": "2026-09-05",
+    "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png",
+    "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, disponible le 05/09/2026.",
+    "status": "À venir",
+    "type": "Album",
+    "links": {}
   },
   {
     "id": "makeda-karma",
