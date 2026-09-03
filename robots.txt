@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
 
+# Réduction de visibilité uniquement ; l'autorisation réelle reste contrôlée côté serveur.
+Disallow: /admin
+Disallow: /admin.html
 Disallow: /admin-pro/
-Disallow: /admin/
 Disallow: /admin-440-mpbp-corp/
+Disallow: /analytics/
+Disallow: /preview/
 
 Sitemap: https://www.mpbp440.com/sitemap.xml

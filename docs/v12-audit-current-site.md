@@ -289,20 +289,23 @@ Risques spécifiques :
 
 ## 13. Back-office
 
-Trois surfaces existent : `admin.html`, `admin-pro/` et `admin-440-mpbp-corp/`.
+L'ancien studio public `admin.html` et l'ancien tableau Analytics Pro ont été retirés. La route historique `admin-pro/` ne contient plus d'outil et redirige immédiatement vers l'accueil avec une directive `noindex`.
 
-- `admin.html` fonctionne comme un studio local : lecture des JSON, brouillons en `localStorage`, préparation d'assets et téléchargement de fichiers à replacer manuellement.
-- `admin-440-mpbp-corp/` charge plusieurs sources, permet l'édition en mémoire et génère un ZIP d'update.
-- L'authentification de cette dernière surface est entièrement côté client. Les identifiants sont intégrés dans un fichier JavaScript public ; `robots.txt` et la suppression des liens de navigation ne constituent pas une protection.
-- Aucun appel d'écriture GitHub ou API serveur n'a été détecté. Le back-office ne publie pas directement : il prépare des fichiers téléchargés.
+La seule surface d'administration active est `admin-440-mpbp-corp/` :
 
-Risque critique : toute personne connaissant l'URL peut lire le JavaScript, contourner l'écran local et accéder aux fonctions d'édition/export. Avant de qualifier cette surface de privée, il faut la sortir du site public ou l'adosser à une authentification serveur réelle. La rotation des secrets éventuellement réutilisés ailleurs est à traiter séparément et explicitement.
+- authentification par Supabase Auth ;
+- vérification d'un rôle administrateur actif par les fonctions SQL protégées ;
+- politiques RLS sur les tables CMS et le stockage ;
+- publication et import de médias par des Edge Functions qui revérifient la session et le rôle côté serveur ;
+- jeton GitHub et clé `service_role` lus uniquement depuis les secrets de l'environnement serveur.
+
+La clé publiable Supabase reste visible dans le navigateur par conception, mais elle ne donne aucun droit administratif. `robots.txt` réduit l'indexation des routes internes sans être considéré comme un mécanisme de sécurité.
 
 ## 14. Registre des risques
 
 | Priorité | Risque | Impact | Action préalable recommandée |
 |---|---|---|---|
-| P0 | identifiants back-office dans le client public | accès non sécurisé, secret exposé | retirer la confiance du client, rotation contrôlée, hébergement privé |
+| Traité | ancien admin manuel public | surface obsolète accessible sans authentification | fichiers retirés ; seul le back-office protégé reste actif |
 | P0 | sources JSON concurrentes | contenu divergent ou publication invisible | schéma canonique + adaptateurs V11 |
 | P1 | cache illimité avec query strings temporels | stockage croissant, données périmées | routes autorisées, expiration, nettoyage ciblé |
 | P1 | suppression de tous les autres caches à l'activation | perte du cache utilisateur/app | préfixe partagé et liste de versions appartenant à MPBP |
