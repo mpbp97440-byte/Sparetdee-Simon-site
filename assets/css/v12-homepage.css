@@ -7,6 +7,8 @@
 .v12-upcoming-card img,.v12-upcoming-card__missing-artwork{display:block;width:100%;aspect-ratio:1;object-fit:cover}.v12-upcoming-card__missing-artwork{margin:0;display:grid;place-items:center;padding:1rem;background:#16140f;color:#e7c878;text-align:center}
 @media (max-width:700px){.v12-home-hero:before{opacity:.5;background-image:linear-gradient(180deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.72) 58%,rgba(5,5,5,.32) 100%),url('../gallery/neuvieme-merveille.webp');background-position:center,center bottom;background-size:100% 100%,auto 66%}}
 
+.v12-latest-release__lead>img,.v12-feature>img{object-fit:contain;background:radial-gradient(circle at center,rgba(213,174,85,.12),transparent 65%),#0b0a08}
+
 /* Upcoming releases: roomy editorial cards that preserve every artwork format. */
 .v12-upcoming-grid{
   grid-template-columns:repeat(auto-fit,minmax(min(100%,42rem),1fr));

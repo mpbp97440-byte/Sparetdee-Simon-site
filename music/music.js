@@ -40,7 +40,7 @@ function renderMusic(){
   const artist=document.getElementById("artistFilter")?.value||"Tous";
   const grid=document.getElementById("musicGrid");
   let list=musicLibrary.filter(t=>
-    (artist==="Tous"||t.artist===artist) &&
+    (artist==="Tous"||t.artist===artist||t.artists?.includes(artist)) &&
     ((t.title+t.artist+t.description).toLowerCase().includes(q))
   );
   grid.innerHTML=list.length?list.map(t=>`

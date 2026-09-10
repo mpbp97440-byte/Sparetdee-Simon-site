@@ -1,5 +1,28 @@
 [
   {
+    "id": "neons-carnivores",
+    "title": "Néons Carnivores",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "album": "Le Tribunal des Maux",
+    "trackNumber": 3,
+    "category": "clip officiel",
+    "description": "Clip officiel de Néons Carnivores, piste 3 de l’album Le Tribunal des Maux.",
+    "url": "https://youtu.be/GRPAsRzQTB0?si=DJdNh8QAJHk2IEQY",
+    "youtubeId": "GRPAsRzQTB0",
+    "src": "",
+    "poster": "assets/videos/neons-carnivores-video-poster.jpg"
+  },
+  {
+    "id": "mon-influence-version-long-2026",
+    "title": "Mon Influence Version Long 2026",
+    "artist": "Sparetdee Simon feat. Makéda Muse",
+    "category": "clip officiel",
+    "url": "https://youtu.be/qWhe7fzbx_g",
+    "youtubeId": "qWhe7fzbx_g",
+    "src": "",
+    "poster": ""
+  },
+  {
     "title": "Karma version long",
     "artist": "Makéda Muse",
     "category": "clip officiel",

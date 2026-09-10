@@ -15,41 +15,58 @@
     "Apple Music": "https://music.apple.com/fr/artist/sparetdee-simon/1893053126"
   },
   "featured": {
-    "id": "juste-une-plume-petit-demon",
-    "title": "Petit Démon",
-    "artist": "Juste Une Plume",
+    "id": "le-tribunal-des-maux",
+    "title": "Le Tribunal des Maux",
+    "artist": "Sparetdee Simon feat Makéda Muse",
     "artists": [
-      "Juste Une Plume"
+      "Sparetdee Simon",
+      "Makéda Muse"
     ],
-    "date": "2026-08-29",
-    "description": "Petit Démon, le nouveau single de Juste Une Plume, est disponible dès maintenant sur les plateformes officielles.",
-    "cover": "assets/releases/juste-une-plume/petit-demon-cover-officielle.jpeg",
+    "featuring": "Makéda Muse",
+    "date": "2026-09-05",
+    "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+    "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png",
     "status": "Disponible",
-    "type": "Single",
+    "type": "Album",
     "links": {
-      "spotify": "https://open.spotify.com/intl-fr/track/1YIOeU2i9lvaUPQh56qA1q?si=7f6289acab7c4035",
-      "deezer": "https://link.deezer.com/s/34fz5ZbJHKmCiyeoqNDa9",
-      "apple": "https://music.apple.com/fr/album/petit-d%C3%A9mon/6805402159?i=6805402650",
-      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_k7BBXMm3QYMqUldptDELFQcV3GR6lJ67I&si=EOonO68VJtzpYcfK"
+      "spotify": "https://open.spotify.com/intl-fr/album/1KQRfymOK0hmSUEiMASQ7K?si=XfbfHG3bQgaV8AupiY5Wqw",
+      "deezer": "https://link.deezer.com/s/34mAWHoh5CYieWMQUPVxi",
+      "apple": "https://music.apple.com/fr/album/le-tribunal-des-maux-feat-mak%C3%A9da-muse/6807806481",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lcsXv84cFXPcv80RA8TVdbBpFEW7PaU-w&si=9EM_0kr66hHMa1rD"
     }
   },
   "upcoming": [
     {
-      "id": "le-tribunal-des-maux",
-      "title": "Le Tribunal des Maux",
+      "id": "sous-le-meme-toit",
+      "title": "Sous Le Même Toit",
       "artist": "Sparetdee Simon feat Makéda Muse",
       "artists": [
         "Sparetdee Simon",
         "Makéda Muse"
       ],
       "featuring": "Makéda Muse",
-      "date": "2026-09-05",
-      "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png",
-      "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, disponible le 05/09/2026.",
+      "date": "2026-09-16",
+      "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
+      "description": "Sous Le Même Toit, nouveau single de Sparetdee Simon feat Makéda Muse, disponible le 16/09/2026.",
       "status": "À venir",
-      "type": "Album",
+      "type": "Single",
       "links": {},
       "label": "Prochaine sortie officielle"
+    },
+    {
+      "id": "brainrot-society-remix",
+      "title": "BrainRot Society Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-09-26",
+      "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+      "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+      "status": "À venir",
+      "type": "Single",
+      "links": {},
+      "label": "Sortie à venir"
     }
   ],
   "tracks": [
@@ -82,10 +99,45 @@
       ],
       "featuring": "Makéda Muse",
       "date": "2026-09-05",
-      "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png",
-      "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, disponible le 05/09/2026.",
-      "status": "À venir",
+      "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png",
+      "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+      "status": "Disponible",
       "type": "Album",
+      "links": {
+        "spotify": "https://open.spotify.com/intl-fr/album/1KQRfymOK0hmSUEiMASQ7K?si=XfbfHG3bQgaV8AupiY5Wqw",
+        "deezer": "https://link.deezer.com/s/34mAWHoh5CYieWMQUPVxi",
+        "apple": "https://music.apple.com/fr/album/le-tribunal-des-maux-feat-mak%C3%A9da-muse/6807806481",
+        "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lcsXv84cFXPcv80RA8TVdbBpFEW7PaU-w&si=9EM_0kr66hHMa1rD"
+      }
+    },
+    {
+      "id": "sous-le-meme-toit",
+      "title": "Sous Le Même Toit",
+      "artist": "Sparetdee Simon feat Makéda Muse",
+      "artists": [
+        "Sparetdee Simon",
+        "Makéda Muse"
+      ],
+      "featuring": "Makéda Muse",
+      "date": "2026-09-16",
+      "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
+      "description": "Sous Le Même Toit, nouveau single de Sparetdee Simon feat Makéda Muse, disponible le 16/09/2026.",
+      "status": "À venir",
+      "type": "Single",
+      "links": {}
+    },
+    {
+      "id": "brainrot-society-remix",
+      "title": "BrainRot Society Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-09-26",
+      "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+      "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+      "status": "À venir",
+      "type": "Single",
       "links": {}
     },
     {
@@ -1287,6 +1339,18 @@
   ],
   "videos": [
     {
+      "id": "neons-carnivores",
+      "title": "Néons Carnivores",
+      "artist": "Sparetdee Simon feat Makéda Muse",
+      "album": "Le Tribunal des Maux",
+      "trackNumber": 3,
+      "category": "clip officiel",
+      "description": "Clip officiel de Néons Carnivores, piste 3 de l’album Le Tribunal des Maux.",
+      "youtubeId": "GRPAsRzQTB0",
+      "url": "https://youtu.be/GRPAsRzQTB0?si=DJdNh8QAJHk2IEQY",
+      "poster": "assets/videos/neons-carnivores-video-poster.jpg"
+    },
+    {
       "id": "mon-influence-version-long-2026",
       "title": "Mon Influence Version Long 2026",
       "artist": "Sparetdee Simon feat. Makéda Muse",
@@ -1363,11 +1427,6 @@
     "email": "mpbp97440@gmail.com",
     "heroGallery": "assets/gallery/neuvieme-merveille.webp"
   },
-  "countdown": {
-    "title": "Double sortie — Sparetdee Simon",
-    "date": "2026-06-20T00:00:00+02:00",
-    "label": "Compte à rebours double sortie officielle"
-  },
   "gallery": [
     {
       "title": "Sparetdee Simon — réflexion",
@@ -1441,21 +1500,36 @@
   ],
   "countdowns": [
     {
-      "id": "le-tribunal-des-maux",
-      "title": "Le Tribunal des Maux",
+      "id": "sous-le-meme-toit",
+      "title": "Sous Le Même Toit",
       "artist": "Sparetdee Simon feat Makéda Muse",
       "artists": [
         "Sparetdee Simon",
         "Makéda Muse"
       ],
       "featuring": "Makéda Muse",
-      "date": "2026-09-05",
-      "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png",
-      "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, disponible le 05/09/2026.",
+      "date": "2026-09-16",
+      "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
+      "description": "Sous Le Même Toit, nouveau single de Sparetdee Simon feat Makéda Muse, disponible le 16/09/2026.",
       "status": "À venir",
-      "type": "Album",
+      "type": "Single",
       "links": {},
       "label": "Prochaine sortie officielle"
+    },
+    {
+      "id": "brainrot-society-remix",
+      "title": "BrainRot Society Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-09-26",
+      "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+      "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+      "status": "À venir",
+      "type": "Single",
+      "links": {},
+      "label": "Sortie à venir"
     }
   ],
   "mpbp_tv": {

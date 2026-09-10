@@ -28,10 +28,45 @@
     ],
     "featuring": "Makéda Muse",
     "date": "2026-09-05",
-    "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png",
-    "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, disponible le 05/09/2026.",
-    "status": "À venir",
+    "cover": "assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png",
+    "description": "Le Tribunal des Maux, nouvel album de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+    "status": "Disponible",
     "type": "Album",
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/1KQRfymOK0hmSUEiMASQ7K?si=XfbfHG3bQgaV8AupiY5Wqw",
+      "deezer": "https://link.deezer.com/s/34mAWHoh5CYieWMQUPVxi",
+      "apple": "https://music.apple.com/fr/album/le-tribunal-des-maux-feat-mak%C3%A9da-muse/6807806481",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_lcsXv84cFXPcv80RA8TVdbBpFEW7PaU-w&si=9EM_0kr66hHMa1rD"
+    }
+  },
+  {
+    "id": "sous-le-meme-toit",
+    "title": "Sous Le Même Toit",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "artists": [
+      "Sparetdee Simon",
+      "Makéda Muse"
+    ],
+    "featuring": "Makéda Muse",
+    "date": "2026-09-16",
+    "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
+    "description": "Sous Le Même Toit, nouveau single de Sparetdee Simon feat Makéda Muse, disponible le 16/09/2026.",
+    "status": "À venir",
+    "type": "Single",
+    "links": {}
+  },
+  {
+    "id": "brainrot-society-remix",
+    "title": "BrainRot Society Remix",
+    "artist": "Sparetdee Simon",
+    "artists": [
+      "Sparetdee Simon"
+    ],
+    "date": "2026-09-26",
+    "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+    "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+    "status": "À venir",
+    "type": "Single",
     "links": {}
   },
   {

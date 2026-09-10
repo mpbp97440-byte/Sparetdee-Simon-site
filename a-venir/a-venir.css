@@ -1,0 +1,14 @@
+.a-venir-page #upcomingGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.a-venir-page #upcomingGrid .time-card{min-width:0}
+@media(max-width:980px){
+  .a-venir-page .site-header{overflow:hidden}
+  .a-venir-page .nav{width:auto;max-width:100%;min-height:auto;margin:0;padding:8px 10px;gap:8px}
+  .a-venir-page .brand{padding-inline:4px}
+  .a-venir-page .brand img{width:40px;height:40px}
+  .a-venir-page .nav-links{display:flex;width:100%;max-width:100%;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding:2px 4px 8px;scrollbar-width:thin;overscroll-behavior-inline:contain}
+  .a-venir-page .nav-links a{flex:0 0 auto;padding:7px 9px;border:1px solid rgba(244,211,94,.2);border-radius:999px;background:rgba(255,255,255,.04);white-space:nowrap}
+  .a-venir-page .miniCountdown{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+  .a-venir-page #upcomingGrid{grid-template-columns:1fr}
+}

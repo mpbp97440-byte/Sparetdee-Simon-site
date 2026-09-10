@@ -46,7 +46,7 @@ async function loadArtistReleases(){
   try{
     const r = await fetch("../data/releases.json?v=countdown-notifications-hotfix-v11-202607", {cache:"no-store"});
     const releases = await r.json();
-    const artistReleases = releases.filter(x => norm(x.artist) === norm(artistName));
+    const artistReleases = releases.filter(x => norm(x.artist) === norm(artistName) || x.artists?.some(name => norm(name) === norm(artistName)));
     let current = "Tous";
     function render(){
       const list = current === "Tous" ? artistReleases : artistReleases.filter(x => norm(x.type) === norm(current));

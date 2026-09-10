@@ -1,5 +1,49 @@
 [
   {
+    "id": "neons-carnivores-clip-20260910",
+    "date": "2026-09-10",
+    "title": "Le clip Néons Carnivores est disponible",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "text": "Découvrez le clip officiel de Néons Carnivores, piste 3 de l’album Le Tribunal des Maux, dans le nouveau lecteur MPBP TV.",
+    "type": "clip",
+    "image": "assets/videos/neons-carnivores-video-poster.jpg",
+    "url": "/mpbp-tv/index.html#neons-carnivores",
+    "buttonText": "Voir le clip"
+  },
+  {
+    "id": "brainrot-society-remix-presortie-20260926",
+    "date": "2026-09-10",
+    "title": "BrainRot Society Remix arrive le 26 septembre 2026",
+    "artist": "Sparetdee Simon",
+    "text": "BrainRot Society Remix, le nouveau single de Sparetdee Simon, sortira le 26/09/2026. Suivez le compte à rebours officiel.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+    "url": "/#avenir",
+    "buttonText": "Voir le compte à rebours"
+  },
+  {
+    "id": "sous-le-meme-toit-presortie-20260916",
+    "date": "2026-09-10",
+    "title": "Sous Le Même Toit arrive le 16 septembre 2026",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "text": "Sous Le Même Toit, le nouveau single de Sparetdee Simon feat Makéda Muse, sortira le 16/09/2026. Suivez le compte à rebours officiel.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
+    "url": "/#avenir",
+    "buttonText": "Voir le compte à rebours"
+  },
+  {
+    "id": "le-tribunal-des-maux-available",
+    "date": "2026-09-05",
+    "title": "Le Tribunal des Maux est disponible maintenant",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "text": "Le Tribunal des Maux, le nouvel album de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png",
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Écouter l’album"
+  },
+  {
     "id": "juste-une-plume-petit-demon-available",
     "date": "2026-08-29",
     "title": "Petit Démon est disponible maintenant",

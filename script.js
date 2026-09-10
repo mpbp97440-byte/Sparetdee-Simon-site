@@ -12,7 +12,7 @@ function cleanKey(value){
 
 function publicRoot(){
   const path = location.pathname;
-  const section = path.match(/^(.*)\/(?:music|artistes|mpbp-tv|galerie|evenements|actualites|notifications|live|members|application|telechargements|admin-440-mpbp-corp)\//);
+  const section = path.match(/^(.*)\/(?:music|artistes|mpbp-tv|galerie|evenements|actualites|notifications|live|members|application|telechargements|a-venir|admin-440-mpbp-corp)\//);
   return section ? `${section[1]}/` : path.replace(/[^/]*$/, '');
 }
 const fallbackLogo = `${publicRoot()}assets/brand/mpbp440-corp-official.png`;
@@ -180,17 +180,24 @@ function emptyStateHtml(message, href="#home", label="Retour a l'accueil"){
 
 function parseReleaseDate(value){
   if(!value) return null;
-  if(String(value).includes("T")){
-    const date = new Date(value);
+  const raw = String(value).trim();
+  if(raw.includes("T")){
+    const date = new Date(raw);
     return isNaN(date) ? null : date;
   }
-  const parts = String(value).split("/");
+  const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(iso){
+    const [,year,month,day] = iso;
+    const date = new Date(Number(year), Number(month) - 1, Number(day));
+    return date.getFullYear() === Number(year) && date.getMonth() === Number(month) - 1 && date.getDate() === Number(day) ? date : null;
+  }
+  const parts = raw.split("/");
   if(parts.length === 3){
     const [day, month, year] = parts.map(Number);
     const date = new Date(year, month - 1, day);
-    return isNaN(date) ? null : date;
+    return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
   }
-  const date = new Date(value);
+  const date = new Date(raw);
   return isNaN(date) ? null : date;
 }
 

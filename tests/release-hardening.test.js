@@ -107,21 +107,27 @@ function runPublishedContentTests() {
   const news = json('data/news.json');
   const petitId = 'juste-une-plume-petit-demon';
   const tribunalId = 'le-tribunal-des-maux';
+  const sousLeMemeToitId = 'sous-le-meme-toit';
+  const brainrotRemixId = 'brainrot-society-remix';
   const petit = site.tracks.find(item => item.id === petitId);
   const tribunal = site.tracks.find(item => item.id === tribunalId);
-  const expectedLinks = {
+  const petitLinks = {
     spotify: 'https://open.spotify.com/intl-fr/track/1YIOeU2i9lvaUPQh56qA1q?si=7f6289acab7c4035',
     deezer: 'https://link.deezer.com/s/34fz5ZbJHKmCiyeoqNDa9',
     apple: 'https://music.apple.com/fr/album/petit-d%C3%A9mon/6805402159?i=6805402650',
     youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_k7BBXMm3QYMqUldptDELFQcV3GR6lJ67I&si=EOonO68VJtzpYcfK'
   };
+  const tribunalLinks = {
+    spotify: 'https://open.spotify.com/intl-fr/album/1KQRfymOK0hmSUEiMASQ7K?si=XfbfHG3bQgaV8AupiY5Wqw',
+    deezer: 'https://link.deezer.com/s/34mAWHoh5CYieWMQUPVxi',
+    apple: 'https://music.apple.com/fr/album/le-tribunal-des-maux-feat-mak%C3%A9da-muse/6807806481',
+    youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_lcsXv84cFXPcv80RA8TVdbBpFEW7PaU-w&si=9EM_0kr66hHMa1rD'
+  };
 
   assert.equal(petit.status, 'Disponible');
   assert.equal(petit.date, '2026-08-29');
-  assert.deepEqual(petit.links, expectedLinks);
+  assert.deepEqual(petit.links, petitLinks);
   assert.ok(Object.values(petit.links).every(url => url.startsWith('https://')));
-  assert.equal(site.featured.id, petitId);
-  assert.deepEqual(site.featured.links, expectedLinks);
   assert.equal(site.upcoming.some(item => item.id === petitId), false);
   assert.equal(site.countdowns.some(item => item.id === petitId), false);
   assert.equal(countdowns.some(item => item.id === petitId), false);
@@ -129,21 +135,50 @@ function runPublishedContentTests() {
   assert.equal(library.filter(item => item.id === petitId && item.status === 'Disponible').length, 1);
   assert.equal(releases.filter(item => item.id === petitId && item.status === 'Disponible').length, 1);
 
-  assert.equal(tribunal.status, 'À venir');
+  assert.equal(tribunal.status, 'Disponible');
   assert.equal(tribunal.type, 'Album');
   assert.equal(tribunal.date, '2026-09-05');
   assert.deepEqual(tribunal.artists, ['Sparetdee Simon', 'Makéda Muse']);
-  assert.equal(tribunal.artists.includes('Sparetdee Simon'), true);
-  assert.equal(tribunal.artists.includes('Makéda Muse'), true);
-  assert.equal(site.upcoming.filter(item => item.id === tribunalId).length, 1);
-  assert.equal(site.countdowns.filter(item => item.id === tribunalId).length, 1);
-  assert.equal(countdowns.filter(item => item.id === tribunalId).length, 1);
-  assert.equal(site.tracks.filter(item => item.id === tribunalId && item.status === 'Disponible').length, 0);
-  assert.equal(site.featured.id, petitId);
+  assert.deepEqual(tribunal.links, tribunalLinks);
+  assert.ok(Object.values(tribunal.links).every(url => url.startsWith('https://')));
+  assert.equal(tribunal.cover, 'assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png');
+  assert.equal(site.featured.id, tribunalId);
+  assert.deepEqual(site.featured.links, tribunalLinks);
+  assert.equal(site.upcoming.some(item => item.id === tribunalId), false);
+  assert.equal(site.countdowns.some(item => item.id === tribunalId), false);
+  assert.equal(countdowns.some(item => item.id === tribunalId), false);
+  assert.equal(library.filter(item => item.id === tribunalId && item.status === 'Disponible').length, 1);
+  assert.equal(releases.filter(item => item.id === tribunalId && item.status === 'Disponible').length, 1);
+  assert.equal(news.filter(item => item.id === `${tribunalId}-available`).length, 1);
+
+  for (const id of [sousLeMemeToitId, brainrotRemixId]) {
+    assert.equal(site.tracks.filter(item => item.id === id && item.status === 'À venir').length, 1);
+    assert.equal(site.upcoming.filter(item => item.id === id).length, 1);
+    assert.equal(site.countdowns.filter(item => item.id === id).length, 1);
+    assert.equal(countdowns.filter(item => item.id === id).length, 1);
+    assert.equal(library.filter(item => item.id === id).length, 1);
+    assert.equal(releases.filter(item => item.id === id).length, 1);
+  }
+  assert.deepEqual(site.tracks.find(item => item.id === sousLeMemeToitId).artists, ['Sparetdee Simon', 'Makéda Muse']);
+  assert.deepEqual(site.tracks.find(item => item.id === brainrotRemixId).artists, ['Sparetdee Simon']);
+  assert.equal(news.filter(item => item.id === 'sous-le-meme-toit-presortie-20260916').length, 1);
+  assert.equal(news.filter(item => item.id === 'brainrot-society-remix-presortie-20260926').length, 1);
+  assert.equal(news.filter(item => item.id === 'neons-carnivores-clip-20260910').length, 1);
+
+  const videos = json('data/videos.json');
+  const neons = videos.find(item => item.id === 'neons-carnivores');
+  assert.equal(neons.youtubeId, 'GRPAsRzQTB0');
+  assert.equal(neons.url, 'https://youtu.be/GRPAsRzQTB0?si=DJdNh8QAJHk2IEQY');
+  assert.equal(neons.poster, 'assets/videos/neons-carnivores-video-poster.jpg');
+  assert.equal(videos.filter(item => item.id === 'neons-carnivores').length, 1);
+  assert.equal(new Set(videos.map(item => item.youtubeId).filter(Boolean)).size, videos.map(item => item.youtubeId).filter(Boolean).length);
 
   const hash = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
   assert.equal(hash('assets/releases/juste-une-plume/petit-demon-cover-officielle.jpeg'), 'a012bb4875fc7d209b29881f0347e65a15fc2f930dd68c9eb3a5686b3f0fb3f5');
-  assert.equal(hash('assets/releases/sparetdee-simon/le-tribunal-des-maux-pre-sortie-2026-09-05.png'), '68da5f4da0df083fbf318bfe83d3e5c79a5ad4b36159c59946085a700aed5f4c');
+  assert.equal(hash('assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png'), 'b4c640208eadb1dfc9635ccd4506f5e8b936aeaefceaace56efee5f7086322fe');
+  assert.equal(hash('assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg'), '8daed8c4c7154559613eb3b05c5916d3b4b42df100a06e2ded7ea74870446e20');
+  assert.equal(hash('assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png'), 'db0f2f7e0a8c655c327e7043f9f507c79c6dd6a4ac4a0066bf95764d3af9b86d');
+  assert.equal(hash('assets/videos/neons-carnivores-video-poster.jpg'), '58651378c38b22775f6cc3c4cde55850e17ed14e4dff0ddea434e193fd9f1f58');
 }
 
 function runRendererTests() {
@@ -193,9 +228,23 @@ function runRendererTests() {
   mainScript.scrollY = 0;
   mainScript.scrollTo = () => {};
   vm.runInContext(read('script.js'), mainScript);
+  assert.equal(vm.runInContext(`parseReleaseDate('2026-09-16').getDate()`, mainScript), 16);
+  assert.equal(vm.runInContext(`parseReleaseDate('16/09/2026').getDate()`, mainScript), 16);
+  assert.equal(vm.runInContext(`parseReleaseDate('31/02/2026')`, mainScript), null);
   assert.equal(vm.runInContext(`isUpcomingTrack({status:'À venir'})`, mainScript), true);
   assert.match(vm.runInContext(`trackBadgesHtml({status:'À venir',title:'Le Tribunal des Maux'})`, mainScript), /À venir/);
   assert.doesNotMatch(vm.runInContext(`trackBadgesHtml({status:'À venir',title:'Le Tribunal des Maux'})`, mainScript), /Disponible/);
+
+  const tvHtml = read('mpbp-tv/index.html');
+  const tvScript = read('assets/js/v12-mpbp-tv.js');
+  assert.match(tvHtml, /data-v13-video-filter="youtube"/);
+  assert.match(tvHtml, /data-v13-video-filter="exclusive"/);
+  assert.match(tvHtml, /id="v13YoutubePlayer"/);
+  assert.match(tvScript, /youtube-nocookie\.com\/embed/);
+  assert.doesNotMatch(tvScript, /youtube-nocookie\.com\/embed\/[^\n]+autoplay=1/);
+  for (const id of ['clip-karma','clip-mon-influence','clip-que-restera-t-il-de-moi','l-argent','clip-je-sais-que-tu-sais','clip-j-existe','clip-dois-je-me-taire']) {
+    assert.match(tvScript, new RegExp(`id: '${id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'`));
+  }
 }
 
 runBackofficeTests();
