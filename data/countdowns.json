@@ -1,22 +1,5 @@
 [
   {
-    "id": "sous-le-meme-toit",
-    "title": "Sous Le Même Toit",
-    "artist": "Sparetdee Simon feat Makéda Muse",
-    "artists": [
-      "Sparetdee Simon",
-      "Makéda Muse"
-    ],
-    "featuring": "Makéda Muse",
-    "date": "2026-09-16",
-    "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
-    "description": "Sous Le Même Toit, nouveau single de Sparetdee Simon feat Makéda Muse, disponible le 16/09/2026.",
-    "status": "À venir",
-    "type": "Single",
-    "links": {},
-    "label": "Prochaine sortie officielle"
-  },
-  {
     "id": "brainrot-society-remix",
     "title": "BrainRot Society Remix",
     "artist": "Sparetdee Simon",
@@ -26,6 +9,21 @@
     "date": "2026-09-26",
     "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
     "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+    "status": "À venir",
+    "type": "Single",
+    "links": {},
+    "label": "Sortie à venir"
+  },
+  {
+    "id": "legalize-la-kalite-remix",
+    "title": "Légalize La Kalité Remix",
+    "artist": "Sparetdee Simon",
+    "artists": [
+      "Sparetdee Simon"
+    ],
+    "date": "2026-09-26",
+    "cover": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
+    "description": "Légalize La Kalité Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
     "status": "À venir",
     "type": "Single",
     "links": {},

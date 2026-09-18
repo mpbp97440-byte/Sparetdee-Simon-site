@@ -1,5 +1,27 @@
 [
   {
+    "id": "sous-le-meme-toit-available",
+    "date": "2026-09-18",
+    "title": "Sous Le Même Toit est disponible maintenant",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "text": "Sous Le Même Toit, le nouveau single de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/sous-le-meme-toit-cover-officielle.png",
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Écouter le titre"
+  },
+  {
+    "id": "legalize-la-kalite-remix-presortie-20260926",
+    "date": "2026-09-18",
+    "title": "Légalize La Kalité Remix arrive le 26 septembre 2026",
+    "artist": "Sparetdee Simon",
+    "text": "Légalize La Kalité Remix, le nouveau single de Sparetdee Simon, sortira le 26/09/2026. Suivez le compte à rebours officiel.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
+    "url": "/#avenir",
+    "buttonText": "Voir le compte à rebours"
+  },
+  {
     "id": "neons-carnivores-clip-20260910",
     "date": "2026-09-10",
     "title": "Le clip Néons Carnivores est disponible",
@@ -18,17 +40,6 @@
     "text": "BrainRot Society Remix, le nouveau single de Sparetdee Simon, sortira le 26/09/2026. Suivez le compte à rebours officiel.",
     "type": "sortie",
     "image": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
-    "url": "/#avenir",
-    "buttonText": "Voir le compte à rebours"
-  },
-  {
-    "id": "sous-le-meme-toit-presortie-20260916",
-    "date": "2026-09-10",
-    "title": "Sous Le Même Toit arrive le 16 septembre 2026",
-    "artist": "Sparetdee Simon feat Makéda Muse",
-    "text": "Sous Le Même Toit, le nouveau single de Sparetdee Simon feat Makéda Muse, sortira le 16/09/2026. Suivez le compte à rebours officiel.",
-    "type": "sortie",
-    "image": "assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg",
     "url": "/#avenir",
     "buttonText": "Voir le compte à rebours"
   },

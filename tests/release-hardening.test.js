@@ -109,6 +109,7 @@ function runPublishedContentTests() {
   const tribunalId = 'le-tribunal-des-maux';
   const sousLeMemeToitId = 'sous-le-meme-toit';
   const brainrotRemixId = 'brainrot-society-remix';
+  const legalizeRemixId = 'legalize-la-kalite-remix';
   const petit = site.tracks.find(item => item.id === petitId);
   const tribunal = site.tracks.find(item => item.id === tribunalId);
   const petitLinks = {
@@ -122,6 +123,14 @@ function runPublishedContentTests() {
     deezer: 'https://link.deezer.com/s/34mAWHoh5CYieWMQUPVxi',
     apple: 'https://music.apple.com/fr/album/le-tribunal-des-maux-feat-mak%C3%A9da-muse/6807806481',
     youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_lcsXv84cFXPcv80RA8TVdbBpFEW7PaU-w&si=9EM_0kr66hHMa1rD'
+  };
+  const sousLeMemeToitLinks = {
+    spotify: 'https://open.spotify.com/intl-fr/album/6Mf9hv60u1L3sZP585UVoM?si=aM1-c5FZS3-t3JIeDezhzA',
+    deezer: 'https://link.deezer.com/s/34qSWklejnRpkrk7octZJ',
+    youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_k64HBzkuh16CdUMhxnNoFg9Fc703nBmBY&si=E1FQImMeZ_8pemJz',
+    apple: 'https://music.apple.com/fr/album/sous-le-m%C3%AAme-toit-feat-mak%C3%A9da-muse-single/6810645594',
+    tiktok: 'https://www.tiktok.com/@simonsparet',
+    facebook: 'https://www.facebook.com/Sparetdee.simon'
   };
 
   assert.equal(petit.status, 'Disponible');
@@ -151,7 +160,28 @@ function runPublishedContentTests() {
   assert.equal(releases.filter(item => item.id === tribunalId && item.status === 'Disponible').length, 1);
   assert.equal(news.filter(item => item.id === `${tribunalId}-available`).length, 1);
 
-  for (const id of [sousLeMemeToitId, brainrotRemixId]) {
+  const sousLeMemeToit = site.tracks.find(item => item.id === sousLeMemeToitId);
+  assert.equal(sousLeMemeToit.status, 'Disponible');
+  assert.equal(sousLeMemeToit.date, '2026-09-16');
+  assert.deepEqual(sousLeMemeToit.artists, ['Sparetdee Simon', 'Makéda Muse']);
+  assert.deepEqual(sousLeMemeToit.links, sousLeMemeToitLinks);
+  assert.ok(Object.values(sousLeMemeToit.links).every(url => url.startsWith('https://')));
+  assert.equal(sousLeMemeToit.cover, 'assets/releases/sparetdee-simon/sous-le-meme-toit-cover-officielle.png');
+  assert.equal(site.upcoming.some(item => item.id === sousLeMemeToitId), false);
+  assert.equal(site.countdowns.some(item => item.id === sousLeMemeToitId), false);
+  assert.equal(countdowns.some(item => item.id === sousLeMemeToitId), false);
+  assert.equal(site.tracks.filter(item => item.id === sousLeMemeToitId).length, 1);
+  assert.equal(library.filter(item => item.id === sousLeMemeToitId && item.status === 'Disponible').length, 1);
+  assert.equal(releases.filter(item => item.id === sousLeMemeToitId && item.status === 'Disponible').length, 1);
+  assert.equal(news.filter(item => item.id === `${sousLeMemeToitId}-available`).length, 1);
+  assert.equal(news.filter(item => item.id === 'sous-le-meme-toit-presortie-20260916').length, 0);
+  assert.equal(site.featured.id, tribunalId);
+  assert.equal(site.tracks.filter(item => item.status === 'Disponible').sort((a, b) => new Date(b.date) - new Date(a.date))[0].id, sousLeMemeToitId);
+  const belongsToArtist = (item, artist) => item.artist === artist || item.artists?.includes(artist);
+  assert.equal(belongsToArtist(sousLeMemeToit, 'Sparetdee Simon'), true);
+  assert.equal(belongsToArtist(sousLeMemeToit, 'Makéda Muse'), true);
+
+  for (const id of [brainrotRemixId, legalizeRemixId]) {
     assert.equal(site.tracks.filter(item => item.id === id && item.status === 'À venir').length, 1);
     assert.equal(site.upcoming.filter(item => item.id === id).length, 1);
     assert.equal(site.countdowns.filter(item => item.id === id).length, 1);
@@ -159,10 +189,17 @@ function runPublishedContentTests() {
     assert.equal(library.filter(item => item.id === id).length, 1);
     assert.equal(releases.filter(item => item.id === id).length, 1);
   }
-  assert.deepEqual(site.tracks.find(item => item.id === sousLeMemeToitId).artists, ['Sparetdee Simon', 'Makéda Muse']);
   assert.deepEqual(site.tracks.find(item => item.id === brainrotRemixId).artists, ['Sparetdee Simon']);
-  assert.equal(news.filter(item => item.id === 'sous-le-meme-toit-presortie-20260916').length, 1);
+  assert.deepEqual(site.tracks.find(item => item.id === legalizeRemixId).artists, ['Sparetdee Simon']);
+  assert.equal(belongsToArtist(site.tracks.find(item => item.id === legalizeRemixId), 'Makéda Muse'), false);
+  assert.deepEqual(site.upcoming.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
+  assert.deepEqual(site.countdowns.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
+  assert.deepEqual(countdowns.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
+  assert.equal(site.countdowns[0].date, '2026-09-26');
+  assert.equal(site.countdowns[1].date, '2026-09-26');
+  assert.notEqual(site.countdowns[0].id, site.countdowns[1].id);
   assert.equal(news.filter(item => item.id === 'brainrot-society-remix-presortie-20260926').length, 1);
+  assert.equal(news.filter(item => item.id === 'legalize-la-kalite-remix-presortie-20260926').length, 1);
   assert.equal(news.filter(item => item.id === 'neons-carnivores-clip-20260910').length, 1);
 
   const videos = json('data/videos.json');
@@ -176,8 +213,9 @@ function runPublishedContentTests() {
   const hash = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
   assert.equal(hash('assets/releases/juste-une-plume/petit-demon-cover-officielle.jpeg'), 'a012bb4875fc7d209b29881f0347e65a15fc2f930dd68c9eb3a5686b3f0fb3f5');
   assert.equal(hash('assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png'), 'b4c640208eadb1dfc9635ccd4506f5e8b936aeaefceaace56efee5f7086322fe');
-  assert.equal(hash('assets/releases/sparetdee-simon/sous-le-meme-toit-presortie.jpg'), '8daed8c4c7154559613eb3b05c5916d3b4b42df100a06e2ded7ea74870446e20');
+  assert.equal(hash('assets/releases/sparetdee-simon/sous-le-meme-toit-cover-officielle.png'), 'a9298b1e8ce1dd8602892b98db5d715281100825eefe0e846308ba3b7640e8ab');
   assert.equal(hash('assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png'), 'db0f2f7e0a8c655c327e7043f9f507c79c6dd6a4ac4a0066bf95764d3af9b86d');
+  assert.equal(hash('assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png'), '8d0c424481f820610cdcf0cec8d5ca7d8d7b9b8214de6b1bf7556299dd353ef3');
   assert.equal(hash('assets/videos/neons-carnivores-video-poster.jpg'), '58651378c38b22775f6cc3c4cde55850e17ed14e4dff0ddea434e193fd9f1f58');
 }
 
@@ -202,7 +240,7 @@ function runRendererTests() {
   const homepage = browserContext();
   const homepageSource = read('assets/js/v12-homepage.js').replace(
     'document.addEventListener("DOMContentLoaded", render, {once:true});',
-    'globalThis.__homepageTest={date,validDate};'
+    'globalThis.__homepageTest={date,validDate,links};'
   );
   vm.runInContext(homepageSource, homepage);
   assert.equal(vm.runInContext(`__homepageTest.date('29/08/2026').getFullYear()`, homepage), 2026);
@@ -210,6 +248,9 @@ function runRendererTests() {
   assert.equal(vm.runInContext(`__homepageTest.validDate('2026-08-29')`, homepage), true);
   assert.equal(vm.runInContext(`__homepageTest.validDate('31/02/2026')`, homepage), false);
   assert.equal(vm.runInContext(`__homepageTest.date('29/08/2026') > __homepageTest.date('2026-08-13')`, homepage), true);
+  assert.match(vm.runInContext(`__homepageTest.links({links:{spotify:'https://spotify.test',deezer:'https://deezer.test',youtube:'https://youtube.test',apple:'https://apple.test',tiktok:'https://tiktok.test',facebook:'https://facebook.test'}})`, homepage), /YouTube Music/);
+  assert.match(vm.runInContext(`__homepageTest.links({links:{spotify:'https://spotify.test',deezer:'https://deezer.test',youtube:'https://youtube.test',apple:'https://apple.test',tiktok:'https://tiktok.test',facebook:'https://facebook.test'}})`, homepage), /TikTok/);
+  assert.match(vm.runInContext(`__homepageTest.links({links:{spotify:'https://spotify.test',deezer:'https://deezer.test',youtube:'https://youtube.test',apple:'https://apple.test',tiktok:'https://tiktok.test',facebook:'https://facebook.test'}})`, homepage), /Facebook/);
 
   const v12Artist = browserContext();
   const artistSource = read('artistes/v12-artist.js').replace(
