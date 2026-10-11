@@ -1,0 +1,152 @@
+@media (max-width: 1180px) {
+  .v12-primary-nav a { padding-inline: 8px; font-size: .76rem; }
+  .v12-home-hero { background-size: 660px auto; background-position: 104% 48%; }
+  .v12-clips-grid { grid-template-columns: repeat(2, 1fr); }
+  .v12-news-grid { grid-template-columns: repeat(2, 1fr); }
+  .v12-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 980px) {
+  :root { --v14-header-height: 70px; }
+  .v12-container,
+  .v85-tv-page,
+  .v85-music-page,
+  .artist-page,
+  .v12-content-page main,
+  .members-page,
+  .downloads-page { width: min(100% - 28px, var(--v14-max)); }
+  .v12-home-hero {
+    min-height: 820px;
+    background:
+      linear-gradient(90deg, rgba(3, 5, 7, .97), rgba(3, 7, 10, .8) 60%, rgba(3, 5, 7, .78)),
+      linear-gradient(180deg, transparent, rgba(3, 5, 7, .94)),
+      var(--v14-hero-image) 112% 52% / 600px auto no-repeat,
+      var(--v14-blue-black);
+  }
+  .v12-home-hero__inner { grid-template-columns: minmax(0, 1fr) 220px; gap: 24px; }
+  .v12-home-hero__logo { width: 220px; }
+  .v12-latest-release__lead,
+  .v12-feature,
+  .v12-event { grid-template-columns: minmax(250px, .8fr) minmax(0, 1.2fr); }
+  .artist-page .hero { grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr); min-height: 560px; }
+  .artist-page .hero-img { min-height: 560px; }
+}
+
+@media (max-width: 760px) {
+  .v12-site-header,
+  .topbar,
+  .site-header { top: 8px; width: calc(100% - 16px); min-height: 60px; border-radius: 18px; }
+  .site-header .nav { gap: 8px; }
+  .site-header .brand span { display: none; }
+  .site-header .nav-links { padding-bottom: 2px; }
+  .v12-brand img,
+  .brand img { width: 40px; height: 40px; }
+  .v12-home-hero {
+    min-height: 860px;
+    align-items: end;
+    padding: 130px 0 64px;
+    background:
+      linear-gradient(180deg, rgba(3, 5, 7, .28), rgba(3, 5, 7, .78) 42%, rgba(3, 5, 7, .99) 76%),
+      var(--v14-hero-image) 50% 5% / 116% auto no-repeat,
+      var(--v14-blue-black);
+  }
+  .v12-home-hero::before { width: 120vw; right: -52vw; top: -20%; opacity: .35; }
+  .v12-home-hero__inner { display: block; width: calc(100% - 30px); }
+  .v12-home-hero__content { padding-top: 250px; }
+  .v12-home-hero__logo { display: none; }
+  .v12-home-hero h1 { font-size: clamp(4.5rem, 25vw, 7.4rem); }
+  .v12-home-hero__claim { font-size: 1.12rem; }
+  .v12-home-hero .v12-home-actions { display: grid; }
+  .v12-home-hero .v12-button { width: 100%; justify-content: center; }
+  .v12-home-section { padding-block: 72px; }
+  .v12-home-heading--row,
+  .v12-radio { display: grid; }
+  .v12-home-heading h2 { font-size: clamp(2.8rem, 15vw, 4.5rem); }
+  .v12-latest-release__lead,
+  .v12-feature,
+  .v12-event { grid-template-columns: 1fr; border-radius: 24px; }
+  .v12-latest-release__lead > img,
+  .v12-feature > img,
+  .v12-event img { min-height: 0; aspect-ratio: 1; border-right: 0; border-bottom: 1px solid var(--v14-line); }
+  .v12-latest-release h3,
+  .v12-feature h3,
+  .v12-event h3 { font-size: clamp(2.8rem, 14vw, 4.7rem); }
+  .v12-release-history { grid-template-columns: 1fr; }
+  .v12-upcoming-grid,
+  .v12-clips-grid,
+  .v12-artists-grid,
+  .v12-news-grid { grid-template-columns: 1fr; }
+  .v12-clip,
+  .v12-clip--featured { min-height: 340px; }
+  .v12-gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+  .v12-gallery-grid img:first-child { grid-column: span 2; grid-row: span 2; }
+  .v12-radio { padding: 28px 22px; }
+  .v12-radio .v12-platforms { justify-content: flex-start; }
+  .musicHero,
+  .v12-tv-hero,
+  .v12-content-hero { min-height: 330px; padding: 26px 20px; background-size: 330px auto; background-position: 130% 30%; }
+  .musicHero h1,
+  .v12-tv-hero h1,
+  .v12-content-hero h1 { font-size: clamp(3.8rem, 20vw, 6rem); }
+  .artist-page { padding-top: 86px; }
+  .artist-page .top { position: relative; top: auto; }
+  .artist-page .hero { display: grid; grid-template-columns: 1fr; min-height: 0; }
+  .artist-page .hero-img { min-height: 0; aspect-ratio: 4 / 5; mask-image: linear-gradient(180deg, #000 72%, transparent); }
+  .artist-page .hero-content { margin-top: -90px; position: relative; z-index: 2; padding: 24px; }
+  .artist-page h1 { font-size: clamp(4rem, 22vw, 7rem); }
+  .artist-page .section > h2 { font-size: clamp(2.6rem, 15vw, 4.2rem); }
+  .v13-tv-library { grid-template-columns: 1fr; }
+  .mpbpAudioControl,
+  #mpbpAudioControl { left: 8px !important; right: 8px !important; bottom: 8px !important; width: auto !important; max-width: none !important; }
+  body.v14-miami > .wrap,
+  .app-page,
+  .dash-page,
+  .space-page { width: calc(100% - 20px); }
+  body.v14-miami > .wrap { padding-top: 96px; }
+  body.v14-miami > .wrap > .hero { min-height: 620px; display: grid; align-content: end; background-size: 440px auto; background-position: 70% 0; }
+  body.v14-miami > .wrap > .hero .hero-logo { width: 150px; }
+  .a-venir-page .timeGrid { grid-template-columns: 1fr; }
+  .app-page > .hero,
+  .dash-page > .hero,
+  .space-page > .hero { min-height: 430px; }
+}
+
+@media (max-width: 430px) {
+  .v12-container,
+  .v85-tv-page,
+  .v85-music-page,
+  .artist-page,
+  .v12-content-page main,
+  .members-page,
+  .downloads-page { width: calc(100% - 18px); }
+  .v12-brand span,
+  .brand span { font-size: .78rem; letter-spacing: .08em; }
+  .v12-home-hero { min-height: 800px; }
+  .v12-home-hero__content { padding-top: 210px; }
+  .v12-home-hero__content::before { font-size: .62rem; }
+  .v12-home-actions { display: grid; }
+  .v12-home-actions > * { width: 100%; justify-content: center; }
+  .v12-countdown { gap: 4px; }
+  .v12-countdown div { padding: 9px 2px; }
+  .v12-countdown span { font-size: .53rem; }
+  .v12-gallery-grid { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .v12-gallery-grid img,
+  .v12-gallery-grid img:first-child { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 5; }
+  body.v14-miami > .wrap,
+  .app-page,
+  .dash-page,
+  .space-page { width: calc(100% - 14px); }
+  body.v14-miami > .wrap > .hero { padding: 24px 18px; }
+}
+
+@media (min-width: 1600px) {
+  :root { --v14-max: 1420px; }
+  .v12-home-hero { min-height: 920px; background-size: 860px auto; }
+  .v12-home-hero__logo { width: 420px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v12-home-hero::before,
+  .v12-home-hero__logo { animation: none; }
+  .v14-reveal { opacity: 1; transform: none; }
+}

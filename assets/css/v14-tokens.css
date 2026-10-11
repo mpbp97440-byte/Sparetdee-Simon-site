@@ -1,0 +1,65 @@
+:root {
+  color-scheme: dark;
+  --v14-night: #030507;
+  --v14-blue-black: #041017;
+  --v14-glass: rgba(8, 18, 23, .72);
+  --v14-glass-solid: #09151a;
+  --v14-gold: #d7a532;
+  --v14-gold-light: #ffd875;
+  --v14-amber: #e47a24;
+  --v14-cyan: #19c7d8;
+  --v14-teal: #087f8c;
+  --v14-warm-white: #f7f1e5;
+  --v14-muted: #b9c4c5;
+  --v14-line: rgba(255, 216, 117, .2);
+  --v14-line-cyan: rgba(25, 199, 216, .2);
+  --v14-shadow: 0 30px 90px rgba(0, 0, 0, .48);
+  --v14-glow: 0 0 42px rgba(215, 165, 50, .16);
+  --v14-radius-xl: 36px;
+  --v14-radius-lg: 26px;
+  --v14-radius-md: 18px;
+  --v14-max: 1240px;
+  --v14-header-height: 82px;
+  --v14-hero-image: url('../events/mpbp440-artists-hall-flyer.png');
+  --v14-display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+  --v14-body: Inter, Montserrat, Arial, sans-serif;
+}
+
+::selection { background: var(--v14-cyan); color: var(--v14-night); }
+
+html { scroll-behavior: smooth; background: var(--v14-night); }
+
+body {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(25, 199, 216, .08), transparent 28rem),
+    radial-gradient(circle at 90% 2%, rgba(228, 122, 36, .08), transparent 34rem),
+    var(--v14-night);
+  color: var(--v14-warm-white);
+  font-family: var(--v14-body);
+  accent-color: var(--v14-cyan);
+}
+
+body, button, input, textarea, select { font-family: var(--v14-body); }
+
+h1, h2, h3, .v14-display {
+  text-wrap: balance;
+  letter-spacing: -.02em;
+}
+
+a { text-underline-offset: .2em; }
+
+:focus-visible {
+  outline: 3px solid var(--v14-cyan) !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 7px rgba(25, 199, 216, .18) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

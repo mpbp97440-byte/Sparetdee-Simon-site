@@ -1,8 +1,11 @@
 (() => {
   'use strict';
 
-  const previewBase = '/MPBP440-V12-Preview';
-  const isPreview = location.hostname.endsWith('github.io') && location.pathname.startsWith(`${previewBase}/`);
+  const githubPagesBase = '/MPBP440-V12-Preview';
+  const rawPreviewHost = ['raw.githack.com', 'rawcdn.githack.com'].includes(location.hostname);
+  const rawPreviewMatch = rawPreviewHost && location.pathname.match(/^\/[^/]+\/[^/]+\/[^/]+/);
+  const previewBase = rawPreviewMatch ? rawPreviewMatch[0] : githubPagesBase;
+  const isPreview = Boolean(rawPreviewMatch) || (location.hostname.endsWith('github.io') && location.pathname.startsWith(`${previewBase}/`));
   if (!isPreview) return;
 
   const rebase = value => {
@@ -10,27 +13,33 @@
     return value === previewBase || value.startsWith(`${previewBase}/`) ? value : `${previewBase}${value}`;
   };
 
-  const rewriteLinks = root => {
-    root.querySelectorAll?.('a[href]').forEach(link => {
-      const href = link.getAttribute('href');
-      const resolved = rebase(href);
-      if (resolved !== href) link.setAttribute('href', resolved);
+  const rewritePaths = root => {
+    root.querySelectorAll?.('a[href], link[href], script[src], img[src], source[src], video[poster]').forEach(element => {
+      const attribute = element.hasAttribute('href') ? 'href' : element.hasAttribute('poster') ? 'poster' : 'src';
+      const value = element.getAttribute(attribute);
+      const resolved = rebase(value);
+      if (resolved !== value) element.setAttribute(attribute, resolved);
     });
   };
 
+  if (rawPreviewHost && typeof window.fetch === 'function') {
+    const nativeFetch = window.fetch.bind(window);
+    window.fetch = (input, options) => nativeFetch(typeof input === 'string' ? rebase(input) : input, options);
+  }
+
   const start = () => {
-    rewriteLinks(document);
+    rewritePaths(document);
     new MutationObserver(records => {
       records.forEach(record => {
-        if (record.type === 'attributes') rewriteLinks(record.target.parentElement || document);
+        if (record.type === 'attributes') rewritePaths(record.target.parentElement || document);
         record.addedNodes.forEach(node => {
           if (node.nodeType === Node.ELEMENT_NODE) {
-            if (node.matches?.('a[href]')) rewriteLinks(node.parentElement || document);
-            rewriteLinks(node);
+            if (node.matches?.('a[href], link[href], script[src], img[src], source[src], video[poster]')) rewritePaths(node.parentElement || document);
+            rewritePaths(node);
           }
         });
       });
-    }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+    }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src', 'poster'] });
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
