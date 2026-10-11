@@ -34,9 +34,14 @@ async function inspect(route, width, screenshot = false) {
   });
   page.on('pageerror', error => errors.push(`${route} @${width}: ${error.message}`));
 
-  const response = await page.goto(`${baseUrl}${route}`, { waitUntil: 'domcontentloaded', timeout: 20000 });
+  const rawGitHackPreview = /raw(?:cdn)?\.githack\.com/.test(baseUrl);
+  const previewRoute = rawGitHackPreview && route.endsWith('/') ? `${route}index.html` : route;
+  let response = await page.goto(`${baseUrl}${previewRoute}`, { waitUntil: 'domcontentloaded', timeout: 20000 });
+  if (rawGitHackPreview && (await page.title()).includes('External Content Notice')) {
+    await page.getByRole('button', { name: /open the page/i }).click();
+  }
   assert.equal(response?.status(), 200, `${route} @${width}: HTTP ${response?.status()}`);
-  await page.waitForTimeout(450);
+  await page.waitForTimeout(rawGitHackPreview ? 1800 : 450);
 
   const metrics = await page.evaluate(() => ({
     title: document.title,

@@ -45,6 +45,7 @@ for (const page of publicPages) {
     assert.equal((html.match(new RegExp(stylesheet.replace('.', '\\.'), 'g')) || []).length, 1, `${page}: ${stylesheet} doit être chargé une seule fois`);
   }
   assert.equal((html.match(/v14-motion\.js/g) || []).length, 1, `${page}: motion V14 doit être chargé une seule fois`);
+  assert.equal((html.match(/v12-preview-basepath\.js/g) || []).length, 1, `${page}: support de preview doit être chargé une seule fois`);
 }
 
 for (const cmsPage of ['admin-440-mpbp-corp/index.html', 'admin-pro/index.html']) {
