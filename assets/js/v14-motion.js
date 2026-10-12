@@ -33,7 +33,8 @@
     root.querySelectorAll?.('.time-card .miniCountdown.is-available').forEach(timer => {
       timer.hidden = true;
       const status = timer.parentElement.querySelector('.countdownStatus');
-      if (status) status.textContent = 'Date annoncée passée · disponibilité à confirmer';
+      const message = 'Date annoncée passée · disponibilité à confirmer';
+      if (status && status.textContent !== message) status.textContent = message;
     });
   }
   hydrate(document);

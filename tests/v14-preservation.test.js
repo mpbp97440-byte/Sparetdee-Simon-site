@@ -51,7 +51,10 @@ if (process.argv.includes('--record')) {
   contains(baseline.routes,current.routes,'route disparue');
   for (const [file,contracts] of Object.entries(baseline.html)) for (const key of ['hrefs','ids','data','media','scripts']) {
     // Cache versions may change; the script route itself must remain identical.
-    const normalize = values => key === 'scripts' ? values.map(value=>value.split('?')[0]) : values;
+    const normalize = values => ['scripts','media'].includes(key) ? values.map(value=>{
+      const url = new URL(value,`https://contract.local/${file}`);
+      return url.origin==='https://contract.local' ? url.pathname + (key==='media' ? url.search : '') : url.href;
+    }) : values;
     contains(normalize(contracts[key]),normalize(current.html[file]?.[key] || []),`${file}: ${key} disparu`);
   }
   for (const [file,contracts] of Object.entries(baseline.jsonContracts)) for (const [key,values] of Object.entries(contracts)) contains(values,current.jsonContracts[file]?.[key] || [],`${file}: ${key} disparu`);

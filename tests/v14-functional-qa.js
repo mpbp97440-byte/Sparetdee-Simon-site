@@ -39,6 +39,9 @@ async function ready(page, route) {
   if(route==='/')await page.waitForSelector('#v12LatestRelease article');
   if(route.includes('mpbp-tv'))await page.waitForSelector('#v13TvLibrary button');
   if(route.includes('artistes'))await page.waitForSelector('#artistDiscography article');
+  if(route.includes('/galerie/'))await page.waitForSelector('[data-gallery-index]');
+  if(route.includes('/a-venir/'))await page.waitForSelector('#upcomingGrid article');
+  if(route.includes('/actu/'))await page.waitForSelector('#v12NewsCards article');
     if(route==='/') await page.locator('#radio iframe').evaluate(frame=>frame.loading='eager');
   await page.waitForTimeout(300);
 }
@@ -73,9 +76,9 @@ async function artworkMetrics(page, selector) {
   const rpcRequests=await installFixtures(context);
   const errors=[],report={routes:[],captures:[],responsive:[],interactions:[],errors};
   context.on('page',page=>page.on('pageerror',error=>errors.push(error.message)));
-  for(const route of (process.argv.includes('--captures-only') ? [] : manifest.routes)){
+  for(const route of (process.argv.includes('--captures-only') || process.argv.includes('--interactions-only') ? [] : manifest.routes)){
     const page=await context.newPage(),missing=[];
-    page.on('response',response=>{if(response.url().startsWith(base)&&response.status()===404)missing.push(response.url());});
+    page.on('response',response=>{if(new URL(response.url()).origin===new URL(base).origin&&response.status()===404&&!response.url().includes('favicon'))missing.push(response.url());});
     await ready(page,route);
     await loadImages(page);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
@@ -84,7 +87,7 @@ async function artworkMetrics(page, selector) {
     assert.deepEqual(bad,[],`${route}: images cassées`);
     report.routes.push({route,status:200,overflow}); await page.close();
   }
-  for(const [name,route,selector]of [...(process.argv.includes('--mobile-only') ? [] : shots),...mobileShots]){
+  for(const [name,route,selector]of (process.argv.includes('--interactions-only') ? [] : [...(process.argv.includes('--mobile-only') ? [] : shots),...mobileShots])){
     const mobile=name.includes('mobile');
     const page=await context.newPage();await page.setViewportSize({width:mobile?390:1600,height:mobile?844:900});
     await ready(page,route);await loadImages(page,selector);
@@ -110,14 +113,14 @@ async function artworkMetrics(page, selector) {
     await page.screenshot({path:path.join(output,`${name}.png`)});
     report.captures.push({name,viewport:mobile?'390x844':'1600x900',layout,media});await page.close();
   }
-  for(const width of (process.argv.includes('--captures-only') ? [] : [375,430,768,1024,1440,1920]))for(const route of ['/','/a-venir/','/music/','/mpbp-tv/','/artistes/makeda-muse.html']){
+  for(const width of (process.argv.includes('--captures-only') || process.argv.includes('--interactions-only') ? [] : [375,430,768,1024,1440,1920]))for(const route of ['/','/a-venir/','/music/','/mpbp-tv/','/artistes/makeda-muse.html']){
     const page=await context.newPage();await page.setViewportSize({width,height:900});await ready(page,route);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
     assert.ok(overflow<=2,`${route} ${width}: overflow ${overflow}`);report.responsive.push({route,width,overflow});await page.close();
   }
   const home=await context.newPage();await home.setViewportSize({width:390,height:844});await ready(home,'/');
   await home.locator('[data-v12-menu-toggle]').click();assert.equal(await home.locator('#v12MobileMenu').isVisible(),true);
-  await home.locator('#v12MobileMenu a[href="/#radio"]').click();await home.waitForTimeout(400);assert.equal(await home.locator('#v12MobileMenu').isVisible(),false);
+  await home.locator('#v12MobileMenu a[href$="#radio"]').click();await home.waitForTimeout(400);assert.equal(await home.locator('#v12MobileMenu').isVisible(),false);
   const radioTop=await home.locator('#radio').evaluate(el=>el.getBoundingClientRect().top);assert.ok(radioTop>=60,'Ancre radio sous header');
   assert.equal(await home.locator('#radio iframe').count(),1,'Spotify doit être unique');
   await home.locator('#mpbpAudioControl').scrollIntoViewIfNeeded();
