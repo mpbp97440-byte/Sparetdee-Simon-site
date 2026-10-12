@@ -55,7 +55,7 @@ async function inspect(route, width, screenshot = false) {
 
   assert.ok(metrics.title, `${route} @${width}: titre absent`);
   assert.match(metrics.bodyClass, /v14-miami/, `${route} @${width}: classe V14 absente`);
-  assert.equal(metrics.v14Loaded, '#030507', `${route} @${width}: tokens V14 non chargés`);
+  assert.equal(metrics.v14Loaded, '#02070b', `${route} @${width}: tokens V14 non chargés`);
   assert.ok(metrics.overflow <= 2, `${route} @${width}: débordement horizontal ${metrics.overflow}px`);
   assert.deepEqual(local404s, [], `${route} @${width}: ressources 404`);
   assert.deepEqual(metrics.brokenImages, [], `${route} @${width}: images cassées`);

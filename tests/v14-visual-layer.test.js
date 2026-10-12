@@ -59,13 +59,21 @@ for (const stylesheet of styles) {
 assert.ok(fs.statSync(path.join(root, 'assets/js/v14-motion.js')).size > 100, 'v14-motion.js: fichier vide');
 
 const tokens = read('assets/css/v14-tokens.css');
-for (const token of ['--v14-night', '--v14-gold', '--v14-cyan', '--v14-warm-white', '--v14-hero-image']) {
+for (const token of ['--v14-night', '--v14-gold', '--v14-cyan', '--v14-warm-white', '--v14-heading']) {
   assert.ok(tokens.includes(token), `token absent: ${token}`);
 }
 assert.match(tokens, /prefers-reduced-motion:\s*reduce/, 'reduced motion doit être pris en charge');
 assert.match(read('assets/css/v14-responsive.css'), /max-width:\s*430px/, 'palier mobile 430 px absent');
 assert.match(read('assets/css/v14-responsive.css'), /max-width:\s*760px/, 'palier tablette absent');
 assert.match(read('assets/css/v14-responsive.css'), /min-width:\s*1600px/, 'palier grand écran absent');
+
+const home = read('index.html');
+assert.match(home, /v14-hero-sky/, 'couche ciel du hero absente');
+assert.match(home, /v14-hero-city/, 'couche ville du hero absente');
+assert.match(home, /v14-hero-audio/, 'couche audio du hero absente');
+assert.match(home, /MPBP440 Audio Lounge/, 'identité Audio Lounge absente');
+assert.match(read('assets/css/v14-home.css'), /spotifyRadioBox/, 'lecteur Spotify Audio Lounge non composé');
+assert.match(read('assets/css/v14-components.css'), /\.v14-artwork-frame/, 'cadre artwork V14 absent');
 
 const previewPaths = read('assets/js/v12-preview-basepath.js');
 assert.match(previewPaths, /raw\.githack\.com/, 'la preview publique V14 doit gérer raw.githack.com');
