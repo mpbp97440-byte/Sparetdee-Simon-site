@@ -64,7 +64,7 @@ for (const token of ['--v14-night', '--v14-gold', '--v14-cyan', '--v14-warm-whit
 }
 assert.match(tokens, /prefers-reduced-motion:\s*reduce/, 'reduced motion doit être pris en charge');
 assert.match(read('assets/css/v14-responsive.css'), /max-width:\s*430px/, 'palier mobile 430 px absent');
-assert.match(read('assets/css/v14-responsive.css'), /max-width:\s*760px/, 'palier tablette absent');
+assert.match(read('assets/css/v14-responsive.css'), /max-width:\s*700px/, 'palier mobile absent');
 assert.match(read('assets/css/v14-responsive.css'), /min-width:\s*1600px/, 'palier grand écran absent');
 
 const home = read('index.html');

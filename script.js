@@ -781,10 +781,12 @@ function initMPBPAmbianceAudio(){
   const control = document.createElement("div");
   control.id = "mpbpAudioControl";
   control.className = "mpbpAudioControl";
-  control.innerHTML = `<button type="button" class="mpbpAudioButton" aria-pressed="false">Activer l'ambiance MPBP440</button>
-    <button type="button" class="mpbpAudioOffButton" aria-pressed="false">Couper le son</button>
+  const publicScript = [...document.scripts].find(script => /\/script\.js(?:\?|$)/.test(script.src));
+  control.innerHTML = `<img class="v14-dock-logo" src="${new URL('assets/brand/mpbp440-corp-official.png', new URL('./', publicScript?.src || document.baseURI)).href}" alt="MPBP440">
+    <button type="button" class="mpbpAudioButton" aria-label="Activer l'ambiance MPBP440" aria-pressed="false">▶</button>
+    <button type="button" class="mpbpAudioOffButton" aria-label="Couper le son" aria-pressed="false">◼</button>
     <span class="mpbpAudioStatus" aria-live="polite">Ambiance OFF</span>
-    <label class="mpbpAudioVolume" aria-label="Volume ambiance"><span>Volume</span><input type="range" min="0" max="1" step="0.01"></label>`;
+    <label class="mpbpAudioVolume" aria-label="Volume ambiance"><span>Volume</span><input type="range" min="0" max="1" step="0.01"></label><a class="v14-dock-open" href="${radioHref}" aria-label="Ouvrir Radio MPBP440">↗</a>`;
   document.body.appendChild(control);
 
   const button = control.querySelector(".mpbpAudioButton");
@@ -829,9 +831,8 @@ function initMPBPAmbianceAudio(){
   }
   function setButton(){
     if(!button) return;
-    if(jinglePlaying) button.textContent = "Pause";
-    else if(ambiancePlaying) button.textContent = "Pause";
-    else button.textContent = audioMode === "paused" ? "Relancer l'ambiance" : "Activer l'ambiance MPBP440";
+    button.textContent = ambiancePlaying || jinglePlaying ? "Ⅱ" : "▶";
+    button.setAttribute("aria-label", ambiancePlaying || jinglePlaying ? "Pause" : (audioMode === "paused" ? "Relancer l'ambiance" : "Activer l'ambiance MPBP440"));
     button.setAttribute("aria-pressed", ambiancePlaying || jinglePlaying ? "true" : "false");
     offButton?.setAttribute("aria-pressed", audioMode === "off" ? "true" : "false");
     setState(audioBlocked ? "Son a relancer" : (jinglePlaying ? "Jingle" : (ducked ? "Muet pendant lecture" : (ambiancePlaying ? "Ambiance ON" : (audioMode === "paused" ? "Ambiance en pause" : "Ambiance OFF")))));

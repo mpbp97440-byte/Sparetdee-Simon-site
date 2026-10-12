@@ -4,7 +4,7 @@
   const media = path => path ? new URL(path.replace(/^\.\//, ""), document.baseURI).href : "";
   const releaseArtwork = (path, alt) => {
     const source = media(path);
-    return source ? `<div class="v14-artwork-frame" style="--v14-artwork:url(&quot;${esc(source)}&quot;)"><img src="${source}" alt="${esc(alt)}" width="1254" height="1254" loading="lazy" decoding="async"></div>` : '<p class="v12-upcoming-card__missing-artwork" role="status">Visuel officiel indisponible.</p>';
+    return source ? `<div class="v14-media-stage v14-artwork-frame" style="--v14-artwork:url(&quot;${esc(source)}&quot;)"><img class="v14-artwork" src="${esc(source)}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>` : '<p class="v12-upcoming-card__missing-artwork" role="status">Visuel officiel indisponible.</p>';
   };
   const date = value => {
     const raw = String(value || "").trim();
@@ -26,7 +26,7 @@
     let timer;
     const tick = () => {
       const distance = Math.max(0, date(target).getTime() - Date.now());
-      if (!distance) { root.innerHTML = '<p class="v12-countdown__available">Disponible maintenant</p>'; clearInterval(timer); return; }
+      if (!distance) { root.innerHTML = '<p class="v14-release-review">Date annoncée passée · disponibilité à confirmer</p>'; clearInterval(timer); return; }
       const values = [Math.floor(distance / 86400000), Math.floor(distance / 3600000) % 24, Math.floor(distance / 60000) % 60, Math.floor(distance / 1000) % 60];
       root.innerHTML = values.map((value, index) => `<div><strong>${String(value).padStart(2,"0")}</strong><span>${["Jours","Heures","Minutes","Secondes"][index]}</span></div>`).join("");
     };
@@ -35,6 +35,8 @@
   const render = async () => {
     try {
       const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=featured-dynamic-20260813", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json?v=dois-je-me-taire-disponible-20260730", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
+      const portraits = $("#v14HeroPortraits");
+      if (portraits) portraits.innerHTML = gallery.filter(item => /profil|artiste/i.test(item.type || "")).slice(0, 3).map(item => `<figure class="v14-hero-portrait"><img src="${esc(media(item.image))}" alt="${esc(item.artist || item.title)}" decoding="async"><figcaption>${esc(item.artist)}</figcaption></figure>`).join("");
       const featured = data.featured && typeof data.featured === "object" ? data.featured : null;
       const featuredRoot = $("#v12Featured"), featuredHeading = $("#v12FeaturedHeading"), featuredSection = $("#alaune");
       if (featuredRoot && featured?.title) {
@@ -42,7 +44,7 @@
         const featuredLinks = links(featured);
         const destination = Object.values(featured.links || {}).find(Boolean) || (isAvailable ? "/music/index.html#morceaux" : "#avenir");
         const isExternal = /^https?:\/\//i.test(destination);
-        if (featuredHeading) featuredHeading.textContent = isAvailable ? "À découvrir maintenant" : "Le prochain chapitre";
+        if (featuredHeading) featuredHeading.textContent = "Spotlight";
         featuredRoot.innerHTML = `<article class="v12-feature">${releaseArtwork(featured.cover, `Pochette ${featured.title}`)}<div class="v12-feature__glass"><span class="v12-badge">${isAvailable ? "Disponible maintenant" : "À venir"}</span><h3>${esc(featured.title)}</h3><p class="v12-feature__artist">${esc(featured.artist)}${!isAvailable && displayDate(featured.date) ? ` · ${displayDate(featured.date)}` : ""}</p><p>${esc(featured.description)}</p><div class="v12-home-actions"><a class="v12-button v12-button--primary" href="${esc(destination)}"${isExternal ? " target=\"_blank\" rel=\"noopener\"" : ""}>${isAvailable ? "Écouter maintenant" : "Voir la prochaine sortie"}</a></div>${featuredLinks ? `<div class="v12-platform-links">${featuredLinks}</div>` : ""}</div></article>`;
       } else if (featuredSection) {
         featuredSection.hidden = true;
@@ -53,12 +55,19 @@
       if (latest && latestRoot) { const history = recentReleases.slice(1, 3).map(item => `<article class="v12-release-history__item">${releaseArtwork(item.promoCover || item.cover, `${item.title} — sortie récente`)}<div><span class="v12-badge">Sortie récente</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)}</p><div class="v12-platform-links">${links(item)}</div></div></article>`).join(""); latestRoot.innerHTML = `<article class="v12-latest-release__lead" style="--v14-artwork:url(&quot;${esc(media(latest.promoCover || latest.cover))}&quot;)"><div class="v12-latest-release__signal" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>${releaseArtwork(latest.promoCover || latest.cover, `${latest.title} — disponible maintenant`)}<div class="v12-latest-release__body"><span class="v12-badge">Now playing</span><h3>${esc(latest.title)}</h3><p class="v12-feature__artist">${esc(latest.artist)}</p><p>${esc(latest.description)}</p></div><div class="v12-latest-release__platforms"><span>Écouter sur</span><div class="v12-platform-links">${links(latest)}</div></div></article>${history ? `<div class="v12-release-history"><p class="v12-eyebrow">Dans la rotation</p>${history}</div>` : ""}`; }
       const upcoming = (data.upcoming || []).filter(item => item.status !== "Disponible").sort((a, b) => date(a.date).getTime() - date(b.date).getTime());
       const upcomingRoot = $("#v12UpcomingGrid");
-      if (upcomingRoot) { upcomingRoot.innerHTML = upcoming.length ? upcoming.map((item, index) => `<article class="v12-upcoming-card" data-timeline-index="${index + 1}"><div class="v12-upcoming-card__date"><strong>${String(date(item.date).getDate()).padStart(2,"0")}</strong><span>${date(item.date).toLocaleDateString("fr-FR", {month:"short"})}</span></div>${releaseArtwork(item.cover, `Pochette ${item.title}`)}<div class="v12-upcoming-card__body"><span class="v12-badge">${date(item.date).getTime() <= Date.now() ? "Disponible maintenant" : "À venir"}</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)} · ${displayDate(item.date)}</p><div class="v12-countdown" data-date="${esc(item.date)}"></div></div></article>`).join("") : '<p class="v12-upcoming-empty" role="status">Aucune prochaine sortie annoncée pour le moment.</p>'; upcomingRoot.querySelectorAll("[data-date]").forEach(node => countdown(node.dataset.date, node)); }
+      if (upcomingRoot) {
+        // An elapsed announced date is not an official CMS availability decision.
+        const hasFuture = upcoming.some(item => date(item.date).getTime() > Date.now());
+        const heading = $("#avenir h2");
+        if (heading) heading.textContent = hasFuture ? "Release Roadmap" : "Les sorties annoncées";
+        upcomingRoot.innerHTML = upcoming.length ? upcoming.map((item, index) => `<article class="v12-upcoming-card" data-timeline-index="${index + 1}"><div class="v12-upcoming-card__date"><strong>${String(date(item.date).getDate()).padStart(2,"0")}</strong><span>${date(item.date).toLocaleDateString("fr-FR", {month:"short",year:"numeric"})}</span></div>${releaseArtwork(item.cover, `Pochette ${item.title}`)}<div class="v12-upcoming-card__body"><span class="v12-badge">${date(item.date).getTime() <= Date.now() ? "Annonce · statut à confirmer" : "À venir"}</span><h3>${esc(item.title)}</h3><p>${esc(item.artist)} · ${displayDate(item.date)}</p><p>${esc(item.description)}</p><div class="v12-countdown" data-date="${esc(item.date)}"></div></div></article>`).join("") : '<p class="v12-upcoming-empty" role="status">Aucune prochaine sortie annoncée pour le moment.</p>';
+        upcomingRoot.querySelectorAll("[data-date]").forEach(node => countdown(node.dataset.date, node));
+      }
       const newsRoot = $("#v12NewsGrid");
-      if (newsRoot) newsRoot.innerHTML = news.filter(item => !item.hidden && !/Live TikTok/.test(item.title)).sort((a, b) => date(b.date).getTime() - date(a.date).getTime()).slice(0,4).map((item, index) => `<article class="v12-news-card ${index === 0 ? "v12-news-card--lead" : ""}"><span class="v12-eyebrow">${esc(item.type || "actualité")}</span><time datetime="${esc(item.date)}">${displayDate(item.date)}</time><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p><a href="${esc(item.url || "/#actus")}">${esc(item.buttonText || "Lire l’actualité")}</a></article>`).join("");
-      const futureEvents = events.filter(item => validDate(item.datetime || item.date) && date(item.datetime || item.date).getTime() >= Date.now());
+      if (newsRoot) newsRoot.innerHTML = news.filter(item => !item.hidden && !/Live TikTok/.test(item.title)).sort((a, b) => date(b.date).getTime() - date(a.date).getTime()).slice(0,4).map((item, index) => `<article class="v12-news-card ${index === 0 ? "v12-news-card--lead" : ""}">${item.image ? releaseArtwork(item.image,item.title) : ""}<span class="v12-eyebrow">${esc(item.type || "actualité")}</span><time datetime="${esc(item.date)}">${displayDate(item.date)}</time><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p><a href="${esc(item.url || "/#actus")}">${esc(item.buttonText || "Lire l’actualité")}</a></article>`).join("");
+      const futureEvents = events.filter(item => validDate(item.datetime || item.date)).sort((a,b) => date(b.datetime || b.date) - date(a.datetime || a.date));
       const eventSection = $("#events"), eventRoot = $("#v12Event");
-      if (futureEvents.length && eventSection && eventRoot) { const item = futureEvents.sort((a,b) => date(a.datetime || a.date) - date(b.datetime || b.date))[0]; eventSection.hidden = false; eventRoot.innerHTML = `${releaseArtwork(item.cover, item.title)}<div><span class="v12-badge">Événement à venir</span><h3>${esc(item.title)}</h3><p>${displayDate(item.datetime || item.date)}${item.time ? ` · ${esc(item.time)}` : ""}</p><p>${esc(item.description)}</p><a class="v12-button v12-button--primary" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.buttonText || "En savoir plus")}</a></div>`; }
+      if (futureEvents.length && eventSection && eventRoot) { const item = futureEvents.find(event => date(event.datetime || event.date).getTime() >= Date.now()) || futureEvents[0]; const archived = date(item.datetime || item.date).getTime() < Date.now(); eventSection.hidden = false; eventRoot.innerHTML = `${releaseArtwork(item.cover, item.title)}<div><span class="v12-badge">${archived ? "Archive événement" : "Événement à venir"}</span><h3>${esc(item.title)}</h3><p>${displayDate(item.datetime || item.date)}${item.time ? ` · ${esc(item.time)}` : ""}</p><p>${esc(item.description)}</p><a class="v12-button v12-button--primary" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.buttonText || "En savoir plus")}</a></div>`; }
       const galleryRoot = $("#v12GalleryGrid");
       if (galleryRoot) galleryRoot.innerHTML = gallery.slice(0,5).map((item, index) => `<figure class="v12-gallery-item" data-gallery-index="${index + 1}"><img src="${media(item.image)}" alt="${esc(item.title)}" width="900" height="900" loading="lazy"><figcaption>${esc(item.title)}</figcaption></figure>`).join("");
       const platformsRoot = $("#v12Platforms");

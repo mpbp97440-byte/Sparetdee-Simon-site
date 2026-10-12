@@ -1,0 +1,338 @@
+{
+  "baselineSha": "1b57152757ba6992baf9d274e39632be22a66a17",
+  "date": "2026-10-12",
+  "routes": [
+    {
+      "route": "/a-venir/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/actu/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/application/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/artistes/juste-une-plume.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/artistes/makeda-muse.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/artistes/sparetdee-simon.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/dashboard/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/evenements/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/galerie/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/live/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/lyrics/je-sais-que-tu-sais.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/lyrics/le-systeme.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/members/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/mon-espace/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/mpbp-tv/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/music/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/notifications/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/offline.html",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/sortie/",
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/telechargements/",
+      "status": 200,
+      "overflow": 0
+    }
+  ],
+  "captures": [
+    {
+      "name": "hero",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 81,
+        "height": 680,
+        "width": 1600,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 4,
+      "cropped": []
+    },
+    {
+      "name": "now-playing",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 101,
+        "height": 1094.796875,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 3,
+      "cropped": []
+    },
+    {
+      "name": "spotlight",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 100.796875,
+        "height": 704.9375,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "roadmap",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 100.734375,
+        "height": 1173.828125,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 2,
+      "cropped": []
+    },
+    {
+      "name": "cinema",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 101,
+        "height": 1262.796875,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 17,
+      "cropped": []
+    },
+    {
+      "name": "sparetdee",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 91.59375,
+        "height": 580,
+        "width": 1344,
+        "headerBottom": 71.59375,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "makeda",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 91.59375,
+        "height": 580,
+        "width": 1344,
+        "headerBottom": 71.59375,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "plume",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 91.59375,
+        "height": 580,
+        "width": 1344,
+        "headerBottom": 71.59375,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "events",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 115,
+        "height": 418.4375,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "news",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 190.53125,
+        "height": 893.484375,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 4,
+      "cropped": []
+    },
+    {
+      "name": "gallery",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 101.296875,
+        "height": 1182.140625,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 4,
+      "cropped": []
+    },
+    {
+      "name": "radio",
+      "viewport": "1600x900",
+      "layout": {
+        "top": 101.4375,
+        "height": 513.6875,
+        "width": 1344,
+        "headerBottom": 81,
+        "overflow": 0
+      },
+      "artworks": 0,
+      "cropped": []
+    },
+    {
+      "name": "home-mobile",
+      "viewport": "390x844",
+      "layout": {
+        "top": 67,
+        "height": 719.46875,
+        "width": 390,
+        "headerBottom": 67,
+        "overflow": 0
+      },
+      "artworks": 4,
+      "cropped": []
+    },
+    {
+      "name": "cinema-mobile",
+      "viewport": "390x844",
+      "layout": {
+        "top": 87.09375,
+        "height": 1071.46875,
+        "width": 358,
+        "headerBottom": 67,
+        "overflow": 0
+      },
+      "artworks": 17,
+      "cropped": []
+    },
+    {
+      "name": "artist-mobile",
+      "viewport": "390x844",
+      "layout": {
+        "top": 87.59375,
+        "height": 753.40625,
+        "width": 358,
+        "headerBottom": 67.59375,
+        "overflow": 0
+      },
+      "artworks": 1,
+      "cropped": []
+    },
+    {
+      "name": "radio-mobile",
+      "viewport": "390x844",
+      "layout": {
+        "top": 86.640625,
+        "height": 799.59375,
+        "width": 358,
+        "headerBottom": 67,
+        "overflow": 0
+      },
+      "artworks": 0,
+      "cropped": []
+    }
+  ],
+  "responsiveChecks": 30,
+  "interactions": [
+    "menu mobile, ancre radio, Spotify unique, dock 320x56",
+    "galerie, lightbox, filtres",
+    "YouTube, MP4, filtres, likes, vues, commentaires (RPC simulés, aucun write production)",
+    "profil membre local enregistré",
+    "service worker actif, manifeste PWA valide"
+  ],
+  "errors": [],
+  "preservation": {
+    "routes": 21,
+    "linkReferences": 1146,
+    "immutableFiles": 57
+  },
+  "supabaseInteractionMode": "Original RPC client exercised with intercepted fixture responses; no production writes.",
+  "visualReview": "All 12 desktop and 4 mobile captures reviewed. Source artworks preserved; no destructive crop; no header overlap; Spotify rendered.",
+  "decorativeAsset": "assets/brand/v14-golden-miami-night.png"
+}

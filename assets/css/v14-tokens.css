@@ -1,4 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@700&display=swap');
+
 :root {
-  color-scheme:dark;--v14-night:#02070b;--v14-blue-black:#06151d;--v14-warm-black:#120d08;--v14-glass:rgba(8,22,29,.76);--v14-gold:#dcae45;--v14-gold-light:#ffe09a;--v14-amber:#e77f2b;--v14-cyan:#27d3df;--v14-teal:#0b8793;--v14-warm-white:#fbf4e7;--v14-muted:#b6c3c5;--v14-line:rgba(255,224,154,.22);--v14-line-cyan:rgba(39,211,223,.24);--v14-shadow:0 34px 100px rgba(0,0,0,.52);--v14-radius-xl:34px;--v14-radius-lg:24px;--v14-radius-md:16px;--v14-max:1320px;--v14-header-height:82px;--v14-heading:Montserrat,Inter,Arial,sans-serif;--v14-body:Inter,Montserrat,Arial,sans-serif;--v14-accent:'Bebas Neue',Impact,'Arial Narrow',sans-serif;--v14-tech:Orbitron,Montserrat,sans-serif
+  color-scheme: dark;
+  --v14-night: #02070b;
+  --v14-blue-black: #0b202d;
+  --v14-warm-white: #fff5df;
+  --v14-gold: #e7b860;
+  --v14-gold-light: #ffdda0;
+  --v14-amber: #dc8f40;
+  --v14-cyan: #62c9ca;
+  --v14-muted: #b9c8cd;
+  --v14-line: #ffffff19;
+  --v14-line-cyan: #62c9ca40;
+  --v14-heading: 'Montserrat', sans-serif;
+  --v14-body: 'Montserrat', sans-serif;
+  --v14-tech: 'Orbitron', sans-serif;
+  --v14-max: 1344px;
+  --header-height: 92px;
+  --v14-shadow: 0 24px 60px #0005;
 }
-::selection{background:var(--v14-cyan);color:#021014}html{scroll-behavior:smooth;background:var(--v14-night)}body{color:var(--v14-warm-white);font-family:var(--v14-body);background:var(--v14-night);accent-color:var(--v14-cyan)}body,button,input,textarea,select{font-family:var(--v14-body)}h1,h2,h3{font-family:var(--v14-heading);text-wrap:balance;letter-spacing:-.035em}:focus-visible{outline:3px solid var(--v14-cyan)!important;outline-offset:4px!important;box-shadow:0 0 0 7px rgba(39,211,223,.17)!important}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--v14-night); }
+body { margin: 0; background: #091a25; color: var(--v14-warm-white); font: 400 15px/1.65 var(--v14-body); }
+body, button, input, textarea, select { font-family: var(--v14-body); }
+body:has(#mpbpAudioControl) { padding-bottom: 78px; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; background: radial-gradient(ellipse at 95% 0, #c2873421, transparent 58%), linear-gradient(160deg,#0e2c3f,#111c24 55%,#132b36); }
+a { color: inherit; text-underline-offset: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+button { cursor: pointer; }
+button, input, select, textarea { font-size: inherit; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--v14-heading); letter-spacing: -.045em; line-height: 1.12; text-wrap: balance; }
+h1 { font-size: clamp(38px, 4.4vw, 66px); font-weight: 800; }
+h2 { font-size: clamp(28px, 2.8vw, 42px); font-weight: 800; }
+h3 { font-size: clamp(20px, 1.7vw, 27px); font-weight: 700; }
+p { margin-bottom: 16px; }
+[hidden] { display: none !important; }
+[id], section { scroll-margin-top: calc(var(--header-height) + 20px); }
+:focus-visible { outline: 2px solid var(--v14-cyan); outline-offset: 5px; }
+::selection { background: var(--v14-cyan); color: #06121b; }
+.muted, .note, .bio, .v12-feature__artist + p { color: var(--v14-muted); }
+.v12-eyebrow, .sup { font: 700 10px/1.6 var(--v14-tech); color: var(--v14-gold-light); text-transform: uppercase; letter-spacing: .16em; margin-bottom: 12px; }
+.v12-container, .artist-page, .tvPage, .musicPage, .wrap, .v12-content-page main, .app-page, .dash-page, .space-page, .members-page, .downloads-page { width: min(var(--v14-max), calc(100% - 64px)); margin-inline: auto; }
+.v12-visually-hidden, .v14-anchor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }

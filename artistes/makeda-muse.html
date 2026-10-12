@@ -20,17 +20,18 @@
 <meta name="twitter:description" content="Nouvelle artiste MPBP440 : douceur, profondeur, inspiration et clé de sol.">
 <meta name="twitter:image" content="https://www.mpbp440.com/assets/makeda-muse/makeda-muse-profile.png">
 <link rel="icon" href="/assets/brand/mpbp440-corp-official.png" type="image/png">
-<link rel="stylesheet" href="artist.css?v=v13-3-content-video-20260910b">
-<link rel="stylesheet" href="v12-artist.css?v=12-lot3">
+
+
 <script src="../assets/js/v12-preview-basepath.js?v=12-1-2-preview-paths-20260724" defer></script>
 <script src="../assets/js/mpbp440-supabase.js?v=12-0-9-20260720b" defer></script>
-<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-miami-20261011">
-<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-miami-20261011">
-<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-miami-20261011">
-<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-miami-20261011">
-<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-miami-20261011">
-<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-miami-20261011">
-<script src="../assets/js/v14-motion.js?v=14-miami-20261011" defer></script></head>
+<link rel="stylesheet" href="../assets/css/v14-compat.css?v=14-final">
+<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-final-rebuild">
+<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-final-rebuild">
+<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-final-rebuild">
+<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-final-rebuild">
+<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-final-rebuild">
+<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-final-rebuild">
+<script src="../assets/js/v14-motion.js?v=14-final-rebuild" defer></script></head>
 <body class="v14-miami v95-artist-body makeda-artist-body v12-artist-body" data-artist="Makéda Muse" data-artist-key="makeda">
 <main class="artist-page">
   <header class="top">
@@ -52,6 +53,13 @@
   </section>
   <nav class="v14-artist-nav" aria-label="Navigation rapide artiste"><a href="#artist-bio">Bio</a><a href="#artistDiscography">Sorties</a><a href="../mpbp-tv/index.html">Clips</a><a href="../index.html#galerie">Galerie</a><a href="../index.html#liens">Liens</a></nav>
   <span id="artist-bio" class="v14-anchor"></span>
+
+  <section class="section">
+    <p class="sup">Discographie</p>
+    <h2>Sorties officielles</h2>
+    <div id="discographyFilters" class="discography-filters"></div>
+    <div id="artistDiscography"></div>
+  </section>
 
   <section class="section makeda-clip-section">
     <p class="sup">Clip exclusif web</p>
@@ -115,6 +123,7 @@
     </div>
   </section>
 </main>
+<script src="artist.js?v=14-final-rebuild"></script>
 <script src="v12-artist.js?v=v13-2-release-hardening-20260829b"></script>
 <script src="../script.js?v=v13-2-release-hardening-20260829"></script>
 </body>
