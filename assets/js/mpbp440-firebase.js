@@ -1,7 +1,7 @@
 /* Firebase modular SDK 13.0.0, pinned. Public config; no administrative secrets. */
 (() => {
   'use strict';
-  const config=Object.freeze({apiKey:'AIzaSyC1_KbQ2yj5JV7PKLib_Z8-6ya0JzTLSO3k',authDomain:'mpbp440-site.firebaseapp.com',projectId:'mpbp440-site',storageBucket:'mpbp440-site.firebasestorage.app',messagingSenderId:'907230366915',appId:'1:907230366915:web:d5d51dff0510071a2c2676',measurementId:'G-LYCLQ7NWFM'});
+  const config=Object.freeze({apiKey:'AIzaSyC1_KbQ2y5JV7PKLib_Z8-6yaOJzTLSO3k',authDomain:'mpbp440-site.firebaseapp.com',projectId:'mpbp440-site',storageBucket:'mpbp440-site.firebasestorage.app',messagingSenderId:'907230366915',appId:'1:907230366915:web:d5d51dff0510071a2c2676',measurementId:'G-LYCLQ7NWFM'});
   const isAdmin=location.pathname.includes('/admin-440-mpbp-corp/');
   const isPreview=/(?:^|\.)githack\.com$/.test(location.hostname)||(location.hostname==='mpbp97440-byte.github.io'&&location.pathname.startsWith('/MPBP440-V12-Preview/'));
   let runtime,anonymous,ga;
