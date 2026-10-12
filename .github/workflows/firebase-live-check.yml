@@ -14,45 +14,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-
-      - name: Validate Firebase public config and anonymous auth
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          FIREBASE_API_KEY="$(python - <<'PY'
-import re
-text=open('assets/js/mpbp440-firebase.js', encoding='utf-8').read()
-m=re.search(r"apiKey:'([^']+)'", text)
-if not m:
-    raise SystemExit('apiKey not found')
-print(m.group(1))
-PY
-          )"
-
-          echo "Checking public project config..."
-          config="$(curl --fail-with-body --silent --show-error             "https://identitytoolkit.googleapis.com/v1/projects?key=${FIREBASE_API_KEY}")"
-
-          project_id="$(jq -r '.projectId // empty' <<<"$config")"
-          if [ "$project_id" != "mpbp440-site" ]; then
-            echo "Unexpected projectId: $project_id"
-            exit 1
-          fi
-
-          echo "Creating one temporary anonymous Firebase user..."
-          signup="$(curl --fail-with-body --silent --show-error             -H 'Content-Type: application/json'             -X POST             "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_API_KEY}"             --data '{"returnSecureToken":true}')"
-
-          id_token="$(jq -r '.idToken // empty' <<<"$signup")"
-          local_id="$(jq -r '.localId // empty' <<<"$signup")"
-
-          if [ -z "$id_token" ] || [ -z "$local_id" ]; then
-            echo "Anonymous auth did not return an ID token and UID."
-            exit 1
-          fi
-
-          echo "Anonymous auth PASS."
-
-          echo "Deleting temporary anonymous user..."
-          curl --fail-with-body --silent --show-error             -H 'Content-Type: application/json'             -X POST             "https://identitytoolkit.googleapis.com/v1/accounts:delete?key=${FIREBASE_API_KEY}"             --data "$(jq -nc --arg idToken "$id_token" '{idToken:$idToken}')"             >/dev/null
-
-          echo "Cleanup PASS."
+      - name: Run Firebase live auth probe
+        run: node tests/firebase-live-auth.mjs
