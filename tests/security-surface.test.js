@@ -44,9 +44,10 @@ assert.match(backOffice, /auth\.js/);
 assert.ok(backOffice.indexOf('auth.js') < backOffice.indexOf('backoffice.js'), 'auth.js doit être chargé avant le CMS');
 
 const auth = read('admin-440-mpbp-corp/auth.js');
-assert.match(auth, /signInWithPassword/);
-assert.match(auth, /\/auth\/v1\/user/);
-assert.match(auth, /get_admin_dashboard_summary/);
+assert.match(auth, /signInWithEmailAndPassword/);
+assert.match(auth, /onAuthStateChanged/);
+assert.match(auth, /admin-verify/);
+assert.ok(auth.includes("role.data().role!=='admin'"));
 assert.doesNotMatch(auth, /SUPABASE_SERVICE_ROLE_KEY|GITHUB_ADMIN_TOKEN/);
 
 const sharedAdmin = read('supabase/functions/_shared/admin.ts');

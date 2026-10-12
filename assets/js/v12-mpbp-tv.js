@@ -229,11 +229,12 @@
     });
     youtubeStart?.addEventListener('click', () => {
       if (!selected || selected.kind !== 'youtube') return;
+      analytics?.track?.('mpbp_tv_play', {content_id:selected.id, player:'youtube'});
       youtubePlayer.src = `https://www.youtube-nocookie.com/embed/${selected.youtubeId}?rel=0&modestbranding=1`;
       youtubePlayer.hidden = false;
       youtubeStart.hidden = true;
     });
-    player.addEventListener('play', () => { if (toggle) toggle.textContent = 'Pause'; lastPosition = player.currentTime; });
+    player.addEventListener('play', () => { analytics?.track?.('mpbp_tv_play', {content_id:selected?.id, player:'mp4'}); if (toggle) toggle.textContent = 'Pause'; lastPosition = player.currentTime; });
     player.addEventListener('pause', () => { if (toggle) toggle.textContent = 'Lecture'; lastPosition = null; });
     player.addEventListener('timeupdate', () => {
       if (lastPosition !== null) {

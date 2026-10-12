@@ -1,131 +1,73 @@
-/* Back-office authentication: Supabase Auth first, then the database role.
- * The publishable key is public by design; no password or token is logged. */
+/* Firebase Auth + Firestore role + Worker validation. No browser GitHub token. */
 (() => {
   'use strict';
-
-  const config = Object.freeze({
-    url: 'https://eneuejomsrpdwvvpgvgl.supabase.co',
-    publishableKey: 'sb_publishable_ysbrjS9YnmymD_6YIU2gbg_Gb2RfyiD'
-  });
-  const sessionKey = 'mpbp440.admin.supabase.session.v1';
-  const timeoutMs = 6500;
-  let activeSession = null;
-
-  const byId = (id) => document.getElementById(id);
-  const setMessage = (message, isError = true) => {
-    const target = byId('loginMsg');
-    if (!target) return;
-    target.textContent = message;
-    target.classList.toggle('success', !isError);
-  };
-  const sessionFromStorage = () => { try { return JSON.parse(sessionStorage.getItem(sessionKey) || 'null'); } catch (_) { return null; } };
-  const saveSession = (session) => {
-    if (!session?.access_token) throw new Error('Supabase n’a pas renvoyé de session valide.');
-    activeSession = session;
-    sessionStorage.setItem(sessionKey, JSON.stringify(session));
-  };
-  const clearSession = () => { activeSession = null; sessionStorage.removeItem(sessionKey); };
-  const isExpired = (session) => !session?.access_token || (session.expires_at && session.expires_at * 1000 <= Date.now() + 10000);
-  const authError = (message, stage, status) => Object.assign(new Error(message), { stage, status });
-  const request = async (path, options = {}, stage = 'request') => {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-      const response = await fetch(`${config.url}${path}`, {
-        ...options,
-        signal: controller.signal,
-        headers: { apikey: config.publishableKey, ...(options.body instanceof FormData ? {} : {'Content-Type': 'application/json'}), ...(options.headers || {}) }
-      });
-      const body = await response.json().catch(() => null);
-      if (!response.ok) {
-        throw authError(body?.error_description || body?.msg || body?.message || `Requête refusée (${response.status}).`, stage, response.status);
+  const worker='https://mpbp440-cms-worker.mpbp97440.workers.dev';
+  const draftKey='mpbp440.cms.draft.firebase.v1';
+  const $=id=>document.getElementById(id);
+  let verifiedUid=null,revision=0;
+  const message=(text,error=true)=>{const node=$('loginMsg');if(node){node.textContent=text;node.classList.toggle('success',!error);}};
+  const hide=()=>{verifiedUid=null;$('loginBox').hidden=false;$('adminBox').hidden=true;};
+  async function invoke(name,body={}) {
+    if(!['admin-verify','admin-bootstrap-registry','admin-media-upload','admin-publish-site'].includes(name))throw new Error('Endpoint non autorisé.');
+    const sdk=await window.MPBP440Firebase.ready(),account=sdk.auth.currentUser;
+    if(!account||(account.uid!==verifiedUid&&name!=='admin-verify'))throw new Error('Session administrateur requise.');
+    const token=await account.getIdToken();
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),60000);
+    try{
+      const response=await fetch(worker+'/'+name,{method:'POST',signal:controller.signal,headers:{Authorization:'Bearer '+token,...(body instanceof FormData?{}:{'Content-Type':'application/json'})},body:body instanceof FormData?body:JSON.stringify(body)});
+      const result=await response.json().catch(()=>null);
+      if(!response.ok){if((response.status===401||response.status===403)&&name!=='admin-bootstrap-registry'){hide();message('Session refusée. Reconnectez-vous.');}throw Object.assign(new Error(result?.error?.message||result?.error||result?.message||'Worker : erreur '+response.status),{status:response.status});}
+      if(result?.ok===false)throw new Error(result.message||result.error||'Opération refusée.');
+      return result;
+    }finally{clearTimeout(timer);}
+  }
+  async function rpc(name,args={}) {
+    const sdk=await window.MPBP440Firebase.ready(),account=sdk.auth.currentUser;
+    if(!account||account.uid!==verifiedUid)throw new Error('Session administrateur requise.');
+    if(name==='cms_save_draft'){
+      if(JSON.stringify(args.p_payload).includes('blob:'))throw new Error('Un média temporaire ne peut pas être restauré. Importez-le de nouveau avant publication.');
+      localStorage.setItem(draftKey,JSON.stringify({payload:args.p_payload,savedAt:new Date().toISOString(),uid:account.uid}));return {ok:true};
+    }
+    if(!window.MPBP440AdminData)throw new Error('Module administrateur indisponible.');
+    return window.MPBP440AdminData.rpc(name,args,sdk);
+  }
+  async function signOut(){revision++;hide();const sdk=await window.MPBP440Firebase.ready();await sdk.signOut(sdk.auth);}
+  window.MPBP440Admin=Object.freeze({invoke,rpc,signOut});
+  window.togglePassword=()=>{$('adminPass').type=$('adminPass').type==='password'?'text':'password';};
+  window.logoutAdmin=()=>signOut().catch(error=>message(error.message));
+  async function validate(account){
+    const current=++revision;hide();if(!account||account.isAnonymous)return;
+    try{
+      const sdk=await window.MPBP440Firebase.ready();
+      const role=await sdk.getDoc(sdk.doc(sdk.db,'admins',account.uid));
+      if(!role.exists()||role.data().active!==true||role.data().role!=='admin')throw new Error('Ce compte ne possède pas le rôle administrateur actif.');
+      await invoke('admin-verify');
+      if(current!==revision||sdk.auth.currentUser?.uid!==account.uid)return;
+      verifiedUid=account.uid;$('loginBox').hidden=true;$('adminBox').hidden=false;
+      $('sessionInfo').textContent='Session administrateur Firebase active';message('',false);
+      document.dispatchEvent(new CustomEvent('mpbp-admin-ready'));
+      const bootstrapKey='mpbp440.registry.firebase.v1.'+account.uid;
+      if(!sessionStorage.getItem(bootstrapKey)){
+        sessionStorage.setItem(bootstrapKey,'attempted');
+        try{await invoke('admin-bootstrap-registry');document.dispatchEvent(new CustomEvent('mpbp-registry-ready'));}
+        catch(error){
+          const status=$('cmsStatus');
+          if(status){const warning=document.createElement('p');warning.className='msg';warning.id='registryWarning';warning.setAttribute('role','status');warning.textContent='Attention : synchronisation du catalogue indisponible. '+error.message;status.after(warning);}
+        }
       }
-      return body;
-    } catch (error) {
-      if (error?.name === 'AbortError') throw authError('La connexion à Supabase a expiré. Réessayez.', stage, 408);
-      if (error instanceof TypeError) throw authError('Impossible de joindre Supabase. Vérifiez votre connexion réseau.', stage, 0);
-      throw error;
-    } finally { clearTimeout(timer); }
-  };
-  const token = () => activeSession?.access_token || '';
-  const rpc = (name, args = {}) => request(`/rest/v1/rpc/${name}`, { method: 'POST', headers: { Authorization: `Bearer ${token()}` }, body: JSON.stringify(args) }, `rpc:${name}`);
-  const currentUser = () => request('/auth/v1/user', { headers: { Authorization: `Bearer ${token()}` } }, 'auth:user');
-  const signInWithPassword = (email, password) => request('/auth/v1/token?grant_type=password', { method: 'POST', body: JSON.stringify({ email, password }) }, 'auth:signInWithPassword');
-  const activate = (profile) => {
-    byId('loginBox').hidden = true;
-    byId('adminBox').hidden = false;
-    const info = byId('sessionInfo');
-    if (info) info.textContent = `Session administrateur active : ${profile.email || 'compte vérifié'}`;
-    document.dispatchEvent(new CustomEvent('mpbp-admin-ready'));
-  };
-  const verifyAdminRole = async () => {
-    const profile = await currentUser();
-    await rpc('get_admin_dashboard_summary');
-    return profile;
-  };
-  const messageForError = (error) => {
-    if (error?.stage === 'auth:signInWithPassword') {
-      if (error.status === 400 || error.status === 401 || /invalid login credentials/i.test(error.message)) return 'Identifiants incorrects. Vérifiez votre e-mail et votre mot de passe.';
-      return error.message;
-    }
-    if (error?.stage === 'auth:user') return 'La session Supabase est invalide ou a expiré. Connectez-vous à nouveau.';
-    if (String(error?.stage || '').startsWith('rpc:get_admin_dashboard_summary')) {
-      if (error.status === 401 || error.status === 403 || /administrator access required|permission denied/i.test(error.message)) return 'Ce compte est authentifié, mais ne possède pas le rôle administrateur actif.';
-      return `Impossible de vérifier le rôle administrateur : ${error.message}`;
-    }
-    return error?.message || 'Connexion impossible. Réessayez.';
-  };
-  const setLoading = (loading) => {
-    const submit = byId('loginSubmit');
-    if (!submit) return;
-    submit.disabled = loading;
-    submit.setAttribute('aria-busy', String(loading));
-    submit.textContent = loading ? 'Connexion…' : 'Accéder au back office';
-  };
-
-  const invoke = async (name, body) => request(`/functions/v1/${name}`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token()}` },
-    body: body instanceof FormData ? body : JSON.stringify(body)
-  }, `function:${name}`);
-  window.MPBP440Admin = Object.freeze({ rpc, invoke, signOut: clearSession });
-  window.togglePassword = () => {
-    const field = byId('adminPass');
-    if (field) field.type = field.type === 'password' ? 'text' : 'password';
-  };
-  const loginAdmin = async (event) => {
-    event?.preventDefault();
-    const email = byId('adminEmail')?.value.trim();
-    const password = byId('adminPass')?.value || '';
-    if (!email || !password) { setMessage('Saisissez votre adresse e-mail et votre mot de passe.'); return; }
-    setLoading(true);
-    setMessage('Connexion Supabase en cours…', false);
-    try {
-      const session = await signInWithPassword(email, password);
-      saveSession(session);
-      const profile = await verifyAdminRole();
-      byId('adminPass').value = '';
-      setMessage('', false);
-      activate(profile);
-    } catch (error) {
-      clearSession();
-      setMessage(messageForError(error));
-    } finally {
-      setLoading(false);
-    }
-  };
-  window.logoutAdmin = async () => {
-    try { if (token()) await request('/auth/v1/logout', { method: 'POST', headers: { Authorization: `Bearer ${token()}` } }, 'auth:signOut'); } catch (_) {}
-    clearSession();
-    location.reload();
-  };
-  document.addEventListener('DOMContentLoaded', async () => {
-    byId('adminLoginForm')?.addEventListener('submit', loginAdmin);
-    const session = sessionFromStorage();
-    if (isExpired(session)) { clearSession(); return; }
-    saveSession(session);
-    setMessage('Restauration de la session…', false);
-    try { activate(await verifyAdminRole()); setMessage('', false); }
-    catch (error) { clearSession(); setMessage(messageForError(error)); }
-  }, { once: true });
+    }catch(error){if(current===revision){hide();message(error.message||'Session invalide ou expirée.');}}
+  }
+  document.addEventListener('DOMContentLoaded',async()=>{
+    sessionStorage.removeItem('mpbp440.admin.supabase.session.v1');
+    $('adminLoginForm').addEventListener('submit',async event=>{
+      event.preventDefault();const email=$('adminEmail').value.trim(),password=$('adminPass').value;
+      if(!email||!password){message('Saisissez votre adresse e-mail et votre mot de passe.');return;}
+      $('loginSubmit').disabled=true;message('Connexion Firebase en cours…',false);
+      try{const sdk=await window.MPBP440Firebase.ready();await sdk.signInWithEmailAndPassword(sdk.auth,email,password);$('adminPass').value='';}
+      catch(error){hide();message(/invalid-credential|wrong-password|user-not-found/.test(error.code||'')?'Identifiants incorrects.':error.message||'Connexion impossible.');}
+      finally{$('loginSubmit').disabled=false;}
+    });
+    try{const sdk=await window.MPBP440Firebase.ready();sdk.onAuthStateChanged(sdk.auth,validate);}
+    catch(error){message('Firebase indisponible : '+error.message);}
+  },{once:true});
 })();

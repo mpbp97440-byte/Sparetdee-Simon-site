@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function admin() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.role == 'admin';
+    }
+    function active(contentId) {
+      return exists(/databases/$(database)/documents/content_registry/$(contentId))
+        && get(/databases/$(database)/documents/content_registry/$(contentId)).data.active == true;
+    }
+    function timestampOnly() {
+      return request.resource.data.keys().hasOnly(['createdAt'])
+        && request.resource.data.createdAt == request.time;
+    }
+    match /admins/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || admin());
+      allow list: if admin();
+      allow write: if false;
+    }
+    match /content_registry/{contentId} {
+      allow read: if signedIn();
+      allow write: if admin();
+    }
+    match /engagement/{contentId}/views/{uid} {
+      allow read: if admin() || (signedIn() && active(contentId));
+      allow create: if signedIn() && request.auth.uid == uid && active(contentId) && timestampOnly();
+      allow update, delete: if false;
+    }
+    match /engagement/{contentId}/likes/{uid} {
+      allow read: if admin() || (signedIn() && active(contentId));
+      allow create: if signedIn() && request.auth.uid == uid && active(contentId) && timestampOnly();
+      allow delete: if signedIn() && request.auth.uid == uid && active(contentId);
+      allow update: if false;
+    }
+    match /comments/{commentId} {
+      allow read: if admin() || (signedIn() && resource.data.status == 'approved');
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['contentId','contentType','authorUid','displayName','message','status','createdAt'])
+        && request.resource.data.contentId is string && active(request.resource.data.contentId)
+        && request.resource.data.contentType == 'clip'
+        && request.resource.data.authorUid == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() >= 2 && request.resource.data.displayName.size() <= 60
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 1 && request.resource.data.message.size() <= 1000;
+      allow update: if admin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status in ['pending','approved','rejected','hidden','deleted'];
+      allow delete: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

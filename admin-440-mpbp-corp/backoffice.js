@@ -142,13 +142,13 @@ async function loadAllData(){
   }
 }
 
-function currentTracks(){ return state.data.site.tracks || []; }
-function currentVideos(){ return state.data.site.videos || []; }
-function currentGallery(){ return state.data.site.gallery || []; }
-function currentEvents(){ return state.data.site.events || []; }
+function currentTracks(){ return state.data.site?.tracks || []; }
+function currentVideos(){ return state.data.site?.videos || []; }
+function currentGallery(){ return state.data.site?.gallery || []; }
+function currentEvents(){ return state.data.site?.events || []; }
 function currentNews(){ return normalizeList(state.data.news); }
-function currentUpcoming(){ return state.data.site.upcoming || []; }
-function currentArtists(){ return state.data.site.label_artists || []; }
+function currentUpcoming(){ return state.data.site?.upcoming || []; }
+function currentArtists(){ return state.data.site?.label_artists || []; }
 function currentReleases(){ return normalizeList(state.data.releases); }
 function currentLibrary(){ return normalizeList(state.data.music); }
 function sameContent(a,b){ return a && b && (text(a.id) && text(a.id)===text(b.id) || (slugify(a.title)===slugify(b.title) && slugify(a.artist)===slugify(b.artist))); }
@@ -570,8 +570,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("mpbp-admin-ready", loadAllData);
 
 /* CMS V2: the existing editor remains the single source of truth.  These
- * actions save private drafts in Supabase and publish changed JSON atomically
- * through an authenticated Edge Function; no GitHub credential reaches the UI. */
+ * actions save drafts on this device and publish JSON through the authenticated
+ * Cloudflare Worker; no GitHub credential reaches the UI. */
 function cmsNode(id){ return document.getElementById(id); }
 function cmsMessage(message, error=false){
   const node=cmsNode('cmsStatus'); if(!node) return;
@@ -606,7 +606,7 @@ async function saveCmsDraft(){
   cmsMessage('Enregistrement du brouillon sécurisé…');
   try {
     await window.MPBP440Admin.rpc('cms_save_draft',{p_payload:payload});
-    cmsMessage('Brouillon enregistré. Le site public reste inchangé.');
+    cmsMessage('Brouillon enregistré sur cet appareil.');
   } catch(error) { cmsMessage(`Brouillon non enregistré : ${error.message}`,true); }
 }
 function replaceMediaUrls(value, replacements){
