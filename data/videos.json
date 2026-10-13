@@ -1,5 +1,27 @@
 [
   {
+    "id": "sous-le-meme-toit-version-long",
+    "title": "Sous Le Même Toit — Clip officiel version longue",
+    "artist": "Sparetdee Simon feat Makéda Muse",
+    "category": "clip officiel",
+    "url": "https://youtu.be/API0lavRLeY",
+    "youtubeId": "API0lavRLeY",
+    "poster": "assets/clips/sparetdee-simon/sous-le-meme-toit-version-long-poster.png",
+    "description": "Clip officiel version longue de Sous Le Même Toit, Sparetdee Simon feat Makéda Muse.",
+    "src": ""
+  },
+  {
+    "id": "prince-des-etoiles-remix-clip",
+    "title": "Prince des étoiles Remix — Clip officiel",
+    "artist": "Sparetdee Simon",
+    "category": "clip officiel",
+    "url": "https://youtu.be/cotFluUcc3g",
+    "youtubeId": "cotFluUcc3g",
+    "poster": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+    "description": "Clip officiel de Prince des étoiles Remix de Sparetdee Simon.",
+    "src": ""
+  },
+  {
     "id": "neons-carnivores",
     "title": "Néons Carnivores",
     "artist": "Sparetdee Simon feat Makéda Muse",

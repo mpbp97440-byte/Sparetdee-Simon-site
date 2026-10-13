@@ -1,5 +1,49 @@
 [
   {
+    "id": "prince-des-etoiles-remix-available",
+    "title": "Prince des étoiles Remix — disponible maintenant",
+    "text": "Prince des étoiles Remix, le nouveau single de Sparetdee Simon, est disponible dès maintenant sur les plateformes officielles.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Voir le titre",
+    "date": "2026-10-13",
+    "artist": "Sparetdee Simon"
+  },
+  {
+    "id": "prince-des-etoiles-remix-clip-20261013",
+    "title": "Prince des étoiles Remix — clip officiel disponible",
+    "text": "Clip officiel de Prince des étoiles Remix de Sparetdee Simon.",
+    "type": "clip",
+    "image": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+    "url": "/mpbp-tv/index.html#prince-des-etoiles-remix-clip",
+    "buttonText": "Voir le clip",
+    "date": "2026-10-13",
+    "artist": "Sparetdee Simon"
+  },
+  {
+    "id": "sous-le-meme-toit-version-long-20261013",
+    "title": "Sous Le Même Toit — clip officiel version longue disponible",
+    "text": "Clip officiel version longue de Sous Le Même Toit, Sparetdee Simon feat Makéda Muse.",
+    "type": "clip",
+    "image": "assets/clips/sparetdee-simon/sous-le-meme-toit-version-long-poster.png",
+    "url": "/mpbp-tv/index.html#sous-le-meme-toit-version-long",
+    "buttonText": "Voir le clip version longue",
+    "date": "2026-10-13",
+    "artist": "Sparetdee Simon"
+  },
+  {
+    "id": "le-bizz-cest-bon-2-0-presortie-20261024",
+    "title": "Le Bizz c'est bon 2.0 — sortie prévue le 24/10/2026",
+    "text": "Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.",
+    "type": "sortie",
+    "image": "assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
+    "url": "/a-venir/",
+    "buttonText": "Voir le compte à rebours",
+    "date": "2026-10-13",
+    "artist": "Sparetdee Simon"
+  },
+  {
     "id": "sous-le-meme-toit-available",
     "date": "2026-09-18",
     "title": "Sous Le Même Toit est disponible maintenant",
@@ -12,14 +56,14 @@
   },
   {
     "id": "legalize-la-kalite-remix-presortie-20260926",
-    "date": "2026-09-18",
-    "title": "Légalize La Kalité Remix arrive le 26 septembre 2026",
+    "date": "2026-10-13",
+    "title": "Légalize La Kalité Remix — disponible depuis le 26/09/2026",
     "artist": "Sparetdee Simon",
-    "text": "Légalize La Kalité Remix, le nouveau single de Sparetdee Simon, sortira le 26/09/2026. Suivez le compte à rebours officiel.",
+    "text": "Légalize La Kalité Remix est disponible depuis le 26/09/2026.",
     "type": "sortie",
     "image": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
-    "url": "/#avenir",
-    "buttonText": "Voir le compte à rebours"
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Voir le titre"
   },
   {
     "id": "neons-carnivores-clip-20260910",
@@ -34,14 +78,14 @@
   },
   {
     "id": "brainrot-society-remix-presortie-20260926",
-    "date": "2026-09-10",
-    "title": "BrainRot Society Remix arrive le 26 septembre 2026",
+    "date": "2026-10-13",
+    "title": "BrainRot Society Remix — disponible depuis le 26/09/2026",
     "artist": "Sparetdee Simon",
-    "text": "BrainRot Society Remix, le nouveau single de Sparetdee Simon, sortira le 26/09/2026. Suivez le compte à rebours officiel.",
+    "text": "BrainRot Society Remix est disponible depuis le 26/09/2026.",
     "type": "sortie",
     "image": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
-    "url": "/#avenir",
-    "buttonText": "Voir le compte à rebours"
+    "url": "/music/index.html#morceaux",
+    "buttonText": "Voir le titre"
   },
   {
     "id": "le-tribunal-des-maux-available",

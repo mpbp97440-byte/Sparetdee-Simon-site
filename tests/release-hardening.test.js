@@ -50,6 +50,12 @@ function runBackofficeTests() {
   const before = plain(original);
   run(`state.data=${JSON.stringify(original)};state.original=clone(state.data);state.ready=false;`);
   assert.deepEqual(plain(run(`validateCmsData()`)), []);
+  // Published editorial entries with no supplied links must not block unrelated
+  // CMS changes; newly changed/available tracks still require an official link.
+  const remixIndex=run(`currentTracks().findIndex(item=>item.id==='brainrot-society-remix')`);
+  run(`currentTracks()[${remixIndex}].description+=' (modified)';`);
+  assert.ok(plain(run(`validateCmsData()`)).some(message=>message.includes('BrainRot Society Remix')&&message.includes('HTTPS')));
+  run(`state.data=clone(state.original);`);
   const index = run(`currentTracks().findIndex(item=>item.id==='${id}')`);
   run(`{
     const fixture={...clone(currentTracks()[${index}]),date:'29/08/2026',status:'À venir',links:{'Spotify':'https://open.spotify.com/test'}};
@@ -151,8 +157,8 @@ function runPublishedContentTests() {
   assert.deepEqual(tribunal.links, tribunalLinks);
   assert.ok(Object.values(tribunal.links).every(url => url.startsWith('https://')));
   assert.equal(tribunal.cover, 'assets/releases/sparetdee-simon/le-tribunal-des-maux-cover-officielle.png');
-  assert.equal(site.featured.id, tribunalId);
-  assert.deepEqual(site.featured.links, tribunalLinks);
+  assert.equal(site.featured.id, 'prince-des-etoiles-remix');
+  assert.deepEqual(site.featured.links, site.tracks.find(item=>item.id==='prince-des-etoiles-remix').links);
   assert.equal(site.upcoming.some(item => item.id === tribunalId), false);
   assert.equal(site.countdowns.some(item => item.id === tribunalId), false);
   assert.equal(countdowns.some(item => item.id === tribunalId), false);
@@ -175,29 +181,28 @@ function runPublishedContentTests() {
   assert.equal(releases.filter(item => item.id === sousLeMemeToitId && item.status === 'Disponible').length, 1);
   assert.equal(news.filter(item => item.id === `${sousLeMemeToitId}-available`).length, 1);
   assert.equal(news.filter(item => item.id === 'sous-le-meme-toit-presortie-20260916').length, 0);
-  assert.equal(site.featured.id, tribunalId);
-  assert.equal(site.tracks.filter(item => item.status === 'Disponible').sort((a, b) => new Date(b.date) - new Date(a.date))[0].id, sousLeMemeToitId);
+  assert.equal(site.featured.id, 'prince-des-etoiles-remix');
+  assert.equal(site.tracks.filter(item => item.status === 'Disponible').sort((a, b) => new Date(b.date) - new Date(a.date))[0].id, 'prince-des-etoiles-remix');
   const belongsToArtist = (item, artist) => item.artist === artist || item.artists?.includes(artist);
   assert.equal(belongsToArtist(sousLeMemeToit, 'Sparetdee Simon'), true);
   assert.equal(belongsToArtist(sousLeMemeToit, 'Makéda Muse'), true);
 
   for (const id of [brainrotRemixId, legalizeRemixId]) {
-    assert.equal(site.tracks.filter(item => item.id === id && item.status === 'À venir').length, 1);
-    assert.equal(site.upcoming.filter(item => item.id === id).length, 1);
-    assert.equal(site.countdowns.filter(item => item.id === id).length, 1);
-    assert.equal(countdowns.filter(item => item.id === id).length, 1);
+    assert.equal(site.tracks.filter(item => item.id === id && item.status === 'Disponible').length, 1);
+    assert.equal(site.upcoming.filter(item => item.id === id).length, 0);
+    assert.equal(site.countdowns.filter(item => item.id === id).length, 0);
+    assert.equal(countdowns.filter(item => item.id === id).length, 0);
     assert.equal(library.filter(item => item.id === id).length, 1);
     assert.equal(releases.filter(item => item.id === id).length, 1);
   }
   assert.deepEqual(site.tracks.find(item => item.id === brainrotRemixId).artists, ['Sparetdee Simon']);
   assert.deepEqual(site.tracks.find(item => item.id === legalizeRemixId).artists, ['Sparetdee Simon']);
   assert.equal(belongsToArtist(site.tracks.find(item => item.id === legalizeRemixId), 'Makéda Muse'), false);
-  assert.deepEqual(site.upcoming.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
-  assert.deepEqual(site.countdowns.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
-  assert.deepEqual(countdowns.map(item => item.id), [brainrotRemixId, legalizeRemixId]);
-  assert.equal(site.countdowns[0].date, '2026-09-26');
-  assert.equal(site.countdowns[1].date, '2026-09-26');
-  assert.notEqual(site.countdowns[0].id, site.countdowns[1].id);
+  assert.deepEqual(site.upcoming.map(item => item.id), ['le-bizz-cest-bon-2-0']);
+  assert.deepEqual(site.countdowns.map(item => item.id), ['le-bizz-cest-bon-2-0']);
+  assert.deepEqual(countdowns.map(item => item.id), ['le-bizz-cest-bon-2-0']);
+  assert.equal(site.countdowns[0].date, '2026-10-24');
+
   assert.equal(news.filter(item => item.id === 'brainrot-society-remix-presortie-20260926').length, 1);
   assert.equal(news.filter(item => item.id === 'legalize-la-kalite-remix-presortie-20260926').length, 1);
   assert.equal(news.filter(item => item.id === 'neons-carnivores-clip-20260910').length, 1);

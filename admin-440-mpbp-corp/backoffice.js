@@ -588,7 +588,9 @@ function validateCmsData(){
     if(!text(item.title)||!text(item.artist)) problems.push("Un morceau doit avoir un titre et un artiste.");
     if(!text(item.cover)) problems.push(`${item.title || "Morceau"} : pochette manquante.`);
     if(item.status==="Disponible" && currentUpcoming().some(entry=>sameContent(entry,item))) problems.push(`${item.title} est Disponible mais présent dans À venir.`);
-    if(item.status==="Disponible" && !hasOfficialStreamingLink(item)) problems.push(`${item.title} : au moins un lien officiel de streaming HTTPS est requis.`);
+    const published=(state.original.site?.tracks||[]).find(entry=>sameContent(entry,item));
+    const unchangedPublished=published?.status==="Disponible" && JSON.stringify(published)===JSON.stringify(item);
+    if(item.status==="Disponible" && !hasOfficialStreamingLink(item) && !unchangedPublished) problems.push(`${item.title} : au moins un lien officiel de streaming HTTPS est requis.`);
     Object.entries(item.links||{}).forEach(([name,url])=>{ if(text(url) && !/^https:\/\//i.test(text(url))) problems.push(`${item.title} : lien ${name} invalide.`); });
   });
   currentVideos().forEach(item=>{ if(!item.youtubeId && !text(item.src)) problems.push(`${item.title || "Clip"} : source vidéo manquante.`); });

@@ -331,7 +331,7 @@ async function loadData(){
 
     const availableReleasesGrid = document.getElementById("availableReleasesGrid");
     if(availableReleasesGrid){
-      const priorityIds = ["brainrot-society-2-0", "le-systeme", "je-sais-que-tu-sais"];
+      const priorityIds = ["prince-des-etoiles-remix", "brainrot-society-remix", "legalize-la-kalite-remix"];
       const tracks = (data.tracks || []).filter(isPublicItem);
       const selected = priorityIds
         .map(id => tracks.find(track => cleanKey(track.id) === cleanKey(id) || cleanKey(track.title) === cleanKey(id)))

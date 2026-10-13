@@ -1,15 +1,19 @@
 {
-  "title": "Sixième Sens",
-  "artist": "Makéda Muse",
-  "date": "Disponible maintenant",
-  "description": "Le nouveau titre de Makéda Muse est désormais disponible sur toutes les plateformes officielles.",
-  "cover": "assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png",
+  "id": "prince-des-etoiles-remix",
+  "title": "Prince des étoiles Remix",
+  "artist": "Sparetdee Simon",
+  "artists": [
+    "Sparetdee Simon"
+  ],
+  "date": "2026-10-13",
   "status": "Disponible",
+  "type": "Single",
+  "cover": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+  "description": "Prince des étoiles Remix, le nouveau single de Sparetdee Simon, est disponible dès maintenant sur les plateformes officielles.",
   "links": {
-    "spotify": "https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833",
-    "deezer": "https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m",
-    "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J",
-    "apple": "https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284",
-    "tiktok": "https://www.tiktok.com/@makeda_77"
+    "youtube": "https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y",
+    "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag",
+    "deezer": "https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ",
+    "apple": "https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955"
   }
 }

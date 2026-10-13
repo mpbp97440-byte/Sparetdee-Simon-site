@@ -1,32 +1,17 @@
 [
   {
-    "id": "brainrot-society-remix",
-    "title": "BrainRot Society Remix",
+    "id": "le-bizz-cest-bon-2-0",
+    "title": "Le Bizz c'est bon 2.0",
     "artist": "Sparetdee Simon",
     "artists": [
       "Sparetdee Simon"
     ],
-    "date": "2026-09-26",
-    "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
-    "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
+    "date": "2026-10-24",
     "status": "À venir",
     "type": "Single",
-    "links": {},
-    "label": "Sortie à venir"
-  },
-  {
-    "id": "legalize-la-kalite-remix",
-    "title": "Légalize La Kalité Remix",
-    "artist": "Sparetdee Simon",
-    "artists": [
-      "Sparetdee Simon"
-    ],
-    "date": "2026-09-26",
-    "cover": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
-    "description": "Légalize La Kalité Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
-    "status": "À venir",
-    "type": "Single",
-    "links": {},
-    "label": "Sortie à venir"
+    "label": "Sortie à venir",
+    "cover": "assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
+    "description": "Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.",
+    "links": {}
   }
 ]

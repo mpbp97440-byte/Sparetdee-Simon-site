@@ -46,7 +46,7 @@
       verifiedUid=account.uid;$('loginBox').hidden=true;$('adminBox').hidden=false;
       $('sessionInfo').textContent='Session administrateur Firebase active';message('',false);
       document.dispatchEvent(new CustomEvent('mpbp-admin-ready'));
-      const bootstrapKey='mpbp440.registry.firebase.v1.'+account.uid;
+      const bootstrapKey='mpbp440.registry.firebase.v2.'+account.uid;
       if(!sessionStorage.getItem(bootstrapKey)){
         sessionStorage.setItem(bootstrapKey,'attempted');
         try{await invoke('admin-bootstrap-registry');document.dispatchEvent(new CustomEvent('mpbp-registry-ready'));}

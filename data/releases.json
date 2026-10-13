@@ -1,5 +1,39 @@
 [
   {
+    "id": "prince-des-etoiles-remix",
+    "title": "Prince des étoiles Remix",
+    "artist": "Sparetdee Simon",
+    "artists": [
+      "Sparetdee Simon"
+    ],
+    "date": "2026-10-13",
+    "status": "Disponible",
+    "type": "Single",
+    "cover": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+    "description": "Prince des étoiles Remix, le nouveau single de Sparetdee Simon, est disponible dès maintenant sur les plateformes officielles.",
+    "links": {
+      "youtube": "https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y",
+      "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag",
+      "deezer": "https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ",
+      "apple": "https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955"
+    }
+  },
+  {
+    "id": "le-bizz-cest-bon-2-0",
+    "title": "Le Bizz c'est bon 2.0",
+    "artist": "Sparetdee Simon",
+    "artists": [
+      "Sparetdee Simon"
+    ],
+    "date": "2026-10-24",
+    "status": "À venir",
+    "type": "Single",
+    "label": "Sortie à venir",
+    "cover": "assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
+    "description": "Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.",
+    "links": {}
+  },
+  {
     "id": "juste-une-plume-petit-demon",
     "title": "Petit Démon",
     "artist": "Juste Une Plume",
@@ -71,8 +105,8 @@
     ],
     "date": "2026-09-26",
     "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
-    "description": "BrainRot Society Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
-    "status": "À venir",
+    "description": "BrainRot Society Remix est disponible depuis le 26/09/2026.",
+    "status": "Disponible",
     "type": "Single",
     "links": {}
   },
@@ -85,8 +119,8 @@
     ],
     "date": "2026-09-26",
     "cover": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
-    "description": "Légalize La Kalité Remix, nouveau single de Sparetdee Simon, disponible le 26/09/2026.",
-    "status": "À venir",
+    "description": "Légalize La Kalité Remix est disponible depuis le 26/09/2026.",
+    "status": "Disponible",
     "type": "Single",
     "links": {}
   },
