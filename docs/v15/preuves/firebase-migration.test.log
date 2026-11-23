@@ -1,0 +1,298 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: artistes/makeda-muse.html: V14 markup unchanged
++ actual - expected
+... Skipped lines
+
+  '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '<meta charset="UTF-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+...
+    '    <div class="grid">\n' +
++   '      <article class="card"><img src="../assets/clips/sparetdee-simon/sous-le-meme-toit-version-long-poster.png" alt="Sous Le Même Toit — Clip officiel version longue" loading="lazy"><h3>Sous Le Même Toit — Clip officiel version longue</h3><p>Clip officiel version longue de Sous Le Même Toit, Sparetdee Simon feat Makéda Muse.</p><a class="btn ghost" href="/mpbp-tv/index.html#sous-le-meme-toit-version-long">Voir le clip officiel</a></article>\n' +
+    `      <article class="card"><h3>Actualité</h3><p>Makeda Muse apporte au label une nouvelle couleur artistique, entre douceur, profondeur et force intérieure.</p><a class="btn ghost" href="../index.html#journal">Lire l'annonce</a></article>\n` +
+    `      <article class="card"><h3>Live TikTok</h3><p>Découverte en pré-écoute exclusive pendant le live MPBP440 du 11 juillet 2026 à 21h00.</p><a class="btn ghost" href="../evenements/index.html#archives">Voir l'événement</a></article>\n` +
+    '      <article class="card"><h3>Music Hub</h3><p>Retrouvez les sorties officielles du label et les prochaines annonces musicales.</p><a class="btn ghost" href="../music/index.html#morceaux">Ouvrir le Music Hub</a></article>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+
+    at Object.<anonymous> (C:\Users\spare\Documents\Codex\2026-11-23\codex-mpbp-440-corp-mission-v15\v15\tests\firebase-migration.test.js:12:10)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '<meta charset="UTF-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+    '<title>Makéda Muse — Artiste officielle | MPBP440</title>\n' +
+    '<meta name="description" content="Découvre Makéda Muse, artiste officielle MPBP440, son univers inspiré et ses sorties Sixième Sens et Jour de pluie, disponibles maintenant.">\n' +
+    '<meta name="robots" content="index,follow">\n' +
+    '<meta name="theme-color" content="#050505">\n' +
+    '<link rel="canonical" href="https://www.mpbp440.com/artistes/makeda-muse.html">\n' +
+    '<meta property="og:title" content="Makéda Muse — Artiste officielle | MPBP440">\n' +
+    '<meta property="og:description" content="Makéda Muse rejoint MPBP440 avec un univers sensible, profond et inspiré.">\n' +
+    '<meta property="og:type" content="profile">\n' +
+    '<meta property="og:url" content="https://www.mpbp440.com/artistes/makeda-muse.html">\n' +
+    '<meta property="og:image" content="https://www.mpbp440.com/assets/makeda-muse/makeda-muse-profile.png">\n' +
+    '<meta property="og:site_name" content="MPBP440">\n' +
+    '<meta property="og:locale" content="fr_FR">\n' +
+    '<meta name="twitter:card" content="summary_large_image">\n' +
+    '<meta name="twitter:title" content="Makéda Muse — Artiste officielle | MPBP440">\n' +
+    '<meta name="twitter:description" content="Nouvelle artiste MPBP440 : douceur, profondeur, inspiration et clé de sol.">\n' +
+    '<meta name="twitter:image" content="https://www.mpbp440.com/assets/makeda-muse/makeda-muse-profile.png">\n' +
+    '<link rel="icon" href="../assets/brand/mpbp440-corp-official.png" type="image/png">\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-compat.css?v=14-final">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-final-rebuild">\n' +
+    '</head>\n' +
+    '<body class="v14-miami v95-artist-body makeda-artist-body v12-artist-body" data-artist="Makéda Muse" data-artist-key="makeda">\n' +
+    '<main class="artist-page">\n' +
+    '  <header class="top">\n' +
+    '    <a class="logo" href="../index.html">M.P.B.P 440</a>\n' +
+    '    <a class="btn ghost" href="../index.html#artistes">Retour aux artistes</a>\n' +
+    '  </header>\n' +
+    '\n' +
+    '  <section class="hero makeda-hero">\n' +
+    '    <div class="v14-artist-portrait v14-artwork-frame"><img class="hero-img" src="../assets/makeda-muse/makeda-muse-profile.png" alt="Makéda Muse"></div>\n' +
+    '    <div class="hero-content">\n' +
+    '      <p class="sup">Profil artiste officiel</p>\n' +
+    '      <h1>Makéda Muse</h1>\n' +
+    '      <p class="role">Artiste MPBP440</p>\n' +
+    `      <p class="bio">Makéda Muse rejoint officiellement MPBP440 avec un univers inspiré, sensible et profond. Son écriture agit comme une présence qui touche les âmes, réveille l'émotion et élève les esprits.</p>\n` +
+    `      <p class="bio">Sa symbolique est la clé de sol : signe de musique, d'ouverture et d'inspiration.</p>\n` +
+    '      <div class="tags"><span>Clé de sol</span><span>Émotion</span><span>Douceur</span><span>Force intérieure</span><span>Résonance poétique</span></div>\n' +
+    '      <a class="btn" href="../music/index.html#morceaux">Écouter Sixième Sens</a>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '  <nav class="v14-artist-nav" aria-label="Navigation rapide artiste"><a href="#artist-bio">Bio</a><a href="#artistDiscography">Sorties</a><a href="../mpbp-tv/index.html">Clips</a><a href="../index.html#galerie">Galerie</a><a href="../index.html#liens">Liens</a></nav>\n' +
+    '  <span id="artist-bio" class="v14-anchor"></span>\n' +
+    '\n' +
+    '  <section class="section">\n' +
+    '    <p class="sup">Discographie</p>\n' +
+    '    <h2>Sorties officielles</h2>\n' +
+    '    <div id="discographyFilters" class="discography-filters"></div>\n' +
+    '    <div id="artistDiscography"></div>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif web</p>\n' +
+    '    <h2>Karma</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/makeda-muse/makeda-muse-karma-clip-exclusif.png" alt="Karma — Makéda Muse" loading="lazy">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Makéda Muse — Karma</h3>\n' +
+    '        <p>Clip exclusif web disponible avant la sortie officielle du morceau le 13 août 2026.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-karma">Voir le clip exclusif Karma</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif web</p>\n' +
+    '    <h2>Mon Influence</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/sparetdee-simon/sparetdee-simon-feat-makeda-muse-mon-influence-clip-exclusif.png" alt="Mon Influence — Sparetdee Simon feat. Makéda Muse" loading="lazy">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Sparetdee Simon feat. Makéda Muse — Mon Influence</h3>\n' +
+    '        <p>Clip exclusif web disponible avant la sortie officielle du morceau le 11 août 2026.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-mon-influence">Voir le clip exclusif Mon Influence</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif</p>\n' +
+    '    <h2>J’existe</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/makeda-muse/j-existe-cover.png" alt="J’existe - Makéda Muse">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Makéda Muse dévoile J’existe</h3>\n' +
+    '        <p>Un clip exclusif disponible uniquement sur MPBP440.com, dans l’univers sensible et intense de Makéda Muse.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-j-existe">Voir le clip exclusif J’existe</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section">\n' +
+    '    <p class="sup">Univers artiste</p>\n' +
+    '    <h2>Une nouvelle vibration MPBP440</h2>\n' +
+    '    <div class="grid">\n' +
+    '      <article class="card"><img src="../assets/clips/sparetdee-simon/sous-le-meme-toit-version-long-poster.png" alt="Sous Le Même Toit — Clip officiel version longue" loading="lazy"><h3>Sous Le Même Toit — Clip officiel version longue</h3><p>Clip officiel version longue de Sous Le Même Toit, Sparetdee Simon feat Makéda Muse.</p><a class="btn ghost" href="/mpbp-tv/index.html#sous-le-meme-toit-version-long">Voir le clip officiel</a></article>\n' +
+    `      <article class="card"><h3>Actualité</h3><p>Makeda Muse apporte au label une nouvelle couleur artistique, entre douceur, profondeur et force intérieure.</p><a class="btn ghost" href="../index.html#journal">Lire l'annonce</a></article>\n` +
+    `      <article class="card"><h3>Live TikTok</h3><p>Découverte en pré-écoute exclusive pendant le live MPBP440 du 11 juillet 2026 à 21h00.</p><a class="btn ghost" href="../evenements/index.html#archives">Voir l'événement</a></article>\n` +
+    '      <article class="card"><h3>Music Hub</h3><p>Retrouvez les sorties officielles du label et les prochaines annonces musicales.</p><a class="btn ghost" href="../music/index.html#morceaux">Ouvrir le Music Hub</a></article>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section artistOfficialLinks">\n' +
+    '    <p class="sup">Liens officiels</p>\n' +
+    '    <h2>Accès rapide</h2>\n' +
+    '    <div class="grid">\n' +
+    '      <a class="card" href="../index.html#artistes"><h3>Artistes</h3><p>Retour à la section artistes du label.</p></a>\n' +
+    '      <a class="card" href="../index.html#avenir"><h3>À venir</h3><p>Suivre les comptes à rebours officiels.</p></a>\n' +
+    '      <a class="card" href="../evenements/index.html#archives"><h3>Événements</h3><p>Voir les lives et annonces MPBP440.</p></a>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '</main>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '</body>\n' +
+    '</html>',
+  expected: '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '<meta charset="UTF-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+    '<title>Makéda Muse — Artiste officielle | MPBP440</title>\n' +
+    '<meta name="description" content="Découvre Makéda Muse, artiste officielle MPBP440, son univers inspiré et ses sorties Sixième Sens et Jour de pluie, disponibles maintenant.">\n' +
+    '<meta name="robots" content="index,follow">\n' +
+    '<meta name="theme-color" content="#050505">\n' +
+    '<link rel="canonical" href="https://www.mpbp440.com/artistes/makeda-muse.html">\n' +
+    '<meta property="og:title" content="Makéda Muse — Artiste officielle | MPBP440">\n' +
+    '<meta property="og:description" content="Makéda Muse rejoint MPBP440 avec un univers sensible, profond et inspiré.">\n' +
+    '<meta property="og:type" content="profile">\n' +
+    '<meta property="og:url" content="https://www.mpbp440.com/artistes/makeda-muse.html">\n' +
+    '<meta property="og:image" content="https://www.mpbp440.com/assets/makeda-muse/makeda-muse-profile.png">\n' +
+    '<meta property="og:site_name" content="MPBP440">\n' +
+    '<meta property="og:locale" content="fr_FR">\n' +
+    '<meta name="twitter:card" content="summary_large_image">\n' +
+    '<meta name="twitter:title" content="Makéda Muse — Artiste officielle | MPBP440">\n' +
+    '<meta name="twitter:description" content="Nouvelle artiste MPBP440 : douceur, profondeur, inspiration et clé de sol.">\n' +
+    '<meta name="twitter:image" content="https://www.mpbp440.com/assets/makeda-muse/makeda-muse-profile.png">\n' +
+    '<link rel="icon" href="../assets/brand/mpbp440-corp-official.png" type="image/png">\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-compat.css?v=14-final">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-final-rebuild">\n' +
+    '</head>\n' +
+    '<body class="v14-miami v95-artist-body makeda-artist-body v12-artist-body" data-artist="Makéda Muse" data-artist-key="makeda">\n' +
+    '<main class="artist-page">\n' +
+    '  <header class="top">\n' +
+    '    <a class="logo" href="../index.html">M.P.B.P 440</a>\n' +
+    '    <a class="btn ghost" href="../index.html#artistes">Retour aux artistes</a>\n' +
+    '  </header>\n' +
+    '\n' +
+    '  <section class="hero makeda-hero">\n' +
+    '    <div class="v14-artist-portrait v14-artwork-frame"><img class="hero-img" src="../assets/makeda-muse/makeda-muse-profile.png" alt="Makéda Muse"></div>\n' +
+    '    <div class="hero-content">\n' +
+    '      <p class="sup">Profil artiste officiel</p>\n' +
+    '      <h1>Makéda Muse</h1>\n' +
+    '      <p class="role">Artiste MPBP440</p>\n' +
+    `      <p class="bio">Makéda Muse rejoint officiellement MPBP440 avec un univers inspiré, sensible et profond. Son écriture agit comme une présence qui touche les âmes, réveille l'émotion et élève les esprits.</p>\n` +
+    `      <p class="bio">Sa symbolique est la clé de sol : signe de musique, d'ouverture et d'inspiration.</p>\n` +
+    '      <div class="tags"><span>Clé de sol</span><span>Émotion</span><span>Douceur</span><span>Force intérieure</span><span>Résonance poétique</span></div>\n' +
+    '      <a class="btn" href="../music/index.html#morceaux">Écouter Sixième Sens</a>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '  <nav class="v14-artist-nav" aria-label="Navigation rapide artiste"><a href="#artist-bio">Bio</a><a href="#artistDiscography">Sorties</a><a href="../mpbp-tv/index.html">Clips</a><a href="../index.html#galerie">Galerie</a><a href="../index.html#liens">Liens</a></nav>\n' +
+    '  <span id="artist-bio" class="v14-anchor"></span>\n' +
+    '\n' +
+    '  <section class="section">\n' +
+    '    <p class="sup">Discographie</p>\n' +
+    '    <h2>Sorties officielles</h2>\n' +
+    '    <div id="discographyFilters" class="discography-filters"></div>\n' +
+    '    <div id="artistDiscography"></div>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif web</p>\n' +
+    '    <h2>Karma</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/makeda-muse/makeda-muse-karma-clip-exclusif.png" alt="Karma — Makéda Muse" loading="lazy">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Makéda Muse — Karma</h3>\n' +
+    '        <p>Clip exclusif web disponible avant la sortie officielle du morceau le 13 août 2026.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-karma">Voir le clip exclusif Karma</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif web</p>\n' +
+    '    <h2>Mon Influence</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/sparetdee-simon/sparetdee-simon-feat-makeda-muse-mon-influence-clip-exclusif.png" alt="Mon Influence — Sparetdee Simon feat. Makéda Muse" loading="lazy">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Sparetdee Simon feat. Makéda Muse — Mon Influence</h3>\n' +
+    '        <p>Clip exclusif web disponible avant la sortie officielle du morceau le 11 août 2026.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-mon-influence">Voir le clip exclusif Mon Influence</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section makeda-clip-section">\n' +
+    '    <p class="sup">Clip exclusif</p>\n' +
+    '    <h2>J’existe</h2>\n' +
+    '    <article class="makeda-clip-card">\n' +
+    '      <img src="../assets/clips/makeda-muse/j-existe-cover.png" alt="J’existe - Makéda Muse">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Disponible maintenant sur MPBP TV</p>\n' +
+    '        <h3>Makéda Muse dévoile J’existe</h3>\n' +
+    '        <p>Un clip exclusif disponible uniquement sur MPBP440.com, dans l’univers sensible et intense de Makéda Muse.</p>\n' +
+    '        <a class="btn" href="../mpbp-tv/index.html#clip-j-existe">Voir le clip exclusif J’existe</a>\n' +
+    '      </div>\n' +
+    '    </article>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section">\n' +
+    '    <p class="sup">Univers artiste</p>\n' +
+    '    <h2>Une nouvelle vibration MPBP440</h2>\n' +
+    '    <div class="grid">\n' +
+    `      <article class="card"><h3>Actualité</h3><p>Makeda Muse apporte au label une nouvelle couleur artistique, entre douceur, profondeur et force intérieure.</p><a class="btn ghost" href="../index.html#journal">Lire l'annonce</a></article>\n` +
+    `      <article class="card"><h3>Live TikTok</h3><p>Découverte en pré-écoute exclusive pendant le live MPBP440 du 11 juillet 2026 à 21h00.</p><a class="btn ghost" href="../evenements/index.html#archives">Voir l'événement</a></article>\n` +
+    '      <article class="card"><h3>Music Hub</h3><p>Retrouvez les sorties officielles du label et les prochaines annonces musicales.</p><a class="btn ghost" href="../music/index.html#morceaux">Ouvrir le Music Hub</a></article>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '\n' +
+    '  <section class="section artistOfficialLinks">\n' +
+    '    <p class="sup">Liens officiels</p>\n' +
+    '    <h2>Accès rapide</h2>\n' +
+    '    <div class="grid">\n' +
+    '      <a class="card" href="../index.html#artistes"><h3>Artistes</h3><p>Retour à la section artistes du label.</p></a>\n' +
+    '      <a class="card" href="../index.html#avenir"><h3>À venir</h3><p>Suivre les comptes à rebours officiels.</p></a>\n' +
+    '      <a class="card" href="../evenements/index.html#archives"><h3>Événements</h3><p>Voir les lives et annonces MPBP440.</p></a>\n' +
+    '    </div>\n' +
+    '  </section>\n' +
+    '</main>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '</body>\n' +
+    '</html>',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

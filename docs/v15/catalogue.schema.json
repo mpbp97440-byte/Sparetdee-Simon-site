@@ -1,0 +1,349 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MPBP440 V15 catalogue proposé",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "items"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "enum": [
+        1
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "slug",
+          "category",
+          "name",
+          "summary",
+          "description",
+          "images",
+          "demoVideo",
+          "features",
+          "limitations",
+          "useCases",
+          "platforms",
+          "requirements",
+          "hosting",
+          "status",
+          "version",
+          "updatedAt",
+          "changelog",
+          "documentation",
+          "pricing",
+          "license",
+          "cta",
+          "public",
+          "order",
+          "verification"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^mpbp-[a-z0-9-]+$"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "category": {
+            "enum": [
+              "software",
+              "agent",
+              "module",
+              "game",
+              "service",
+              "plan",
+              "demo",
+              "technical-news"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "description": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "src",
+                "alt"
+              ],
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "pattern": "^(?:/assets/|https://)[^\\s]+$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "demoVideo": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^(https://|/|mailto:)[^\\s]+$"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "useCases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hosting": {
+            "enum": [
+              null,
+              "local",
+              "cloud",
+              "hybrid",
+              "not-applicable"
+            ]
+          },
+          "status": {
+            "enum": [
+              null,
+              "En conception",
+              "En développement",
+              "Bêta",
+              "Démonstration disponible",
+              "Disponible",
+              "Maintenance",
+              "Retiré"
+            ]
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updatedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "changelog": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "version",
+                "date",
+                "notes"
+              ],
+              "properties": {
+                "version": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "notes": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "documentation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "url"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^(https://|/)[^\\s]+$"
+                }
+              }
+            }
+          },
+          "pricing": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "model",
+              "amount",
+              "currency",
+              "taxInformation",
+              "enabled"
+            ],
+            "properties": {
+              "model": {
+                "enum": [
+                  "unconfirmed",
+                  "one-time",
+                  "license",
+                  "monthly",
+                  "annual",
+                  "credits",
+                  "quote"
+                ]
+              },
+              "amount": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "currency": {
+                "enum": [
+                  null,
+                  "EUR"
+                ]
+              },
+              "taxInformation": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "license": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cta": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "url",
+              "verified"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "none",
+                  "contact",
+                  "demo",
+                  "download",
+                  "play",
+                  "purchase"
+                ]
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^(https://|/|mailto:)[^\\s]+$"
+              },
+              "verified": {
+                "type": "boolean"
+              }
+            }
+          },
+          "public": {
+            "type": "boolean"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "content",
+              "access",
+              "commercial",
+              "checkedAt",
+              "source"
+            ],
+            "properties": {
+              "content": {
+                "type": "boolean"
+              },
+              "access": {
+                "type": "boolean"
+              },
+              "commercial": {
+                "type": "boolean"
+              },
+              "checkedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "source": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

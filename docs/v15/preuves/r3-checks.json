@@ -1,0 +1,317 @@
+{
+  "protectedFiles": 404,
+  "changed": [],
+  "pythonSyntax": "PASS",
+  "localCssResources": 25,
+  "logos": {
+    "mpbp440-corp-user-official.jpg": "unchanged versus approved R2 asset",
+    "mpbp440-engineering-concept-v1.png": "unchanged versus approved R2 asset"
+  },
+  "backgroundBytes": 212854,
+  "fonts": [
+    {
+      "name": "manrope-0.ttf",
+      "bytes": 96200
+    },
+    {
+      "name": "manrope-1.ttf",
+      "bytes": 96300
+    },
+    {
+      "name": "manrope-2.ttf",
+      "bytes": 96348
+    },
+    {
+      "name": "manrope-3.ttf",
+      "bytes": 96188
+    },
+    {
+      "name": "space-grotesk-4.ttf",
+      "bytes": 69360
+    },
+    {
+      "name": "space-grotesk-5.ttf",
+      "bytes": 69416
+    },
+    {
+      "name": "space-grotesk-6.ttf",
+      "bytes": 69356
+    },
+    {
+      "name": "space-grotesk-7.ttf",
+      "bytes": 69308
+    }
+  ],
+  "responsive": [
+    {
+      "screen": "engineering",
+      "viewport": 320,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 320,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 320,
+      "pass": true
+    },
+    {
+      "screen": "shop",
+      "viewport": 320,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 320,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 320,
+      "pass": true
+    },
+    {
+      "screen": "demos",
+      "viewport": 320,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 320,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 320,
+      "pass": true
+    },
+    {
+      "screen": "project",
+      "viewport": 320,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 320,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 320,
+      "pass": true
+    },
+    {
+      "screen": "editor",
+      "viewport": 320,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 320,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 320,
+      "pass": true
+    },
+    {
+      "screen": "engineering",
+      "viewport": 390,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 390,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 390,
+      "pass": true
+    },
+    {
+      "screen": "shop",
+      "viewport": 390,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 390,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 390,
+      "pass": true
+    },
+    {
+      "screen": "demos",
+      "viewport": 390,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 390,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 390,
+      "pass": true
+    },
+    {
+      "screen": "project",
+      "viewport": 390,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 390,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 390,
+      "pass": true
+    },
+    {
+      "screen": "editor",
+      "viewport": 390,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 390,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 390,
+      "pass": true
+    },
+    {
+      "screen": "engineering",
+      "viewport": 768,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 768,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 768,
+      "pass": true
+    },
+    {
+      "screen": "shop",
+      "viewport": 768,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 768,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 768,
+      "pass": true
+    },
+    {
+      "screen": "demos",
+      "viewport": 768,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 768,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 768,
+      "pass": true
+    },
+    {
+      "screen": "project",
+      "viewport": 768,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 768,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 768,
+      "pass": true
+    },
+    {
+      "screen": "editor",
+      "viewport": 768,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 768,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 768,
+      "pass": true
+    },
+    {
+      "screen": "engineering",
+      "viewport": 1440,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 1440,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "screen": "shop",
+      "viewport": 1440,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 1440,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "screen": "demos",
+      "viewport": 1440,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 1440,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "screen": "project",
+      "viewport": 1440,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 1440,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "screen": "editor",
+      "viewport": 1440,
+      "bodyFont": "Manrope, Arial, sans-serif",
+      "documentWidth": 1440,
+      "fontsLoaded": "loaded",
+      "headingFont": "\"Space Grotesk\", sans-serif",
+      "mainCount": 1,
+      "missingImages": [],
+      "width": 1440,
+      "pass": true
+    }
+  ],
+  "functional": [
+    {
+      "test": "Menu mobile",
+      "pass": true
+    },
+    {
+      "test": "Ã‰chap et focus",
+      "pass": true
+    },
+    {
+      "test": "AccÃ¨s au catalogue",
+      "pass": true
+    },
+    {
+      "test": "Filtre agent",
+      "pass": true
+    },
+    {
+      "test": "Recherche vide",
+      "pass": true
+    },
+    {
+      "test": "Boutique six projets sans achat",
+      "pass": true
+    },
+    {
+      "test": "Aucune fausse dÃ©mo jeu",
+      "pass": true
+    }
+  ]
+}

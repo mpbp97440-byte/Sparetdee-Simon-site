@@ -1,0 +1,44 @@
+[
+  {
+    "test": "content-20261013.test.js",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 1.022,
+    "evidence": "content-20261013.test.log"
+  },
+  {
+    "test": "firebase-migration.test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "seconds": 0.371,
+    "evidence": "firebase-migration.test.log"
+  },
+  {
+    "test": "release-hardening.test.js",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.143,
+    "evidence": "release-hardening.test.log"
+  },
+  {
+    "test": "security-surface.test.js",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.072,
+    "evidence": "security-surface.test.log"
+  },
+  {
+    "test": "v14-preservation.test.js",
+    "status": "FAIL",
+    "exit": 1,
+    "seconds": 0.275,
+    "evidence": "v14-preservation.test.log"
+  },
+  {
+    "test": "v14-visual-layer.test.js",
+    "status": "PASS",
+    "exit": 0,
+    "seconds": 0.076,
+    "evidence": "v14-visual-layer.test.log"
+  }
+]

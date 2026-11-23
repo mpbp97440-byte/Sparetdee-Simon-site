@@ -128,9 +128,9 @@
         return;
       }
       const linkPath = normalizedPath(url.pathname);
-      const isHomeLink = linkPath === "/" && (!url.hash || url.hash === "#home");
+      const isHomeLink = linkPath === "/musique/" && (!url.hash || url.hash === "#home");
       const current = linkPath === currentPath
-        && (currentPath !== "/" || isHomeLink)
+        && (currentPath !== "/musique/" || isHomeLink)
         && (!url.hash || url.hash === window.location.hash || (url.hash === "#home" && !window.location.hash));
       if (current) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");

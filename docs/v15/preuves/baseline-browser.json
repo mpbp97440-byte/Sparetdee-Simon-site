@@ -1,0 +1,77 @@
+{
+  "home": {
+    "artistCards": 3,
+    "audio": [],
+    "latest": "Prince des étoiles Remix",
+    "overflow": false,
+    "upcoming": "24oct. 2026Annonce · statut à confirmerLe Bizz c'est bon 2.0Sparetdee Simon · 24 octobre 2026Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.Date annoncée passée · disponibilité à confirmer"
+  },
+  "tv": {
+    "anchors": [
+      {
+        "id": "neons-carnivores",
+        "present": false
+      },
+      {
+        "id": "clip-je-sais-que-tu-sais",
+        "present": true
+      },
+      {
+        "id": "clip-j-existe",
+        "present": true
+      },
+      {
+        "id": "clip-dois-je-me-taire",
+        "present": true
+      },
+      {
+        "id": "prince-des-etoiles-remix-clip",
+        "present": false
+      },
+      {
+        "id": "sous-le-meme-toit-version-long",
+        "present": false
+      }
+    ],
+    "libraryButtons": 18,
+    "videos": 6,
+    "deepLinks": [
+      {
+        "clip": "neons-carnivores",
+        "selected": "neons-carnivores",
+        "title": "Néons Carnivores",
+        "pass": true
+      },
+      {
+        "clip": "clip-je-sais-que-tu-sais",
+        "selected": "clip-je-sais-que-tu-sais",
+        "title": "Je sais que tu sais",
+        "pass": true
+      },
+      {
+        "clip": "clip-j-existe",
+        "selected": "clip-j-existe",
+        "title": "J’existe",
+        "pass": true
+      },
+      {
+        "clip": "clip-dois-je-me-taire",
+        "selected": "clip-dois-je-me-taire",
+        "title": "Dois-je me taire ?",
+        "pass": true
+      },
+      {
+        "clip": "prince-des-etoiles-remix-clip",
+        "selected": "prince-des-etoiles-remix-clip",
+        "title": "Prince des étoiles Remix — Clip officiel",
+        "pass": true
+      },
+      {
+        "clip": "sous-le-meme-toit-version-long",
+        "selected": "sous-le-meme-toit-version-long",
+        "title": "Sous Le Même Toit — Clip officiel version longue",
+        "pass": true
+      }
+    ]
+  }
+}

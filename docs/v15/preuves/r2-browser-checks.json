@@ -1,0 +1,65 @@
+[
+  {
+    "test": "Sauvegarde locale",
+    "pass": true
+  },
+  {
+    "test": "Masquage d’une fiche dans le catalogue",
+    "pass": true
+  },
+  {
+    "test": "Masquage cohérent en boutique",
+    "pass": true
+  },
+  {
+    "test": "Import du catalogue source",
+    "pass": true
+  },
+  {
+    "test": "Refus import invalid-sale",
+    "pass": true,
+    "message": "Les ventes sont désactivées pour cette version."
+  },
+  {
+    "test": "Refus import invalid-url",
+    "pass": true,
+    "message": "$.items[0].cta.url : format invalide"
+  },
+  {
+    "test": "Refus import duplicate-slug",
+    "pass": true,
+    "message": "Chaque slug doit être unique."
+  },
+  {
+    "test": "Ajout d’une fiche brouillon",
+    "pass": true
+  },
+  {
+    "test": "Export JSON réel de 7 fiches, sans vente",
+    "pass": true
+  },
+  {
+    "test": "Menu R2 mobile",
+    "pass": true
+  },
+  {
+    "test": "Échap et restitution du focus R2",
+    "pass": true
+  },
+  {
+    "test": "Filtre agents R2",
+    "pass": true
+  },
+  {
+    "test": "Recherche sans résultat R2",
+    "pass": true
+  },
+  {
+    "test": "Aucune fausse démo activée",
+    "pass": true
+  },
+  {
+    "test": "Boutique six présentations sans achat",
+    "pass": true
+  }
+]

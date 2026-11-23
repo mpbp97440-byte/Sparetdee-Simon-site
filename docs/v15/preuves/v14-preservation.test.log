@@ -1,0 +1,80 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: HARD FAIL préservation:
+data/countdowns.json: media disparu: assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png
+data/countdowns.json: media disparu: assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png
+data/countdowns.json: ids disparu: brainrot-society-remix
+data/countdowns.json: ids disparu: legalize-la-kalite-remix
+data/featured.json: links disparu: https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m
+data/featured.json: links disparu: https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284
+data/featured.json: links disparu: https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J
+data/featured.json: links disparu: https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833
+data/featured.json: links disparu: https://www.tiktok.com/@makeda_77
+data/featured.json: media disparu: assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png
+data.json: fichier protégé modifié
+data/countdowns.json: fichier protégé modifié
+data/featured.json: fichier protégé modifié
+data/music-library.json: fichier protégé modifié
+data/news.json: fichier protégé modifié
+data/releases.json: fichier protégé modifié
+data/videos.json: fichier protégé modifié
++ actual - expected
+
++ [
++   'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png',
++   'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png',
++   'data/countdowns.json: ids disparu: brainrot-society-remix',
++   'data/countdowns.json: ids disparu: legalize-la-kalite-remix',
++   'data/featured.json: links disparu: https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m',
++   'data/featured.json: links disparu: https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284',
++   'data/featured.json: links disparu: https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J',
++   'data/featured.json: links disparu: https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833',
++   'data/featured.json: links disparu: https://www.tiktok.com/@makeda_77',
++   'data/featured.json: media disparu: assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png',
++   'data.json: fichier protégé modifié',
++   'data/countdowns.json: fichier protégé modifié',
++   'data/featured.json: fichier protégé modifié',
++   'data/music-library.json: fichier protégé modifié',
++   'data/news.json: fichier protégé modifié',
++   'data/releases.json: fichier protégé modifié',
++   'data/videos.json: fichier protégé modifié'
++ ]
+- []
+
+    at Object.<anonymous> (C:\Users\spare\Documents\Codex\2026-11-23\codex-mpbp-440-corp-mission-v15\v15\tests\v14-preservation.test.js:66:10)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png',
+    'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png',
+    'data/countdowns.json: ids disparu: brainrot-society-remix',
+    'data/countdowns.json: ids disparu: legalize-la-kalite-remix',
+    'data/featured.json: links disparu: https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m',
+    'data/featured.json: links disparu: https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284',
+    'data/featured.json: links disparu: https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J',
+    'data/featured.json: links disparu: https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833',
+    'data/featured.json: links disparu: https://www.tiktok.com/@makeda_77',
+    'data/featured.json: media disparu: assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png',
+    'data.json: fichier protégé modifié',
+    'data/countdowns.json: fichier protégé modifié',
+    'data/featured.json: fichier protégé modifié',
+    'data/music-library.json: fichier protégé modifié',
+    'data/news.json: fichier protégé modifié',
+    'data/releases.json: fichier protégé modifié',
+    'data/videos.json: fichier protégé modifié'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

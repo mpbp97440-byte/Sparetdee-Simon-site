@@ -12,7 +12,7 @@ function cleanKey(value){
 
 function publicRoot(){
   const path = location.pathname;
-  const section = path.match(/^(.*)\/(?:music|artistes|mpbp-tv|galerie|evenements|actualites|notifications|live|members|application|telechargements|a-venir|admin-440-mpbp-corp)\//);
+  const section = path.match(/^(.*)\/(?:musique|music|actu|mon-espace|artistes|mpbp-tv|galerie|evenements|actualites|notifications|live|members|application|telechargements|a-venir|admin-440-mpbp-corp)\//);
   return section ? `${section[1]}/` : path.replace(/[^/]*$/, '');
 }
 const fallbackLogo = `${publicRoot()}assets/brand/mpbp440-corp-official.png`;
@@ -573,7 +573,7 @@ function applyV94MusicFilters(){
 
 function redirectLegacyMusicHash(){
   const path = location.pathname.replace(/\/index\.html$/,"/");
-  if((path === "/" || path === "") && cleanKey(location.hash) === "#morceaux"){
+  if((path === "/" || path === "" || path === "/musique/") && cleanKey(location.hash) === "#morceaux"){
     location.replace("/music/index.html#morceaux");
   }
 }
@@ -777,7 +777,7 @@ function initMPBPAmbianceAudio(){
   const ambiancePath = "/assets/audio/mpbp-ambiance.mp3";
   const jinglePath = "/assets/audio/mpbp-intro-jingle.mp3";
   const isSubPage = location.pathname.includes("/artistes/");
-  const radioHref = isSubPage ? "../index.html#radio" : "/#radio";
+  const radioHref = isSubPage ? "/musique/#radio" : "/musique/#radio";
   const control = document.createElement("div");
   control.id = "mpbpAudioControl";
   control.className = "mpbpAudioControl";
@@ -1552,7 +1552,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       {keys:["evenements","événements","evenement","évènement"],url:"/#events"},
       {keys:["morceaux","music hub"],url:"/music/index.html#morceaux"},
       {keys:["mpbp tv"],url:"/mpbp-tv/index.html"},
-      {keys:["radio"],url:"/#radio"},
+      {keys:["radio"],url:"/musique/#radio"},
       {keys:["actus","actualites","actualités"],url:"/#actus"},
       {keys:["artistes"],url:"/#artistes"},
       {keys:["recherche"],url:"/music/index.html#morceaux"},

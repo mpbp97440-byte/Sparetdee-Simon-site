@@ -1,0 +1,24 @@
+{
+  "method": "Three HTTPS HTML fetches before deployment. Includes network/DNS/TLS; not LCP or a device performance score.",
+  "samples": [
+    {
+      "status": 200,
+      "bytes": 18101,
+      "totalMs": 259.7,
+      "sha256": "412764369863e895aa0fa85435cb042e9e244062afb803e72bdf52af76ad7feb"
+    },
+    {
+      "status": 200,
+      "bytes": 18101,
+      "totalMs": 28.47,
+      "sha256": "412764369863e895aa0fa85435cb042e9e244062afb803e72bdf52af76ad7feb"
+    },
+    {
+      "status": 200,
+      "bytes": 18101,
+      "totalMs": 48.7,
+      "sha256": "412764369863e895aa0fa85435cb042e9e244062afb803e72bdf52af76ad7feb"
+    }
+  ],
+  "medianMs": 48.7
+}

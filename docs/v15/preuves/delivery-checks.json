@@ -1,0 +1,390 @@
+{
+  "javascriptSyntax": [
+    {
+      "file": "script.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "site.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "sw.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "admin-440-mpbp-corp/admin-firebase.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "admin-440-mpbp-corp/admin-pro.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "admin-440-mpbp-corp/auth.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "admin-440-mpbp-corp/backoffice.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "admin-440-mpbp-corp/cms-visual.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "app/app-shell.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "app/member-system.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "app/offline-manager.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "app/player.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "application/application.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "artistes/artist.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "artistes/v12-artist.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "artistes/videos.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "dashboard/dashboard.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "galerie/galerie.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "js/favorites.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "js/profile-manager.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "live/live.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "members/members.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "mon-espace/profile.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "music/music-hub.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "music/music.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "notifications/notifications.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "pwa/pwa-advanced.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "pwa/pwa.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "telechargements/telechargements.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/content-20261013-browser.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/content-20261013.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/firebase-browser-qa.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/firebase-migration.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/release-hardening.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/security-surface.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/v14-browser-qa.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/v14-capture-qa.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/v14-functional-qa.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/v14-preservation.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "tests/v14-visual-layer.test.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/mpbp440-firebase.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v12-content-experience.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v12-homepage.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v12-mpbp-tv.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v12-navigation.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v12-preview-basepath.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "assets/js/v14-motion.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "preview/v15/engineering-content.js",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "file": "preview/v15/site.js",
+      "status": "PASS",
+      "error": null
+    }
+  ],
+  "jsonSyntax": {
+    "files": 67,
+    "failures": []
+  },
+  "preservation": {
+    "files": 404,
+    "changed": []
+  },
+  "mainHead": "49e4ae78539e2305296db3c92ad7d8e1a3f528f2",
+  "branch": "codex/mpbp440-corp-v15-dual-universe",
+  "sourceMainStatus": "",
+  "changedTrackedFiles": [
+    "README-V15.md",
+    "assets/brand/v15/mpbp440-corp-user-official.jpg",
+    "assets/brand/v15/mpbp440-engineering-concept-v1.png",
+    "docs/v15/ARCHITECTURE.md",
+    "docs/v15/AUDIT-INITIAL.md",
+    "docs/v15/LOGO-ENGINEERING.md",
+    "docs/v15/REVISION-R2.md",
+    "docs/v15/SAUVEGARDE-ROLLBACK.md",
+    "docs/v15/TESTS.md",
+    "docs/v15/VALIDATION-VISUELLE.md",
+    "docs/v15/catalogue.candidats.json",
+    "docs/v15/catalogue.schema.json",
+    "docs/v15/preuves/backup-sha256.json",
+    "docs/v15/preuves/baseline-browser.json",
+    "docs/v15/preuves/baseline-music-1440.jpg",
+    "docs/v15/preuves/baseline-tests.json",
+    "docs/v15/preuves/content-20261013.test.log",
+    "docs/v15/preuves/delivery-checks.json",
+    "docs/v15/preuves/dependency-graph.json",
+    "docs/v15/preuves/firebase-migration.test.log",
+    "docs/v15/preuves/git-blob-sha256.json",
+    "docs/v15/preuves/interaction-review.json",
+    "docs/v15/preuves/protected-files-sha256.json",
+    "docs/v15/preuves/r2-browser-checks.json",
+    "docs/v15/preuves/r2-contract-checks.json",
+    "docs/v15/preuves/r2-export-qa.json",
+    "docs/v15/preuves/r2-responsive-initial.json",
+    "docs/v15/preuves/r2-responsive.json",
+    "docs/v15/preuves/release-hardening.test.log",
+    "docs/v15/preuves/remote-audit.json",
+    "docs/v15/preuves/review-checks.json",
+    "docs/v15/preuves/rollback-check.json",
+    "docs/v15/preuves/routes-baseline.json",
+    "docs/v15/preuves/security-surface.test.log",
+    "docs/v15/preuves/v14-preservation.test.log",
+    "docs/v15/preuves/v14-visual-layer.test.log",
+    "docs/v15/preuves/visual-review.json",
+    "preview/v15/boutique.html",
+    "preview/v15/captures-r2/corporate-1440-viewport.jpg",
+    "preview/v15/captures-r2/corporate-1440.jpg",
+    "preview/v15/captures-r2/corporate-320.jpg",
+    "preview/v15/captures-r2/corporate-390-viewport.jpg",
+    "preview/v15/captures-r2/corporate-390.jpg",
+    "preview/v15/captures-r2/corporate-768.jpg",
+    "preview/v15/captures-r2/demos-1440-viewport.jpg",
+    "preview/v15/captures-r2/demos-1440.jpg",
+    "preview/v15/captures-r2/demos-320.jpg",
+    "preview/v15/captures-r2/demos-390-viewport.jpg",
+    "preview/v15/captures-r2/demos-390.jpg",
+    "preview/v15/captures-r2/demos-768.jpg",
+    "preview/v15/captures-r2/editor-1440-viewport.jpg",
+    "preview/v15/captures-r2/editor-1440.jpg",
+    "preview/v15/captures-r2/editor-320.jpg",
+    "preview/v15/captures-r2/editor-390-viewport.jpg",
+    "preview/v15/captures-r2/editor-390.jpg",
+    "preview/v15/captures-r2/editor-768.jpg",
+    "preview/v15/captures-r2/engineering-1440-viewport.jpg",
+    "preview/v15/captures-r2/engineering-1440.jpg",
+    "preview/v15/captures-r2/engineering-320.jpg",
+    "preview/v15/captures-r2/engineering-390-viewport.jpg",
+    "preview/v15/captures-r2/engineering-390.jpg",
+    "preview/v15/captures-r2/engineering-768.jpg",
+    "preview/v15/captures-r2/music-1440-viewport.jpg",
+    "preview/v15/captures-r2/music-1440.jpg",
+    "preview/v15/captures-r2/music-320.jpg",
+    "preview/v15/captures-r2/music-390-viewport.jpg",
+    "preview/v15/captures-r2/music-390.jpg",
+    "preview/v15/captures-r2/music-768.jpg",
+    "preview/v15/captures-r2/project-1440-viewport.jpg",
+    "preview/v15/captures-r2/project-1440.jpg",
+    "preview/v15/captures-r2/project-320.jpg",
+    "preview/v15/captures-r2/project-390-viewport.jpg",
+    "preview/v15/captures-r2/project-390.jpg",
+    "preview/v15/captures-r2/project-768.jpg",
+    "preview/v15/captures-r2/review-overview-r2.jpg",
+    "preview/v15/captures-r2/shop-1440-viewport.jpg",
+    "preview/v15/captures-r2/shop-1440.jpg",
+    "preview/v15/captures-r2/shop-320.jpg",
+    "preview/v15/captures-r2/shop-390-viewport.jpg",
+    "preview/v15/captures-r2/shop-390.jpg",
+    "preview/v15/captures-r2/shop-768.jpg",
+    "preview/v15/captures/corporate-1440-viewport.jpg",
+    "preview/v15/captures/corporate-1440.jpg",
+    "preview/v15/captures/corporate-320.jpg",
+    "preview/v15/captures/corporate-390-viewport.jpg",
+    "preview/v15/captures/corporate-390.jpg",
+    "preview/v15/captures/corporate-768.jpg",
+    "preview/v15/captures/engineering-1440-viewport.jpg",
+    "preview/v15/captures/engineering-1440.jpg",
+    "preview/v15/captures/engineering-320.jpg",
+    "preview/v15/captures/engineering-390-viewport.jpg",
+    "preview/v15/captures/engineering-390.jpg",
+    "preview/v15/captures/engineering-768.jpg",
+    "preview/v15/captures/music-1440-viewport.jpg",
+    "preview/v15/captures/music-1440.jpg",
+    "preview/v15/captures/music-320.jpg",
+    "preview/v15/captures/music-390-viewport.jpg",
+    "preview/v15/captures/music-390.jpg",
+    "preview/v15/captures/music-768.jpg",
+    "preview/v15/captures/review-overview.jpg",
+    "preview/v15/contenus.html",
+    "preview/v15/data/.r2-initialized",
+    "preview/v15/data/catalogue.schema.json",
+    "preview/v15/data/engineering.json",
+    "preview/v15/demos.html",
+    "preview/v15/engineering-content.js",
+    "preview/v15/engineering.html",
+    "preview/v15/index.html",
+    "preview/v15/musique.html",
+    "preview/v15/premium-r2.css",
+    "preview/v15/projets/audio-forensics-lab.html",
+    "preview/v15/projets/brenda.html",
+    "preview/v15/projets/les-jardins-des-lumelys.html",
+    "preview/v15/projets/office.html",
+    "preview/v15/projets/render-nexus.html",
+    "preview/v15/projets/studio-os.html",
+    "preview/v15/review.html",
+    "preview/v15/site.css",
+    "preview/v15/site.js",
+    "tools/.gitignore",
+    "tools/v15-build-design-review.py",
+    "tools/v15-build-review-r2.py",
+    "tools/v15-check-delivery.py",
+    "tools/v15-prepare-contract.py",
+    "tools/v15-preview-server.py",
+    "tools/v15-r2-checks.py",
+    "tools/v15-verify-review.py",
+    "tools/v15_catalogue_contract.py"
+  ]
+}

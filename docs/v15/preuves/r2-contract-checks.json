@@ -1,0 +1,38 @@
+[
+  {
+    "test": "Six annonces sans disponibilité ni vente inventée",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet invalid-sale",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet invalid-url",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet duplicate-slug",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet invalid-date",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet unknown-field",
+    "status": "PASS"
+  },
+  {
+    "test": "Rejet unverified-public",
+    "status": "PASS"
+  },
+  {
+    "test": "404 fichiers musicaux et applicatifs existants inchangés",
+    "status": "PASS"
+  },
+  {
+    "test": "Logo corporate fourni conservé octet pour octet",
+    "status": "PASS"
+  }
+]

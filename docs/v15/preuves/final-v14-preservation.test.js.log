@@ -1,0 +1,546 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: HARD FAIL prÃ©servation:
+route disparue: /
+a-venir/index.html: hrefs disparu: /
+a-venir/index.html: hrefs disparu: /#artistes
+a-venir/index.html: hrefs disparu: /#clips
+a-venir/index.html: hrefs disparu: /#galerie
+a-venir/index.html: hrefs disparu: /#label
+a-venir/index.html: hrefs disparu: /#radio
+a-venir/index.html: hrefs disparu: /#recherche
+a-venir/index.html: hrefs disparu: /#sortie
+actu/index.html: hrefs disparu: ../index.html#actus
+actu/index.html: hrefs disparu: ../index.html#home
+actu/index.html: hrefs disparu: ../index.html#radio
+application/index.html: hrefs disparu: /
+artistes/juste-une-plume.html: hrefs disparu: ../index.html
+artistes/juste-une-plume.html: hrefs disparu: ../index.html#actus
+artistes/juste-une-plume.html: hrefs disparu: ../index.html#artistes
+artistes/juste-une-plume.html: hrefs disparu: ../index.html#galerie
+artistes/juste-une-plume.html: hrefs disparu: ../index.html#liens
+artistes/makeda-muse.html: hrefs disparu: ../index.html
+artistes/makeda-muse.html: hrefs disparu: ../index.html#artistes
+artistes/makeda-muse.html: hrefs disparu: ../index.html#avenir
+artistes/makeda-muse.html: hrefs disparu: ../index.html#galerie
+artistes/makeda-muse.html: hrefs disparu: ../index.html#journal
+artistes/makeda-muse.html: hrefs disparu: ../index.html#liens
+artistes/sparetdee-simon.html: hrefs disparu: ../index.html
+artistes/sparetdee-simon.html: hrefs disparu: ../index.html#actus
+artistes/sparetdee-simon.html: hrefs disparu: ../index.html#artistes
+artistes/sparetdee-simon.html: hrefs disparu: ../index.html#galerie
+artistes/sparetdee-simon.html: hrefs disparu: ../index.html#liens
+dashboard/index.html: hrefs disparu: /
+evenements/index.html: hrefs disparu: ../index.html
+evenements/index.html: hrefs disparu: ../index.html#artistes
+evenements/index.html: hrefs disparu: ../index.html#clips
+evenements/index.html: hrefs disparu: ../index.html#galerie
+evenements/index.html: hrefs disparu: ../index.html#label
+evenements/index.html: hrefs disparu: ../index.html#radio
+evenements/index.html: hrefs disparu: ../index.html#recherche
+evenements/index.html: hrefs disparu: ../index.html#sortie
+galerie/index.html: hrefs disparu: /#actus
+galerie/index.html: hrefs disparu: /#home
+galerie/index.html: hrefs disparu: /#radio
+index.html: hrefs disparu: #artistes
+index.html: hrefs disparu: #avenir
+index.html: hrefs disparu: #clips
+index.html: hrefs disparu: #contenu-principal
+index.html: hrefs disparu: #sortie
+index.html: hrefs disparu: /#actus
+index.html: hrefs disparu: /#application
+index.html: hrefs disparu: /#artistes
+index.html: hrefs disparu: /#avenir
+index.html: hrefs disparu: /#clips
+index.html: hrefs disparu: /#galerie
+index.html: hrefs disparu: /#home
+index.html: hrefs disparu: /#label
+index.html: hrefs disparu: /#liens
+index.html: hrefs disparu: /#radio
+index.html: hrefs disparu: /#sortie
+index.html: hrefs disparu: /artistes/juste-une-plume.html
+index.html: hrefs disparu: /artistes/makeda-muse.html
+index.html: hrefs disparu: /artistes/sparetdee-simon.html
+index.html: hrefs disparu: /evenements/index.html#archives
+index.html: hrefs disparu: /galerie/index.html
+index.html: hrefs disparu: /members/index.html
+index.html: hrefs disparu: /mpbp-tv/index.html
+index.html: hrefs disparu: /mpbp-tv/index.html#clip-dois-je-me-taire
+index.html: hrefs disparu: /mpbp-tv/index.html#clip-j-existe
+index.html: hrefs disparu: /mpbp-tv/index.html#clip-je-sais-que-tu-sais
+index.html: hrefs disparu: /mpbp-tv/index.html#neons-carnivores
+index.html: hrefs disparu: /music/index.html#morceaux
+index.html: hrefs disparu: /telechargements/index.html
+index.html: hrefs disparu: https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2
+index.html: hrefs disparu: https://music.apple.com/fr/artist/sparetdee-simon/1893053126
+index.html: hrefs disparu: https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu
+index.html: hrefs disparu: https://open.spotify.com/playlist/5e9OUZTwsGnWjBREAAVKUv
+index.html: hrefs disparu: https://www.youtube.com/@sparetdee440
+index.html: hrefs disparu: mailto:mpbp97440@gmail.com
+index.html: ids disparu: actus
+index.html: ids disparu: alaune
+index.html: ids disparu: application
+index.html: ids disparu: artistes
+index.html: ids disparu: artists-hall
+index.html: ids disparu: avenir
+index.html: ids disparu: clips
+index.html: ids disparu: contenu-principal
+index.html: ids disparu: events
+index.html: ids disparu: galerie
+index.html: ids disparu: home
+index.html: ids disparu: journal
+index.html: ids disparu: label
+index.html: ids disparu: liens
+index.html: ids disparu: menuBtn
+index.html: ids disparu: mpbpIntro
+index.html: ids disparu: mpbpIntroCanvas
+index.html: ids disparu: mpbpIntroSkip
+index.html: ids disparu: mpbpIntroSoundOff
+index.html: ids disparu: mpbpIntroSoundOn
+index.html: ids disparu: radio
+index.html: ids disparu: recherche
+index.html: ids disparu: sortie
+index.html: ids disparu: topBtn
+index.html: ids disparu: v12Event
+index.html: ids disparu: v12Featured
+index.html: ids disparu: v12FeaturedHeading
+index.html: ids disparu: v12GalleryGrid
+index.html: ids disparu: v12LatestRelease
+index.html: ids disparu: v12MobileMenu
+index.html: ids disparu: v12MobileMenuTitle
+index.html: ids disparu: v12MoreMenu
+index.html: ids disparu: v12NewsGrid
+index.html: ids disparu: v12Platforms
+index.html: ids disparu: v12UpcomingGrid
+index.html: data disparu: data-v12-footer=
+index.html: data disparu: data-v12-header=
+index.html: data disparu: data-v12-menu-close=
+index.html: data disparu: data-v12-menu-toggle=
+index.html: data disparu: data-v12-mobile-menu=
+index.html: data disparu: data-v12-more-menu=
+index.html: data disparu: data-v12-more-toggle=
+index.html: data disparu: data-v12-navigation=
+index.html: data disparu: data-v647=1
+index.html: data disparu: data-v94-menu=1
+index.html: media disparu: /assets/artists/juste-une-plume-profile.jpg
+index.html: media disparu: /assets/artists/sparetdee-simon-profile.jpg
+index.html: media disparu: /assets/brand/mpbp440-corp-official.png
+index.html: media disparu: /assets/clips/makeda-muse/j-existe-cover.png
+index.html: media disparu: /assets/clips/sparetdee-simon/dois-je-me-taire-cover.png
+index.html: media disparu: /assets/covers/je-sais-juste-une-plume.webp
+index.html: media disparu: /assets/events/mpbp440-artists-hall-flyer.png
+index.html: media disparu: /assets/makeda-muse/makeda-muse-profile.png
+index.html: media disparu: /assets/videos/neons-carnivores-video-poster.jpg
+index.html: media disparu: /assets/artists/makeda-muse/makeda-muse-treble-clef-badge.png
+index.html: media disparu: /assets/brand/mpbp440-corp-official.png
+index.html: media disparu: /assets/intro/mpbp-canes.webp
+index.html: media disparu: /assets/intro/mpbp-feather.webp
+index.html: media disparu: /assets/intro/mpbp-universe.webp
+index.html: scripts disparu: /assets/js/mpbp440-firebase.js
+index.html: scripts disparu: /assets/js/v12-homepage.js
+index.html: scripts disparu: /assets/js/v12-navigation.js
+index.html: scripts disparu: /assets/js/v12-preview-basepath.js
+index.html: scripts disparu: /assets/js/v14-motion.js
+index.html: scripts disparu: /script.js
+live/index.html: hrefs disparu: /
+live/index.html: hrefs disparu: /#artistes
+live/index.html: hrefs disparu: /#clips
+live/index.html: hrefs disparu: /#galerie
+live/index.html: hrefs disparu: /#label
+live/index.html: hrefs disparu: /#radio
+live/index.html: hrefs disparu: /#recherche
+live/index.html: hrefs disparu: /#sortie
+mon-espace/index.html: hrefs disparu: /
+mpbp-tv/index.html: hrefs disparu: /#actus
+mpbp-tv/index.html: hrefs disparu: /#application
+mpbp-tv/index.html: hrefs disparu: /#artistes
+mpbp-tv/index.html: hrefs disparu: /#avenir
+mpbp-tv/index.html: hrefs disparu: /#clips
+mpbp-tv/index.html: hrefs disparu: /#galerie
+mpbp-tv/index.html: hrefs disparu: /#home
+mpbp-tv/index.html: hrefs disparu: /#label
+mpbp-tv/index.html: hrefs disparu: /#liens
+mpbp-tv/index.html: hrefs disparu: /#radio
+mpbp-tv/index.html: hrefs disparu: /#sortie
+music/index.html: hrefs disparu: /#actus
+music/index.html: hrefs disparu: /#application
+music/index.html: hrefs disparu: /#artistes
+music/index.html: hrefs disparu: /#avenir
+music/index.html: hrefs disparu: /#clips
+music/index.html: hrefs disparu: /#galerie
+music/index.html: hrefs disparu: /#home
+music/index.html: hrefs disparu: /#label
+music/index.html: hrefs disparu: /#liens
+music/index.html: hrefs disparu: /#radio
+music/index.html: hrefs disparu: /#sortie
+notifications/index.html: hrefs disparu: /
+notifications/index.html: hrefs disparu: /#artistes
+notifications/index.html: hrefs disparu: /#clips
+notifications/index.html: hrefs disparu: /#galerie
+notifications/index.html: hrefs disparu: /#label
+notifications/index.html: hrefs disparu: /#radio
+notifications/index.html: hrefs disparu: /#recherche
+notifications/index.html: hrefs disparu: /#sortie
+offline.html: hrefs disparu: /
+sortie/index.html: hrefs disparu: /
+sortie/index.html: hrefs disparu: /#artistes
+sortie/index.html: hrefs disparu: /#clips
+sortie/index.html: hrefs disparu: /#galerie
+sortie/index.html: hrefs disparu: /#label
+sortie/index.html: hrefs disparu: /#radio
+sortie/index.html: hrefs disparu: /#recherche
+sortie/index.html: hrefs disparu: /#sortie
+telechargements/index.html: hrefs disparu: /
+data/countdowns.json: media disparu: assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png
+data/countdowns.json: media disparu: assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png
+data/countdowns.json: ids disparu: brainrot-society-remix
+data/countdowns.json: ids disparu: legalize-la-kalite-remix
+data/featured.json: links disparu: https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m
+data/featured.json: links disparu: https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284
+data/featured.json: links disparu: https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J
+data/featured.json: links disparu: https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833
+data/featured.json: links disparu: https://www.tiktok.com/@makeda_77
+data/featured.json: media disparu: assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png
+data.json: fichier protÃ©gÃ© modifiÃ©
+data/countdowns.json: fichier protÃ©gÃ© modifiÃ©
+data/featured.json: fichier protÃ©gÃ© modifiÃ©
+data/music-library.json: fichier protÃ©gÃ© modifiÃ©
+data/news.json: fichier protÃ©gÃ© modifiÃ©
+data/releases.json: fichier protÃ©gÃ© modifiÃ©
+data/videos.json: fichier protÃ©gÃ© modifiÃ©
+manifest.webmanifest: fichier protÃ©gÃ© modifiÃ©
++ actual - expected
+
++ [
++   'route disparue: /',
++   'a-venir/index.html: hrefs disparu: /',
++   'a-venir/index.html: hrefs disparu: /#artistes',
++   'a-venir/index.html: hrefs disparu: /#clips',
++   'a-venir/index.html: hrefs disparu: /#galerie',
++   'a-venir/index.html: hrefs disparu: /#label',
++   'a-venir/index.html: hrefs disparu: /#radio',
++   'a-venir/index.html: hrefs disparu: /#recherche',
++   'a-venir/index.html: hrefs disparu: /#sortie',
++   'actu/index.html: hrefs disparu: ../index.html#actus',
++   'actu/index.html: hrefs disparu: ../index.html#home',
++   'actu/index.html: hrefs disparu: ../index.html#radio',
++   'application/index.html: hrefs disparu: /',
++   'artistes/juste-une-plume.html: hrefs disparu: ../index.html',
++   'artistes/juste-une-plume.html: hrefs disparu: ../index.html#actus',
++   'artistes/juste-une-plume.html: hrefs disparu: ../index.html#artistes',
++   'artistes/juste-une-plume.html: hrefs disparu: ../index.html#galerie',
++   'artistes/juste-une-plume.html: hrefs disparu: ../index.html#liens',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html#artistes',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html#avenir',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html#galerie',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html#journal',
++   'artistes/makeda-muse.html: hrefs disparu: ../index.html#liens',
++   'artistes/sparetdee-simon.html: hrefs disparu: ../index.html',
++   'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#actus',
++   'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#artistes',
++   'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#galerie',
++   'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#liens',
++   'dashboard/index.html: hrefs disparu: /',
++   'evenements/index.html: hrefs disparu: ../index.html',
++   'evenements/index.html: hrefs disparu: ../index.html#artistes',
++   'evenements/index.html: hrefs disparu: ../index.html#clips',
++   'evenements/index.html: hrefs disparu: ../index.html#galerie',
++   'evenements/index.html: hrefs disparu: ../index.html#label',
++   'evenements/index.html: hrefs disparu: ../index.html#radio',
++   'evenements/index.html: hrefs disparu: ../index.html#recherche',
++   'evenements/index.html: hrefs disparu: ../index.html#sortie',
++   'galerie/index.html: hrefs disparu: /#actus',
++   'galerie/index.html: hrefs disparu: /#home',
++   'galerie/index.html: hrefs disparu: /#radio',
++   'index.html: hrefs disparu: #artistes',
++   'index.html: hrefs disparu: #avenir',
++   'index.html: hrefs disparu: #clips',
++   'index.html: hrefs disparu: #contenu-principal',
++   'index.html: hrefs disparu: #sortie',
++   'index.html: hrefs disparu: /#actus',
++   'index.html: hrefs disparu: /#application',
++   'index.html: hrefs disparu: /#artistes',
++   'index.html: hrefs disparu: /#avenir',
++   'index.html: hrefs disparu: /#clips',
++   'index.html: hrefs disparu: /#galerie',
++   'index.html: hrefs disparu: /#home',
++   'index.html: hrefs disparu: /#label',
++   'index.html: hrefs disparu: /#liens',
++   'index.html: hrefs disparu: /#radio',
++   'index.html: hrefs disparu: /#sortie',
++   'index.html: hrefs disparu: /artistes/juste-une-plume.html',
++   'index.html: hrefs disparu: /artistes/makeda-muse.html',
++   'index.html: hrefs disparu: /artistes/sparetdee-simon.html',
++   'index.html: hrefs disparu: /evenements/index.html#archives',
++   'index.html: hrefs disparu: /galerie/index.html',
++   'index.html: hrefs disparu: /members/index.html',
++   'index.html: hrefs disparu: /mpbp-tv/index.html',
++   'index.html: hrefs disparu: /mpbp-tv/index.html#clip-dois-je-me-taire',
++   'index.html: hrefs disparu: /mpbp-tv/index.html#clip-j-existe',
++   'index.html: hrefs disparu: /mpbp-tv/index.html#clip-je-sais-que-tu-sais',
++   'index.html: hrefs disparu: /mpbp-tv/index.html#neons-carnivores',
++   'index.html: hrefs disparu: /music/index.html#morceaux',
++   'index.html: hrefs disparu: /telechargements/index.html',
++   'index.html: hrefs disparu: https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2',
++   'index.html: hrefs disparu: https://music.apple.com/fr/artist/sparetdee-simon/1893053126',
++   'index.html: hrefs disparu: https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu',
++   'index.html: hrefs disparu: https://open.spotify.com/playlist/5e9OUZTwsGnWjBREAAVKUv',
++   'index.html: hrefs disparu: https://www.youtube.com/@sparetdee440',
++   'index.html: hrefs disparu: mailto:mpbp97440@gmail.com',
++   'index.html: ids disparu: actus',
++   'index.html: ids disparu: alaune',
++   'index.html: ids disparu: application',
++   'index.html: ids disparu: artistes',
++   'index.html: ids disparu: artists-hall',
++   'index.html: ids disparu: avenir',
++   'index.html: ids disparu: clips',
++   'index.html: ids disparu: contenu-principal',
++   'index.html: ids disparu: events',
++   'index.html: ids disparu: galerie',
++   'index.html: ids disparu: home',
++   'index.html: ids disparu: journal',
++   'index.html: ids disparu: label',
++   'index.html: ids disparu: liens',
++   'index.html: ids disparu: menuBtn',
++   'index.html: ids disparu: mpbpIntro',
++   'index.html: ids disparu: mpbpIntroCanvas',
++   'index.html: ids disparu: mpbpIntroSkip',
++   'index.html: ids disparu: mpbpIntroSoundOff',
++   'index.html: ids disparu: mpbpIntroSoundOn',
++   'index.html: ids disparu: radio',
++   'index.html: ids disparu: recherche',
++   'index.html: ids disparu: sortie',
++   'index.html: ids disparu: topBtn',
++   'index.html: ids disparu: v12Event',
++   'index.html: ids disparu: v12Featured',
++   'index.html: ids disparu: v12FeaturedHeading',
++   'index.html: ids disparu: v12GalleryGrid',
++   'index.html: ids disparu: v12LatestRelease',
++   'index.html: ids disparu: v12MobileMenu',
++   'index.html: ids disparu: v12MobileMenuTitle',
++   'index.html: ids disparu: v12MoreMenu',
++   'index.html: ids disparu: v12NewsGrid',
++   'index.html: ids disparu: v12Platforms',
++   'index.html: ids disparu: v12UpcomingGrid',
++   'index.html: data disparu: data-v12-footer=',
++   'index.html: data disparu: data-v12-header=',
++   'index.html: data disparu: data-v12-menu-close=',
++   'index.html: data disparu: data-v12-menu-toggle=',
++   'index.html: data disparu: data-v12-mobile-menu=',
++   'index.html: data disparu: data-v12-more-menu=',
++   'index.html: data disparu: data-v12-more-toggle=',
++   'index.html: data disparu: data-v12-navigation=',
++   'index.html: data disparu: data-v647=1',
++   'index.html: data disparu: data-v94-menu=1',
++   'index.html: media disparu: /assets/artists/juste-une-plume-profile.jpg',
++   'index.html: media disparu: /assets/artists/sparetdee-simon-profile.jpg',
++   'index.html: media disparu: /assets/brand/mpbp440-corp-official.png',
++   'index.html: media disparu: /assets/clips/makeda-muse/j-existe-cover.png',
++   'index.html: media disparu: /assets/clips/sparetdee-simon/dois-je-me-taire-cover.png',
++   'index.html: media disparu: /assets/covers/je-sais-juste-une-plume.webp',
++   'index.html: media disparu: /assets/events/mpbp440-artists-hall-flyer.png',
++   'index.html: media disparu: /assets/makeda-muse/makeda-muse-profile.png',
++   'index.html: media disparu: /assets/videos/neons-carnivores-video-poster.jpg',
++   'index.html: media disparu: /assets/artists/makeda-muse/makeda-muse-treble-clef-badge.png',
++   'index.html: media disparu: /assets/brand/mpbp440-corp-official.png',
++   'index.html: media disparu: /assets/intro/mpbp-canes.webp',
++   'index.html: media disparu: /assets/intro/mpbp-feather.webp',
++   'index.html: media disparu: /assets/intro/mpbp-universe.webp',
++   'index.html: scripts disparu: /assets/js/mpbp440-firebase.js',
++   'index.html: scripts disparu: /assets/js/v12-homepage.js',
++   'index.html: scripts disparu: /assets/js/v12-navigation.js',
++   'index.html: scripts disparu: /assets/js/v12-preview-basepath.js',
++   'index.html: scripts disparu: /assets/js/v14-motion.js',
++   'index.html: scripts disparu: /script.js',
++   'live/index.html: hrefs disparu: /',
++   'live/index.html: hrefs disparu: /#artistes',
++   'live/index.html: hrefs disparu: /#clips',
++   'live/index.html: hrefs disparu: /#galerie',
++   'live/index.html: hrefs disparu: /#label',
++   'live/index.html: hrefs disparu: /#radio',
++   'live/index.html: hrefs disparu: /#recherche',
++   'live/index.html: hrefs disparu: /#sortie',
++   'mon-espace/index.html: hrefs disparu: /',
++   'mpbp-tv/index.html: hrefs disparu: /#actus',
++   'mpbp-tv/index.html: hrefs disparu: /#application',
++   'mpbp-tv/index.html: hrefs disparu: /#artistes',
++   'mpbp-tv/index.html: hrefs disparu: /#avenir',
++   'mpbp-tv/index.html: hrefs disparu: /#clips',
++   'mpbp-tv/index.html: hrefs disparu: /#galerie',
++   'mpbp-tv/index.html: hrefs disparu: /#home',
++   'mpbp-tv/index.html: hrefs disparu: /#label',
++   'mpbp-tv/index.html: hrefs disparu: /#liens',
++   'mpbp-tv/index.html: hrefs disparu: /#radio',
++   'mpbp-tv/index.html: hrefs disparu: /#sortie',
++   'music/index.html: hrefs disparu: /#actus',
++   'music/index.html: hrefs disparu: /#application',
++   'music/index.html: hrefs disparu: /#artistes',
++   'music/index.html: hrefs disparu: /#avenir',
++   'music/index.html: hrefs disparu: /#clips',
++   'music/index.html: hrefs disparu: /#galerie',
++   'music/index.html: hrefs disparu: /#home',
++   'music/index.html: hrefs disparu: /#label',
++   'music/index.html: hrefs disparu: /#liens',
++   'music/index.html: hrefs disparu: /#radio',
++   'music/index.html: hrefs disparu: /#sortie',
++   'notifications/index.html: hrefs disparu: /',
++   'notifications/index.html: hrefs disparu: /#artistes',
++   'notifications/index.html: hrefs disparu: /#clips',
++   'notifications/index.html: hrefs disparu: /#galerie',
++   'notifications/index.html: hrefs disparu: /#label',
++   'notifications/index.html: hrefs disparu: /#radio',
++   'notifications/index.html: hrefs disparu: /#recherche',
++   'notifications/index.html: hrefs disparu: /#sortie',
++   'offline.html: hrefs disparu: /',
++   'sortie/index.html: hrefs disparu: /',
++   'sortie/index.html: hrefs disparu: /#artistes',
++   'sortie/index.html: hrefs disparu: /#clips',
++   'sortie/index.html: hrefs disparu: /#galerie',
++   'sortie/index.html: hrefs disparu: /#label',
++   'sortie/index.html: hrefs disparu: /#radio',
++   'sortie/index.html: hrefs disparu: /#recherche',
++   'sortie/index.html: hrefs disparu: /#sortie',
++   'telechargements/index.html: hrefs disparu: /',
++   'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png',
++   'data/countdowns.json: media disparu: assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png',
++   'data/countdowns.json: ids disparu: brainrot-society-remix',
++   'data/countdowns.json: ids disparu: legalize-la-kalite-remix',
++   'data/featured.json: links disparu: https://link.deezer.com/s/33UGWQLgUohs76rJp9g0m',
++   'data/featured.json: links disparu: https://music.apple.com/fr/album/sixi%C3%A8me-sens-single/6790749284',
++   'data/featured.json: links disparu: https://music.youtube.com/playlist?list=OLAK5uy_kjqHYbgibPx1MayLadMr5qjNy8yuty5kc&si=vm3td4-Y_bGLxN1J',
++   'data/featured.json: links disparu: https://open.spotify.com/intl-fr/track/7t1eBU5ytTHwKktUA8sxQX?si=fc69e2f800ef4833',
++   'data/featured.json: links disparu: https://www.tiktok.com/@makeda_77',
++   'data/featured.json: media disparu: assets/releases/makeda-muse/sixieme-sens-disponible-maintenant.png',
++   'data.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/countdowns.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/featured.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/music-library.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/news.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/releases.json: fichier protÃ©gÃ© modifiÃ©',
++   'data/videos.json: fichier protÃ©gÃ© modifiÃ©',
++   'manifest.webmanifest: fichier protÃ©gÃ© modifiÃ©'
++ ]
+- []
+
+    at Object.<anonymous> (C:\Users\spare\Documents\Codex\2026-11-23\codex-mpbp-440-corp-mission-v15\v15\tests\v14-preservation.test.js:66:10)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'route disparue: /',
+    'a-venir/index.html: hrefs disparu: /',
+    'a-venir/index.html: hrefs disparu: /#artistes',
+    'a-venir/index.html: hrefs disparu: /#clips',
+    'a-venir/index.html: hrefs disparu: /#galerie',
+    'a-venir/index.html: hrefs disparu: /#label',
+    'a-venir/index.html: hrefs disparu: /#radio',
+    'a-venir/index.html: hrefs disparu: /#recherche',
+    'a-venir/index.html: hrefs disparu: /#sortie',
+    'actu/index.html: hrefs disparu: ../index.html#actus',
+    'actu/index.html: hrefs disparu: ../index.html#home',
+    'actu/index.html: hrefs disparu: ../index.html#radio',
+    'application/index.html: hrefs disparu: /',
+    'artistes/juste-une-plume.html: hrefs disparu: ../index.html',
+    'artistes/juste-une-plume.html: hrefs disparu: ../index.html#actus',
+    'artistes/juste-une-plume.html: hrefs disparu: ../index.html#artistes',
+    'artistes/juste-une-plume.html: hrefs disparu: ../index.html#galerie',
+    'artistes/juste-une-plume.html: hrefs disparu: ../index.html#liens',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html#artistes',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html#avenir',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html#galerie',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html#journal',
+    'artistes/makeda-muse.html: hrefs disparu: ../index.html#liens',
+    'artistes/sparetdee-simon.html: hrefs disparu: ../index.html',
+    'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#actus',
+    'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#artistes',
+    'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#galerie',
+    'artistes/sparetdee-simon.html: hrefs disparu: ../index.html#liens',
+    'dashboard/index.html: hrefs disparu: /',
+    'evenements/index.html: hrefs disparu: ../index.html',
+    'evenements/index.html: hrefs disparu: ../index.html#artistes',
+    'evenements/index.html: hrefs disparu: ../index.html#clips',
+    'evenements/index.html: hrefs disparu: ../index.html#galerie',
+    'evenements/index.html: hrefs disparu: ../index.html#label',
+    'evenements/index.html: hrefs disparu: ../index.html#radio',
+    'evenements/index.html: hrefs disparu: ../index.html#recherche',
+    'evenements/index.html: hrefs disparu: ../index.html#sortie',
+    'galerie/index.html: hrefs disparu: /#actus',
+    'galerie/index.html: hrefs disparu: /#home',
+    'galerie/index.html: hrefs disparu: /#radio',
+    'index.html: hrefs disparu: #artistes',
+    'index.html: hrefs disparu: #avenir',
+    'index.html: hrefs disparu: #clips',
+    'index.html: hrefs disparu: #contenu-principal',
+    'index.html: hrefs disparu: #sortie',
+    'index.html: hrefs disparu: /#actus',
+    'index.html: hrefs disparu: /#application',
+    'index.html: hrefs disparu: /#artistes',
+    'index.html: hrefs disparu: /#avenir',
+    'index.html: hrefs disparu: /#clips',
+    'index.html: hrefs disparu: /#galerie',
+    'index.html: hrefs disparu: /#home',
+    'index.html: hrefs disparu: /#label',
+    'index.html: hrefs disparu: /#liens',
+    'index.html: hrefs disparu: /#radio',
+    'index.html: hrefs disparu: /#sortie',
+    'index.html: hrefs disparu: /artistes/juste-une-plume.html',
+    'index.html: hrefs disparu: /artistes/makeda-muse.html',
+    'index.html: hrefs disparu: /artistes/sparetdee-simon.html',
+    'index.html: hrefs disparu: /evenements/index.html#archives',
+    'index.html: hrefs disparu: /galerie/index.html',
+    'index.html: hrefs disparu: /members/index.html',
+    'index.html: hrefs disparu: /mpbp-tv/index.html',
+    'index.html: hrefs disparu: /mpbp-tv/index.html#clip-dois-je-me-taire',
+    'index.html: hrefs disparu: /mpbp-tv/index.html#clip-j-existe',
+    'index.html: hrefs disparu: /mpbp-tv/index.html#clip-je-sais-que-tu-sais',
+    'index.html: hrefs disparu: /mpbp-tv/index.html#neons-carnivores',
+    'index.html: hrefs disparu: /music/index.html#morceaux',
+    'index.html: hrefs disparu: /telechargements/index.html',
+    'index.html: hrefs disparu: https://link.deezer.com/s/33irRvA9B9fRe2H5gP4D2',
+    'index.html: hrefs disparu: https://music.apple.com/fr/artist/sparetdee-simon/1893053126',
+    'index.html: hrefs disparu: https://open.spotify.com/artist/4JVhHLEc4vOZ2627BBNQKu',
+    'index.html: hrefs disparu: https://open.spotify.com/playlist/5e9OUZTwsGnWjBREAAVKUv',
+    'index.html: hrefs disparu: https://www.youtube.com/@sparetdee440',
+    'index.html: hrefs disparu: mailto:mpbp97440@gmail.com',
+    'index.html: ids disparu: actus',
+    'index.html: ids disparu: alaune',
+    'index.html: ids disparu: application',
+    'index.html: ids disparu: artistes',
+    'index.html: ids disparu: artists-hall',
+    'index.html: ids disparu: avenir',
+    'index.html: ids disparu: clips',
+    'index.html: ids disparu: contenu-principal',
+    'index.html: ids disparu: events',
+    'index.html: ids disparu: galerie',
+    'index.html: ids disparu: home',
+    'index.html: ids disparu: journal',
+    'index.html: ids disparu: label',
+    'index.html: ids disparu: liens',
+    'index.html: ids disparu: menuBtn',
+    'index.html: ids disparu: mpbpIntro',
+    'index.html: ids disparu: mpbpIntroCanvas',
+    'index.html: ids disparu: mpbpIntroSkip',
+    'index.html: ids disparu: mpbpIntroSoundOff',
+    'index.html: ids disparu: mpbpIntroSoundOn',
+    'index.html: ids disparu: radio',
+    'index.html: ids disparu: recherche',
+    'index.html: ids disparu: sortie',
+    'index.html: ids disparu: topBtn',
+    ... 108 more items
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "mpbp-office",
+      "slug": "office",
+      "category": "software",
+      "name": "MPBP 440 Office",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 0,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    },
+    {
+      "id": "mpbp-studio-os",
+      "slug": "studio-os",
+      "category": "software",
+      "name": "MPBP Studio OS",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 1,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    },
+    {
+      "id": "mpbp-render-nexus",
+      "slug": "render-nexus",
+      "category": "software",
+      "name": "MPBP 440 Render Nexus",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 2,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    },
+    {
+      "id": "mpbp-audio-forensics-lab",
+      "slug": "audio-forensics-lab",
+      "category": "software",
+      "name": "MPBP 440 Audio Forensics Lab",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 3,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    },
+    {
+      "id": "mpbp-brenda",
+      "slug": "brenda",
+      "category": "agent",
+      "name": "Brenda",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 4,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    },
+    {
+      "id": "mpbp-les-jardins-des-lumelys",
+      "slug": "les-jardins-des-lumelys",
+      "category": "game",
+      "name": "Les Jardins des Lumélys",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 5,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": "Noms fournis dans le brief V15 ; spécifications non vérifiées"
+      }
+    }
+  ]
+}

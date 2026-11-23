@@ -1,7 +1,7 @@
 (() => {
   const $ = (selector, root = document) => root.querySelector(selector);
   const esc = value => String(value || "").replace(/[&<>\"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
-  const media = path => path ? new URL(path.replace(/^\.\//, ""), document.baseURI).href : "";
+  const media = path => path ? new URL(path.replace(/^\.\//, ""), new URL("/",location.origin)).href : "";
   const releaseArtwork = (path, alt) => {
     const source = media(path);
     return source ? `<div class="v14-media-stage v14-artwork-frame" style="--v14-artwork:url(&quot;${esc(source)}&quot;)"><img class="v14-artwork" src="${esc(source)}" alt="${esc(alt)}" loading="lazy" decoding="async"></div>` : '<p class="v12-upcoming-card__missing-artwork" role="status">Visuel officiel indisponible.</p>';
@@ -34,7 +34,7 @@
   };
   const render = async () => {
     try {
-      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=featured-dynamic-20260813", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json?v=dois-je-me-taire-disponible-20260730", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", document.baseURI), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", document.baseURI), {cache:"no-store"}).then(r => r.json())]);
+      const [data, news, events, gallery] = await Promise.all([fetch(new URL("data.json?v=featured-dynamic-20260813", new URL("/",location.origin)), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/news.json?v=dois-je-me-taire-disponible-20260730", new URL("/",location.origin)), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/events.json", new URL("/",location.origin)), {cache:"no-store"}).then(r => r.json()), fetch(new URL("data/gallery.json", new URL("/",location.origin)), {cache:"no-store"}).then(r => r.json())]);
       const portraits = $("#v14HeroPortraits");
       if (portraits) portraits.innerHTML = gallery.filter(item => /profil|artiste/i.test(item.type || "")).slice(0, 3).map(item => `<figure class="v14-hero-portrait"><img src="${esc(media(item.image))}" alt="${esc(item.artist || item.title)}" decoding="async"><figcaption>${esc(item.artist)}</figcaption></figure>`).join("");
       const featured = data.featured && typeof data.featured === "object" ? data.featured : null;

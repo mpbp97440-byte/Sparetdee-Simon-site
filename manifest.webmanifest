@@ -1,7 +1,7 @@
 {
   "name": "MPBP440 — Portail Musical Officiel",
   "short_name": "MPBP440",
-  "start_url": "/",
+  "start_url": "/musique/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#050505",
@@ -19,5 +19,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "id": "/"
 }

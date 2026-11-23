@@ -1,0 +1,166 @@
+[
+  {
+    "file": "SNIPPET_BODY_INDEX_V5_2.html",
+    "route": "/SNIPPET_BODY_INDEX_V5_2.html",
+    "canonical": [],
+    "publicBody": false
+  },
+  {
+    "file": "SNIPPET_HEAD_INDEX_V5_2.html",
+    "route": "/SNIPPET_HEAD_INDEX_V5_2.html",
+    "canonical": [],
+    "publicBody": false
+  },
+  {
+    "file": "a-venir/index.html",
+    "route": "/a-venir/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "actu/index.html",
+    "route": "/actu/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "admin-440-mpbp-corp/index.html",
+    "route": "/admin-440-mpbp-corp/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "admin-pro/index.html",
+    "route": "/admin-pro/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "application/index.html",
+    "route": "/application/",
+    "canonical": [
+      "https://www.mpbp440.com/application/"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "artistes/juste-une-plume.html",
+    "route": "/artistes/juste-une-plume.html",
+    "canonical": [
+      "https://www.mpbp440.com/artistes/juste-une-plume.html"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "artistes/makeda-muse.html",
+    "route": "/artistes/makeda-muse.html",
+    "canonical": [
+      "https://www.mpbp440.com/artistes/makeda-muse.html"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "artistes/sparetdee-simon.html",
+    "route": "/artistes/sparetdee-simon.html",
+    "canonical": [
+      "https://www.mpbp440.com/artistes/sparetdee-simon.html"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "dashboard/index.html",
+    "route": "/dashboard/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "evenements/index.html",
+    "route": "/evenements/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "galerie/index.html",
+    "route": "/galerie/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "index.html",
+    "route": "/",
+    "canonical": [
+      "https://www.mpbp440.com/"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "live/index.html",
+    "route": "/live/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "lyrics/je-sais-que-tu-sais.html",
+    "route": "/lyrics/je-sais-que-tu-sais.html",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "lyrics/le-systeme.html",
+    "route": "/lyrics/le-systeme.html",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "members/index.html",
+    "route": "/members/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "mon-espace/index.html",
+    "route": "/mon-espace/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "mpbp-tv/index.html",
+    "route": "/mpbp-tv/",
+    "canonical": [
+      "https://www.mpbp440.com/mpbp-tv/"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "music/index.html",
+    "route": "/music/",
+    "canonical": [
+      "https://www.mpbp440.com/music/"
+    ],
+    "publicBody": true
+  },
+  {
+    "file": "notifications/index.html",
+    "route": "/notifications/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "offline.html",
+    "route": "/offline.html",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "sortie/index.html",
+    "route": "/sortie/",
+    "canonical": [],
+    "publicBody": true
+  },
+  {
+    "file": "telechargements/index.html",
+    "route": "/telechargements/",
+    "canonical": [],
+    "publicBody": true
+  }
+]

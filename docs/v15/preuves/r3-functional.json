@@ -1,0 +1,30 @@
+[
+  {
+    "test": "Menu mobile",
+    "pass": true
+  },
+  {
+    "test": "Échap et focus",
+    "pass": true
+  },
+  {
+    "test": "Accès au catalogue",
+    "pass": true
+  },
+  {
+    "test": "Filtre agent",
+    "pass": true
+  },
+  {
+    "test": "Recherche vide",
+    "pass": true
+  },
+  {
+    "test": "Boutique six projets sans achat",
+    "pass": true
+  },
+  {
+    "test": "Aucune fausse démo jeu",
+    "pass": true
+  }
+]

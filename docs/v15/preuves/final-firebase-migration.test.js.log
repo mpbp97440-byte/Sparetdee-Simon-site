@@ -1,0 +1,137 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: a-venir/index.html: V14 markup unchanged
++ actual - expected
+... Skipped lines
+
+  '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '  <meta charset="UTF-8">\n' +
+    '  <meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+...
+    '    <nav class="nav">\n' +
++   '      <a class="brand" href="/musique/"><img src="../assets/brand/mpbp440-corp-official.png" alt="MPBP440"><span>M.P.B.P 440</span></a>\n' +
+-   '      <a class="brand" href="/"><img src="../assets/brand/mpbp440-corp-official.png" alt="MPBP440"><span>M.P.B.P 440</span></a>\n' +
+    '      <div class="nav-links">\n' +
++   '        <a href="/musique/">Accueil</a><a href="/musique/#label">Label</a><a href="/musique/#sortie">Sortie</a><a href="/a-venir/" aria-current="page">Ã€ venir</a><a href="/live/index.html">Ã‰vÃ©nements</a><a href="/music/index.html">Morceaux</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/musique/#radio">Radio</a><a href="/notifications/index.html">Actus</a><a href="/musique/#artistes">Artistes</a><a href="/musique/#recherche">Recherche</a><a href="/musique/#clips">Clips</a><a href="/musique/#galerie">Galerie</a><a href="/application/index.html">Application</a><a href="/members/index.html">Mon espace</a><a href="/telechargements/index.html">TÃ©lÃ©chargements</a>\n' +
+-   '        <a href="/">Accueil</a><a href="/#label">Label</a><a href="/#sortie">Sortie</a><a href="/a-venir/" aria-current="page">Ã€ venir</a><a href="/live/index.html">Ã‰vÃ©nements</a><a href="/music/index.html">Morceaux</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/#radio">Radio</a><a href="/notifications/index.html">Actus</a><a href="/#artistes">Artistes</a><a href="/#recherche">Recherche</a><a href="/#clips">Clips</a><a href="/#galerie">Galerie</a><a href="/application/index.html">Application</a><a href="/members/index.html">Mon espace</a><a href="/telechargements/index.html">TÃ©lÃ©chargements</a>\n' +
+    '      </div>\n' +
+    '    </nav>\n' +
+    '  </header>\n' +
+    '  <main class="wrap">\n' +
+    '    <section class="hero">\n' +
+
+    at Object.<anonymous> (C:\Users\spare\Documents\Codex\2026-11-23\codex-mpbp-440-corp-mission-v15\v15\tests\firebase-migration.test.js:12:10)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '  <meta charset="UTF-8">\n' +
+    '  <meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+    '  <title>Ã€ venir â€” MPBP440</title>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-compat.css?v=14-final">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-final-rebuild">\n' +
+    '\n' +
+    '</head>\n' +
+    '<body class="v14-miami a-venir-page">\n' +
+    '  <header class="site-header">\n' +
+    '    <nav class="nav">\n' +
+    '      <a class="brand" href="/musique/"><img src="../assets/brand/mpbp440-corp-official.png" alt="MPBP440"><span>M.P.B.P 440</span></a>\n' +
+    '      <div class="nav-links">\n' +
+    '        <a href="/musique/">Accueil</a><a href="/musique/#label">Label</a><a href="/musique/#sortie">Sortie</a><a href="/a-venir/" aria-current="page">Ã€ venir</a><a href="/live/index.html">Ã‰vÃ©nements</a><a href="/music/index.html">Morceaux</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/musique/#radio">Radio</a><a href="/notifications/index.html">Actus</a><a href="/musique/#artistes">Artistes</a><a href="/musique/#recherche">Recherche</a><a href="/musique/#clips">Clips</a><a href="/musique/#galerie">Galerie</a><a href="/application/index.html">Application</a><a href="/members/index.html">Mon espace</a><a href="/telechargements/index.html">TÃ©lÃ©chargements</a>\n' +
+    '      </div>\n' +
+    '    </nav>\n' +
+    '  </header>\n' +
+    '  <main class="wrap">\n' +
+    '    <section class="hero">\n' +
+    '      <img class="hero-logo" src="../assets/brand/mpbp440-corp-official.png" alt="">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Ã€ venir</p>\n' +
+    '        <h1>Prochaines sorties</h1>\n' +
+    '        <p>Retrouvez les prochaines sorties MPBP440 et leurs comptes Ã  rebours officiels.</p>\n' +
+    '        <div class="actions"><a class="btn" href="/music/index.html#avenir">Music Hub</a><a class="btn ghost" href="/mpbp-tv/index.html">MPBP TV</a></div>\n' +
+    '      </div>\n' +
+    '    </section>\n' +
+    '    <section class="section panel" aria-labelledby="upcomingTitle">\n' +
+    '      <p class="sup">Calendrier officiel</p>\n' +
+    '      <h2 id="upcomingTitle">Les rendez-vous Ã  venir</h2>\n' +
+    '      <div id="upcomingGrid" class="timeGrid" aria-live="polite"></div>\n' +
+    '    </section>\n' +
+    '  </main>\n' +
+    '  <footer>Â© MPBP440 Corp.</footer>\n' +
+    '  \n' +
+    '  \n' +
+    '</body>\n' +
+    '</html>',
+  expected: '<!DOCTYPE html>\n' +
+    '<html lang="fr">\n' +
+    '<head>\n' +
+    '  <meta charset="UTF-8">\n' +
+    '  <meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+    '  <title>Ã€ venir â€” MPBP440</title>\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-compat.css?v=14-final">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-tokens.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-shell.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-components.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-home.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-pages.css?v=14-final-rebuild">\n' +
+    '<link rel="stylesheet" href="../assets/css/v14-responsive.css?v=14-final-rebuild">\n' +
+    '\n' +
+    '</head>\n' +
+    '<body class="v14-miami a-venir-page">\n' +
+    '  <header class="site-header">\n' +
+    '    <nav class="nav">\n' +
+    '      <a class="brand" href="/"><img src="../assets/brand/mpbp440-corp-official.png" alt="MPBP440"><span>M.P.B.P 440</span></a>\n' +
+    '      <div class="nav-links">\n' +
+    '        <a href="/">Accueil</a><a href="/#label">Label</a><a href="/#sortie">Sortie</a><a href="/a-venir/" aria-current="page">Ã€ venir</a><a href="/live/index.html">Ã‰vÃ©nements</a><a href="/music/index.html">Morceaux</a><a href="/mpbp-tv/index.html">MPBP TV</a><a href="/#radio">Radio</a><a href="/notifications/index.html">Actus</a><a href="/#artistes">Artistes</a><a href="/#recherche">Recherche</a><a href="/#clips">Clips</a><a href="/#galerie">Galerie</a><a href="/application/index.html">Application</a><a href="/members/index.html">Mon espace</a><a href="/telechargements/index.html">TÃ©lÃ©chargements</a>\n' +
+    '      </div>\n' +
+    '    </nav>\n' +
+    '  </header>\n' +
+    '  <main class="wrap">\n' +
+    '    <section class="hero">\n' +
+    '      <img class="hero-logo" src="../assets/brand/mpbp440-corp-official.png" alt="">\n' +
+    '      <div>\n' +
+    '        <p class="sup">Ã€ venir</p>\n' +
+    '        <h1>Prochaines sorties</h1>\n' +
+    '        <p>Retrouvez les prochaines sorties MPBP440 et leurs comptes Ã  rebours officiels.</p>\n' +
+    '        <div class="actions"><a class="btn" href="/music/index.html#avenir">Music Hub</a><a class="btn ghost" href="/mpbp-tv/index.html">MPBP TV</a></div>\n' +
+    '      </div>\n' +
+    '    </section>\n' +
+    '    <section class="section panel" aria-labelledby="upcomingTitle">\n' +
+    '      <p class="sup">Calendrier officiel</p>\n' +
+    '      <h2 id="upcomingTitle">Les rendez-vous Ã  venir</h2>\n' +
+    '      <div id="upcomingGrid" class="timeGrid" aria-live="polite"></div>\n' +
+    '    </section>\n' +
+    '  </main>\n' +
+    '  <footer>Â© MPBP440 Corp.</footer>\n' +
+    '  \n' +
+    '  \n' +
+    '</body>\n' +
+    '</html>',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

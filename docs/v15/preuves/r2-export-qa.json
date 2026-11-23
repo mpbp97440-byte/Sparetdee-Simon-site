@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "mpbp-office",
+      "slug": "office",
+      "category": "software",
+      "name": "MPBP 440 Office",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 0,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-studio-os",
+      "slug": "studio-os",
+      "category": "software",
+      "name": "MPBP Studio OS",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 1,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-render-nexus",
+      "slug": "render-nexus",
+      "category": "software",
+      "name": "MPBP 440 Render Nexus",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 2,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-audio-forensics-lab",
+      "slug": "audio-forensics-lab",
+      "category": "software",
+      "name": "MPBP 440 Audio Forensics Lab",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 3,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-brenda",
+      "slug": "brenda",
+      "category": "agent",
+      "name": "Brenda",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 4,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-les-jardins-des-lumelys",
+      "slug": "les-jardins-des-lumelys",
+      "category": "game",
+      "name": "Les Jardins des Lumélys",
+      "summary": "Projet identifié au sein de MPBP Engineering. Informations techniques à venir.",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": true,
+      "order": 5,
+      "verification": {
+        "content": true,
+        "access": false,
+        "commercial": false,
+        "checkedAt": "2026-11-23",
+        "source": "Nom et catégorie fournis par le propriétaire ; aucune fonctionnalité ou disponibilité commerciale annoncée."
+      }
+    },
+    {
+      "id": "mpbp-nouveau-projet-1",
+      "slug": "nouveau-projet-1",
+      "category": "software",
+      "name": "Fiche QA locale non publiée",
+      "summary": "",
+      "description": "",
+      "images": [],
+      "demoVideo": null,
+      "features": [],
+      "limitations": [],
+      "useCases": [],
+      "platforms": [],
+      "requirements": [],
+      "hosting": null,
+      "status": null,
+      "version": null,
+      "updatedAt": null,
+      "changelog": [],
+      "documentation": [],
+      "pricing": {
+        "model": "unconfirmed",
+        "amount": null,
+        "currency": null,
+        "taxInformation": null,
+        "enabled": false
+      },
+      "license": null,
+      "cta": {
+        "kind": "none",
+        "url": null,
+        "verified": false
+      },
+      "public": false,
+      "order": 6,
+      "verification": {
+        "content": false,
+        "access": false,
+        "commercial": false,
+        "checkedAt": null,
+        "source": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "screen": "corporate",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 320,
+    "documentWidth": 320,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 390,
+    "documentWidth": 390,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 768,
+    "documentWidth": 768,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  }
+]

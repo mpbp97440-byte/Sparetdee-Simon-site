@@ -1,0 +1,126 @@
+[
+  {
+    "screen": "corporate",
+    "viewport": 320,
+    "documentWidth": 305,
+    "h1": "La création.Sans frontières.",
+    "images": [],
+    "landmarks": 1,
+    "width": 320
+  },
+  {
+    "screen": "music",
+    "viewport": 320,
+    "documentWidth": 305,
+    "h1": "La musique vraie.L’esprit libre.",
+    "images": [
+      "/assets/artists/sparetdee-simon-profile.jpg",
+      "/assets/makeda-muse/makeda-muse-profile.png",
+      "/assets/artists/juste-une-plume-profile.jpg"
+    ],
+    "landmarks": 1,
+    "width": 320
+  },
+  {
+    "screen": "engineering",
+    "viewport": 320,
+    "documentWidth": 305,
+    "h1": "Des idées aux outils.Du code aux expériences.",
+    "images": [],
+    "landmarks": 1,
+    "width": 320
+  },
+  {
+    "screen": "corporate",
+    "viewport": 390,
+    "documentWidth": 375,
+    "h1": "La création.Sans frontières.",
+    "images": [],
+    "landmarks": 1,
+    "width": 390
+  },
+  {
+    "screen": "music",
+    "viewport": 390,
+    "documentWidth": 375,
+    "h1": "La musique vraie.L’esprit libre.",
+    "images": [
+      "/assets/artists/sparetdee-simon-profile.jpg",
+      "/assets/makeda-muse/makeda-muse-profile.png",
+      "/assets/artists/juste-une-plume-profile.jpg"
+    ],
+    "landmarks": 1,
+    "width": 390
+  },
+  {
+    "screen": "engineering",
+    "viewport": 390,
+    "documentWidth": 375,
+    "h1": "Des idées aux outils.Du code aux expériences.",
+    "images": [],
+    "landmarks": 1,
+    "width": 390
+  },
+  {
+    "screen": "corporate",
+    "viewport": 768,
+    "documentWidth": 753,
+    "h1": "La création.Sans frontières.",
+    "images": [],
+    "landmarks": 1,
+    "width": 768
+  },
+  {
+    "screen": "music",
+    "viewport": 768,
+    "documentWidth": 753,
+    "h1": "La musique vraie.L’esprit libre.",
+    "images": [
+      "/assets/artists/sparetdee-simon-profile.jpg",
+      "/assets/makeda-muse/makeda-muse-profile.png",
+      "/assets/artists/juste-une-plume-profile.jpg"
+    ],
+    "landmarks": 1,
+    "width": 768
+  },
+  {
+    "screen": "engineering",
+    "viewport": 768,
+    "documentWidth": 753,
+    "h1": "Des idées aux outils.Du code aux expériences.",
+    "images": [],
+    "landmarks": 1,
+    "width": 768
+  },
+  {
+    "screen": "corporate",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "h1": "La création.Sans frontières.",
+    "images": [],
+    "landmarks": 1,
+    "width": 1440
+  },
+  {
+    "screen": "music",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "h1": "La musique vraie.L’esprit libre.",
+    "images": [
+      "/assets/artists/sparetdee-simon-profile.jpg",
+      "/assets/makeda-muse/makeda-muse-profile.png",
+      "/assets/artists/juste-une-plume-profile.jpg"
+    ],
+    "landmarks": 1,
+    "width": 1440
+  },
+  {
+    "screen": "engineering",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "h1": "Des idées aux outils.Du code aux expériences.",
+    "images": [],
+    "landmarks": 1,
+    "width": 1440
+  }
+]

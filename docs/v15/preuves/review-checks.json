@@ -1,0 +1,50 @@
+[
+  {
+    "test": "Contrat proposé / 6 candidats",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus slug dupliqué",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus état inventé",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus publication non vérifiée",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus achat non vérifié",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus URL dangereuse",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus date invalide",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus champ manquant",
+    "status": "PASS"
+  },
+  {
+    "test": "Refus média sans alt",
+    "status": "PASS"
+  },
+  {
+    "test": "404 fichiers préexistants inchangés",
+    "status": "PASS"
+  },
+  {
+    "test": "379 références locales de maquettes résolues",
+    "status": "PASS"
+  },
+  {
+    "test": "6 réponses HTTP locales de référence",
+    "status": "PASS"
+  }
+]

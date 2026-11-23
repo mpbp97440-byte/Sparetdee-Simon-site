@@ -1,0 +1,61 @@
+[
+  {
+    "test": "Menu mobile ouvert",
+    "pass": true
+  },
+  {
+    "test": "Échap ferme le menu et rend le focus",
+    "pass": true
+  },
+  {
+    "test": "Filtre agents",
+    "pass": true
+  },
+  {
+    "test": "Recherche vide",
+    "pass": true
+  },
+  {
+    "test": "Recherche Brenda",
+    "pass": true
+  },
+  {
+    "test": "Fiche Brenda accessible par URL",
+    "pass": true
+  },
+  {
+    "test": "Porte Music",
+    "pass": true
+  },
+  {
+    "test": "Porte Engineering",
+    "pass": true
+  },
+  {
+    "test": "Filtre jeux",
+    "pass": true
+  },
+  {
+    "test": "Fiche Lumélys accessible",
+    "pass": true
+  },
+  {
+    "test": "Focus clavier visible",
+    "pass": true,
+    "detail": {
+      "outline": "solid",
+      "tag": "A",
+      "text": "Dossier de validation"
+    }
+  },
+  {
+    "test": "Médias musicaux après capture 390",
+    "pass": true,
+    "missing": []
+  },
+  {
+    "test": "Médias musicaux après capture 1440",
+    "pass": true,
+    "missing": []
+  }
+]

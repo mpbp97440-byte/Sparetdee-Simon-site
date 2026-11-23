@@ -1,0 +1,282 @@
+[
+  {
+    "screen": "corporate",
+    "viewport": 320,
+    "documentWidth": 327,
+    "h1": "L’imagination.La maîtrise.La création.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": false
+  },
+  {
+    "screen": "music",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "La musique vraie.L’esprit libre.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "Concevoir l’outil.Créer l’expérience.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "Des outils pourvos prochaines idées.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "Voir les idéesprendre vie.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "Brenda",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 320,
+    "documentWidth": 320,
+    "h1": "Gérer les contenus Engineering.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 320,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "L’imagination.La maîtrise.La création.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "La musique vraie.L’esprit libre.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "Concevoir l’outil.Créer l’expérience.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "Des outils pourvos prochaines idées.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "Voir les idéesprendre vie.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "Brenda",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 390,
+    "documentWidth": 390,
+    "h1": "Gérer les contenus Engineering.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 390,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "L’imagination.La maîtrise.La création.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "La musique vraie.L’esprit libre.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "Concevoir l’outil.Créer l’expérience.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "Des outils pourvos prochaines idées.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "Voir les idéesprendre vie.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "Brenda",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 768,
+    "documentWidth": 768,
+    "h1": "Gérer les contenus Engineering.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 768,
+    "pass": true
+  },
+  {
+    "screen": "corporate",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "L’imagination.La maîtrise.La création.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "music",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "La musique vraie.L’esprit libre.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "engineering",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "Concevoir l’outil.Créer l’expérience.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "shop",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "Des outils pourvos prochaines idées.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "demos",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "Voir les idéesprendre vie.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "project",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "Brenda",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "screen": "editor",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "h1": "Gérer les contenus Engineering.",
+    "mainCount": 1,
+    "missingImages": [],
+    "width": 1440,
+    "pass": true
+  }
+]
