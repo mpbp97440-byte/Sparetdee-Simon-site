@@ -1,0 +1,86 @@
+{
+  "reproducedBrokenImages": 16,
+  "correctedImages": 16,
+  "after": [
+    {
+      "expected": "/assets/intro/mpbp-universe.webp",
+      "actual": "/assets/intro/mpbp-universe.webp",
+      "pass": true
+    },
+    {
+      "expected": "/assets/brand/mpbp440-corp-official.png",
+      "actual": "/assets/brand/mpbp440-corp-official.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/intro/mpbp-canes.webp",
+      "actual": "/assets/intro/mpbp-canes.webp",
+      "pass": true
+    },
+    {
+      "expected": "/assets/artists/makeda-muse/makeda-muse-treble-clef-badge.png",
+      "actual": "/assets/artists/makeda-muse/makeda-muse-treble-clef-badge.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/intro/mpbp-feather.webp",
+      "actual": "/assets/intro/mpbp-feather.webp",
+      "pass": true
+    },
+    {
+      "expected": "/assets/brand/mpbp440-corp-official.png",
+      "actual": "/assets/brand/mpbp440-corp-official.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/brand/mpbp440-corp-official.png",
+      "actual": "/assets/brand/mpbp440-corp-official.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/videos/neons-carnivores-video-poster.jpg",
+      "actual": "/assets/videos/neons-carnivores-video-poster.jpg",
+      "pass": true
+    },
+    {
+      "expected": "/assets/covers/je-sais-juste-une-plume.webp",
+      "actual": "/assets/covers/je-sais-juste-une-plume.webp",
+      "pass": true
+    },
+    {
+      "expected": "/assets/clips/makeda-muse/j-existe-cover.png",
+      "actual": "/assets/clips/makeda-muse/j-existe-cover.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+      "actual": "/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/artists/sparetdee-simon-profile.jpg",
+      "actual": "/assets/artists/sparetdee-simon-profile.jpg",
+      "pass": true
+    },
+    {
+      "expected": "/assets/makeda-muse/makeda-muse-profile.png",
+      "actual": "/assets/makeda-muse/makeda-muse-profile.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/artists/juste-une-plume-profile.jpg",
+      "actual": "/assets/artists/juste-une-plume-profile.jpg",
+      "pass": true
+    },
+    {
+      "expected": "/assets/events/mpbp440-artists-hall-flyer.png",
+      "actual": "/assets/events/mpbp440-artists-hall-flyer.png",
+      "pass": true
+    },
+    {
+      "expected": "/assets/brand/mpbp440-corp-official.png",
+      "actual": "/assets/brand/mpbp440-corp-official.png",
+      "pass": true
+    }
+  ]
+}

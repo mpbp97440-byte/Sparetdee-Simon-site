@@ -77,6 +77,12 @@ for name in subprocess.check_output(['git','ls-tree','-r','--name-only',BASELINE
  if updated!=src:write(R/relative,updated)
 music=re.sub(r'(src|href)="([^"]+)"',lambda m:m[1]+'="'+(m[2] if m[2].startswith(('/','#','http:','https:','mailto:','data:')) else '/'+m[2])+'"',original)
 music=re.sub(r'href="([^"]+)"',lambda m:'href="'+music_link(m[1],'index.html')+'"',music)
+# The old root-only helper strips /assets into assets. At /musique/ it breaks
+# lazy static images and the generic error fallback conceals the failed request.
+legacy_image_rewrite="<script>document.querySelectorAll('img[src^=\"/assets/\"]').forEach(image => { image.src = image.getAttribute('src').slice(1); });</script>"
+assert music.count(legacy_image_rewrite)==1, 'Audit changed: inspect the original image rewrite before migrating'
+music=music.replace(legacy_image_rewrite,'<!-- V15: preserve root-absolute media paths at /musique/. -->')
+
 # Canonical and structured website identity belong to the musical entry now.
 music=music.replace('https://www.mpbp440.com/"','https://www.mpbp440.com/musique/"')
 music=music.replace('<title>MPBP440 - Site officiel | M.P.B.P 440 Corp.</title>','<title>MPBP Music — Artistes, sorties et clips | MPBP 440 Corp.</title>')
@@ -106,7 +112,7 @@ precache=['/','/index.html','/musique/','/offline.html','/manifest.webmanifest',
 precache += ['/'+p.relative_to(R).as_posix() for p in (R/'assets/css').glob('v14-*.css')]
 precache += ['/assets/js/'+x for x in ('v12-preview-basepath.js','v12-navigation.js','v12-homepage.js','v14-motion.js','mpbp440-firebase.js')]
 precache += ['/assets/v15/'+x for x in ('site.css','premium-r2.css','site.js','portal.js')]
-sw='''const MPBP_CACHE='mpbp440-v15-20261123-v1';
+sw='''const MPBP_CACHE='mpbp440-v15-20261123-v2-media-fix';
 const PRECACHE=PRECACHE_JSON;
 const privatePath=/^\\/(?:admin[^/]*|members|mon-espace|analytics|dashboard|api)(?:\\/|\\.|$)/;
 self.addEventListener('install',event=>{event.waitUntil(caches.open(MPBP_CACHE).then(cache=>cache.addAll(PRECACHE)).then(()=>self.skipWaiting()));});

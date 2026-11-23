@@ -1,3 +1,5 @@
+> Correctif musical : régression des images reproduite et corrigée. Les anciens contrôles étaient insuffisants ; voir [le rapport de correction](docs/v15/CORRECTIF-MEDIAS.md).
+
 # Livraison V15 — portail officiel MPBP 440 Corp.
 
 Direction R3 et publication explicitement autorisées par le propriétaire le 23 novembre 2026 : « Oui je valide fait le commit final et met le site à jour ».

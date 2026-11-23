@@ -1,3 +1,5 @@
+> Correctif musical : régression des images reproduite et corrigée. Les anciens contrôles étaient insuffisants ; voir [le rapport de correction](CORRECTIF-MEDIAS.md).
+
 # Tests finaux V15 — 23 novembre 2026
 
 Les résultats concernent les actions effectivement exécutées, avant publication. Les preuves de publication seront conservées hors du commit dans `../evidence/` et le HEAD/deployment seront communiqués à la livraison.

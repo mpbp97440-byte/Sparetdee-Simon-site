@@ -14,15 +14,18 @@ for name in basefiles:
 protected=[n for n in basefiles if n=='data.json' or n.startswith(('data/','supabase/','admin-440-mpbp-corp/','tests/','.github/workflows/')) or (n.startswith('assets/') and n not in ('assets/js/v12-homepage.js','assets/js/v12-navigation.js')) or n in ('firestore.rules','CNAME')]
 check('Protected music data, media, backend, original tests and deployment workflows unchanged',all((S/n).read_bytes()==(R/n).read_bytes() for n in protected),str(len(protected))+' files byte-identical')
 class Dom(HTMLParser):
- def __init__(self,text):super().__init__(convert_charrefs=True);self.ids=[];self.text=[];self.refs=[];self.canon=[];self.feed(text)
+ def __init__(self,text):super().__init__(convert_charrefs=True);self.ids=[];self.text=[];self.refs=[];self.canon=[];self.scriptDepth=0;self.feed(text)
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
+  if tag=='script':self.scriptDepth+=1
   if 'id'in a:self.ids.append(a['id'])
   for k in ('href','src','poster'):
    if k in a:self.refs.append((tag,k,a[k]))
   if tag=='link'and a.get('rel')=='canonical':self.canon.append(a['href'])
+ def handle_endtag(self,tag):
+  if tag=='script':self.scriptDepth=max(0,self.scriptDepth-1)
  def handle_data(self,data):
-  if data.strip():self.text.append(data.strip())
+  if data.strip() and not self.scriptDepth:self.text.append(data.strip())
 old=Dom((S/'index.html').read_text(encoding='utf-8'));new=Dom((R/'musique/index.html').read_text(encoding='utf-8'))
 check('All original music IDs/anchors preserved',set(old.ids)<=set(new.ids),str(len(old.ids)))
 # All original body text survives except the intentional page title change.

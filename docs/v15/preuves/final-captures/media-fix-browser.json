@@ -1,0 +1,294 @@
+{
+  "brokenBefore": [
+    {
+      "alt": "Néons Carnivores, Sparetdee Simon feat Makéda Muse",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "Je sais que tu sais, Juste Une Plume",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "J’existe, Makéda Muse",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "Dois-je me taire ?, Sparetdee Simon",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "Sparetdee Simon",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "Makéda Muse",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    },
+    {
+      "alt": "Juste Une Plume",
+      "src": "/assets/brand/mpbp440-corp-official.png",
+      "width": 1254
+    }
+  ],
+  "mediaChecks": [
+    {
+      "images": [
+        {
+          "alt": "Néons Carnivores, Sparetdee Simon feat Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/videos/neons-carnivores-video-poster.jpg",
+          "width": 1254
+        },
+        {
+          "alt": "Je sais que tu sais, Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/covers/je-sais-juste-une-plume.webp",
+          "width": 1200
+        },
+        {
+          "alt": "J’existe, Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/makeda-muse/j-existe-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Dois-je me taire ?, Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/sparetdee-simon-profile.jpg",
+          "width": 700
+        },
+        {
+          "alt": "Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/makeda-muse/makeda-muse-profile.png",
+          "width": 1254
+        },
+        {
+          "alt": "Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/juste-une-plume-profile.jpg",
+          "width": 700
+        }
+      ],
+      "overflow": false,
+      "width": 320
+    },
+    {
+      "images": [
+        {
+          "alt": "Néons Carnivores, Sparetdee Simon feat Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/videos/neons-carnivores-video-poster.jpg",
+          "width": 1254
+        },
+        {
+          "alt": "Je sais que tu sais, Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/covers/je-sais-juste-une-plume.webp",
+          "width": 1200
+        },
+        {
+          "alt": "J’existe, Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/makeda-muse/j-existe-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Dois-je me taire ?, Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/sparetdee-simon-profile.jpg",
+          "width": 700
+        },
+        {
+          "alt": "Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/makeda-muse/makeda-muse-profile.png",
+          "width": 1254
+        },
+        {
+          "alt": "Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/juste-une-plume-profile.jpg",
+          "width": 700
+        }
+      ],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "images": [
+        {
+          "alt": "Néons Carnivores, Sparetdee Simon feat Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/videos/neons-carnivores-video-poster.jpg",
+          "width": 1254
+        },
+        {
+          "alt": "Je sais que tu sais, Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/covers/je-sais-juste-une-plume.webp",
+          "width": 1200
+        },
+        {
+          "alt": "J’existe, Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/makeda-muse/j-existe-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Dois-je me taire ?, Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/sparetdee-simon-profile.jpg",
+          "width": 700
+        },
+        {
+          "alt": "Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/makeda-muse/makeda-muse-profile.png",
+          "width": 1254
+        },
+        {
+          "alt": "Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/juste-une-plume-profile.jpg",
+          "width": 700
+        }
+      ],
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "images": [
+        {
+          "alt": "Néons Carnivores, Sparetdee Simon feat Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/videos/neons-carnivores-video-poster.jpg",
+          "width": 1254
+        },
+        {
+          "alt": "Je sais que tu sais, Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/covers/je-sais-juste-une-plume.webp",
+          "width": 1200
+        },
+        {
+          "alt": "J’existe, Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/makeda-muse/j-existe-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Dois-je me taire ?, Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+          "width": 1920
+        },
+        {
+          "alt": "Sparetdee Simon",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/sparetdee-simon-profile.jpg",
+          "width": 700
+        },
+        {
+          "alt": "Makéda Muse",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/makeda-muse/makeda-muse-profile.png",
+          "width": 1254
+        },
+        {
+          "alt": "Juste Une Plume",
+          "pass": true,
+          "src": "http://127.0.0.1:4417/assets/artists/juste-une-plume-profile.jpg",
+          "width": 700
+        }
+      ],
+      "overflow": false,
+      "width": 1440
+    }
+  ],
+  "galleryCheck": {
+    "gallery": [
+      {
+        "alt": "Profil officiel Sparetdee Simon",
+        "src": "http://127.0.0.1:4417/assets/artists/sparetdee-simon.webp",
+        "width": 1200
+      },
+      {
+        "alt": "Profil officiel Makéda Muse",
+        "src": "http://127.0.0.1:4417/assets/makeda-muse/makeda-muse-profile.png",
+        "width": 1254
+      },
+      {
+        "alt": "Profil officiel Juste Une Plume",
+        "src": "http://127.0.0.1:4417/assets/artists/juste-une-plume.webp",
+        "width": 1200
+      },
+      {
+        "alt": "Le Système",
+        "src": "http://127.0.0.1:4417/assets/covers/le-systeme-pre-sortie-27-06-2026.webp",
+        "width": 1200
+      }
+    ],
+    "release": [
+      {
+        "alt": "Prince des étoiles Remix — disponible maintenant",
+        "src": "http://127.0.0.1:4417/assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+        "width": 1254
+      },
+      {
+        "alt": "BrainRot Society Remix — sortie récente",
+        "src": "http://127.0.0.1:4417/assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+        "width": 1254
+      },
+      {
+        "alt": "Légalize La Kalité Remix — sortie récente",
+        "src": "http://127.0.0.1:4417/assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
+        "width": 1024
+      },
+      {
+        "alt": "Pochette Prince des étoiles Remix",
+        "src": "http://127.0.0.1:4417/assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+        "width": 1254
+      },
+      {
+        "alt": "Pochette Le Bizz c'est bon 2.0",
+        "src": "http://127.0.0.1:4417/assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
+        "width": 1254
+      }
+    ]
+  },
+  "expectedOriginalMedia": {
+    "Néons Carnivores, Sparetdee Simon feat Makéda Muse": "/assets/videos/neons-carnivores-video-poster.jpg",
+    "Je sais que tu sais, Juste Une Plume": "/assets/covers/je-sais-juste-une-plume.webp",
+    "J’existe, Makéda Muse": "/assets/clips/makeda-muse/j-existe-cover.png",
+    "Dois-je me taire ?, Sparetdee Simon": "/assets/clips/sparetdee-simon/dois-je-me-taire-cover.png",
+    "Sparetdee Simon": "/assets/artists/sparetdee-simon-profile.jpg",
+    "Makéda Muse": "/assets/makeda-muse/makeda-muse-profile.png",
+    "Juste Une Plume": "/assets/artists/juste-une-plume-profile.jpg"
+  },
+  "exactOriginalSourcesVerified": 28
+}
