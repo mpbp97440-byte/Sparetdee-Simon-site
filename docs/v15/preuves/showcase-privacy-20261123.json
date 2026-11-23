@@ -1,0 +1,207 @@
+[
+  {
+    "slug": "office",
+    "publicFile": "assets/engineering/showcase-20261123/office.webp",
+    "sha256": "4ed65ba129123a98743371ac3f2b0f299b163a5c7c003ff83218e58d4072bdb3",
+    "sourceSha256": "7243db93bf7b3b299275e509a7e445882b1dc7da688e717263df78f7a484d523",
+    "review": "Archive de présentation existante ; espace initial sans clients ni montants personnels. Avatar utilisateur flouté.",
+    "redactions": [
+      {
+        "kind": "user-avatar",
+        "box": [
+          1454,
+          8,
+          1512,
+          70
+        ],
+        "method": "local downsampling and Gaussian blur"
+      }
+    ],
+    "dimensions": [
+      1536,
+      1499
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "brenda",
+    "publicFile": "assets/engineering/showcase-20261123/brenda.webp",
+    "sha256": "4ce996943cd105f8c0082fef388cc0a525cfa76f4473ebda3c3316c738623e5d",
+    "sourceSha256": "9d20d7f1597f6f76329cecf21053ba6566bf6dfb1e73fa1c53514e645e8accb7",
+    "review": "Archive de présentation existante ; accueil vide, aucune demande, clé ou donnée de compte visible.",
+    "redactions": [],
+    "dimensions": [
+      1360,
+      820
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "audio-forensics-lab",
+    "publicFile": "assets/engineering/showcase-20261123/audio-forensics-lab.webp",
+    "sha256": "8ac670043ce21abd8efcf341d12bb466a048b08b6f1439e6020a03f459e2abaa",
+    "sourceSha256": "2d6006183fbfddd0c08a15bdf3146801155e83c56a553c86c05c3075951b33da",
+    "review": "Capture native du 23 novembre 2026 ; aucun fichier chargé, aucune analyse lancée, aucun nom, chemin privé ou résultat personnel visible.",
+    "redactions": [],
+    "dimensions": [
+      1662,
+      1012
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "studio-ia",
+    "publicFile": "assets/engineering/showcase-20261123/studio-ia.webp",
+    "sha256": "be81383a5010712a6d27f381003ffcd91b06384ab90741a377a38c38be3c2149",
+    "sourceSha256": "42549f2ae1cf717b19ae71c94aa8805fd56fe6fe56ba22567274335a2d486b2e",
+    "review": "Capture native du 23 novembre 2026 ; aucun projet ni fichier chargé, pas de nom, chemin privé, clé ou donnée financière visible.",
+    "redactions": [],
+    "dimensions": [
+      1920,
+      1032
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "studio-os",
+    "publicFile": "assets/engineering/showcase-20261123/studio-os.webp",
+    "sha256": "931fa62853109bfd503c054244be182afa93b0b9d7294ef784d96569fc6f22ce",
+    "sourceSha256": "f475cc9fbf6531d6e8668b9c2a6e306f47d5d700b98edd991381906f08ada80a",
+    "review": "Capture du 23 novembre 2026 ; nom, indicateurs financiers et compteurs confidentiels masqués localement avant publication. Aucun document modifié.",
+    "redactions": [
+      {
+        "kind": "personal-greeting",
+        "box": [
+          340,
+          200,
+          690,
+          250
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "financial-status",
+        "box": [
+          340,
+          308,
+          1060,
+          338
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "private-document-counter",
+        "box": [
+          210,
+          390,
+          238,
+          417
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "financial-indicators",
+        "box": [
+          315,
+          537,
+          1870,
+          607
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "financial-chart",
+        "box": [
+          330,
+          708,
+          1215,
+          885
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "financial-summary",
+        "box": [
+          318,
+          936,
+          1205,
+          984
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "private-followup-counters",
+        "box": [
+          1276,
+          919,
+          1840,
+          960
+        ],
+        "method": "local downsampling and Gaussian blur"
+      }
+    ],
+    "dimensions": [
+      1920,
+      1032
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "render-nexus",
+    "publicFile": "assets/engineering/showcase-20261123/render-nexus.webp",
+    "sha256": "cf9a58b10b5a685bc7b750477fcd06d49581baefbb063abe0e2cf2b2dbc170ba",
+    "sourceSha256": "90d2ce95b5c78f90b486afaf1a0419050274e8ecdd1d81546913dab92cf42a6b",
+    "review": "Capture du 23 novembre 2026 ; nom du projet et libellé nominatif de l’assistant masqués. Aucun média importé et aucun export lancé.",
+    "redactions": [
+      {
+        "kind": "private-project-title",
+        "box": [
+          622,
+          52,
+          1240,
+          105
+        ],
+        "method": "local downsampling and Gaussian blur"
+      },
+      {
+        "kind": "assistant-personal-label",
+        "box": [
+          1605,
+          173,
+          1728,
+          194
+        ],
+        "method": "local downsampling and Gaussian blur"
+      }
+    ],
+    "dimensions": [
+      1920,
+      1032
+    ],
+    "exifRemoved": true
+  },
+  {
+    "slug": "roblox-game-factory",
+    "publicFile": "assets/engineering/showcase-20261123/roblox-game-factory.webp",
+    "sha256": "53a5219006920498b4bec0bd688b7ca1a8e2eb4a8be54353f0ce84704c09d4ff",
+    "sourceSha256": "8158155a08103fc94e6af7ca11038029d675a5522adfd2be24aa9a79594dcc1b",
+    "review": "Capture du 23 novembre 2026 ; aucun projet ou compte personnel affiché. Versions techniques de l’environnement masquées ; aucune publication de jeu effectuée.",
+    "redactions": [
+      {
+        "kind": "local-tool-versions",
+        "box": [
+          308,
+          299,
+          1828,
+          327
+        ],
+        "method": "local downsampling and Gaussian blur"
+      }
+    ],
+    "dimensions": [
+      1920,
+      1032
+    ],
+    "exifRemoved": true
+  }
+]

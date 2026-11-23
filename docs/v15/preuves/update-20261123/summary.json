@@ -1,0 +1,14 @@
+{
+  "staticPass": 49,
+  "historicalFailures": [
+    "tests/release-hardening.test.js",
+    "tests/content-20261013.test.js"
+  ],
+  "uiRecords": 28,
+  "responsiveCases": 20,
+  "originalMusicImageChecks": 28,
+  "publicProductScreenshots": 7,
+  "projects": 8,
+  "originalMediaPreserved": 143,
+  "privateRawScreenshotsPublished": false
+}

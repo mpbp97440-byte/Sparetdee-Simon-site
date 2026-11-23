@@ -34,8 +34,8 @@ function artistMediaUrl(value){
 }
 function linkButtons(links){
   if(!links) return "";
-  const labels = {spotify:"Spotify", apple:"Apple Music", deezer:"Deezer", youtube:"YouTube", amazon:"Amazon Music"};
-  const aliases={spotify:["spotify","Spotify"],apple:["apple","Apple Music"],deezer:["deezer","Deezer"],youtube:["youtube","YouTube","YouTube Music"],amazon:["amazon","Amazon","Amazon Music"]};
+  const labels = {spotify:"Spotify", apple:"Apple Music", deezer:"Deezer", youtube:"YouTube", amazon:"Amazon Music", tiktok:"TikTok", facebook:"Facebook"};
+  const aliases={spotify:["spotify","Spotify"],apple:["apple","Apple Music"],deezer:["deezer","Deezer"],youtube:["youtube","YouTube","YouTube Music"],amazon:["amazon","Amazon","Amazon Music"],tiktok:["tiktok","TikTok"],facebook:["facebook","Facebook"]};
   return Object.keys(labels).map(k => {const url=aliases[k].map(name=>links[name]).find(Boolean);return url ? `<a class="btn ghost small" href="${url}" target="_blank" rel="noopener">${labels[k]}</a>` : "";}).join("");
 }
 async function loadArtistReleases(){

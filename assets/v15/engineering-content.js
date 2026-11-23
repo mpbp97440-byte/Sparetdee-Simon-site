@@ -58,6 +58,8 @@
       const row=el('article',undefined,'project-row');row.dataset.product='';row.dataset.category=item.category;
       const content=el('div');content.append(el('h3',item.name),el('p',item.summary));
       const action=link('Voir le projet','projets/'+item.slug+'.html');action.setAttribute('aria-label','Découvrir '+item.name);
+      const image=item.images.find(image=>urlSafe(image.src));
+      if(image){const preview=el('img',undefined,'project-preview');preview.src=new URL(image.src,base).href;preview.alt=image.alt;preview.loading='lazy';preview.decoding='async';row.classList.add('has-screenshot');row.append(preview);}
       row.append(el('div',categories[item.category]||item.category,'project-category'),content,el('span',item.status||'Informations à venir','project-status'),action);list.append(row);
     }
     $('#catalog-search')?.dispatchEvent(new Event('input'));

@@ -1,0 +1,125 @@
+{
+  "source": "Liens et disponibilité fournis par le propriétaire le 23 novembre 2026 ; Apple Music Légalize corrigé dans son message complémentaire.",
+  "links": {
+    "le-bizz-cest-bon-2-0": {
+      "spotify": "https://open.spotify.com/intl-fr/album/5Dx5qdEjqFH4OIUBtP8lTp?si=Y0L33oX8RuG_7k9-1eqh6w",
+      "apple": "https://music.apple.com/us/album/le-bizz-cest-bon-2-0-single/6824945377",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_m8mKZ6RUHUIn17Kr7DW6Ito9q_oxuOTak&si=cpcTlFw_Tg-05mjd",
+      "deezer": "https://link.deezer.com/s/351DiofztoXAfDAAVSqVv"
+    },
+    "prince-des-etoiles-remix": {
+      "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=s-eVk7BFS2qTz-vw5RXFBg",
+      "apple": "https://music.apple.com/us/album/prince-des-%C3%A9toiles-remix-single/6818615955",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_ldrXe82l9WK6BApn-LS2lS7sTaYfxxQiQ&si=cpgT2NrHQ8bLN3wm",
+      "deezer": "https://link.deezer.com/s/351D94Sl7SIsvpt0K4Lfl"
+    },
+    "legalize-la-kalite-remix": {
+      "spotify": "https://open.spotify.com/intl-fr/album/6uewS3oixPu3iO4gSgiarM?si=JVSRjcllT1Ge4bgJkrvp8g",
+      "apple": "https://music.apple.com/us/album/l%C3%A9galize-la-kalit%C3%A9-remix-single/6815171851",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_njDfbdyrcQdX8KIVMFWYx413JS1iYLV6w&si=b6r_THVrEk_JFfdY",
+      "deezer": "https://link.deezer.com/s/351CSDjpVmJ4qn7eAyHDj"
+    },
+    "brainrot-society-remix": {
+      "spotify": "https://open.spotify.com/intl-fr/album/0BTdjtwV2h8z1tkD5NfvlC?si=avO-nswKSOCPLneSkuyWnQ",
+      "apple": "https://music.apple.com/us/song/brainrot-society-remix/6813404749",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kXx9w_E9SGZ9aJDXnU9egffaJYH7Qijbo&si=k7r_Up0h76kpRImw",
+      "deezer": "https://link.deezer.com/s/351CCgdeBQ0mXoX4EpgsG"
+    },
+    "sous-le-meme-toit": {
+      "spotify": "https://open.spotify.com/intl-fr/album/6Mf9hv60u1L3sZP585UVoM?si=aM1-c5FZS3-t3JIeDezhzA",
+      "deezer": "https://link.deezer.com/s/34qSWklejnRpkrk7octZJ",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_k64HBzkuh16CdUMhxnNoFg9Fc703nBmBY&si=E1FQImMeZ_8pemJz",
+      "apple": "https://music.apple.com/fr/album/sous-le-m%C3%AAme-toit-feat-mak%C3%A9da-muse-single/6810645594",
+      "tiktok": "https://www.tiktok.com/@simonsparet",
+      "facebook": "https://www.facebook.com/Sparetdee.simon"
+    }
+  },
+  "originalTracks": {
+    "prince-des-etoiles-remix": {
+      "id": "prince-des-etoiles-remix",
+      "title": "Prince des étoiles Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-10-13",
+      "status": "Disponible",
+      "type": "Single",
+      "cover": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
+      "description": "Prince des étoiles Remix, le nouveau single de Sparetdee Simon, est disponible dès maintenant sur les plateformes officielles.",
+      "links": {
+        "youtube": "https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y",
+        "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag",
+        "deezer": "https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ",
+        "apple": "https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955"
+      }
+    },
+    "le-bizz-cest-bon-2-0": {
+      "id": "le-bizz-cest-bon-2-0",
+      "title": "Le Bizz c'est bon 2.0",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-10-24",
+      "status": "À venir",
+      "type": "Single",
+      "label": "Sortie à venir",
+      "cover": "assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
+      "description": "Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.",
+      "links": {}
+    },
+    "sous-le-meme-toit": {
+      "id": "sous-le-meme-toit",
+      "title": "Sous Le Même Toit",
+      "artist": "Sparetdee Simon feat Makéda Muse",
+      "artists": [
+        "Sparetdee Simon",
+        "Makéda Muse"
+      ],
+      "featuring": "Makéda Muse",
+      "date": "2026-09-16",
+      "cover": "assets/releases/sparetdee-simon/sous-le-meme-toit-cover-officielle.png",
+      "description": "Sous Le Même Toit, le nouveau single de Sparetdee Simon feat Makéda Muse, est disponible dès maintenant sur les plateformes officielles.",
+      "status": "Disponible",
+      "type": "Single",
+      "links": {
+        "spotify": "https://open.spotify.com/intl-fr/album/6Mf9hv60u1L3sZP585UVoM?si=aM1-c5FZS3-t3JIeDezhzA",
+        "deezer": "https://link.deezer.com/s/34qSWklejnRpkrk7octZJ",
+        "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_k64HBzkuh16CdUMhxnNoFg9Fc703nBmBY&si=E1FQImMeZ_8pemJz",
+        "apple": "https://music.apple.com/fr/album/sous-le-m%C3%AAme-toit-feat-mak%C3%A9da-muse-single/6810645594",
+        "tiktok": "https://www.tiktok.com/@simonsparet",
+        "facebook": "https://www.facebook.com/Sparetdee.simon"
+      }
+    },
+    "brainrot-society-remix": {
+      "id": "brainrot-society-remix",
+      "title": "BrainRot Society Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-09-26",
+      "cover": "assets/releases/sparetdee-simon/brainrot-society-remix-presortie.png",
+      "description": "BrainRot Society Remix est disponible depuis le 26/09/2026.",
+      "status": "Disponible",
+      "type": "Single",
+      "links": {}
+    },
+    "legalize-la-kalite-remix": {
+      "id": "legalize-la-kalite-remix",
+      "title": "Légalize La Kalité Remix",
+      "artist": "Sparetdee Simon",
+      "artists": [
+        "Sparetdee Simon"
+      ],
+      "date": "2026-09-26",
+      "cover": "assets/releases/sparetdee-simon/legalize-la-kalite-remix-presortie.png",
+      "description": "Légalize La Kalité Remix est disponible depuis le 26/09/2026.",
+      "status": "Disponible",
+      "type": "Single",
+      "links": {}
+    }
+  },
+  "backupSha256": "f045440d6dfc63f18613c37e1793fd3cda7def2c5d4c36581a89de191a81b9db"
+}

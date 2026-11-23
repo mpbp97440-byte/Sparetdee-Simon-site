@@ -1,0 +1,45 @@
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  {
++   apple: 'https://music.apple.com/us/album/prince-des-%C3%A9toiles-remix-single/6818615955',
++   deezer: 'https://link.deezer.com/s/351D94Sl7SIsvpt0K4Lfl',
++   spotify: 'https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=s-eVk7BFS2qTz-vw5RXFBg',
++   youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_ldrXe82l9WK6BApn-LS2lS7sTaYfxxQiQ&si=cpgT2NrHQ8bLN3wm'
+-   apple: 'https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955',
+-   deezer: 'https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ',
+-   spotify: 'https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag',
+-   youtube: 'https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y'
+  }
+
+    at Object.<anonymous> (C:\Users\spare\Documents\Codex\2026-11-23\codex-mpbp-440-corp-mission-v15\v15\tests\content-20261013.test.js:9:8)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: {
+    youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_ldrXe82l9WK6BApn-LS2lS7sTaYfxxQiQ&si=cpgT2NrHQ8bLN3wm',
+    spotify: 'https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=s-eVk7BFS2qTz-vw5RXFBg',
+    deezer: 'https://link.deezer.com/s/351D94Sl7SIsvpt0K4Lfl',
+    apple: 'https://music.apple.com/us/album/prince-des-%C3%A9toiles-remix-single/6818615955'
+  },
+  expected: {
+    youtube: 'https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y',
+    spotify: 'https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag',
+    deezer: 'https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ',
+    apple: 'https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955'
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

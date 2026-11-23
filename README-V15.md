@@ -1,3 +1,5 @@
+> Actualisation : sorties musicales, accueil et vitrine de sept applications/agent. Voir [la mise à jour du 23 novembre 2026](docs/v15/MISE-A-JOUR-20261123.md) pour le résultat et les preuves courants.
+
 > Correctif musical : régression des images reproduite et corrigée. Les anciens contrôles étaient insuffisants ; voir [le rapport de correction](docs/v15/CORRECTIF-MEDIAS.md).
 
 # Livraison V15 — portail officiel MPBP 440 Corp.

@@ -7,7 +7,7 @@ from v15_catalogue_contract import validate_catalogue
 catalog=json.loads((P/'data/engineering.json').read_text(encoding='utf-8'));validate_catalogue(catalog,json.loads((P/'data/catalogue.schema.json').read_text(encoding='utf-8')))
 def write(path,text):
  path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8',newline='\n')
-for name in ('site.css','premium-r2.css','atelier-r3.css','fonts-r3.css','site.js'):
+for name in ('site.css','premium-r2.css','atelier-r3.css','fonts-r3.css','site.js','corporate-update.css'):
  shutil.copyfile(P/name,A/name)
 shutil.copytree(P/'fonts',A/'fonts',dirs_exist_ok=True)
 shutil.copytree(P/'data',E/'data',dirs_exist_ok=True)
@@ -30,6 +30,7 @@ def page(source,dest,description):
  text=re.sub(r'(href|src)="([^"]+)"',lambda m:m[1]+'="'+html.escape(public_url(html.unescape(m[2]),source),quote=True)+'"',text)
  canonical='https://www.mpbp440.com'+dest
  meta=f'<meta name="description" content="{html.escape(description,quote=True)}"><link rel="canonical" href="{canonical}"><meta property="og:url" content="{canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="MPBP 440 Corp."><meta property="og:title" content="MPBP 440 Corp. — '+('Engineering' if source!='index.html' else 'Musique et création numérique')+'"><meta property="og:description" content="'+html.escape(description,quote=True)+'"><meta property="og:image" content="https://www.mpbp440.com/assets/brand/v15/mpbp440-corp-user-official.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="manifest" href="/manifest.webmanifest">'
+ text=text.replace('href="/assets/v15/corporate-update.css"','href="/assets/v15/corporate-update.css?v=20261123-content-2"')
  text=text.replace('</head>',meta+'<script src="/assets/v15/portal.js" defer></script></head>')
  text=text.replace('</nav></div><div class="wrap footer-inner">','<a href="/informations/">Informations & confidentialité</a></nav></div><div class="wrap footer-inner">')
  if source=='index.html':
@@ -48,7 +49,7 @@ for project in (P/'projets').glob('*.html'):
  target=E/'projets'/project.name;text=target.read_text(encoding='utf-8');extras=[];esc=lambda x:html.escape(str(x),quote=True)
  def safe_url(u):return isinstance(u,str) and (u.startswith('https://') or (u.startswith('/') and not u.startswith('//')))
  for image in item['images']:
-  if safe_url(image['src']):extras.append('<figure><img loading="lazy" src="'+esc(image['src'])+'" alt="'+esc(image['alt'])+'" style="max-width:100%;height:auto"></figure>')
+  if safe_url(image['src']):extras.append('<figure><a href="'+esc(image['src'])+'" target="_blank" rel="noopener"><img loading="lazy" src="'+esc(image['src'])+'" alt="'+esc(image['alt'])+'" style="max-width:100%;height:auto"></a><figcaption>Capture de présentation du projet. Disponibilité publique et essais à venir ; aucun téléchargement ni accès démo activé.</figcaption></figure>')
  for key,label in [('limitations','Limites'),('useCases','Cas d’utilisation')]:
   if item[key]:extras.append('<h3>'+label+'</h3><ul>'+''.join('<li>'+esc(x)+'</li>' for x in item[key])+'</ul>')
  if item['hosting']:extras.append('<p>Hébergement : '+esc(item['hosting'])+'</p>')
@@ -74,6 +75,10 @@ for name in subprocess.check_output(['git','ls-tree','-r','--name-only',BASELINE
  if '.git' in relative.parts or str(relative)=='index.html':continue
  src=baseline(name)
  updated=re.sub(r'href="([^"]+)"',lambda m:'href="'+music_link(m[1],relative.as_posix())+'"',src)
+ if relative.as_posix().startswith('artistes/'):
+  updated=updated.replace('artist.js?v=v13-3-content-video-20260910','artist.js?v=v15-links-20261123').replace('artist.js?v=v13-2-release-hardening-20260829b','artist.js?v=v15-links-20261123')
+ if not relative.parts[0].startswith('admin'):
+  updated=re.sub(r'(src="(?:\.\./|/)?script\.js)\?[^"\s]*',r'\1?v=v15-content-20261123',updated)
  if updated!=src:write(R/relative,updated)
 music=re.sub(r'(src|href)="([^"]+)"',lambda m:m[1]+'="'+(m[2] if m[2].startswith(('/','#','http:','https:','mailto:','data:')) else '/'+m[2])+'"',original)
 music=re.sub(r'href="([^"]+)"',lambda m:'href="'+music_link(m[1],'index.html')+'"',music)
@@ -87,11 +92,13 @@ music=music.replace(legacy_image_rewrite,'<!-- V15: preserve root-absolute media
 music=music.replace('https://www.mpbp440.com/"','https://www.mpbp440.com/musique/"')
 music=music.replace('<title>MPBP440 - Site officiel | M.P.B.P 440 Corp.</title>','<title>MPBP Music — Artistes, sorties et clips | MPBP 440 Corp.</title>')
 music=music.replace('<h2>Informations</h2>','<h2>Informations</h2><a href="/">Portail MPBP 440 Corp.</a><a href="/engineering/">Design & Engineering</a><a href="/informations/">Informations & confidentialité</a>')
-music=music.replace('v=v13-2-release-hardening-20260829','v=v15-production-20261123').replace('v=v13-3-content-video-20260910','v=v15-production-20261123')
+music=music.replace('v=v13-2-release-hardening-20260829','v=v15-content-20261123').replace('v=v13-3-content-video-20260910','v=v15-production-20261123')
 music=music.replace('<link rel="canonical" href="/musique/">','<link rel="canonical" href="https://www.mpbp440.com/musique/">')
 write(R/'musique/index.html',music)
 script=baseline('script.js').replace('(?:music|artistes|','(?:musique|music|actu|mon-espace|artistes|').replace('"/#radio"','"/musique/#radio"').replace('"../index.html#radio"','"/musique/#radio"')
 script=script.replace('(path === "/" || path === "")','(path === "/" || path === "" || path === "/musique/")')
+script=script.replace('"35 titres Sparetdee Simon et Je sais que tu sais, avec pochettes, liens plateformes et recherche accentuée."','String(tracks.length) + " titres du catalogue officiel, avec les pochettes d’origine et les liens de chaque artiste."')
+script=script.replace('La page Music Hub contient les 36 cartes et tous les filtres.','La page Music Hub rassemble tous les titres et les filtres du catalogue.')
 write(R/'script.js',script)
 home=baseline('assets/js/v12-homepage.js').replace('document.baseURI','new URL("/",location.origin)')
 write(R/'assets/js/v12-homepage.js',home)
@@ -108,11 +115,11 @@ write(A/'portal.js',portal)
 manifest=json.loads(baseline('manifest.webmanifest'));manifest['id']='/';manifest['start_url']='/musique/'
 write(R/'manifest.webmanifest',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 # Cache only explicitly public resources. Never cache account/admin/Worker/API requests.
-precache=['/','/index.html','/musique/','/offline.html','/manifest.webmanifest','/script.js','/data.json','/data/news.json','/data/events.json','/data/gallery.json','/assets/brand/mpbp440-corp-official.png']
+precache=['/','/index.html','/musique/','/offline.html','/manifest.webmanifest','/script.js','/data.json','/data/releases.json','/data/news.json','/data/events.json','/data/gallery.json','/assets/v15/corporate-update.css','/assets/brand/mpbp440-corp-official.png']
 precache += ['/'+p.relative_to(R).as_posix() for p in (R/'assets/css').glob('v14-*.css')]
 precache += ['/assets/js/'+x for x in ('v12-preview-basepath.js','v12-navigation.js','v12-homepage.js','v14-motion.js','mpbp440-firebase.js')]
 precache += ['/assets/v15/'+x for x in ('site.css','premium-r2.css','site.js','portal.js')]
-sw='''const MPBP_CACHE='mpbp440-v15-20261123-v2-media-fix';
+sw='''const MPBP_CACHE='mpbp440-v15-20261123-v3-content-showcase';
 const PRECACHE=PRECACHE_JSON;
 const privatePath=/^\\/(?:admin[^/]*|members|mon-espace|analytics|dashboard|api)(?:\\/|\\.|$)/;
 self.addEventListener('install',event=>{event.waitUntil(caches.open(MPBP_CACHE).then(cache=>cache.addAll(PRECACHE)).then(()=>self.skipWaiting()));});

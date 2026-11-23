@@ -1,0 +1,257 @@
+[
+  {
+    "name": "All music track IDs and order retained",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Unrequested tracks unchanged; original covers retained",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data.json / le-bizz-cest-bon-2-0",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data.json / prince-des-etoiles-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data.json / legalize-la-kalite-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data.json / brainrot-society-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data.json / sous-le-meme-toit",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/releases.json / le-bizz-cest-bon-2-0",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/releases.json / prince-des-etoiles-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/releases.json / legalize-la-kalite-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/releases.json / brainrot-society-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/releases.json / sous-le-meme-toit",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/music-library.json / le-bizz-cest-bon-2-0",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/music-library.json / prince-des-etoiles-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/music-library.json / legalize-la-kalite-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/music-library.json / brainrot-society-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "data/music-library.json / sous-le-meme-toit",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Confirmed releases removed from future countdowns",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "CMS countdown mirror synchronized",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Latest featured release available",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Official platform hosts le-bizz-cest-bon-2-0",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Official platform hosts prince-des-etoiles-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Official platform hosts legalize-la-kalite-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Official platform hosts brainrot-society-remix",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Official platform hosts sous-le-meme-toit",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Engineering announcement links to real universe",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Bizz news no longer advertises a future release",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Catalogue schema and no-sale policy",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Seven reviewed product images; no raw screenshot in public catalogue",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped office",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped brenda",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped audio-forensics-lab",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped studio-ia",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped studio-os",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped render-nexus",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Public image metadata stripped roblox-game-factory",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Sensitive Studio OS regions anonymized",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Private project label anonymized",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "All pre-existing media bytes unchanged",
+    "status": "PASS",
+    "detail": "143 files; SVG line endings normalized"
+  },
+  {
+    "name": "Backend, rules, production workflows unchanged",
+    "status": "PASS",
+    "detail": "19 files; text line endings normalized"
+  },
+  {
+    "name": "Production local resources resolve",
+    "status": "PASS",
+    "detail": "617 references; []"
+  },
+  {
+    "name": "JS syntax artistes/artist.js",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "JS syntax assets/v15/engineering-content.js",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "JS syntax sw.js",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tools/v15-media-regression.test.cjs",
+    "status": "PASS",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tools/v15-visual-migration.test.cjs",
+    "status": "PASS",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tools/v15-sw-security.test.cjs",
+    "status": "PASS",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tests/security-surface.test.js",
+    "status": "PASS",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tools/v15-release-fixture.test.cjs",
+    "status": "PASS",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tests/release-hardening.test.js",
+    "status": "FAIL",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  },
+  {
+    "name": "tests/content-20261013.test.js",
+    "status": "FAIL",
+    "detail": "Original October content expectations may intentionally differ; see log."
+  }
+]

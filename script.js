@@ -517,7 +517,7 @@ function setupV94MusicHub(tracks=[]){
       <div>
         <p class="sup">Écouter maintenant</p>
         <h3>${isMusicPage ? "Catalogue officiel" : "Aperçu Music Hub"}</h3>
-        <p>${isMusicPage ? "35 titres Sparetdee Simon et Je sais que tu sais, avec pochettes, liens plateformes et recherche accentuée." : "Une sélection du catalogue officiel. La page Music Hub contient les 36 cartes et tous les filtres."}</p>
+        <p>${isMusicPage ? String(tracks.length) + " titres du catalogue officiel, avec les pochettes d’origine et les liens de chaque artiste." : "Une sélection du catalogue officiel. La page Music Hub rassemble tous les titres et les filtres du catalogue."}</p>
       </div>
       <div class="v94-listen-actions">
         <a class="btn primary" href="/music/index.html#morceaux">Ouvrir Music Hub</a>

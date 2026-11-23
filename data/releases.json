@@ -12,10 +12,10 @@
     "cover": "assets/releases/sparetdee-simon/prince-des-etoiles-remix-cover-officielle.png",
     "description": "Prince des étoiles Remix, le nouveau single de Sparetdee Simon, est disponible dès maintenant sur les plateformes officielles.",
     "links": {
-      "youtube": "https://youtu.be/IJxt7Sju9cA?si=mmP6waO1yOWvip0y",
-      "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=u3aLo0eXRumWC6yjiegoag",
-      "deezer": "https://link.deezer.com/s/34EYFKIHRH5g1ZtShbxGQ",
-      "apple": "https://music.apple.com/fr/album/prince-des-%C3%A9toiles-remix-single/6818615955"
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_ldrXe82l9WK6BApn-LS2lS7sTaYfxxQiQ&si=cpgT2NrHQ8bLN3wm",
+      "spotify": "https://open.spotify.com/intl-fr/album/7yjm4wkEaKeUCmZIELM1gi?si=s-eVk7BFS2qTz-vw5RXFBg",
+      "deezer": "https://link.deezer.com/s/351D94Sl7SIsvpt0K4Lfl",
+      "apple": "https://music.apple.com/us/album/prince-des-%C3%A9toiles-remix-single/6818615955"
     }
   },
   {
@@ -26,12 +26,17 @@
       "Sparetdee Simon"
     ],
     "date": "2026-10-24",
-    "status": "À venir",
+    "status": "Disponible",
     "type": "Single",
-    "label": "Sortie à venir",
+    "label": "Disponible maintenant",
     "cover": "assets/releases/sparetdee-simon/le-bizz-cest-bon-2-0-presortie.png",
-    "description": "Le Bizz c'est bon 2.0, le prochain single de Sparetdee Simon, sera disponible le 24/10/2026.",
-    "links": {}
+    "description": "Le Bizz c'est bon 2.0 de Sparetdee Simon est disponible sur Spotify, Apple Music, YouTube Music et Deezer.",
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/5Dx5qdEjqFH4OIUBtP8lTp?si=Y0L33oX8RuG_7k9-1eqh6w",
+      "apple": "https://music.apple.com/us/album/le-bizz-cest-bon-2-0-single/6824945377",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_m8mKZ6RUHUIn17Kr7DW6Ito9q_oxuOTak&si=cpcTlFw_Tg-05mjd",
+      "deezer": "https://link.deezer.com/s/351DiofztoXAfDAAVSqVv"
+    }
   },
   {
     "id": "juste-une-plume-petit-demon",
@@ -108,7 +113,12 @@
     "description": "BrainRot Society Remix est disponible depuis le 26/09/2026.",
     "status": "Disponible",
     "type": "Single",
-    "links": {}
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/0BTdjtwV2h8z1tkD5NfvlC?si=avO-nswKSOCPLneSkuyWnQ",
+      "apple": "https://music.apple.com/us/song/brainrot-society-remix/6813404749",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_kXx9w_E9SGZ9aJDXnU9egffaJYH7Qijbo&si=k7r_Up0h76kpRImw",
+      "deezer": "https://link.deezer.com/s/351CCgdeBQ0mXoX4EpgsG"
+    }
   },
   {
     "id": "legalize-la-kalite-remix",
@@ -122,7 +132,12 @@
     "description": "Légalize La Kalité Remix est disponible depuis le 26/09/2026.",
     "status": "Disponible",
     "type": "Single",
-    "links": {}
+    "links": {
+      "spotify": "https://open.spotify.com/intl-fr/album/6uewS3oixPu3iO4gSgiarM?si=JVSRjcllT1Ge4bgJkrvp8g",
+      "apple": "https://music.apple.com/us/album/l%C3%A9galize-la-kalit%C3%A9-remix-single/6815171851",
+      "youtube": "https://music.youtube.com/playlist?list=OLAK5uy_njDfbdyrcQdX8KIVMFWYx413JS1iYLV6w&si=b6r_THVrEk_JFfdY",
+      "deezer": "https://link.deezer.com/s/351CSDjpVmJ4qn7eAyHDj"
+    }
   },
   {
     "id": "makeda-karma",
