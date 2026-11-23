@@ -1,4 +1,4 @@
-const MPBP_CACHE='mpbp440-v15-20261123-v3-content-showcase';
+const MPBP_CACHE='mpbp440-v15-20261123-v4-gousto-lumelys';
 const PRECACHE=["/", "/index.html", "/musique/", "/offline.html", "/manifest.webmanifest", "/script.js", "/data.json", "/data/releases.json", "/data/news.json", "/data/events.json", "/data/gallery.json", "/assets/v15/corporate-update.css", "/assets/brand/mpbp440-corp-official.png", "/assets/css/v14-compat.css", "/assets/css/v14-components.css", "/assets/css/v14-home.css", "/assets/css/v14-pages.css", "/assets/css/v14-responsive.css", "/assets/css/v14-shell.css", "/assets/css/v14-tokens.css", "/assets/js/v12-preview-basepath.js", "/assets/js/v12-navigation.js", "/assets/js/v12-homepage.js", "/assets/js/v14-motion.js", "/assets/js/mpbp440-firebase.js", "/assets/v15/site.css", "/assets/v15/premium-r2.css", "/assets/v15/site.js", "/assets/v15/portal.js"];
 const privatePath=/^\/(?:admin[^/]*|members|mon-espace|analytics|dashboard|api)(?:\/|\.|$)/;
 self.addEventListener('install',event=>{event.waitUntil(caches.open(MPBP_CACHE).then(cache=>cache.addAll(PRECACHE)).then(()=>self.skipWaiting()));});

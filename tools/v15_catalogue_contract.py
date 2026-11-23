@@ -31,7 +31,7 @@ def validate_catalogue(data,schema):
         kind=item['cta']['kind'];url=item['cta']['url']
         if kind=='none'and url is not None:raise ValueError('URL sans accès')
         if kind!='none'and not url:raise ValueError('Accès sans URL')
-        if kind in ('demo','play','download')and(not item['cta']['verified']or not item['verification']['access']):raise ValueError('Accès non vérifié')
+        if kind in ('open','demo','play','download')and(not item['cta']['verified']or not item['verification']['access']):raise ValueError('Accès non vérifié')
         for link in [url,item['demoVideo']]:
             if link:
                 parsed=urlparse(link)

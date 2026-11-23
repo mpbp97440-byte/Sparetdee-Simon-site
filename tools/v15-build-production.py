@@ -31,6 +31,7 @@ def page(source,dest,description):
  canonical='https://www.mpbp440.com'+dest
  meta=f'<meta name="description" content="{html.escape(description,quote=True)}"><link rel="canonical" href="{canonical}"><meta property="og:url" content="{canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="MPBP 440 Corp."><meta property="og:title" content="MPBP 440 Corp. — '+('Engineering' if source!='index.html' else 'Musique et création numérique')+'"><meta property="og:description" content="'+html.escape(description,quote=True)+'"><meta property="og:image" content="https://www.mpbp440.com/assets/brand/v15/mpbp440-corp-user-official.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="manifest" href="/manifest.webmanifest">'
  text=text.replace('href="/assets/v15/corporate-update.css"','href="/assets/v15/corporate-update.css?v=20261123-content-2"')
+ text=text.replace('src="/assets/v15/engineering-content.js"','src="/assets/v15/engineering-content.js?v=20261123-gousto-lumelys"')
  text=text.replace('</head>',meta+'<script src="/assets/v15/portal.js" defer></script></head>')
  text=text.replace('</nav></div><div class="wrap footer-inner">','<a href="/informations/">Informations & confidentialité</a></nav></div><div class="wrap footer-inner">')
  if source=='index.html':
@@ -48,17 +49,27 @@ for project in (P/'projets').glob('*.html'):
   target=E/'projets'/project.name;write(target,target.read_text(encoding='utf-8').replace('index,follow','noindex,follow'));continue
  target=E/'projets'/project.name;text=target.read_text(encoding='utf-8');extras=[];esc=lambda x:html.escape(str(x),quote=True)
  def safe_url(u):return isinstance(u,str) and (u.startswith('https://') or (u.startswith('/') and not u.startswith('//')))
+ caption='Pochette officielle du jeu — bêta publique pour les plus de 16 ans.' if item['category']=='game' and item['verification']['access'] else 'Capture réelle de l’application accessible en ligne ; informations personnelles masquées.' if item['cta']['kind']=='open' else 'Capture de présentation du projet. Disponibilité publique et essais à venir ; aucun téléchargement ni accès démo activé.'
  for image in item['images']:
-  if safe_url(image['src']):extras.append('<figure><a href="'+esc(image['src'])+'" target="_blank" rel="noopener"><img loading="lazy" src="'+esc(image['src'])+'" alt="'+esc(image['alt'])+'" style="max-width:100%;height:auto"></a><figcaption>Capture de présentation du projet. Disponibilité publique et essais à venir ; aucun téléchargement ni accès démo activé.</figcaption></figure>')
+  if safe_url(image['src']):extras.append('<figure><a href="'+esc(image['src'])+'" target="_blank" rel="noopener"><img loading="lazy" src="'+esc(image['src'])+'" alt="'+esc(image['alt'])+'" style="max-width:100%;height:auto"></a><figcaption>'+caption+'</figcaption></figure>')
  for key,label in [('limitations','Limites'),('useCases','Cas d’utilisation')]:
   if item[key]:extras.append('<h3>'+label+'</h3><ul>'+''.join('<li>'+esc(x)+'</li>' for x in item[key])+'</ul>')
  if item['hosting']:extras.append('<p>Hébergement : '+esc(item['hosting'])+'</p>')
  text=text.replace('<section class="section" id="acces">',''.join(extras)+'<section class="section" id="acces">')
  access=[]
  if item['verification']['access']:
-  if item['demoVideo'] and safe_url(item['demoVideo']):access.append('<p><a class="button secondary" rel="noopener noreferrer" href="'+esc(item['demoVideo'])+'">Voir la démonstration officielle</a></p>')
-  if item['cta']['verified'] and item['cta']['kind'] in ('play','demo','download') and safe_url(item['cta']['url']):access.append('<p><a class="button secondary" rel="noopener noreferrer" href="'+esc(item['cta']['url'])+'">'+{'play':'Jouer','demo':'Essayer la démonstration','download':'Télécharger'}[item['cta']['kind']]+'</a></p>')
+  video=item['demoVideo']
+  video_notice='<p class="editorial-note">'+esc(item['demoVideoNotice'])+'</p>' if item.get('demoVideoNotice') else ''
+  if video and safe_url(video):
+   parsed=urlsplit(video)
+   if parsed.netloc=='www.mpbp440.com' and parsed.path.startswith('/assets/engineering/') and parsed.path.endswith('.mp4'):
+    access.append('<figure class="official-trailer"><video controls playsinline preload="none" aria-label="Bande-annonce officielle — '+esc(item['name'])+'" aria-describedby="trailer-notice" poster="'+esc(item['images'][0]['src'] if item['images'] else '')+'" style="display:block;width:100%;height:auto;aspect-ratio:16/9"><source src="'+esc(parsed.path)+'" type="video/mp4">Votre navigateur ne permet pas la lecture intégrée.</video><figcaption id="trailer-notice">Teaser officiel 2026 · Lecture à votre demande. <a href="'+esc(parsed.path)+'">Ouvrir la vidéo MP4</a>.'+video_notice+'</figcaption></figure>')
+   else:access.append('<p><a class="button secondary" rel="noopener noreferrer" href="'+esc(video)+'">Voir la démonstration officielle</a></p>')
+  if item['cta']['verified'] and item['cta']['kind'] in ('open','play','demo','download') and safe_url(item['cta']['url']):access.append('<p><a class="button secondary" target="_blank" rel="noopener noreferrer" href="'+esc(item['cta']['url'])+'">'+{'open':'Ouvrir My Gousto Cuisto','play':'Jouer sur Roblox','demo':'Essayer la démonstration','download':'Télécharger'}[item['cta']['kind']]+'</a></p>')
  if access:text=text.replace('<h2>Démonstrations &amp; accès</h2>','<h2>Démonstrations &amp; accès</h2>'+''.join(access)).replace('<h2>Démonstrations & accès</h2>','<h2>Démonstrations & accès</h2>'+''.join(access))
+ if access:text=text.replace('Les vidéos officielles et les liens d’essai seront ajoutés lorsqu’un accès public vérifié sera disponible.','Accès officiel fourni par MPBP. Consultez les conditions et prérequis avant de continuer.')
+ if item['images']:
+  text=text.replace('property="og:image" content="https://www.mpbp440.com/assets/brand/v15/mpbp440-corp-user-official.jpg"','property="og:image" content="'+esc(urljoin('https://www.mpbp440.com',item['images'][0]['src']))+'"')
  write(target,text)
 # Controlled migration from the immutable baseline, never from an already transformed home.
 BASELINE='49e4ae78539e2305296db3c92ad7d8e1a3f528f2'
@@ -119,7 +130,7 @@ precache=['/','/index.html','/musique/','/offline.html','/manifest.webmanifest',
 precache += ['/'+p.relative_to(R).as_posix() for p in (R/'assets/css').glob('v14-*.css')]
 precache += ['/assets/js/'+x for x in ('v12-preview-basepath.js','v12-navigation.js','v12-homepage.js','v14-motion.js','mpbp440-firebase.js')]
 precache += ['/assets/v15/'+x for x in ('site.css','premium-r2.css','site.js','portal.js')]
-sw='''const MPBP_CACHE='mpbp440-v15-20261123-v3-content-showcase';
+sw='''const MPBP_CACHE='mpbp440-v15-20261123-v4-gousto-lumelys';
 const PRECACHE=PRECACHE_JSON;
 const privatePath=/^\\/(?:admin[^/]*|members|mon-espace|analytics|dashboard|api)(?:\\/|\\.|$)/;
 self.addEventListener('install',event=>{event.waitUntil(caches.open(MPBP_CACHE).then(cache=>cache.addAll(PRECACHE)).then(()=>self.skipWaiting()));});

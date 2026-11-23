@@ -282,6 +282,7 @@
                 "enum": [
                   "none",
                   "contact",
+                  "open",
                   "demo",
                   "download",
                   "play",
@@ -341,6 +342,10 @@
                 ]
               }
             }
+          },
+          "demoVideoNotice": {
+            "type": "string",
+            "maxLength": 800
           }
         }
       }

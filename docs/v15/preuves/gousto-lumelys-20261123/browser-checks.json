@@ -1,0 +1,147 @@
+{
+  "responsive": [
+    {
+      "page": "gousto",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "gousto-320.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "lumelys",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "lumelys-320.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "demos",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "demos-320.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "engineering",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "engineering-320.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "gousto",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "gousto-390.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "lumelys",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "lumelys-390.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "demos",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "demos-390.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "engineering",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "engineering-390.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "gousto",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "gousto-768.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "lumelys",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "lumelys-768.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "demos",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "demos-768.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "engineering",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "engineering-768.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "gousto",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "gousto-1440.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "lumelys",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "lumelys-1440.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "demos",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "demos-1440.jpg",
+      "status": "PASS"
+    },
+    {
+      "page": "engineering",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": 0,
+      "screenshot": "engineering-1440.jpg",
+      "status": "PASS"
+    }
+  ],
+  "video": {
+    "duration": 78.366667,
+    "observedPlaybackTime": 74.496838,
+    "width": 1280,
+    "height": 720,
+    "readyState": 4,
+    "status": "PASS"
+  },
+  "filters": {
+    "applications": 1,
+    "games": 1,
+    "goustoSearch": 1
+  },
+  "menu390Expanded": true,
+  "roblox": "Official owner-provided link redirects to login; owner confirms daily game use; no Codex player session."
+}

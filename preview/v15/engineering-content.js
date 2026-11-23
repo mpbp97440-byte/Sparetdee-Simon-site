@@ -38,7 +38,7 @@
       if(item.public&&(!item.verification.content||!item.summary.trim()))throw new Error(item.name+' : vérifier les informations et renseigner le résumé avant affichage.');
       if(item.cta.kind!=='none'&&!urlSafe(item.cta.url))throw new Error(item.name+' : URL d’accès non autorisée.');
       if(item.cta.kind==='none'&&item.cta.url!==null)throw new Error(item.name+' : retirer l’URL si aucun accès n’est prévu.');
-      if(['demo','play','download'].includes(item.cta.kind)&&(!item.cta.verified||!item.verification.access))throw new Error(item.name+' : accès non vérifié.');
+      if(['open','demo','play','download'].includes(item.cta.kind)&&(!item.cta.verified||!item.verification.access))throw new Error(item.name+' : accès non vérifié.');
       if(item.demoVideo&&!urlSafe(item.demoVideo))throw new Error(item.name+' : URL vidéo invalide.');
       if(item.demoVideo&&!item.demoVideo.startsWith('https://'))throw new Error('La vidéo doit utiliser HTTPS.');
     }
@@ -48,7 +48,7 @@
   function link(label,path,className){const a=el('a',label,className);a.href=new URL(path,base).href;return a;}
   function publicCard(item,demo=false){
     const card=el('article',undefined,'public-item'),copy=el('div');copy.append(el('p',categories[item.category]||item.category,'eyebrow'),el('h3',item.name),el('p',item.summary));
-    if(demo){const isVideo=!['demo','play'].includes(item.cta.kind);const target=isVideo?item.demoVideo:item.cta.url;const action=link(isVideo?'Voir la présentation':item.cta.kind==='play'?'Accéder au jeu':'Ouvrir la démonstration',target,'button secondary');action.target='_blank';action.rel='noopener noreferrer';copy.append(el('p',item.limitations.join(' · ')||'Consulter les conditions et prérequis de la fiche.','editorial-note'));card.append(copy,action);}
+    if(demo){const isVideo=!['open','demo','play'].includes(item.cta.kind);const target=isVideo?'projets/'+item.slug+'.html#acces':item.cta.url;const action=link(isVideo?'Voir la présentation':item.cta.kind==='play'?'Jouer sur Roblox':item.cta.kind==='open'?'Ouvrir l’application':'Ouvrir la démonstration',target,'button secondary');action.target='_blank';action.rel='noopener noreferrer';copy.append(el('p',item.limitations.join(' · ')||'Consulter les conditions et prérequis de la fiche.','editorial-note'));card.append(copy,action,link(item.demoVideo?'Présentation & vidéo':'Voir la fiche','projets/'+item.slug+'.html#acces','text-link'));}
     else{copy.append(el('p','Vente non ouverte','editorial-note'));card.append(copy,link('Consulter le projet','projets/'+item.slug+'.html','button secondary'));}
     return card;
   }
@@ -69,8 +69,8 @@
   function renderDemos(){
     const list=$('[data-demo-list]');if(!list)return;
     const query=normalized($('#demo-search')?.value||'');
-    const entries=displayed().filter(i=>i.verification.access&&(i.demoVideo||(['demo','play'].includes(i.cta.kind)&&i.cta.verified))).filter(i=>(demoCategory==='all'||i.category===demoCategory)&&normalized(i.name+' '+i.summary).includes(query));
-    $('#demo-count').textContent=entries.length+' démonstration'+(entries.length===1?'':'s')+' disponible'+(entries.length===1?'':'s');
+    const entries=displayed().filter(i=>i.verification.access&&(i.demoVideo||(['open','demo','play'].includes(i.cta.kind)&&i.cta.verified))).filter(i=>(demoCategory==='all'||i.category===demoCategory)&&normalized(i.name+' '+i.summary).includes(query));
+    $('#demo-count').textContent=entries.length+' accès public'+(entries.length===1?'':'s')+' disponible'+(entries.length===1?'':'s');
     if(entries.length)list.replaceChildren(...entries.map(i=>publicCard(i,true)));
     else{const empty=el('div',undefined,'store-empty');empty.append(el('span','▷','demo-glyph'),el('h3','Aucune démonstration publique vérifiée pour cette sélection.'),el('p','Les premiers essais d’applications, d’agents IA et de jeux seront proposés ici avec leurs liens officiels.'),link('Découvrir les projets','engineering.html#projets','button secondary'));list.replaceChildren(empty);}
   }

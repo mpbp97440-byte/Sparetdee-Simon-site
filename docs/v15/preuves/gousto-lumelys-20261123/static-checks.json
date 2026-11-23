@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Nine public projects with schema and sales disabled",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Canonical, preview and production catalogue synchronized",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Seven other projects strictly unchanged",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Game beta, age condition and owner-provided official Roblox URL",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Gousto live app is not labelled a fake demo or sale",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Local data and remote AI distinction accurately disclosed",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Reject unverified open access",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Reject unverified play access",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Reject commercial activation",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Music data, migrated homepage, catalogue, artist renderer and PWA identity unchanged",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "All existing media retained byte for byte",
+    "status": "PASS",
+    "detail": "151 original media"
+  },
+  {
+    "name": "No backend, workflow, admin or domain change",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Real capture anonymized locally with stripped EXIF",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Web trailer below GitHub file limit and fast start",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "H264/AAC trailer preserves duration",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Accessible player is controlled, inline and never autoplays",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Promotional video notice visible next to player and linked accessibly",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "No placeholder availability remains on active projects",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "Video excluded from SW media cache and precache",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "All local public links and media resolve",
+    "status": "PASS",
+    "detail": "540 refs; []"
+  },
+  {
+    "name": "Pre-update backup verified",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tools/v15-media-regression.test.cjs",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tools/v15-visual-migration.test.cjs",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tools/v15-sw-security.test.cjs",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tests/security-surface.test.js",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "tools/v15-release-fixture.test.cjs",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "JS syntax assets/v15/engineering-content.js",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "JS syntax sw.js",
+    "status": "PASS",
+    "detail": ""
+  }
+]

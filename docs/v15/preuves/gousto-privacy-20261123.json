@@ -1,0 +1,33 @@
+{
+  "slug": "gousto-cuisto",
+  "publicFile": "assets/engineering/showcase-20261123/gousto-cuisto.webp",
+  "sha256": "3acd3777b53b8a5dd5d96fddb831687296753aacab1dfb50bf52e553f243d7be",
+  "sourceSha256": "49cdbe71bec4c7445cba872405493b8ca2518b41cd054b0a2f2e213e60eb0ee6",
+  "redactions": [
+    [
+      370,
+      48,
+      620,
+      73
+    ],
+    [
+      400,
+      201,
+      645,
+      237
+    ],
+    [
+      400,
+      250,
+      665,
+      309
+    ],
+    [
+      396,
+      650,
+      848,
+      704
+    ]
+  ],
+  "review": "Capture réelle dans une session neuve, aucun compte personnel connecté ; prénom affiché masqué aux quatre emplacements. Aucun message ni photo envoyé."
+}
